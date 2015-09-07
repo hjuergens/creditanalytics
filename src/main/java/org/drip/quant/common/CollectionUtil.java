@@ -57,7 +57,7 @@ public class CollectionUtil {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> PrefixKeys (
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapIn,
-		final java.lang.String strPrefix)
+		final String strPrefix)
 	{
 		if (null == mapIn || null == mapIn.entrySet() || null == strPrefix || strPrefix.isEmpty())
 			return null;
@@ -65,7 +65,7 @@ public class CollectionUtil {
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapOut = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapIn.entrySet()) {
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapIn.entrySet()) {
 			if (null != me.getKey() && !me.getKey().isEmpty())
 				mapOut.put (strPrefix + me.getKey(), me.getValue());
 		}
@@ -95,10 +95,10 @@ public class CollectionUtil {
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapOut = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : map1.entrySet())
+		for (java.util.Map.Entry<String, java.lang.Double> me : map1.entrySet())
 			mapOut.put (me.getKey(), me.getValue());
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : map2.entrySet())
+		for (java.util.Map.Entry<String, java.lang.Double> me : map2.entrySet())
 			mapOut.put (me.getKey(), me.getValue());
 
 		return mapOut;
@@ -121,7 +121,7 @@ public class CollectionUtil {
 			mapToAdd.entrySet())
 			return false;
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapToAdd.entrySet())
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapToAdd.entrySet())
 			mapMain.put (me.getKey(), me.getValue());
 
 		return true;
@@ -137,10 +137,10 @@ public class CollectionUtil {
 	 * @return Flattened map string
 	 */
 
-	public static final java.lang.String TwoDSDMapToFlatString (
+	public static final String TwoDSDMapToFlatString (
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> map2DSD,
-		final java.lang.String strKVDelimiter,
-		final java.lang.String strRecordDelimiter)
+		final String strKVDelimiter,
+		final String strRecordDelimiter)
 	{
 		if (null == map2DSD || 0 == map2DSD.size() || null == map2DSD.entrySet() || null == strKVDelimiter ||
 			strKVDelimiter.isEmpty() || null == strRecordDelimiter || strRecordDelimiter.isEmpty())
@@ -148,9 +148,9 @@ public class CollectionUtil {
 
 		boolean bFirstEntry = true;
 
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : map2DSD.entrySet()) {
+		for (java.util.Map.Entry<String, java.lang.Double> me : map2DSD.entrySet()) {
 			if (null == me || null == me.getKey() || me.getKey().isEmpty()) continue;
 
 			if (bFirstEntry)
@@ -175,13 +175,13 @@ public class CollectionUtil {
 	 * @return Flattened String
 	 */
 
-	public static final java.lang.String ThreeDSDMapToFlatString (
+	public static final String ThreeDSDMapToFlatString (
 		final
 			org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>
 				map3DSD,
-		final java.lang.String strMultiLevelKeyDelimiter,
-		final java.lang.String strKVDelimiter,
-		final java.lang.String strRecordDelimiter)
+		final String strMultiLevelKeyDelimiter,
+		final String strKVDelimiter,
+		final String strRecordDelimiter)
 	{
 		if (null == map3DSD || 0 == map3DSD.size() || null == map3DSD.entrySet() || null ==
 			strMultiLevelKeyDelimiter || strMultiLevelKeyDelimiter.isEmpty() || null == strKVDelimiter ||
@@ -190,13 +190,13 @@ public class CollectionUtil {
 
 		boolean bFirstEntry = true;
 
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
-		for (java.util.Map.Entry<java.lang.String,
+		for (java.util.Map.Entry<String,
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meOut : map3DSD.entrySet()) {
 			if (null == meOut || null == meOut.getValue() || null == meOut.getValue().entrySet()) continue;
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> meIn : meOut.getValue().entrySet())
+			for (java.util.Map.Entry<String, java.lang.Double> meIn : meOut.getValue().entrySet())
 			{
 				if (null == meIn || null == meIn.getKey() || meIn.getKey().isEmpty()) continue;
 
@@ -224,13 +224,13 @@ public class CollectionUtil {
 	 * @return Flattened String
 	 */
 
-	public static final java.lang.String FourDSDMapToFlatString (
+	public static final String FourDSDMapToFlatString (
 		final
 			org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 				map4DSD,
-		final java.lang.String strMultiLevelKeyDelimiter,
-		final java.lang.String strKVDelimiter,
-		final java.lang.String strRecordDelimiter)
+		final String strMultiLevelKeyDelimiter,
+		final String strKVDelimiter,
+		final String strRecordDelimiter)
 	{
 		if (null == map4DSD || 0 == map4DSD.size() || null == map4DSD.entrySet() || null ==
 			strMultiLevelKeyDelimiter || strMultiLevelKeyDelimiter.isEmpty() || null == strKVDelimiter ||
@@ -239,22 +239,22 @@ public class CollectionUtil {
 
 		boolean bFirstEntry = true;
 
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
-		for (java.util.Map.Entry<java.lang.String,org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
+		for (java.util.Map.Entry<String,org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 			meOut : map4DSD.entrySet()) {
 			if (null == meOut || null == meOut.getValue() || null == meOut.getValue().entrySet() || null ==
 				meOut.getKey() || meOut.getKey().isEmpty())
 				continue;
 
-			for (java.util.Map.Entry<java.lang.String,
+			for (java.util.Map.Entry<String,
 				org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meIn :
 					meOut.getValue().entrySet()) {
 				if (null == meIn || null == meIn.getValue() || null == meIn.getValue().entrySet() || null ==
 					meIn.getKey() || meIn.getKey().isEmpty())
 					continue;
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : meIn.getValue().entrySet())
+				for (java.util.Map.Entry<String, java.lang.Double> me : meIn.getValue().entrySet())
 				{
 					if (null == me || null == me.getKey() || me.getKey().isEmpty()) continue;
 
@@ -286,18 +286,18 @@ public class CollectionUtil {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		FlatStringTo2DSDMap (
-			final java.lang.String str2DMap,
-			final java.lang.String strKVDelimiter,
-			final java.lang.String strRecordDelimiter,
+			final String str2DMap,
+			final String strKVDelimiter,
+			final String strRecordDelimiter,
 			final boolean bSkipNullValue,
-			final java.lang.String strNULLString)
+			final String strNULLString)
 	{
 		if (null == str2DMap || str2DMap.isEmpty() || null == strNULLString || strNULLString.isEmpty() ||
 			strNULLString.equalsIgnoreCase (str2DMap) || null == strKVDelimiter || strKVDelimiter.isEmpty()
 				|| null == strRecordDelimiter || strRecordDelimiter.isEmpty())
 			return null;
 
-		java.lang.String[] astrRecord = org.drip.quant.common.StringUtil.Split (str2DMap,
+		String[] astrRecord = org.drip.quant.common.StringUtil.Split (str2DMap,
 			strRecordDelimiter);
 
 		if (null == astrRecord || 0 == astrRecord.length) return null;
@@ -310,7 +310,7 @@ public class CollectionUtil {
 				(astrRecord[i]))
 				continue;
 
-			java.lang.String[] astrKVPair = org.drip.quant.common.StringUtil.Split (astrRecord[i],
+			String[] astrKVPair = org.drip.quant.common.StringUtil.Split (astrRecord[i],
 				strKVDelimiter);
 			
 			if (null == astrKVPair || 2 != astrKVPair.length || null == astrKVPair[0] ||
@@ -343,19 +343,19 @@ public class CollectionUtil {
 	public static final
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>
 			FlatStringTo3DSDMap (
-				final java.lang.String str3DMap,
-				final java.lang.String strMultiLevelKeyDelimiter,
-				final java.lang.String strKVDelimiter,
-				final java.lang.String strRecordDelimiter,
+				final String str3DMap,
+				final String strMultiLevelKeyDelimiter,
+				final String strKVDelimiter,
+				final String strRecordDelimiter,
 				final boolean bSkipNullValue,
-				final java.lang.String strNULLString)
+				final String strNULLString)
 	{
 		if (null == str3DMap || str3DMap.isEmpty() || null == strNULLString || strNULLString.isEmpty() ||
 			strNULLString.equalsIgnoreCase (str3DMap) || null == strKVDelimiter || strKVDelimiter.isEmpty()
 				|| null == strRecordDelimiter || strRecordDelimiter.isEmpty())
 			return null;
 
-		java.lang.String[] astrRecord = org.drip.quant.common.StringUtil.Split (str3DMap, strRecordDelimiter);
+		String[] astrRecord = org.drip.quant.common.StringUtil.Split (str3DMap, strRecordDelimiter);
 
 		if (null == astrRecord || 0 == astrRecord.length) return null;
 
@@ -366,7 +366,7 @@ public class CollectionUtil {
 		for (int i = 0; i < astrRecord.length; ++i) {
 			if (null == astrRecord[i] || astrRecord[i].isEmpty()) continue;
 
-			java.lang.String[] astrKVPair = org.drip.quant.common.StringUtil.Split (astrRecord[i], strKVDelimiter);
+			String[] astrKVPair = org.drip.quant.common.StringUtil.Split (astrRecord[i], strKVDelimiter);
 			
 			if (null == astrKVPair || 2 != astrKVPair.length || null == astrKVPair[0] ||
 				astrKVPair[0].isEmpty() || strNULLString.equalsIgnoreCase (astrKVPair[0]) || (bSkipNullValue
@@ -374,7 +374,7 @@ public class CollectionUtil {
 						(astrKVPair[1]))))
 				continue;
 
-			java.lang.String[] astrKeySet = org.drip.quant.common.StringUtil.Split (astrKVPair[0],
+			String[] astrKeySet = org.drip.quant.common.StringUtil.Split (astrKVPair[0],
 				strMultiLevelKeyDelimiter);
 			
 			if (null == astrKeySet || 2 != astrKeySet.length || null == astrKeySet[0] ||
@@ -415,19 +415,19 @@ public class CollectionUtil {
 	public static final
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 			FlatStringTo4DSDMap (
-				final java.lang.String str4DMap,
-				final java.lang.String strMultiLevelKeyDelimiter,
-				final java.lang.String strKVDelimiter,
-				final java.lang.String strRecordDelimiter,
+				final String str4DMap,
+				final String strMultiLevelKeyDelimiter,
+				final String strKVDelimiter,
+				final String strRecordDelimiter,
 				final boolean bSkipNullValue,
-				final java.lang.String strNULLString)
+				final String strNULLString)
 	{
 		if (null == str4DMap || str4DMap.isEmpty() || null == strNULLString || strNULLString.isEmpty() ||
 			strNULLString.equalsIgnoreCase (str4DMap) || null == strKVDelimiter || strKVDelimiter.isEmpty()
 				|| null == strRecordDelimiter || strRecordDelimiter.isEmpty())
 			return null;
 
-		java.lang.String[] astrRecord = org.drip.quant.common.StringUtil.Split (str4DMap, strRecordDelimiter);
+		String[] astrRecord = org.drip.quant.common.StringUtil.Split (str4DMap, strRecordDelimiter);
 
 		if (null == astrRecord || 0 == astrRecord.length) return null;
 
@@ -440,7 +440,7 @@ public class CollectionUtil {
 				(astrRecord[i]))
 				continue;
 
-			java.lang.String[] astrKVPairOut = org.drip.quant.common.StringUtil.Split (astrRecord[i],
+			String[] astrKVPairOut = org.drip.quant.common.StringUtil.Split (astrRecord[i],
 				strKVDelimiter);
 			
 			if (null == astrKVPairOut || 2 != astrKVPairOut.length || null == astrKVPairOut[0] ||
@@ -449,7 +449,7 @@ public class CollectionUtil {
 						strNULLString.equalsIgnoreCase (astrKVPairOut[1]))))
 				continue;
 
-			java.lang.String[] astrKeySet = org.drip.quant.common.StringUtil.Split (astrKVPairOut[0],
+			String[] astrKeySet = org.drip.quant.common.StringUtil.Split (astrKVPairOut[0],
 				strMultiLevelKeyDelimiter);
 			
 			if (null == astrKeySet || 3 != astrKeySet.length || null == astrKeySet[0] ||

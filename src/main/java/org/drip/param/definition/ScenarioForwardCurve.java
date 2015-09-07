@@ -93,7 +93,7 @@ public abstract class ScenarioForwardCurve {
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double[] adblQuotes,
 		final double dblBump,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final java.util.Map<org.drip.analytics.date.JulianDate,
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> mmFixings,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
@@ -117,12 +117,12 @@ public abstract class ScenarioForwardCurve {
 	 */
 
 	public abstract boolean cookCustomDC (
-		final java.lang.String strCurveName,
-		final java.lang.String strCustomName,
+		final String strCurveName,
+		final String strCustomName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double[] adblQuotes,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final java.util.Map<org.drip.analytics.date.JulianDate,
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> mmFixings,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,

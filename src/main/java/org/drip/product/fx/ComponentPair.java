@@ -37,7 +37,7 @@ package org.drip.product.fx;
  */
 
 public class ComponentPair extends org.drip.product.definition.BasketProduct {
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.param.period.FixingSetting _fxFixingSetting = null;
 	private org.drip.product.definition.CalibratableFixedIncomeComponent _rcDerived = null;
 	private org.drip.product.definition.CalibratableFixedIncomeComponent _rcReference = null;
@@ -54,7 +54,7 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 	 */
 
 	public ComponentPair (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent rcReference,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent rcDerived,
 		final org.drip.param.period.FixingSetting fxFixingSetting)
@@ -106,11 +106,11 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 	 * @return The FX Code
 	 */
 
-	public java.lang.String fxCode()
+	public String fxCode()
 	{
-		java.lang.String strDerivedComponentCouponCurrency = _rcDerived.payCurrency();
+		String strDerivedComponentCouponCurrency = _rcDerived.payCurrency();
 
-		java.lang.String strReferenceComponentCouponCurrency = _rcReference.payCurrency();
+		String strReferenceComponentCouponCurrency = _rcReference.payCurrency();
 
 		return strDerivedComponentCouponCurrency.equalsIgnoreCase (strReferenceComponentCouponCurrency) ?
 			null : strReferenceComponentCouponCurrency + "/" + strDerivedComponentCouponCurrency;
@@ -168,18 +168,18 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent rcReference = referenceComponent();
 
-		java.lang.String strReferenceComponentName = rcReference.name();
+		String strReferenceComponentName = rcReference.name();
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent rcDerived = derivedComponent();
 
-		java.lang.String strDerivedComponentName = rcDerived.name();
+		String strDerivedComponentName = rcDerived.name();
 
-		java.lang.String strReferenceComponentPV = strReferenceComponentName + "[PV]";
+		String strReferenceComponentPV = strReferenceComponentName + "[PV]";
 
 		if (!bBasisOnDerivedComponent) {
-			java.lang.String strReferenceComponentDerivedStreamCleanDV01 = strReferenceComponentName +
+			String strReferenceComponentDerivedStreamCleanDV01 = strReferenceComponentName +
 				"[DerivedCleanDV01]";
-			java.lang.String strReferenceComponentReferenceStreamCleanDV01 = strReferenceComponentName +
+			String strReferenceComponentReferenceStreamCleanDV01 = strReferenceComponentName +
 				"[ReferenceCleanDV01]";
 
 			if (null == mapOP || !mapOP.containsKey (strReferenceComponentPV) || !mapOP.containsKey
@@ -192,9 +192,9 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 					(strReferenceComponentReferenceStreamCleanDV01)) * dblBasis)))
 				return null;
 		} else {
-			java.lang.String strDerivedComponentReferenceStreamCleanDV01 = strDerivedComponentName +
+			String strDerivedComponentReferenceStreamCleanDV01 = strDerivedComponentName +
 				"[ReferenceCleanDV01]";
-			java.lang.String strDerivedComponentDerivedStreamCleanDV01 = strDerivedComponentName +
+			String strDerivedComponentDerivedStreamCleanDV01 = strDerivedComponentName +
 				"[DerivedCleanDV01]";
 
 			if (null == mapOP || !mapOP.containsKey (strReferenceComponentPV) || !mapOP.containsKey
@@ -312,16 +312,16 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 		return null;
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
 
 	@Override public org.drip.state.identifier.FXLabel[] fxLabel()
 	{
-		java.lang.String strReferenceCurrency = _rcReference.payCurrency();
+		String strReferenceCurrency = _rcReference.payCurrency();
 
-		java.lang.String strDerivedCurrency = _rcDerived.payCurrency();
+		String strDerivedCurrency = _rcDerived.payCurrency();
 
 		return new org.drip.state.identifier.FXLabel[] {org.drip.state.identifier.FXLabel.Standard
 			(strReferenceCurrency + "/" + strDerivedCurrency), org.drip.state.identifier.FXLabel.Standard
@@ -334,7 +334,7 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 	}
 
 	@Override public int measureAggregationType (
-		final java.lang.String strMeasureName)
+		final String strMeasureName)
 	{
 		return org.drip.product.definition.BasketProduct.MEASURE_AGGREGATION_TYPE_UNIT_ACCUMULATE;
 	}
@@ -356,23 +356,23 @@ public class ComponentPair extends org.drip.product.definition.BasketProduct {
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent rcDerived = derivedComponent();
 
-		java.lang.String strReferenceCompName = rcReference.name();
+		String strReferenceCompName = rcReference.name();
 
-		java.lang.String strDerivedCompName = rcDerived.name();
+		String strDerivedCompName = rcDerived.name();
 
-		java.lang.String strDerivedCompPV = strDerivedCompName + "[PV]";
-		java.lang.String strReferenceCompPV = strReferenceCompName + "[PV]";
-		java.lang.String strDerivedCompDerivedDV01 = strDerivedCompName + "[DerivedCleanDV01]";
-		java.lang.String strReferenceCompDerivedDV01 = strReferenceCompName + "[DerivedCleanDV01]";
-		java.lang.String strDerivedCompReferenceDV01 = strDerivedCompName + "[ReferenceCleanDV01]";
-		java.lang.String strReferenceCompReferenceDV01 = strReferenceCompName + "[ReferenceCleanDV01]";
-		java.lang.String strDerivedCompCumulativeConvexityPremium = strDerivedCompName +
+		String strDerivedCompPV = strDerivedCompName + "[PV]";
+		String strReferenceCompPV = strReferenceCompName + "[PV]";
+		String strDerivedCompDerivedDV01 = strDerivedCompName + "[DerivedCleanDV01]";
+		String strReferenceCompDerivedDV01 = strReferenceCompName + "[DerivedCleanDV01]";
+		String strDerivedCompReferenceDV01 = strDerivedCompName + "[ReferenceCleanDV01]";
+		String strReferenceCompReferenceDV01 = strReferenceCompName + "[ReferenceCleanDV01]";
+		String strDerivedCompCumulativeConvexityPremium = strDerivedCompName +
 			"[CumulativeConvexityAdjustmentPremium]";
-		java.lang.String strDerivedCompCumulativeConvexityAdjustment = strDerivedCompName +
+		String strDerivedCompCumulativeConvexityAdjustment = strDerivedCompName +
 			"[CumulativeConvexityAdjustmentFactor]";
-		java.lang.String strReferenceCompCumulativeConvexityPremium = strReferenceCompName +
+		String strReferenceCompCumulativeConvexityPremium = strReferenceCompName +
 			"[CumulativeConvexityAdjustmentPremium]";
-		java.lang.String strReferenceCompCumulativeConvexityAdjustment = strReferenceCompName +
+		String strReferenceCompCumulativeConvexityAdjustment = strReferenceCompName +
 			"[QuantoAdjustmentFactor]";
 
 		if (!mapOutput.containsKey (strDerivedCompPV) || !mapOutput.containsKey (strReferenceCompPV) ||

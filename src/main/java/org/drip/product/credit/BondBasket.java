@@ -40,7 +40,7 @@ package org.drip.product.credit;
  */
 
 public class BondBasket extends org.drip.product.definition.BasketProduct {
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private double[] _adblNormWeights = null;
 	private org.drip.product.definition.Bond[] _aBond = null;
 
@@ -55,7 +55,7 @@ public class BondBasket extends org.drip.product.definition.BasketProduct {
 	 */
 
 	public BondBasket (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.Bond[] aBond,
 		final double[] adblWeights)
 		throws java.lang.Exception
@@ -82,7 +82,7 @@ public class BondBasket extends org.drip.product.definition.BasketProduct {
 			_adblNormWeights[i] = adblWeights[i] / dblCumulativeWeight;
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
@@ -93,7 +93,7 @@ public class BondBasket extends org.drip.product.definition.BasketProduct {
 	}
 
 	@Override public int measureAggregationType (
-		final java.lang.String strMeasureName)
+		final String strMeasureName)
 	{
 		if ("Accrued".equalsIgnoreCase (strMeasureName))
 			return org.drip.product.definition.BasketProduct.MEASURE_AGGREGATION_TYPE_CUMULATIVE;

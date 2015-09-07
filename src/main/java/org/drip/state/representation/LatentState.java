@@ -52,7 +52,7 @@ public interface LatentState {
 	 */
 
 	public abstract LatentState parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift);
 
 	/**
@@ -67,7 +67,7 @@ public interface LatentState {
 
 	public abstract LatentState shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift);
 
 	/**
@@ -80,7 +80,7 @@ public interface LatentState {
 	 */
 
 	public abstract LatentState customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp);
 
 	/**

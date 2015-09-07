@@ -35,8 +35,8 @@ package org.drip.dynamics.evolution;
  */
 
 public class LSQMPointRecord {
-	private java.util.Map<java.lang.String, java.util.Map<java.lang.String, java.lang.Double>> _mmLSQMValue =
-		new java.util.HashMap<java.lang.String, java.util.Map<java.lang.String, java.lang.Double>>();
+	private java.util.Map<String, java.util.Map<String, java.lang.Double>> _mmLSQMValue =
+		new java.util.HashMap<String, java.util.Map<String, java.lang.Double>>();
 
 	/**
 	 * Empty LSQMPointRecord Constructor
@@ -52,7 +52,7 @@ public class LSQMPointRecord {
 	 * @return The Latent State Labels
 	 */
 
-	public java.util.Set<java.lang.String> latentStateLabel()
+	public java.util.Set<String> latentStateLabel()
 	{
 		return _mmLSQMValue.keySet();
 	}
@@ -83,16 +83,16 @@ public class LSQMPointRecord {
 
 	public boolean setQM (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM,
+		final String strQM,
 		final double dblValue)
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty() || !org.drip.quant.common.NumberUtil.IsValid
 			(dblValue))
 			return false;
 
-		java.util.Map<java.lang.String, java.lang.Double> mapLSQM = _mmLSQMValue.containsKey
+		java.util.Map<String, java.lang.Double> mapLSQM = _mmLSQMValue.containsKey
 			(lsl.fullyQualifiedName()) ? _mmLSQMValue.get (lsl.fullyQualifiedName()) : new
-				java.util.HashMap<java.lang.String, java.lang.Double>();
+				java.util.HashMap<String, java.lang.Double>();
 
 		mapLSQM.put (strQM, dblValue);
 
@@ -112,7 +112,7 @@ public class LSQMPointRecord {
 
 	public boolean containsQM (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM)
+		final String strQM)
 	{
 		return null == lsl || null == strQM || strQM.isEmpty() ? false : _mmLSQMValue.containsKey
 			(lsl.fullyQualifiedName()) && _mmLSQMValue.get (lsl.fullyQualifiedName()).containsKey (strQM);
@@ -131,14 +131,14 @@ public class LSQMPointRecord {
 
 	public double qm (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM)
+		final String strQM)
 		throws java.lang.Exception
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty() || !_mmLSQMValue.containsKey
 			(lsl.fullyQualifiedName()))
 			throw new java.lang.Exception ("LSQMPointRecord::qm => Invalid Inputs");
 
-		java.util.Map<java.lang.String, java.lang.Double> mapLSQM = _mmLSQMValue.get
+		java.util.Map<String, java.lang.Double> mapLSQM = _mmLSQMValue.get
 			(lsl.fullyQualifiedName());
 
 		if (!mapLSQM.containsKey (strQM))

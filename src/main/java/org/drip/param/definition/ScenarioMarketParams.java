@@ -63,7 +63,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean addScenarioDiscountCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.definition.ScenarioDiscountCurve sdc);
 
 	/**
@@ -75,7 +75,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean removeScenarioDiscountCurve (
-		final java.lang.String strName);
+		final String strName);
 
 	/**
 	 * Add Named Scenario Forward Curve
@@ -87,7 +87,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean addScenarioForwardCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.definition.ScenarioForwardCurve sfc);
 
 	/**
@@ -99,7 +99,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean removeScenarioForwardCurve (
-		final java.lang.String strName);
+		final String strName);
 
 	/**
 	 * Add the named scenario CC
@@ -111,7 +111,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean addScenarioCreditCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.definition.ScenarioCreditCurve scc);
 
 	/**
@@ -123,7 +123,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean removeScenarioCreditCurve (
-		final java.lang.String strName);
+		final String strName);
 
 	/**
 	 * Add the named Treasury Quote
@@ -135,7 +135,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean addTSYQuote (
-		final java.lang.String strBenchmark,
+		final String strBenchmark,
 		final org.drip.param.definition.ProductQuote pqTSY);
 
 	/**
@@ -147,7 +147,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean removeTSYQuote (
-		final java.lang.String strBenchmark);
+		final String strBenchmark);
 
 	/**
 	 * Set the full set of named Treasury Quote Map
@@ -170,7 +170,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract org.drip.param.definition.ProductQuote tsyQuote (
-		final java.lang.String strBenchmark);
+		final String strBenchmark);
 
 	/**
 	 * Get the full set of named Treasury Quote Map
@@ -227,7 +227,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean addComponentQuote (
-		final java.lang.String strComponentID,
+		final String strComponentID,
 		final org.drip.param.definition.ProductQuote cqComponent);
 
 	/**
@@ -239,7 +239,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean removeComponentQuote (
-		final java.lang.String strComponentID);
+		final String strComponentID);
 
 	/**
 	 * Add the full map of component quotes
@@ -262,7 +262,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract org.drip.param.definition.ProductQuote componentQuote (
-		final java.lang.String strComponentID);
+		final String strComponentID);
 
 	/**
 	 * Retrieve the full map of component quotes
@@ -284,7 +284,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract boolean addScenarioMarketParams (
-		final java.lang.String strScenarioName,
+		final String strScenarioName,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs);
 
 	/**
@@ -296,7 +296,7 @@ public abstract class ScenarioMarketParams {
 	 */
 
 	public abstract org.drip.param.market.CurveSurfaceQuoteSet scenarioMarketParams (
-		final java.lang.String strScenarioName);
+		final String strScenarioName);
 
 	/**
 	 * Get the Market Parameters corresponding to the component and the scenario
@@ -309,7 +309,7 @@ public abstract class ScenarioMarketParams {
 
 	public abstract org.drip.param.market.CurveSurfaceQuoteSet scenarioMarketParams (
 		final org.drip.product.definition.FixedIncomeComponent comp,
-		final java.lang.String strScenario);
+		final String strScenario);
 
 	/**
 	 * Get the Map of Funding Tenor Bumped Market Parameters corresponding to the Component
@@ -367,7 +367,7 @@ public abstract class ScenarioMarketParams {
 
 	public abstract org.drip.param.market.CurveSurfaceQuoteSet scenarioMarketParams (
 		final org.drip.product.definition.BasketProduct bp,
-		final java.lang.String strScenario);
+		final String strScenario);
 
 	/**
 	 * Get the Map of Funding Parallel Bumped Curves for the given Basket Product

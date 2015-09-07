@@ -92,6 +92,6 @@ public interface BasisEstimator {
 	 */
 
 	public abstract double basis (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception;
 }

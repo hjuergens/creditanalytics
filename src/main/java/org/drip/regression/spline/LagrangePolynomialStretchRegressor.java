@@ -49,8 +49,8 @@ public class LagrangePolynomialStretchRegressor extends org.drip.regression.core
 	private org.drip.spline.stretch.SingleSegmentSequence _sss = null;
 
 	public LagrangePolynomialStretchRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName)
+		final String strName,
+		final String strScenarioName)
 		throws java.lang.Exception
 	{
 		super (strName, strScenarioName);

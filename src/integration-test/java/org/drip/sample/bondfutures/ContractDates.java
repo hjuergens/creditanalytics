@@ -76,7 +76,7 @@ public class ContractDates {
 
 		System.out.println();
 
-		java.lang.String strForwardTenor = "3M";
+		String strForwardTenor = "3M";
 
 		JulianDate dtToday = DateUtil.Today().addTenor (strForwardTenor);
 

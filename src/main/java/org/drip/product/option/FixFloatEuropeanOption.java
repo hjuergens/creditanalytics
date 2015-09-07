@@ -56,13 +56,13 @@ public class FixFloatEuropeanOption extends org.drip.product.option.FixedIncomeO
 
 	public FixFloatEuropeanOption (
 		final org.drip.product.rates.FixFloatComponent stir,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final boolean bIsReceiver,
 		final double dblStrike,
 		final double dblNotional,
 		final org.drip.product.params.LastTradingDateSetting ltds,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar)
+		final String strDayCount,
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		super (stir, strManifestMeasure, dblStrike, dblNotional, ltds, strDayCount, strCalendar);
@@ -71,17 +71,17 @@ public class FixFloatEuropeanOption extends org.drip.product.option.FixedIncomeO
 		_bIsReceiver = bIsReceiver;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
 		return _stir.couponCurrency();
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _stir.payCurrency();
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return _stir.principalCurrency();
 	}
@@ -111,7 +111,7 @@ public class FixFloatEuropeanOption extends org.drip.product.option.FixedIncomeO
 			return null;
 		}
 
-		java.lang.String strPayCurrency = _stir.payCurrency();
+		String strPayCurrency = _stir.payCurrency();
 
 		org.drip.analytics.rates.DiscountCurve dcFunding = csqs.fundingCurve
 			(org.drip.state.identifier.FundingLabel.Standard (strPayCurrency));
@@ -123,7 +123,7 @@ public class FixFloatEuropeanOption extends org.drip.product.option.FixedIncomeO
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapSTIROutput = _stir.value
 			(valParams, pricerParams, csqs, quotingParams);
 
-		java.lang.String strManifestMeasure = manifestMeasure();
+		String strManifestMeasure = manifestMeasure();
 
 		if (null == mapSTIROutput || !mapSTIROutput.containsKey (strManifestMeasure)) return null;
 
@@ -260,9 +260,9 @@ public class FixFloatEuropeanOption extends org.drip.product.option.FixedIncomeO
 		return null;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("ATMSwapRate");
 

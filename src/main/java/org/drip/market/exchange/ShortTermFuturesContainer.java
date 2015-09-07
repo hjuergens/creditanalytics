@@ -36,9 +36,9 @@ package org.drip.market.exchange;
  */
 
 public class ShortTermFuturesContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.exchange.ShortTermFutures>
+	private static final java.util.Map<String, org.drip.market.exchange.ShortTermFutures>
 		_mapFutures = new
-			java.util.TreeMap<java.lang.String, org.drip.market.exchange.ShortTermFutures>();
+			java.util.TreeMap<String, org.drip.market.exchange.ShortTermFutures>();
 
 	/**
 	 * Initialize the Short Term Futures Container with the pre-set Short Term Contracts
@@ -51,34 +51,34 @@ public class ShortTermFuturesContainer {
 	{
 		try {
 			_mapFutures.put ("CAD-CDOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"MX"}, 1000000.));
+				String[] {"MX"}, 1000000.));
 
 			_mapFutures.put ("CHF-LIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"LIFFE"}, 1000000.));
+				String[] {"LIFFE"}, 1000000.));
 
 			_mapFutures.put ("DKK-CIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"OMX"}, 1000000.));
+				String[] {"OMX"}, 1000000.));
 
 			_mapFutures.put ("EUR-EURIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"EUREX", "LIFFE", "NLX"}, 1000000.));
+				String[] {"EUREX", "LIFFE", "NLX"}, 1000000.));
 
 			_mapFutures.put ("GBP-LIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"LIFFE", "NLX"}, 500000.));
+				String[] {"LIFFE", "NLX"}, 500000.));
 
 			_mapFutures.put ("JPY-LIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"SGX"}, 100000000.));
+				String[] {"SGX"}, 100000000.));
 
 			_mapFutures.put ("JPY-TIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"CME", "SGX"}, 100000000.));
+				String[] {"CME", "SGX"}, 100000000.));
 
 			_mapFutures.put ("USD-LIBOR-1M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"CME"}, 3000000.));
+				String[] {"CME"}, 3000000.));
 
 			_mapFutures.put ("USD-LIBOR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"CME", "SGX"}, 1000000.));
+				String[] {"CME", "SGX"}, 1000000.));
 
 			_mapFutures.put ("ZAR-JIBAR-3M", new org.drip.market.exchange.ShortTermFutures (new
-				java.lang.String[] {"SAFEX"}, 1000000.));
+				String[] {"SAFEX"}, 1000000.));
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 
@@ -101,7 +101,7 @@ public class ShortTermFuturesContainer {
 	{
 		if (null == forwardLabel) return null;
 
-		java.lang.String strFullyQualifiedName = forwardLabel.fullyQualifiedName();
+		String strFullyQualifiedName = forwardLabel.fullyQualifiedName();
 
 		return _mapFutures.containsKey (strFullyQualifiedName) ? _mapFutures.get (strFullyQualifiedName) :
 			null;
@@ -116,7 +116,7 @@ public class ShortTermFuturesContainer {
 	 */
 
 	public static final org.drip.market.exchange.ShortTermFutures ExchangeInfo (
-		final java.lang.String strFullyQualifiedName)
+		final String strFullyQualifiedName)
 	{
 		return null != strFullyQualifiedName && _mapFutures.containsKey (strFullyQualifiedName) ?
 			_mapFutures.get (strFullyQualifiedName) : null;

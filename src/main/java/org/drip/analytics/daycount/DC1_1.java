@@ -45,14 +45,14 @@ public class DC1_1 implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DC1_1";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"1/1", "DC1_1"};
+		return new String[] {"1/1", "DC1_1"};
 	}
 
 	@Override public double yearFraction (
@@ -60,7 +60,7 @@ public class DC1_1 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		return 1.;
@@ -71,7 +71,7 @@ public class DC1_1 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		return 365;

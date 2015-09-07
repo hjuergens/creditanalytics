@@ -337,7 +337,7 @@ public class IBORIndexContainer {
 	 */
 
 	public static final org.drip.market.definition.IBORIndex IndexFromJurisdiction (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return _mapJurisdictionIBORIndex.containsKey (strName) ? _mapJurisdictionIBORIndex.get (strName) :
 			null;
@@ -352,7 +352,7 @@ public class IBORIndexContainer {
 	 */
 
 	public static final org.drip.market.definition.IBORIndex IndexFromName (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return _mapNamedIBORIndex.containsKey (strName) ? _mapNamedIBORIndex.get (strName) : null;
 	}

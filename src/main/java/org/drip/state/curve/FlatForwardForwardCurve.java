@@ -82,7 +82,7 @@ public class FlatForwardForwardCurve extends org.drip.analytics.rates.ForwardCur
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDate)
 	{
 		return null;

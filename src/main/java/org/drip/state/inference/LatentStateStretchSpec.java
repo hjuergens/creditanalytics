@@ -37,7 +37,7 @@ package org.drip.state.inference;
  */
 
 public class LatentStateStretchSpec {
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.state.inference.LatentStateSegmentSpec[] _aLSSS = null;
 
 	/**
@@ -50,7 +50,7 @@ public class LatentStateStretchSpec {
 	 */
 
 	public LatentStateStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.state.inference.LatentStateSegmentSpec[] aLSSS)
 		throws java.lang.Exception
 	{
@@ -65,7 +65,7 @@ public class LatentStateStretchSpec {
 	 * @return Name of the LatentStateStretchSpec Instance
 	 */
 
-	public java.lang.String name()
+	public String name()
 	{
 		return _strName;
 	}

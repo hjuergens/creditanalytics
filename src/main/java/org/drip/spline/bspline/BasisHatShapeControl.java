@@ -48,24 +48,24 @@ public abstract class BasisHatShapeControl extends org.drip.spline.bspline.Tensi
 	 * Cubic Polynomial with Rational Linear Shape Controller
 	 */
 
-	public static final java.lang.String SHAPE_CONTROL_RATIONAL_LINEAR =
+	public static final String SHAPE_CONTROL_RATIONAL_LINEAR =
 		"SHAPE_CONTROL_RATIONAL_LINEAR";
 
 	/**
 	 * Cubic Polynomial with Rational Quadratic Shape Controller
 	 */
 
-	public static final java.lang.String SHAPE_CONTROL_RATIONAL_QUADRATIC =
+	public static final String SHAPE_CONTROL_RATIONAL_QUADRATIC =
 		"SHAPE_CONTROL_RATIONAL_QUADRATIC";
 
 	/**
 	 * Cubic Polynomial with Rational Exponential Shape Controller
 	 */
 
-	public static final java.lang.String SHAPE_CONTROL_RATIONAL_EXPONENTIAL =
+	public static final String SHAPE_CONTROL_RATIONAL_EXPONENTIAL =
 		"SHAPE_CONTROL_RATIONAL_EXPONENTIAL";
 
-	private java.lang.String _strShapeControlType = "";
+	private String _strShapeControlType = "";
 
 	/**
 	 * BasisHatShapeControl constructor
@@ -82,7 +82,7 @@ public abstract class BasisHatShapeControl extends org.drip.spline.bspline.Tensi
 	public BasisHatShapeControl (
 		final double dblLeftPredictorOrdinate,
 		final double dblRightPredictorOrdinate,
-		final java.lang.String strShapeControlType,
+		final String strShapeControlType,
 		final double dblTension)
 		throws java.lang.Exception
 	{
@@ -101,7 +101,7 @@ public abstract class BasisHatShapeControl extends org.drip.spline.bspline.Tensi
 	 * @return The Type of the Shape Controller
 	 */
 
-	public java.lang.String shapeControlType()
+	public String shapeControlType()
 	{
 		return _strShapeControlType;
 	}

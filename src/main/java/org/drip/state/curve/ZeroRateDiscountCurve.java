@@ -67,7 +67,7 @@ public class ZeroRateDiscountCurve extends org.drip.analytics.rates.DiscountCurv
 	 */
 
 	public ZeroRateDiscountCurve (
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final org.drip.spline.grid.Span span)
 		throws java.lang.Exception
@@ -132,13 +132,13 @@ public class ZeroRateDiscountCurve extends org.drip.analytics.rates.DiscountCurv
 		return null;
 	}
 
-	@Override public java.lang.String latentStateQuantificationMetric()
+	@Override public String latentStateQuantificationMetric()
 	{
 		return org.drip.analytics.definition.LatentStateStatic.DISCOUNT_QM_ZERO_RATE;
 	}
 
 	@Override public ZeroRateDiscountCurve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift)) return null;
@@ -158,7 +158,7 @@ public class ZeroRateDiscountCurve extends org.drip.analytics.rates.DiscountCurv
 
 	@Override public ZeroRateDiscountCurve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift)) return null;
@@ -179,7 +179,7 @@ public class ZeroRateDiscountCurve extends org.drip.analytics.rates.DiscountCurv
 	}
 
 	@Override public org.drip.analytics.rates.DiscountCurve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		if (null == rvtp) return null;
@@ -219,7 +219,7 @@ public class ZeroRateDiscountCurve extends org.drip.analytics.rates.DiscountCurv
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return null;
 	}
@@ -230,7 +230,7 @@ public class ZeroRateDiscountCurve extends org.drip.analytics.rates.DiscountCurv
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstrumentCode)
+		final String strInstrumentCode)
 	{
 		return null;
 	}

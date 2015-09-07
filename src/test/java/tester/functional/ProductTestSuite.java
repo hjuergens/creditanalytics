@@ -94,13 +94,13 @@ public class ProductTestSuite {
 	public static final int TP_BASKET_BOND = 64;
 
 	private static final org.drip.product.credit.BondComponent CreateSimpleBond (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final double dblCoupon,
-		final java.lang.String strCurrency,
-		final java.lang.String strCC,
-		final java.lang.String strTicker)
+		final String strCurrency,
+		final String strCC,
+		final String strTicker)
 		throws java.lang.Exception
 	{
 		org.drip.product.credit.BondComponent simpleBond = new org.drip.product.credit.BondComponent();
@@ -186,7 +186,7 @@ public class ProductTestSuite {
 	}
 
 	private static final org.drip.product.credit.BondComponent CreateTSYBond (
-		final java.lang.String strName,
+		final String strName,
 		final double dblCoupon,
 		final org.drip.analytics.date.JulianDate dt,
 		int iNumYears)
@@ -369,7 +369,7 @@ public class ProductTestSuite {
 		int NUM_TSY_CALIB_INSTR = 6;
 		double adblRate[] = new double[NUM_TSY_CALIB_INSTR];
 		double adblCompCalibValue[] = new double[NUM_TSY_CALIB_INSTR];
-		java.lang.String astrCalibMeasure[] = new java.lang.String[NUM_TSY_CALIB_INSTR];
+		String astrCalibMeasure[] = new String[NUM_TSY_CALIB_INSTR];
 		org.drip.product.definition.CalibratableFixedIncomeComponent aCompCalib[] = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[NUM_TSY_CALIB_INSTR];
 		adblCompCalibValue[0] = .0200;
@@ -486,13 +486,13 @@ public class ProductTestSuite {
 				System.out.println ("Tenor Bump Up TSY build: " + (null == mapCSQSDCUp ? "Failure" :
 					"Success"));
 			else if (TD_BRIEF == iTestDetail)
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSDCUp.entrySet())
 					System.out.println (meCSQS.getKey() + meCSQS.getValue().fundingCurve
 						(org.drip.state.identifier.FundingLabel.Standard
 							(aCompCalib[0].payCurrency())).toString());
 			else if (TD_DETAILED == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSDCUp.entrySet()) {
 					System.out.println ("\n\n------\nMeasures for Tenor TSY Bump Up\n--------\n");
 
@@ -517,11 +517,11 @@ public class ProductTestSuite {
 				System.out.println ("Tenor Bump Dn TSY build: " + (null == mapCSQSDCDn ? "Failure" :
 					"Success"));
 			else if (TD_BRIEF == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSDCDn.entrySet())
 					System.out.println (meCSQS.getKey() + meCSQS.getValue().toString());
 			} else if (TD_DETAILED == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSDCDn.entrySet()) {
 					System.out.println ("\n\n------\nMeasures for Tenor TSY Bump Dn\n--------\n");
 
@@ -552,7 +552,7 @@ public class ProductTestSuite {
 		double adblDate[] = new double[NUM_DC_INSTR];
 		double adblRate[] = new double[NUM_DC_INSTR];
 		double adblCompCalibValue[] = new double[NUM_DC_INSTR];
-		java.lang.String astrCalibMeasure[] = new java.lang.String[NUM_DC_INSTR];
+		String astrCalibMeasure[] = new String[NUM_DC_INSTR];
 		org.drip.product.definition.CalibratableFixedIncomeComponent aCompCalib[] = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[NUM_DC_INSTR];
 
@@ -798,13 +798,13 @@ public class ProductTestSuite {
 				System.out.println ("Tenor Bump Up DC build: " + (null == mapCSQSDCUp ? "Failure" :
 					"Success"));
 			else if (TD_BRIEF == iTestDetail)
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSCQ : mapCSQSDCUp.entrySet())
 					System.out.println (meCSCQ.getKey() + meCSCQ.getValue().fundingCurve
 						(org.drip.state.identifier.FundingLabel.Standard
 							(aCompCalib[0].payCurrency())).toString());
 			else if (TD_DETAILED == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 				meCSCQ : mapCSQSDCUp.entrySet()) {
 					System.out.println ("\n\n------\nMeasures for Tenor IR Bump Up\n--------\n");
 
@@ -829,11 +829,11 @@ public class ProductTestSuite {
 				System.out.println ("Tenor Bump Dn DC build: " + (null == mapCSQSDCDn ? "Failure" :
 					"Success"));
 			else if (TD_BRIEF == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSDCDn.entrySet())
 					System.out.println (meCSQS.getKey() + meCSQS.getValue().toString());
 			} else if (TD_DETAILED == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSDCDn.entrySet()) {
 					System.out.println ("\n\n------\nMeasures for Tenor IR Bump Dn\n--------\n");
 
@@ -865,7 +865,7 @@ public class ProductTestSuite {
 		boolean bSNACOn = true;
 		double[] adblQuotesARG = new double[5];
 		double[] adblQuotesBRA = new double[5];
-		java.lang.String[] astrCalibMeasure = new java.lang.String[5];
+		String[] astrCalibMeasure = new String[5];
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCDSARG = new
 			org.drip.product.definition.CreditDefaultSwap[5];
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCDSBRA = new
@@ -1010,11 +1010,11 @@ public class ProductTestSuite {
 				System.out.println ("Tenor Bump Up CC build: " + (null == mapCSQSCCUp ? "Failure" :
 					"Success"));
 			else if (TD_BRIEF == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSCCUp.entrySet())
 					System.out.println (meCSQS.getKey() + ": " + meCSQS.getValue().toString());
 			} else if (TD_DETAILED == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSCCUp.entrySet()) {
 					System.out.println ("\n\n------\nMeasures for Tenor CC Bump Up\n--------\n");
 
@@ -1035,11 +1035,11 @@ public class ProductTestSuite {
 				System.out.println ("Tenor Bump Dn CC build: " + (null == mapCSQSCCDn ? "Failure" :
 					"Success"));
 			else if (TD_BRIEF == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSCCDn.entrySet())
 					System.out.println (meCSQS.getKey() + ": " + meCSQS.getValue().toString());
 			} else if (TD_DETAILED == iTestDetail) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meCSQS : mapCSQSCCDn.entrySet()) {
 					System.out.println ("\n\n------\nMeasures for Tenor CC Bump Dn\n--------\n");
 
@@ -1077,7 +1077,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying Base Cash measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+			for (java.util.Map.Entry<String, java.lang.Double> me :
 				cashOut.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
@@ -1092,7 +1092,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Delta Cash measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cashOut.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1108,7 +1108,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Gamma Cash measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cashOut.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1124,10 +1124,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Cash Tenor IR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						cashOut.tenorIRDeltaMeasures().entrySet())
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1143,10 +1143,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Cash Tenor IR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						cashOut.tenorIRGammaMeasures().entrySet())
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1177,7 +1177,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying Base EDF DC measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+			for (java.util.Map.Entry<String, java.lang.Double> me :
 				edfOut.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
@@ -1192,7 +1192,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Delta EDF measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					edfOut.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1208,7 +1208,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Gamma EDF measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					edfOut.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1224,10 +1224,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying EDF Tenor IR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						edfOut.tenorIRDeltaMeasures().entrySet())
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1243,10 +1243,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying EDF Tenor IR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						edfOut.tenorIRGammaMeasures().entrySet())
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1314,7 +1314,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying Base IRS DC measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+			for (java.util.Map.Entry<String, java.lang.Double> me :
 				irsOut.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
@@ -1329,7 +1329,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Delta IRS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					irsOut.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1345,7 +1345,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Gamma IRS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					irsOut.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1361,10 +1361,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Tenor IR Delta IRS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						irsOut.tenorIRDeltaMeasures().entrySet())
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1380,10 +1380,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Tenor IR Gamma IRS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						irsOut.tenorIRGammaMeasures().entrySet())
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1430,7 +1430,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying Base CDS IR measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+			for (java.util.Map.Entry<String, java.lang.Double> me :
 				cdsOut.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
@@ -1445,7 +1445,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Delta CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdsOut.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1461,7 +1461,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat IR Gamma CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdsOut.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1477,7 +1477,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat Credit Delta CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdsOut.flatCreditDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1493,7 +1493,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat Credit Gamma CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdsOut.flatCreditGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1509,7 +1509,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat RR Delta CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdsOut.flatRRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1525,7 +1525,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Flat RR Gamma CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdsOut.flatRRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1541,10 +1541,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Tenor IR Delta CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						cdsOut.tenorIRDeltaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1561,10 +1561,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Tenor IR Gamma CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						cdsOut.tenorIRGammaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1581,10 +1581,10 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Tenor Credit Delta CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						cdsOut.tenorCreditDeltaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1602,10 +1602,10 @@ public class ProductTestSuite {
 				System.out.println
 					("----\nDisplaying Tenor Credit Gamma CDS measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						cdsOut.tenorCreditGammaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1651,7 +1651,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying Fixed Cpn Bond Base measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+			for (java.util.Map.Entry<String, java.lang.Double> me :
 				bondOut.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
@@ -1666,7 +1666,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Flat IR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bondOut.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1682,7 +1682,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Flat IR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bondOut.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1698,7 +1698,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Flat Credit Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bondOut.flatCreditDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1714,7 +1714,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Flat Credit Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bondOut.flatCreditGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1730,7 +1730,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Flat RR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bondOut.flatRRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1746,7 +1746,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Flat RR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bondOut.flatRRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1762,13 +1762,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Tenor IR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						bondOut.tenorIRDeltaMeasures().entrySet()) {
 					System.out.println
 						("\t----\n\tDisplaying Fixed Cpn Bond Tenor IR Delta measures\n\t----");
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1785,13 +1785,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Tenor IR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						bondOut.tenorIRGammaMeasures().entrySet()) {
 					System.out.println
 						("\t----\n\tDisplaying Fixed Cpn Bond Tenor IR Gamma measures\n\t----");
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1809,13 +1809,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Tenor Credit Delta Fixed Cpn Bond measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						bondOut.tenorCreditDeltaMeasures().entrySet()) {
 					System.out.println
 						("\t----\n\tDisplaying Fixed Cpn Bond Tenor Credit Delta measures\n\t----");
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1832,13 +1832,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Fixed Cpn Bond Tenor Credit Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenorMeasure :
 						bondOut.tenorCreditGammaMeasures().entrySet()) {
 					System.out.println
 						("\t----\n\tDisplaying Fixed Cpn Bond Tenor Credit Gamma measures\n\t----");
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meTenorMeasure.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -1869,7 +1869,7 @@ public class ProductTestSuite {
 		throws java.lang.Exception
 	{
 		org.drip.product.definition.BasketProduct cdx = org.drip.product.creator.CDSBasketBuilder.MakeCDX
-			(dt, dt.addYears (5), 0.05, "USD", new java.lang.String[] {"ARG", "BRA"}, "CDX_Test");
+			(dt, dt.addYears (5), 0.05, "USD", new String[] {"ARG", "BRA"}, "CDX_Test");
 
 		org.drip.param.valuation.ValuationParams valParams = new org.drip.param.valuation.ValuationParams
 			(dt, dt, "USD");
@@ -1889,7 +1889,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying CDX Base measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+			for (java.util.Map.Entry<String, java.lang.Double> me :
 				cdxOp.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
@@ -1904,7 +1904,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX Flat IR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdxOp.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1920,7 +1920,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX Flat IR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdxOp.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1936,7 +1936,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX Flat Credit Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdxOp.flatCreditDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1952,7 +1952,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX Flat Credit Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdxOp.flatCreditGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1968,7 +1968,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX Flat RR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdxOp.flatRRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -1984,7 +1984,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX Flat RR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					cdxOp.flatRRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2000,12 +2000,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX IRDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meIR :
 						cdxOp.componentIRDeltaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped IR Curve: " + meIR.getKey());
 	
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meIR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2022,12 +2022,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX IRGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meIR :
 						cdxOp.componentIRGammaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped IR Curve: " + meIR.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meIR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2044,13 +2044,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX CreditDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meCredit :
 						cdxOp.componentCreditDeltaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped Credit Curve: " +
 						meCredit.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meCredit.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2067,13 +2067,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX CreditGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meCredit :
 						cdxOp.componentCreditGammaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped Credit Curve: " +
 							meCredit.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meCredit.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2090,12 +2090,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX RRDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meRR :
 						cdxOp.componentRRDeltaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped RR Curve: " + meRR.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meRR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2112,12 +2112,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX RRGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meRR :
 						cdxOp.componentRRGammaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped RR Curve: " + meRR.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meRR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2134,16 +2134,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX IRTenorDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmIRTenor : cdxOp.componentTenorIRDeltaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmIRTenor.getValue().entrySet()) {
 						System.out.println ("\tDelta measures shown are for IRCurve=" + mmIRTenor.getKey() +
 							" and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2161,16 +2161,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX IRTenorGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmIRTenor : cdxOp.componentTenorIRGammaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmIRTenor.getValue().entrySet()) {
 						System.out.println ("\tGamma measures shown are for IRCurve=" + mmIRTenor.getKey() +
 							" and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2188,16 +2188,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX CreditTenorDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmCreditTenor : cdxOp.componentTenorCreditDeltaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmCreditTenor.getValue().entrySet()) {
 						System.out.println ("\tDelta measures shown are for Credit=" + mmCreditTenor.getKey()
 							+ " and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2215,16 +2215,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying CDX CreditTenorGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmCreditTenor : cdxOp.componentTenorCreditGammaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmCreditTenor.getValue().entrySet()) {
 						System.out.println ("\tGamma measures shown are for Credit=" + mmCreditTenor.getKey()
 							+ " and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2283,7 +2283,7 @@ public class ProductTestSuite {
 		org.drip.product.credit.BondComponent bond = new org.drip.product.credit.BondComponent();
 
 		if (!bond.setTreasuryBenchmark (new org.drip.product.params.TreasuryBenchmarks ("USD5YON", new
-			java.lang.String[] {"USD3YON", "USD7YON"}))) {
+			String[] {"USD3YON", "USD7YON"}))) {
 			System.out.println ("Cannot initialize bond TSY params!");
 
 			System.exit (126);
@@ -2383,7 +2383,7 @@ public class ProductTestSuite {
 		else if (TD_DETAILED == iTestDetail) {
 			System.out.println ("----\nDisplaying Bond Basket Base measures\n----");
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : bbOp.baseMeasures().entrySet())
+			for (java.util.Map.Entry<String, java.lang.Double> me : bbOp.baseMeasures().entrySet())
 				System.out.println (me.getKey() + ": " + me.getValue().toString());
 		}
 
@@ -2397,7 +2397,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket Flat IR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bbOp.flatIRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2413,7 +2413,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket Flat IR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bbOp.flatIRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2429,7 +2429,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket Flat Credit Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bbOp.flatCreditDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2445,7 +2445,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket Flat Credit Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bbOp.flatCreditGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2461,7 +2461,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket Flat RR Delta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bbOp.flatRRDeltaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2477,7 +2477,7 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket Flat RR Gamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+				for (java.util.Map.Entry<String, java.lang.Double> me :
 					bbOp.flatRRGammaMeasures().entrySet())
 					System.out.println (me.getKey() + ": " + me.getValue().toString());
 			}
@@ -2493,12 +2493,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket IRDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meIR :
 						bbOp.componentIRDeltaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped IR Curve: " + meIR.getKey());
 	
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meIR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2515,12 +2515,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket IRGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meIR :
 						bbOp.componentIRGammaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped IR Curve: " + meIR.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meIR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2537,13 +2537,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket CreditDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meCredit :
 						bbOp.componentCreditDeltaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped Credit Curve: " +
 						meCredit.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meCredit.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2560,13 +2560,13 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket CreditGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meCredit :
 						bbOp.componentCreditGammaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped Credit Curve: " +
 						meCredit.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meCredit.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2583,12 +2583,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket RRDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meRR :
 						bbOp.componentRRDeltaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped RR Curve: " + meRR.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meRR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2605,12 +2605,12 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket RRGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meRR :
 						bbOp.componentRRGammaMeasures().entrySet()) {
 					System.out.println ("\tMeasures shown are for bumped RR Curve: " + meRR.getKey());
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						meRR.getValue().entrySet())
 						System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 				}
@@ -2627,16 +2627,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket IRTenorDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmIRTenor : bbOp.componentTenorIRDeltaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmIRTenor.getValue().entrySet()) {
 						System.out.println ("\tDelta measures shown are for IRCurve=" + mmIRTenor.getKey() +
 							" and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2654,16 +2654,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket IRTenorGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmIRTenor : bbOp.componentTenorIRGammaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmIRTenor.getValue().entrySet()) {
 						System.out.println ("\tGamma measures shown are for IRCurve=" + mmIRTenor.getKey() +
 							" and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2681,16 +2681,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket CreditTenorDelta measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 						mmCreditTenor : bbOp.componentTenorCreditDeltaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmCreditTenor.getValue().entrySet()) {
 						System.out.println ("\tDelta measures shown are for Credit=" + mmCreditTenor.getKey()
 							+ " and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2708,16 +2708,16 @@ public class ProductTestSuite {
 			else if (TD_DETAILED == iTestDetail) {
 				System.out.println ("----\nDisplaying Bond Basket CreditTenorGamma measures\n----");
 
-				for (java.util.Map.Entry<java.lang.String,
+				for (java.util.Map.Entry<String,
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>
 				mmCreditTenor : bbOp.componentTenorCreditGammaMeasures().entrySet()) {
-					for (java.util.Map.Entry<java.lang.String,
+					for (java.util.Map.Entry<String,
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>> meTenor :
 							mmCreditTenor.getValue().entrySet()) {
 						System.out.println ("\tGamma measures shown are for Credit=" + mmCreditTenor.getKey()
 							+ " and Tenor=" + meTenor.getKey());
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							meTenor.getValue().entrySet())
 							System.out.println ("\t\t" + me.getKey() + ": " + me.getValue().toString());
 					}
@@ -2788,7 +2788,7 @@ public class ProductTestSuite {
 	}
 
 	public static void main (
-		final java.lang.String astrArgs[])
+		final String astrArgs[])
 		throws java.lang.Exception
 	{
 		org.drip.analytics.support.Logger.Init ("c:\\Lakshmi\\BondAnal\\Config.xml");

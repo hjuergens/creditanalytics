@@ -35,16 +35,16 @@ package org.drip.market.definition;
  */
 
 public class FXSettingsContainer {
-	private static final java.util.Map<java.lang.String, java.lang.Integer> _mapCurrencyOrder = new
-		java.util.TreeMap<java.lang.String, java.lang.Integer>();
+	private static final java.util.Map<String, java.lang.Integer> _mapCurrencyOrder = new
+		java.util.TreeMap<String, java.lang.Integer>();
 
-	private static final java.util.Map<java.lang.String, org.drip.product.params.CurrencyPair>
-		_mapCurrencyPair = new java.util.TreeMap<java.lang.String,
+	private static final java.util.Map<String, org.drip.product.params.CurrencyPair>
+		_mapCurrencyPair = new java.util.TreeMap<String,
 			org.drip.product.params.CurrencyPair>();
 
 	private static final void SetUpCurrencyPair (
-		final java.lang.String strCurrency1,
-		final java.lang.String strCurrency2,
+		final String strCurrency1,
+		final String strCurrency2,
 		final org.drip.product.params.CurrencyPair cp)
 	{
 		_mapCurrencyPair.put (strCurrency1 + strCurrency2, cp);
@@ -159,7 +159,7 @@ public class FXSettingsContainer {
 	 */
 
 	public static final int CurrencyOrder (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		if (null == strCurrency || strCurrency.isEmpty())
@@ -178,13 +178,13 @@ public class FXSettingsContainer {
 	 */
 
 	public static final org.drip.product.params.CurrencyPair CurrencyPair (
-		final java.lang.String strCurrency1,
-		final java.lang.String strCurrency2)
+		final String strCurrency1,
+		final String strCurrency2)
 	{
 		if (null == strCurrency1 || strCurrency1.isEmpty() || null == strCurrency2 || strCurrency2.isEmpty())
 			return null;
 
-		java.lang.String strCurrencyPairCode = strCurrency1 + strCurrency2;
+		String strCurrencyPairCode = strCurrency1 + strCurrency2;
 
 		return _mapCurrencyPair.containsKey (strCurrencyPairCode) ? _mapCurrencyPair.get
 			(strCurrencyPairCode) : null;

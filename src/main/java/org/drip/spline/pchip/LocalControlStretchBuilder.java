@@ -66,7 +66,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CustomSlopeHermiteSpline (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final double[] adblCustomSlope,
@@ -131,7 +131,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateBesselCubicSplineStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -168,7 +168,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateHyman83MonotoneStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -205,7 +205,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateHyman89MonotoneStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -242,7 +242,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateHarmonicMonotoneStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -279,7 +279,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateVanLeerLimiterStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -316,7 +316,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateKrugerStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -352,7 +352,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateHuynhLeFlochLimiterStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -389,7 +389,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateAkimaStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -429,7 +429,7 @@ public class LocalControlStretchBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateMonotoneConvexStretch (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblObservation,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,

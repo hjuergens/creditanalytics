@@ -46,7 +46,7 @@ public class BasisSplineRegressionEngine extends org.drip.regression.core.Regres
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		BasisSplineRegressionEngine bsre = new BasisSplineRegressionEngine (12,

@@ -47,14 +47,14 @@ public class DCAct_Act_ISDA implements org.drip.analytics.daycount.DCFCalculator
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DCAct_Act_ISDA";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"Actual/Actual ISDA", "Act/Act ISDA", "US:WIT Act/Act",
+		return new String[] {"Actual/Actual ISDA", "Act/Act ISDA", "US:WIT Act/Act",
 			"DCAct_Act_ISDA"};
 	}
 
@@ -63,7 +63,7 @@ public class DCAct_Act_ISDA implements org.drip.analytics.daycount.DCFCalculator
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA (dblStart, dblEnd, bApplyEOMAdj);
@@ -84,7 +84,7 @@ public class DCAct_Act_ISDA implements org.drip.analytics.daycount.DCFCalculator
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA (dblStart, dblEnd, bApplyEOMAdj);

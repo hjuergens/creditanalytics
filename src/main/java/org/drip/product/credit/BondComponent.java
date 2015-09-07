@@ -34,7 +34,7 @@ package org.drip.product.credit;
 
 /**
  * BondComponent is the base class that extends CreditComponent abstract class and implements the
- * 	functionality behind bonds of all kinds. Bond static data is captured in a set of 11 container classes –
+ * 	functionality behind bonds of all kinds. Bond static data is captured in a set of 11 container classes ï¿½
  *  BondTSYParams, BondCouponParams, BondNotionalParams, BondFloaterParams, BondCurrencyParams,
  *  BondIdentifierParams, CompCRValParams, BondCFTerminationEvent, BondFixedPeriodGenerationParams, and one
  *  EmbeddedOptionSchedule object instance each for the call and the put objects. Each of these parameter set
@@ -101,7 +101,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		if (null == valParams || null == csqs || !org.drip.quant.common.NumberUtil.IsValid (dblWorkoutDate))
 			throw new java.lang.Exception ("Bond::treasuryBenchmarkYield => Invalid Inputs");
 
-		java.lang.String strTsyBmk = null;
+		String strTsyBmk = null;
 		org.drip.param.definition.ProductQuote cqTsyBmkYield = null;
 
 		if (null != _treasuryBenchmarks) strTsyBmk = _treasuryBenchmarks.primary();
@@ -542,7 +542,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,
 		final org.drip.param.valuation.WorkoutInfo wi,
 		final double dblPrice,
-		final java.lang.String strPrefix)
+		final String strPrefix)
 	{
 		if (null == strPrefix) return null;
 
@@ -665,16 +665,16 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblCleanPrice)) return null;
 
-		java.lang.String strCalibMeasure = calibParams.measure();
+		String strCalibMeasure = calibParams.measure();
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"CleanPrice", "FairCleanPrice", "FairPrice", "Price"}, false)) {
 			mapCalibMeasures.put (strCalibMeasure, dblCleanPrice);
 
 			return mapCalibMeasures;
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"DirtyPrice", "FairDirtyPrice"}, false)) {
 			try {
 				mapCalibMeasures.put (strCalibMeasure, dblCleanPrice + accrued (valParams.valueDate(),
@@ -686,7 +686,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 			}
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"Yield", "FairYield"}, false)) {
 			try {
 				mapCalibMeasures.put (strCalibMeasure, yieldFromPrice (valParams, csqs, vcp, dblExerciseDate,
@@ -698,7 +698,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 			}
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"TSYSpread", "FairTSYSpread"}, false)) {
 			try {
 				mapCalibMeasures.put (strCalibMeasure, tsySpreadFromPrice (valParams, csqs, vcp,
@@ -710,7 +710,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 			}
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"OAS", "OASpread", "OptionAdjustedSpread"}, false)) {
 			try {
 				mapCalibMeasures.put (strCalibMeasure, oasFromPrice (valParams, csqs, vcp, dblExerciseDate,
@@ -722,7 +722,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 			}
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"BondBasis", "YieldBasis", "YieldSpread"}, false)) {
 			try {
 				mapCalibMeasures.put (strCalibMeasure, bondBasisFromPrice (valParams, csqs, vcp,
@@ -734,7 +734,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 			}
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"CreditBasis"}, false)) {
 			try {
 				if (null == cc) return null;
@@ -748,7 +748,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 			}
 		}
 
-		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new java.lang.String[]
+		if (org.drip.quant.common.StringUtil.MatchInStringArray (strCalibMeasure, new String[]
 			{"PECS", "ParEquivalentCDSSpread"}, false)) {
 			try {
 				if (null == cc) return null;
@@ -784,7 +784,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 
 		if (null == mapTSYQuote || 0 == mapTSYQuote.size()) return null;
 
-		java.lang.String[] astrTreasuryBenchmark = null == _treasuryBenchmarks ? null :
+		String[] astrTreasuryBenchmark = null == _treasuryBenchmarks ? null :
 			_treasuryBenchmarks.secondary();
 
 		int iNumTreasuryBenchmark = null == astrTreasuryBenchmark ? 0 : astrTreasuryBenchmark.length;
@@ -820,7 +820,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		if (null == wi)
 			throw new java.lang.Exception ("Bond::effectiveTreasuryBenchmarkYield => Invalid Work-out!");
 
-		java.lang.String strTreasuryBenchmark = null != _treasuryBenchmarks ? _treasuryBenchmarks.primary() :
+		String strTreasuryBenchmark = null != _treasuryBenchmarks ? _treasuryBenchmarks.primary() :
 			null;
 
 		double dblValueDate = valParams.valueDate();
@@ -959,53 +959,53 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return _notionalSetting;
 	}
 
-	@Override public java.lang.String primaryCode()
+	@Override public String primaryCode()
 	{
 		return null == _idParams ? null : "BOND." + _idParams.id();
 	}
 
 	@Override public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		// _strCode = strCode;
 	}
 
-	@Override public java.lang.String[] secondaryCode()
+	@Override public String[] secondaryCode()
 	{
-		return new java.lang.String[] {_idParams.id()};
+		return new String[] {_idParams.id()};
 	}
 
-	@Override public java.lang.String isin()
+	@Override public String isin()
 	{
 		return null == _idParams ? null : _idParams.isin();
 	}
 
-	@Override public java.lang.String cusip()
+	@Override public String cusip()
 	{
 		return null == _idParams ? null : _idParams.cusip();
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return null == _idParams ? null : _idParams.id();
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCouponCurrency = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCouponCurrency = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		mapCouponCurrency.put (name(), _stream.couponCurrency());
 
 		return mapCouponCurrency;
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _stream.couponCurrency();
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return _notionalSetting.denominationCurrency();
 	}
@@ -1234,7 +1234,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return null == _floaterSetting ? false : true;
 	}
 
-	@Override public java.lang.String rateIndex()
+	@Override public String rateIndex()
 	{
 		return null == _floaterSetting ? "" : _floaterSetting.fri().fullyQualifiedName();
 	}
@@ -1249,7 +1249,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return null == _floaterSetting ? java.lang.Double.NaN : _floaterSetting.spread();
 	}
 
-	@Override public java.lang.String ticker()
+	@Override public String ticker()
 	{
 		return null == _idParams ? null : _idParams.ticker();
 	}
@@ -1326,22 +1326,22 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return _eosPut;
 	}
 
-	@Override public java.lang.String couponType()
+	@Override public String couponType()
 	{
 		return null == _couponSetting ? "" : _couponSetting.couponType();
 	}
 
-	@Override public java.lang.String couponDC()
+	@Override public String couponDC()
 	{
 		return null == _stream ? "" : _stream.couponDC();
 	}
 
-	@Override public java.lang.String accrualDC()
+	@Override public String accrualDC()
 	{
 		return null == _stream ? "" : _stream.accrualDC();
 	}
 
-	@Override public java.lang.String maturityType()
+	@Override public String maturityType()
 	{
 		return null == _stream ? "" : maturityType();
 	}
@@ -1357,7 +1357,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return null;
 	}
 
-	@Override public java.lang.String calculationType()
+	@Override public String calculationType()
 	{
 		return null == _marketConvention ? "" : _marketConvention.calculationType();
 	}
@@ -1367,12 +1367,12 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return null == _marketConvention ? java.lang.Double.NaN : _marketConvention.redemptionValue();
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _stream.couponCurrency();
 	}
 
-	@Override public java.lang.String redemptionCurrency()
+	@Override public String redemptionCurrency()
 	{
 		return _notionalSetting.denominationCurrency();
 	}
@@ -1397,7 +1397,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return _stream.lastPeriod().contains (dblDate);
 	}
 
-	@Override public java.lang.String floatCouponConvention()
+	@Override public String floatCouponConvention()
 	{
 		return null == _floaterSetting ? "" : _floaterSetting.dayCount();
 	}
@@ -6224,11 +6224,11 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 
 		int iFrequency = freq();
 
-		java.lang.String strDC = couponDC();
+		String strDC = couponDC();
 
 		boolean bApplyCpnEOMAdj = _stream.couponEOMAdjustment();
 
-		java.lang.String strCalendar = currency();
+		String strCalendar = currency();
 
 		if (null == strCalendar || strCalendar.isEmpty()) strCalendar = redemptionCurrency();
 
@@ -8269,11 +8269,11 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 
 		int iFrequency = freq();
 
-		java.lang.String strDC = couponDC();
+		String strDC = couponDC();
 
 		boolean bApplyCpnEOMAdj = _stream.couponEOMAdjustment();
 
-		java.lang.String strCalendar = currency();
+		String strCalendar = currency();
 
 		if (null == strCalendar || strCalendar.isEmpty()) strCalendar = redemptionCurrency();
 
@@ -11027,7 +11027,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 
 		if (null == mapMeasures) return null;
 
-		java.lang.String strName = name();
+		String strName = name();
 
 		org.drip.param.definition.ProductQuote pq = csqs.productQuote (strName);
 
@@ -11237,9 +11237,9 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 		return mapMeasures;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("Accrued");
 
@@ -11664,7 +11664,7 @@ public class BondComponent extends org.drip.product.definition.Bond implements
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

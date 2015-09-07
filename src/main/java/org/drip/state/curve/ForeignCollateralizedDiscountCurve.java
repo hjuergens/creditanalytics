@@ -37,7 +37,7 @@ package org.drip.state.curve;
  */
 
 public class ForeignCollateralizedDiscountCurve extends org.drip.analytics.rates.ExplicitBootDiscountCurve {
-	private java.lang.String _strCurrency = null;
+	private String _strCurrency = null;
 	private org.drip.function.definition.R1ToR1 _auFX = null;
 	private org.drip.function.definition.R1ToR1 _auFXVolSurface = null;
 	private org.drip.analytics.rates.DiscountCurve _dcForeignCollateralized = null;
@@ -58,7 +58,7 @@ public class ForeignCollateralizedDiscountCurve extends org.drip.analytics.rates
 	 */
 
 	public ForeignCollateralizedDiscountCurve (
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.analytics.rates.DiscountCurve dcForeignCollateralized,
 		final org.drip.function.definition.R1ToR1 auFX,
 		final org.drip.function.definition.R1ToR1 auForeignRatesVolSurface,
@@ -133,13 +133,13 @@ public class ForeignCollateralizedDiscountCurve extends org.drip.analytics.rates
 	}
 
 	@Override public java.util.Map<java.lang.Double, java.lang.Double> canonicalTruthness (
-		final java.lang.String strLatentQuantificationMetric)
+		final String strLatentQuantificationMetric)
 	{
 		return null;
 	}
 
 	@Override public FlatForwardDiscountCurve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
@@ -147,14 +147,14 @@ public class ForeignCollateralizedDiscountCurve extends org.drip.analytics.rates
 
 	@Override public FlatForwardDiscountCurve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
 	}
 
 	@Override public org.drip.analytics.rates.ExplicitBootDiscountCurve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		return null;
@@ -179,14 +179,14 @@ public class ForeignCollateralizedDiscountCurve extends org.drip.analytics.rates
 		return null;
 	}
 
-	@Override public java.lang.String latentStateQuantificationMetric()
+	@Override public String latentStateQuantificationMetric()
 	{
 		return org.drip.analytics.definition.LatentStateStatic.DISCOUNT_QM_ZERO_RATE;
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return null;
 	}

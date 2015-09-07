@@ -212,7 +212,7 @@ public class CrossOvernightFloatingStream {
 		CalibratableFixedIncomeComponent[] aOISComp = OISFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y"
 			},
 			adblOISQuote

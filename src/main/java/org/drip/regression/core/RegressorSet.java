@@ -62,5 +62,5 @@ public interface RegressorSet {
 	 * @return Regression Set Name
 	 */
 
-	public abstract java.lang.String getSetName();
+	public abstract String getSetName();
 }

@@ -442,7 +442,7 @@ public class Matrix {
 
 	public static final double[][] Invert (
 		final double[][] aadblA,
-		final java.lang.String strMethod)
+		final String strMethod)
 	{
 		if (null == aadblA) return null;
 

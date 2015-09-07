@@ -47,14 +47,14 @@ public class DCNL_360 implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DCNL_360";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"NL/360", "DCNL_360"};
+		return new String[] {"NL/360", "DCNL_360"};
 	}
 
 	@Override public double yearFraction (
@@ -62,7 +62,7 @@ public class DCNL_360 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA (dblStart, dblEnd, bApplyEOMAdj);
@@ -80,7 +80,7 @@ public class DCNL_360 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA (dblStart, dblEnd, bApplyEOMAdj);

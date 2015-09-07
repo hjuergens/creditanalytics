@@ -44,7 +44,7 @@ public class CreditSetting implements org.drip.product.params.Validatable {
 	private int _iLossPayLag = -1;
 	private boolean _bUseCurveRecovery = true;
 	private boolean _bAccrualOnDefault = false;
-	private java.lang.String _strCreditCurveName = "";
+	private String _strCreditCurveName = "";
 	private double _dblRecovery = java.lang.Double.NaN;
 
 	/**
@@ -62,7 +62,7 @@ public class CreditSetting implements org.drip.product.params.Validatable {
 		final int iLossPayLag,
 		final double dblRecovery,
 		final boolean bUseCurveRecovery,
-		final java.lang.String strCreditCurveName,
+		final String strCreditCurveName,
 		final boolean bAccrualOnDefault)
 	{
 		_iLossPayLag = iLossPayLag;
@@ -109,7 +109,7 @@ public class CreditSetting implements org.drip.product.params.Validatable {
 	 * @return The Credit Curve Name
 	 */
 
-	public java.lang.String creditCurveName()
+	public String creditCurveName()
 	{
 		return _strCreditCurveName;
 	}

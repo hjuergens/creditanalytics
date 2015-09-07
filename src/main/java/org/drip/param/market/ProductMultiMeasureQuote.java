@@ -41,7 +41,7 @@ package org.drip.param.market;
  */
 
 public class ProductMultiMeasureQuote extends org.drip.param.definition.ProductQuote {
-	private java.lang.String _strMarketQuoteField = "";
+	private String _strMarketQuoteField = "";
 	private org.drip.param.definition.Quote _mktQuote = null;
 
 	org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.definition.Quote> _mapQuote = new
@@ -56,7 +56,7 @@ public class ProductMultiMeasureQuote extends org.drip.param.definition.ProductQ
 	}
 
 	@Override public void addQuote (
-		final java.lang.String strQuoteField,
+		final String strQuoteField,
 		final org.drip.param.definition.Quote q,
 		final boolean bIsMarketQuote)
 	{
@@ -69,7 +69,7 @@ public class ProductMultiMeasureQuote extends org.drip.param.definition.ProductQ
 	}
 
 	@Override public boolean setMarketQuote (
-		final java.lang.String strMarketQuoteField,
+		final String strMarketQuoteField,
 		final org.drip.param.definition.Quote q)
 	{
 		if (null == strMarketQuoteField || strMarketQuoteField.isEmpty() || null == q) return false;
@@ -87,7 +87,7 @@ public class ProductMultiMeasureQuote extends org.drip.param.definition.ProductQ
 	}
 
 	@Override public org.drip.param.definition.Quote quote (
-		final java.lang.String strQuoteField)
+		final String strQuoteField)
 	{
 		return null == strQuoteField || strQuoteField.isEmpty() ? null : _mapQuote.get (strQuoteField);
 	}
@@ -97,13 +97,13 @@ public class ProductMultiMeasureQuote extends org.drip.param.definition.ProductQ
 		return _mktQuote;
 	}
 
-	@Override public java.lang.String marketQuoteField()
+	@Override public String marketQuoteField()
 	{
 		return _strMarketQuoteField;
 	}
 
 	@Override public boolean removeQuote (
-		final java.lang.String strQuoteField)
+		final String strQuoteField)
 	{
 		if (null == strQuoteField || strQuoteField.isEmpty()) return false;
 
@@ -115,7 +115,7 @@ public class ProductMultiMeasureQuote extends org.drip.param.definition.ProductQ
 	}
 
 	@Override public boolean containsQuote (
-		final java.lang.String strQuoteField)
+		final String strQuoteField)
 	{
 		if (null == strQuoteField || strQuoteField.isEmpty()) return false;
 

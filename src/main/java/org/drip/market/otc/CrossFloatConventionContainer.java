@@ -35,8 +35,8 @@ package org.drip.market.otc;
  */
 
 public class CrossFloatConventionContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.otc.CrossFloatSwapConvention>
-		_mapConvention = new java.util.TreeMap<java.lang.String,
+	private static final java.util.Map<String, org.drip.market.otc.CrossFloatSwapConvention>
+		_mapConvention = new java.util.TreeMap<String,
 			org.drip.market.otc.CrossFloatSwapConvention>();
 
 	private static final boolean AddCrossCurrencyConvention (
@@ -54,9 +54,9 @@ public class CrossFloatConventionContainer {
 			return false;
 		}
 
-		java.lang.String strDerivedCurrency = derivedConvention.currency();
+		String strDerivedCurrency = derivedConvention.currency();
 
-		java.lang.String strReferenceCurrency = referenceConvention.currency();
+		String strReferenceCurrency = referenceConvention.currency();
 
 		_mapConvention.put (strReferenceCurrency + "_" + strDerivedCurrency, xccyConvention);
 
@@ -146,11 +146,11 @@ public class CrossFloatConventionContainer {
 	 */
 
 	public static final org.drip.market.otc.CrossFloatSwapConvention ConventionFromJurisdiction (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == strCurrency || strCurrency.isEmpty()) return null;
 
-		java.lang.String strKey = "USD_" + strCurrency;
+		String strKey = "USD_" + strCurrency;
 
 		return !_mapConvention.containsKey (strKey) ? null : _mapConvention.get (strKey);
 	}
@@ -166,14 +166,14 @@ public class CrossFloatConventionContainer {
 	 */
 
 	public static final org.drip.market.otc.CrossFloatSwapConvention ConventionFromJurisdiction (
-		final java.lang.String strReferenceCurrency,
-		final java.lang.String strDerivedCurrency)
+		final String strReferenceCurrency,
+		final String strDerivedCurrency)
 	{
 		if (null == strReferenceCurrency || strReferenceCurrency.isEmpty() || null == strDerivedCurrency ||
 			strDerivedCurrency.isEmpty())
 			return null;
 
-		java.lang.String strKey = strReferenceCurrency + "_" + strDerivedCurrency;
+		String strKey = strReferenceCurrency + "_" + strDerivedCurrency;
 
 		return !_mapConvention.containsKey (strKey) ? null : _mapConvention.get (strKey);
 	}

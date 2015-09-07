@@ -36,9 +36,9 @@ package org.drip.market.exchange;
  */
 
 public class FuturesOptionsContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.exchange.FuturesOptions>
+	private static final java.util.Map<String, org.drip.market.exchange.FuturesOptions>
 		_mapFuturesOptions = new
-			java.util.TreeMap<java.lang.String, org.drip.market.exchange.FuturesOptions>();
+			java.util.TreeMap<String, org.drip.market.exchange.FuturesOptions>();
 
 	/**
 	 * Initialize the Overnight Index Container with the Overnight Indexes
@@ -164,15 +164,15 @@ public class FuturesOptionsContainer {
 	 */
 
 	public static final org.drip.market.exchange.FuturesOptions ExchangeInfo (
-		final java.lang.String strFullyQualifiedName,
-		final java.lang.String strTradingMode)
+		final String strFullyQualifiedName,
+		final String strTradingMode)
 	{
 		if (null == strFullyQualifiedName || strFullyQualifiedName.isEmpty() || null == strTradingMode ||
 			strTradingMode.isEmpty() || !_mapFuturesOptions.containsKey (strFullyQualifiedName + "|" +
 				strTradingMode))
 			return null;
 
-		java.lang.String strFuturesOptionsKey = strFullyQualifiedName + "|" + strTradingMode;
+		String strFuturesOptionsKey = strFullyQualifiedName + "|" + strTradingMode;
 
 		return !_mapFuturesOptions.containsKey (strFuturesOptionsKey) ? null : _mapFuturesOptions.get
 			(strFuturesOptionsKey);

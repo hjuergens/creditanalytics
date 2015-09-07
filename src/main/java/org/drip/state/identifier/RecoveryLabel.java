@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class RecoveryLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strReferenceEntity = "";
+	private String _strReferenceEntity = "";
 
 	/**
 	 * Make a Standard Recovery Label from the Reference Entity Name
@@ -48,7 +48,7 @@ public class RecoveryLabel implements org.drip.state.identifier.LatentStateLabel
 	 */
 
 	public static final RecoveryLabel Standard (
-		final java.lang.String strReferenceEntity)
+		final String strReferenceEntity)
 	{
 		try {
 			return new RecoveryLabel (strReferenceEntity);
@@ -68,14 +68,14 @@ public class RecoveryLabel implements org.drip.state.identifier.LatentStateLabel
 	 */
 
 	private RecoveryLabel (
-		final java.lang.String strReferenceEntity)
+		final String strReferenceEntity)
 		throws java.lang.Exception
 	{
 		if (null == (_strReferenceEntity = strReferenceEntity) || _strReferenceEntity.isEmpty())
 			throw new java.lang.Exception ("RecoveryLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strReferenceEntity;
 	}

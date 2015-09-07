@@ -48,7 +48,7 @@ package org.drip.param.config;
 public class ConfigLoader {
 	private static final int IntegerTagValue (
 		final org.w3c.dom.Element eTag,
-		final java.lang.String strTag)
+		final String strTag)
 		throws java.lang.Exception {
 		if (null == eTag || null == strTag || null == eTag.getElementsByTagName (strTag))
 			throw new java.lang.Exception ("Cannot get int value for <" + strTag + ">");
@@ -74,7 +74,7 @@ public class ConfigLoader {
 
 	private static final boolean BooleanTagValue (
 		final org.w3c.dom.Element eTag,
-		final java.lang.String strTag)
+		final String strTag)
 		throws java.lang.Exception
 	{
 		if (null == eTag || null == strTag || null == eTag.getElementsByTagName (strTag))
@@ -99,9 +99,9 @@ public class ConfigLoader {
 		return new java.lang.Boolean (node.getNodeValue()).booleanValue();
 	}
 
-	private static final java.lang.String StringTagValue (
+	private static final String StringTagValue (
 		final org.w3c.dom.Element eTag,
-		final java.lang.String strTag)
+		final String strTag)
 	{
 		if (null == eTag || null == strTag || null == eTag.getElementsByTagName (strTag)) return null;
 
@@ -124,7 +124,7 @@ public class ConfigLoader {
 
 	private static final int[] IntegerArrayTagValue (
 		final org.w3c.dom.Element eTag,
-		final java.lang.String strTag)
+		final String strTag)
 	{
 		if (null == eTag || null == strTag || null == eTag.getElementsByTagName (strTag)) return null;
 
@@ -138,11 +138,11 @@ public class ConfigLoader {
 			!(elem.getChildNodes().item (0) instanceof org.w3c.dom.Node))
 			return null;
 
-		java.lang.String strValue = elem.getChildNodes().item (0).getNodeValue();
+		String strValue = elem.getChildNodes().item (0).getNodeValue();
 
 		if (null == strValue || strValue.isEmpty()) return null;
 
-		java.lang.String[] astrValue = strValue.split (",");
+		String[] astrValue = strValue.split (",");
 
 		int[] ai = new int[astrValue.length];
 
@@ -153,7 +153,7 @@ public class ConfigLoader {
 	}
 
 	private static final org.w3c.dom.Document NormalizedXMLDoc (
-		final java.lang.String strXMLFile)
+		final String strXMLFile)
 	{
 		if (null == strXMLFile || strXMLFile.isEmpty()) return null;
 
@@ -186,7 +186,7 @@ public class ConfigLoader {
 
 	public static org.drip.analytics.eventday.Locale LocationHolidays (
 		final org.w3c.dom.Document doc,
-		final java.lang.String strLoc)
+		final String strLoc)
 	{
 		if (null == doc || null == strLoc) return null;
 
@@ -256,8 +256,8 @@ public class ConfigLoader {
 	 * @return String representing the logger location's full path
 	 */
 
-	public static java.lang.String LoggerLocation (
-		final java.lang.String strConfigFile)
+	public static String LoggerLocation (
+		final String strConfigFile)
 	{
 		org.w3c.dom.Document doc = NormalizedXMLDoc (strConfigFile);
 
@@ -281,7 +281,7 @@ public class ConfigLoader {
 	 */
 
 	public static java.net.Socket ConnectToAnalServer (
-		final java.lang.String strConfigFile)
+		final String strConfigFile)
 	{
 		org.w3c.dom.Document doc = NormalizedXMLDoc (strConfigFile);
 
@@ -312,7 +312,7 @@ public class ConfigLoader {
 	 */
 
 	public static java.net.ServerSocket InitAnalServer (
-		final java.lang.String strConfigFile)
+		final String strConfigFile)
 	{
 		org.w3c.dom.Document doc = NormalizedXMLDoc (strConfigFile);
 
@@ -344,7 +344,7 @@ public class ConfigLoader {
 
 	public static org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.eventday.Locale>
 		LoadHolidayCalendars (
-			final java.lang.String strConfigFile)
+			final String strConfigFile)
 		{
 		org.w3c.dom.Document doc = NormalizedXMLDoc (strConfigFile);
 
@@ -371,7 +371,7 @@ public class ConfigLoader {
 	 */
 
 	public static java.sql.Statement OracleInit (
-		final java.lang.String strConfigFile)
+		final String strConfigFile)
 	{
 		org.w3c.dom.Document doc = NormalizedXMLDoc (strConfigFile);
 
@@ -388,10 +388,10 @@ public class ConfigLoader {
 		try {
 			java.lang.Class.forName ("oracle.jdbc.driver.OracleDriver");
 
-			java.lang.String strURL = "jdbc:oracle:thin:@//" + StringTagValue (elemDBConn, "host") + ":" +
+			String strURL = "jdbc:oracle:thin:@//" + StringTagValue (elemDBConn, "host") + ":" +
 				StringTagValue (elemDBConn, "port") + "/" + StringTagValue (elemDBConn, "dbname");
 
-			// java.lang.String strURL = "jdbc:oracle:thin:@//localhost:1521/XE";
+			// String strURL = "jdbc:oracle:thin:@//localhost:1521/XE";
 
 			System.out.println ("URL: " + strURL);
 
@@ -419,7 +419,7 @@ public class ConfigLoader {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.eventday.Locale>
 		LoadHolidayCalendarsFromDB (
-			final java.lang.String strConfigFile)
+			final String strConfigFile)
 	{
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.eventday.Locale> mapHols = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.eventday.Locale>();
@@ -434,7 +434,7 @@ public class ConfigLoader {
 			java.sql.ResultSet rs = stmt.executeQuery ("SELECT Location, Holiday FROM Holidays");
 
 			while (null != rs && rs.next()) {
-				java.lang.String strLocation = rs.getString ("Location");
+				String strLocation = rs.getString ("Location");
 
 				java.util.Date dtSQLHoliday = rs.getDate ("Holiday");
 
@@ -461,7 +461,7 @@ public class ConfigLoader {
 		aiWeekend[1] = org.drip.analytics.date.DateUtil.SUNDAY;
 		aiWeekend[0] = org.drip.analytics.date.DateUtil.SATURDAY;
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.analytics.eventday.Locale> me :
+		for (java.util.Map.Entry<String, org.drip.analytics.eventday.Locale> me :
 			mapHols.entrySet())
 			me.getValue().addWeekend (aiWeekend);
 
@@ -472,15 +472,15 @@ public class ConfigLoader {
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
-		java.lang.String strConfigFile = "c:\\Lakshmi\\java\\BondAnal\\Config.xml";
+		String strConfigFile = "c:\\Lakshmi\\java\\BondAnal\\Config.xml";
 
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.eventday.Locale> mapHols =
 			LoadHolidayCalendars (strConfigFile);
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.analytics.eventday.Locale> me :
+		for (java.util.Map.Entry<String, org.drip.analytics.eventday.Locale> me :
 			mapHols.entrySet())
 			System.out.println (me.getKey() + "=" + me.getValue());
 

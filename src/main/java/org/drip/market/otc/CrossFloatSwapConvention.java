@@ -45,11 +45,11 @@ public class CrossFloatSwapConvention {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.market.otc.CrossFloatStreamConvention cfsc,
 		final org.drip.param.period.FixingSetting fxFixingSetting,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final double dblBasis,
 		final double dblNotional)
 	{
-		java.lang.String strFloaterTenor = cfsc.tenor();
+		String strFloaterTenor = cfsc.tenor();
 
 		org.drip.state.identifier.ForwardLabel forwardLabel = org.drip.state.identifier.ForwardLabel.Create
 			(org.drip.market.definition.IBORIndexContainer.IndexFromJurisdiction (cfsc.currency()),
@@ -182,7 +182,7 @@ public class CrossFloatSwapConvention {
 
 	public org.drip.product.rates.FloatFloatComponent createFloatFloatComponent (
 		final org.drip.analytics.date.JulianDate dtSpot,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final double dblBasis,
 		final double dblReferenceNotional,
 		final double dblDerivedNotional)
@@ -210,7 +210,7 @@ public class CrossFloatSwapConvention {
 		return null;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return _crossStreamReference + " " + _crossStreamDerived + " " + _iFixingType + " " + _iSpotLag + " "
 			+ _bFXMTM;

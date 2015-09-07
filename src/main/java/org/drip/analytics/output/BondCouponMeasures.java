@@ -189,7 +189,7 @@ public class BondCouponMeasures {
 	 */
 
 	public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> toMap (
-		final java.lang.String strPrefix)
+		final String strPrefix)
 	{
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapMeasures = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();

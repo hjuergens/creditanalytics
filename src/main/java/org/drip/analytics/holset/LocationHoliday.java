@@ -47,7 +47,7 @@ public interface LocationHoliday {
 	 * @return HolidayLocation
 	 */
 
-	public java.lang.String getHolidayLoc();
+	public String getHolidayLoc();
 
 	/**
 	 * Return the Locale instance for this location

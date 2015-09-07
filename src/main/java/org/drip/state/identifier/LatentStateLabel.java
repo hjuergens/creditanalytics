@@ -45,7 +45,7 @@ public interface LatentStateLabel {
 	 * @return The Fully Qualified Name
 	 */
 
-	public abstract java.lang.String fullyQualifiedName();
+	public abstract String fullyQualifiedName();
 
 	/**
 	 * Indicate whether this Label matches the supplied.

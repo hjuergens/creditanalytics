@@ -144,7 +144,7 @@ public class LatentStateShapePreservingCCIS implements
 		return null;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> measures()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> measures()
 	{
 		return null;
 	}

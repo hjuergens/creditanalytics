@@ -47,19 +47,19 @@ package org.drip.product.definition;
 
 public abstract class FixedIncomeComponent implements org.drip.product.definition.ComponentMarketParamRef {
 	protected double measureValue (
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCalc)
 		throws java.lang.Exception
 	{
 		if (null == strMeasure || strMeasure.isEmpty() || null == mapCalc)
 			throw new java.lang.Exception ("FixedIncomeComponent::measureValue => Invalid Inputs");
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapES = mapCalc.entrySet();
+		java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapES = mapCalc.entrySet();
 
 		if (null == mapES || 0 == mapES.size())
 			throw new java.lang.Exception ("FixedIncomeComponent::measureValue => Invalid Inputs");
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapES) {
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapES) {
 			if (me.getKey().equalsIgnoreCase (strMeasure)) return me.getValue();
 		}
 
@@ -230,7 +230,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 	 * @return Set of Measure Names
 	 */
 
-	public abstract java.util.Set<java.lang.String> measureNames();
+	public abstract java.util.Set<String> measureNames();
 
 	/**
 	 * Retrieve the Instrument's Imputed Tenor
@@ -238,7 +238,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 	 * @return The Instrument's Imputed Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		double dblNumDays = maturityDate().julian() - effectiveDate().julian();
 
@@ -270,7 +270,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,
-		final java.lang.String strMeasure)
+		final String strMeasure)
 		throws java.lang.Exception
 	{
 		return measureValue (strMeasure, value (valParams, pricerParams, csqs, vcp));
@@ -317,7 +317,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFlatCreditBumpUpMeasures =
 				value (valParams, pricerParams, csqsFlatCreditBumpUp, vcp);
 
-			java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapFlatCreditBumpUpES =
+			java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapFlatCreditBumpUpES =
 				null == mapFlatCreditBumpUpMeasures ? null : mapFlatCreditBumpUpMeasures.entrySet();
 
 			if (null != mapFlatCreditBumpUpES && 0 != mapFlatCreditBumpUpES.size()) {
@@ -325,8 +325,8 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 					mapFlatCreditDeltaMeasures = new
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapFlatCreditBumpUpES) {
-					java.lang.String strKey = me.getKey();
+				for (java.util.Map.Entry<String, java.lang.Double> me : mapFlatCreditBumpUpES) {
+					String strKey = me.getKey();
 
 					mapFlatCreditDeltaMeasures.put (strKey, me.getValue() - mapBaseMeasures.get (strKey));
 				}
@@ -340,7 +340,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 						mapFlatCreditBumpDownMeasures = value (valParams, pricerParams,
 							csqsFlatCreditBumpDown, vcp);
 
-					java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>>
+					java.util.Set<java.util.Map.Entry<String, java.lang.Double>>
 						mapFlatCreditBumpDownES = null == mapFlatCreditBumpDownMeasures ? null :
 							mapFlatCreditBumpDownMeasures.entrySet();
 
@@ -349,9 +349,9 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 							mapFlatCreditGammaMeasures = new
 								org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							mapFlatCreditBumpDownES) {
-							java.lang.String strKey = me.getKey();
+							String strKey = me.getKey();
 
 							mapFlatCreditGammaMeasures.put (strKey, me.getValue() +
 								mapFlatCreditBumpUpMeasures.get (strKey) - 2. * mapBaseMeasures.get
@@ -370,15 +370,15 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapRRBumpUpMeasures = value
 				(valParams, pricerParams, csqsRRBumpUp, vcp);
 
-			java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapRRBumpUpES = null ==
+			java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapRRBumpUpES = null ==
 				mapRRBumpUpMeasures ? null : mapRRBumpUpMeasures.entrySet();
 
 			if (null != mapRRBumpUpES && 0 != mapRRBumpUpES.size()) {
 				org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFlatRRDeltaMeasures =
 					new org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapRRBumpUpES) {
-					java.lang.String strKey = me.getKey();
+				for (java.util.Map.Entry<String, java.lang.Double> me : mapRRBumpUpES) {
+					String strKey = me.getKey();
 
 					mapFlatRRDeltaMeasures.put (strKey, me.getValue() - mapBaseMeasures.get (strKey));
 				}
@@ -390,7 +390,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapRRBumpDownMeasures
 						= value (valParams, pricerParams, csqsRRBumpDown, vcp);
 
-					java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapRRBumpDownES =
+					java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapRRBumpDownES =
 						null == mapRRBumpDownMeasures ? null : mapRRBumpDownMeasures.entrySet();
 
 					if (null != mapRRBumpDownES && 0 != mapRRBumpDownES.size()) {
@@ -398,8 +398,8 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 							mapFlatRRGammaMeasures = new
 								org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapRRBumpDownES) {
-							java.lang.String strKey = me.getKey();
+						for (java.util.Map.Entry<String, java.lang.Double> me : mapRRBumpDownES) {
+							String strKey = me.getKey();
 
 							mapFlatRRGammaMeasures.put (strKey, me.getValue() + mapRRBumpUpMeasures.get
 								(strKey) - 2. * mapBaseMeasures.get (strKey));
@@ -418,15 +418,15 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapIRCreditBumpUpMeasures =
 				value (valParams, pricerParams, csqsIRCreditBumpUp, vcp);
 
-			java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapIRCreditBumpUpES = null
+			java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapIRCreditBumpUpES = null
 				== mapIRCreditBumpUpMeasures ? null : mapIRCreditBumpUpMeasures.entrySet();
 
 			if (null != mapIRCreditBumpUpES && 0 != mapIRCreditBumpUpES.size()) {
 				org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFlatIRDeltaMeasures =
 					new org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-				for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapIRCreditBumpUpES) {
-					java.lang.String strKey = me.getKey();
+				for (java.util.Map.Entry<String, java.lang.Double> me : mapIRCreditBumpUpES) {
+					String strKey = me.getKey();
 
 					mapFlatIRDeltaMeasures.put (strKey, me.getValue() - mapBaseMeasures.get (strKey));
 				}
@@ -439,7 +439,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 						mapIRCreditBumpDownMeasures = value (valParams, pricerParams, csqsIRCreditBumpDown,
 							vcp);
 
-					java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>>
+					java.util.Set<java.util.Map.Entry<String, java.lang.Double>>
 						mapIRCreditBumpDownES = null == mapIRCreditBumpDownMeasures ? null :
 							mapIRCreditBumpDownMeasures.entrySet();
 
@@ -448,9 +448,9 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 							mapFlatIRGammaMeasures = new
 								org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							mapIRCreditBumpDownES) {
-							java.lang.String strKey = me.getKey();
+							String strKey = me.getKey();
 
 							mapFlatIRGammaMeasures.put (strKey, me.getValue() +
 								mapIRCreditBumpUpMeasures.get (strKey) - 2. * mapBaseMeasures.get (strKey));
@@ -470,7 +470,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>());
 
 			if (null != mapCCTenorUpCSQS && null != mapCCTenorUpCSQS.entrySet()) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meTenorUpMP : mapCCTenorUpCSQS.entrySet()) {
 					if (null == meTenorUpMP || null == meTenorUpMP.getValue()) continue;
 
@@ -482,9 +482,9 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCalcUp = new
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						mapCCTenorUp.entrySet()) {
-						java.lang.String strKey = me.getKey();
+						String strKey = me.getKey();
 
 						mapCalcUp.put (strKey, me.getValue() - mapBaseMeasures.get (strKey));
 					}
@@ -500,7 +500,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 						mapCCTenorDnCSQS = mpc.creditTenorMarketParams (this, false);
 
 					if (null != mapCCTenorDnCSQS && null != mapCCTenorDnCSQS.entrySet()) {
-						for (java.util.Map.Entry<java.lang.String,
+						for (java.util.Map.Entry<String,
 							org.drip.param.market.CurveSurfaceQuoteSet> meTenorDnMP :
 								mapCCTenorDnCSQS.entrySet()) {
 							if (null == meTenorDnMP || null == meTenorDnMP.getValue()) continue;
@@ -513,9 +513,9 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 							org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCalcDn =
 								new org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-							for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+							for (java.util.Map.Entry<String, java.lang.Double> me :
 								mapCCTenorDn.entrySet()) {
-								java.lang.String strKey = me.getKey();
+								String strKey = me.getKey();
 
 								mapCalcDn.put (strKey, me.getValue() - mapBaseMeasures.get (strKey) +
 									compOp.tenorCreditDeltaMeasures().get (meTenorDnMP.getKey()).get
@@ -537,7 +537,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 				mapIRTenorUpCSQS = mpc.fundingTenorMarketParams (this, true);
 
 			if (null != mapIRTenorUpCSQS && null != mapIRTenorUpCSQS.entrySet()) {
-				for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+				for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 					meTenorUpMP : mapIRTenorUpCSQS.entrySet()) {
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCCTenorUp = value
 						(valParams, pricerParams, meTenorUpMP.getValue(), vcp);
@@ -547,9 +547,9 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 					org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCalcUp = new
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-					for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+					for (java.util.Map.Entry<String, java.lang.Double> me :
 						mapCCTenorUp.entrySet()) {
-						java.lang.String strKey = me.getKey();
+						String strKey = me.getKey();
 
 						mapCalcUp.put (strKey, me.getValue() - mapBaseMeasures.get (strKey));
 					}
@@ -566,7 +566,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 					mapIRTenorDnCSQS = mpc.fundingTenorMarketParams (this, false);
 
 				if (null != mapIRTenorDnCSQS & null != mapIRTenorDnCSQS.entrySet()) {
-					for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>
+					for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>
 						meTenorDnMP : mapIRTenorDnCSQS.entrySet()) {
 						org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCCTenorDn = value
 							(valParams, pricerParams, meTenorDnMP.getValue(), vcp);
@@ -576,9 +576,9 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 
 						if (null == mapCalcDn || null == mapCalcDn.entrySet()) continue;
 
-						for (java.util.Map.Entry<java.lang.String, java.lang.Double> me :
+						for (java.util.Map.Entry<String, java.lang.Double> me :
 							mapCCTenorDn.entrySet()) {
-							java.lang.String strKey = me.getKey();
+							String strKey = me.getKey();
 
 							mapCalcDn.put (strKey, me.getValue() - mapBaseMeasures.get (strKey) +
 								compOp.tenorIRDeltaMeasures().get (meTenorDnMP.getKey()).get (strKey));
@@ -614,7 +614,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.definition.ScenarioMarketParams mpc,
-		final java.lang.String strCustomScenName,
+		final String strCustomScenName,
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapBaseMeasures)
 	{
@@ -637,7 +637,7 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCustomMeasures = value
 			(valParams, pricerParams, csqsCustom, vcp);
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapCustomMeasuresES = null ==
+		java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapCustomMeasuresES = null ==
 			mapCustomMeasures ? null : mapCustomMeasures.entrySet();
 
 		if (null == mapCustomMeasuresES || 0 == mapCustomMeasuresES.size()) return null;
@@ -645,8 +645,8 @@ public abstract class FixedIncomeComponent implements org.drip.product.definitio
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCustomDeltaMeasures = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapCustomMeasuresES) {
-			java.lang.String strKey = me.getKey();
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapCustomMeasuresES) {
+			String strKey = me.getKey();
 
 			mapCustomDeltaMeasures.put (strKey, me.getValue() - mapBaseMeasures.get (strKey));
 		}

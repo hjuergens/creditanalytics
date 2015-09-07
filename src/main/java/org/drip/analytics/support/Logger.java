@@ -68,13 +68,13 @@ public class Logger {
 	private static boolean _sbInit = false;
 	private static java.io.BufferedWriter _writeLog = null;
 
-	private static final java.lang.String ImprintPreSub (
+	private static final String ImprintPreSub (
 		final int iLevel,
-		final java.lang.String strMsg)
+		final String strMsg)
 	{
 		if (null == strMsg || strMsg.isEmpty()) return "";
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("[").append ((new java.util.Date()).toString()).append ("|Level:").append (iLevel).append
 			("|").append (strMsg).append ("]\n");
@@ -91,7 +91,7 @@ public class Logger {
 	 */
 
 	public static boolean Init (
-		final java.lang.String strConfigFile)
+		final String strConfigFile)
 	{
 		if (null == strConfigFile || strConfigFile.isEmpty()) return false;
 
@@ -120,7 +120,7 @@ public class Logger {
 	public static boolean Log (
 		final int iLevel,
 		final boolean bHardLog,
-		final java.lang.String strMsg)
+		final String strMsg)
 	{
 		if (!_sbInit || null == strMsg || strMsg.isEmpty()) return false;
 

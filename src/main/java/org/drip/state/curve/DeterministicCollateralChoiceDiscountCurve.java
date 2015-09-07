@@ -160,13 +160,13 @@ public class DeterministicCollateralChoiceDiscountCurve extends org.drip.analyti
 		return null;
 	}
 
-	@Override public java.lang.String latentStateQuantificationMetric()
+	@Override public String latentStateQuantificationMetric()
 	{
 		return null;
 	}
 
 	@Override public DiscountFactorDiscountCurve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
@@ -174,14 +174,14 @@ public class DeterministicCollateralChoiceDiscountCurve extends org.drip.analyti
 
 	@Override public DiscountFactorDiscountCurve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
 	}
 
 	@Override public org.drip.analytics.rates.DiscountCurve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		return null;
@@ -201,7 +201,7 @@ public class DeterministicCollateralChoiceDiscountCurve extends org.drip.analyti
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return null;
 	}
@@ -218,7 +218,7 @@ public class DeterministicCollateralChoiceDiscountCurve extends org.drip.analyti
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstr)
+		final String strInstr)
 	{
 		return null;
 	}

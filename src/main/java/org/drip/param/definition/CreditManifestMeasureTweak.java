@@ -46,29 +46,29 @@ public class CreditManifestMeasureTweak extends ResponseValueTweakParams {
 	 * Tweak Parameter Type of Quote
 	 */
 
-	public static final java.lang.String CREDIT_TWEAK_NODE_PARAM_QUOTE = "Quote";
+	public static final String CREDIT_TWEAK_NODE_PARAM_QUOTE = "Quote";
 
 	/**
 	 * Tweak Parameter Type of Recovery
 	 */
 
-	public static final java.lang.String CREDIT_TWEAK_NODE_PARAM_RECOVERY = "Recovery";
+	public static final String CREDIT_TWEAK_NODE_PARAM_RECOVERY = "Recovery";
 
 	/**
 	 * Tweak Measure Type of Quote
 	 */
 
-	public static final java.lang.String CREDIT_TWEAK_NODE_MEASURE_QUOTE = "Quote";
+	public static final String CREDIT_TWEAK_NODE_MEASURE_QUOTE = "Quote";
 
 	/**
 	 * Tweak Measure Type of Hazard
 	 */
 
-	public static final java.lang.String CREDIT_TWEAK_NODE_MEASURE_HAZARD = "Hazard";
+	public static final String CREDIT_TWEAK_NODE_MEASURE_HAZARD = "Hazard";
 
 	private boolean _bSingleNodeCalib = false;
-	private java.lang.String _strTweakParamType = "";
-	private java.lang.String _strTweakMeasureType = "";
+	private String _strTweakParamType = "";
+	private String _strTweakMeasureType = "";
 
 	/**
 	 * CreditManifestMeasureTweak constructor
@@ -83,8 +83,8 @@ public class CreditManifestMeasureTweak extends ResponseValueTweakParams {
 	 */
 
 	public CreditManifestMeasureTweak (
-		final java.lang.String strTweakParamType,
-		final java.lang.String strTweakMeasureType,
+		final String strTweakParamType,
+		final String strTweakMeasureType,
 		final int iTweakNode,
 		final boolean bIsTweakProportional,
 		final double dblTweakAmount,
@@ -124,7 +124,7 @@ public class CreditManifestMeasureTweak extends ResponseValueTweakParams {
 	 * @return The Tweak Parameter Type
 	 */
 
-	public java.lang.String tweakParamType()
+	public String tweakParamType()
 	{
 		return _strTweakParamType;
 	}
@@ -135,7 +135,7 @@ public class CreditManifestMeasureTweak extends ResponseValueTweakParams {
 	 * @return The Tweak Measure Type
 	 */
 
-	public java.lang.String tweakMeasureType()
+	public String tweakMeasureType()
 	{
 		return _strTweakMeasureType;
 	}

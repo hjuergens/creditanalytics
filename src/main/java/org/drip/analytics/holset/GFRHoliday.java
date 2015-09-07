@@ -39,7 +39,7 @@ public class GFRHoliday implements org.drip.analytics.holset.LocationHoliday {
 	{
 	}
 
-	public java.lang.String getHolidayLoc()
+	public String getHolidayLoc()
 	{
 		return "GFR";
 	}

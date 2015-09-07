@@ -47,14 +47,14 @@ public class DC30EPLUS_360_ISDA implements org.drip.analytics.daycount.DCFCalcul
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DC30EPLUS_360_ISDA";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"30E+/360", "30E+/360 ISDA", "30E+/360 (ISDA)", "DC30EPLUS_360_ISDA"};
+		return new String[] {"30E+/360", "30E+/360 ISDA", "30E+/360 (ISDA)", "DC30EPLUS_360_ISDA"};
 	}
 
 	@Override public double yearFraction (
@@ -62,7 +62,7 @@ public class DC30EPLUS_360_ISDA implements org.drip.analytics.daycount.DCFCalcul
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA30EPLUS_360_ISDA (dblStart, dblEnd, bApplyEOMAdj);
@@ -82,7 +82,7 @@ public class DC30EPLUS_360_ISDA implements org.drip.analytics.daycount.DCFCalcul
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA30EPLUS_360_ISDA (dblStart, dblEnd, bApplyEOMAdj);

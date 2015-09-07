@@ -105,7 +105,7 @@ public class MultiSidedQuote extends org.drip.param.definition.Quote {
 	 */
 
 	public MultiSidedQuote (
-		final java.lang.String strSide,
+		final String strSide,
 		final double dblQuote)
 		throws java.lang.Exception
 	{
@@ -126,7 +126,7 @@ public class MultiSidedQuote extends org.drip.param.definition.Quote {
 	 */
 
 	public MultiSidedQuote (
-		final java.lang.String strSide,
+		final String strSide,
 		final double dblQuote,
 		final double dblSize)
 		throws java.lang.Exception
@@ -138,7 +138,7 @@ public class MultiSidedQuote extends org.drip.param.definition.Quote {
 	}
 
 	@Override public double value (
-		final java.lang.String strSide)
+		final String strSide)
 	{
 		if (null == strSide || strSide.isEmpty()) return java.lang.Double.NaN;
 
@@ -146,7 +146,7 @@ public class MultiSidedQuote extends org.drip.param.definition.Quote {
 	}
 
 	@Override public double size (
-		final java.lang.String strSide)
+		final String strSide)
 	{
 		if (null == strSide || strSide.isEmpty()) return java.lang.Double.NaN;
 
@@ -154,7 +154,7 @@ public class MultiSidedQuote extends org.drip.param.definition.Quote {
 	}
 
 	@Override public org.drip.analytics.date.DateTime time (
-		final java.lang.String strSide)
+		final String strSide)
 	{
 		if (null == strSide || strSide.isEmpty()) return null;
 
@@ -162,7 +162,7 @@ public class MultiSidedQuote extends org.drip.param.definition.Quote {
 	}
 
 	@Override public boolean setSide (
-		final java.lang.String strSide,
+		final String strSide,
 		final double dblQuote,
 		final double dblSize)
 	{

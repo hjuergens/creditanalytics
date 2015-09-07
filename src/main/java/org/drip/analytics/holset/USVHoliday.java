@@ -39,7 +39,7 @@ public class USVHoliday implements org.drip.analytics.holset.LocationHoliday {
 	{
 	}
 
-	public java.lang.String getHolidayLoc()
+	public String getHolidayLoc()
 	{
 		return "USV";
 	}

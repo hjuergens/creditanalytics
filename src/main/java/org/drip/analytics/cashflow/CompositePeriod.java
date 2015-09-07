@@ -37,9 +37,9 @@ package org.drip.analytics.cashflow;
 
 public abstract class CompositePeriod {
 	private int _iFreq = -1;
-	private java.lang.String _strTenor = "";
+	private String _strTenor = "";
 	private int _iAccrualCompoundingRule = -1;
-	private java.lang.String _strPayCurrency = "";
+	private String _strPayCurrency = "";
 	private double _dblPayDate = java.lang.Double.NaN;
 	private double _dblBaseNotional = java.lang.Double.NaN;
 	private org.drip.quant.common.Array2D _fsCoupon = null;
@@ -248,7 +248,7 @@ public abstract class CompositePeriod {
 	 * @return The Coupon Frequency converted into a Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		if (null != _strTenor && !_strTenor.isEmpty()) return _strTenor;
 
@@ -264,7 +264,7 @@ public abstract class CompositePeriod {
 	 * @return The Pay Currency
 	 */
 
-	public java.lang.String payCurrency()
+	public String payCurrency()
 	{
 		return _strPayCurrency;
 	}
@@ -275,7 +275,7 @@ public abstract class CompositePeriod {
 	 * @return The Coupon Currency
 	 */
 
-	public java.lang.String couponCurrency()
+	public String couponCurrency()
 	{
 		return _lsCUP.get (0).couponCurrency();
 	}
@@ -524,7 +524,7 @@ public abstract class CompositePeriod {
 
 	public org.drip.state.identifier.FXLabel fxLabel()
 	{
-		java.lang.String strCouponCurrency = couponCurrency();
+		String strCouponCurrency = couponCurrency();
 
 		return _strPayCurrency.equalsIgnoreCase (strCouponCurrency) ? null :
 			org.drip.state.identifier.FXLabel.Standard (_strPayCurrency + "/" + strCouponCurrency);

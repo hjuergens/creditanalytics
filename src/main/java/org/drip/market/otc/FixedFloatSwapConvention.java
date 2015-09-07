@@ -107,7 +107,7 @@ public class FixedFloatSwapConvention {
 
 	public org.drip.product.rates.FixFloatComponent createFixFloatComponent (
 		final org.drip.analytics.date.JulianDate dtSpot,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final double dblFixedCoupon,
 		final double dblFloatBasis,
 		final double dblNotional)
@@ -134,7 +134,7 @@ public class FixedFloatSwapConvention {
 		return null;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return "[SPOT LAG: " + _iSpotLag + "]  " + _fixedConv + "  " + _floatConv;
 	}

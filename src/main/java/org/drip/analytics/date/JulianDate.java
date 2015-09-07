@@ -132,7 +132,7 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 
 	public JulianDate addBusDays (
 		final int iDays,
-		final java.lang.String strCalendarSet)
+		final String strCalendarSet)
 	{
 		int iNumDaysToAdd = iDays;
 		double dblAdjusted = _dblJulian;
@@ -168,7 +168,7 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 
 	public JulianDate subtractBusDays (
 		final int iDays,
-		final java.lang.String strCalendarSet)
+		final String strCalendarSet)
 	{
 		int iNumDaysToAdd = iDays;
 		double dblAdjusted = _dblJulian;
@@ -398,11 +398,11 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 	 */
 
 	public JulianDate addTenor (
-		final java.lang.String strTenorIn)
+		final String strTenorIn)
 	{
 		if (null == strTenorIn || strTenorIn.isEmpty()) return null;
 
-		java.lang.String strTenor = "ON".equalsIgnoreCase (strTenorIn) ? "1D" : strTenorIn;
+		String strTenor = "ON".equalsIgnoreCase (strTenorIn) ? "1D" : strTenorIn;
 
 		int iNumChar = strTenor.length();
 
@@ -443,8 +443,8 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 	 */
 
 	public JulianDate addTenorAndAdjust (
-		final java.lang.String strTenor,
-		final java.lang.String strCalendarSet)
+		final String strTenor,
+		final String strCalendarSet)
 	{
 		JulianDate dtNew = addTenor (strTenor);
 
@@ -469,11 +469,11 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 	 */
 
 	public JulianDate subtractTenor (
-		final java.lang.String strTenorIn)
+		final String strTenorIn)
 	{
 		if (null == strTenorIn || strTenorIn.isEmpty()) return null;
 
-		java.lang.String strTenor = "ON".equalsIgnoreCase (strTenorIn) ? "1D" : strTenorIn;
+		String strTenor = "ON".equalsIgnoreCase (strTenorIn) ? "1D" : strTenorIn;
 
 		int iNumChar = strTenor.length();
 
@@ -512,8 +512,8 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 	 */
 
 	public JulianDate subtractTenorAndAdjust (
-		final java.lang.String strTenor,
-		final java.lang.String strCalendarSet)
+		final String strTenor,
+		final String strCalendarSet)
 	{
 		JulianDate dtNew = subtractTenor (strTenor);
 
@@ -554,7 +554,7 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 	 * @return String representing the trigram representation of date
 	 */
 
-	public java.lang.String toOracleDate()
+	public String toOracleDate()
 	{
 		try {
 			return DateUtil.Day (_dblJulian) + "-" + org.drip.analytics.date.DateUtil.MonthOracleChar
@@ -575,10 +575,10 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 	 * @return String of the YYYYMMDD representation of date
 	 */
 
-	public java.lang.String toYYYYMMDD (
-		final java.lang.String strDelimIn)
+	public String toYYYYMMDD (
+		final String strDelimIn)
 	{
-		java.lang.String strDelim = null == strDelimIn ? "" : strDelimIn;
+		String strDelim = null == strDelimIn ? "" : strDelimIn;
 
 		try {
 			return org.drip.quant.common.FormatUtil.FormatDouble (DateUtil.Year (_dblJulian), 4, 0, 1.) +
@@ -607,7 +607,7 @@ public class JulianDate implements java.lang.Comparable<JulianDate> {
 		return (int) (lBits ^ (lBits >>> 32));
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return org.drip.analytics.date.DateUtil.FromJulian (_dblJulian);
 	}

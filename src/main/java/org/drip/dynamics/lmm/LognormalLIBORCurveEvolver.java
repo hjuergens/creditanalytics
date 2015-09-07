@@ -205,7 +205,7 @@ public class LognormalLIBORCurveEvolver implements org.drip.dynamics.evolution.C
 		final double dblTargetPointDate,
 		final double dblSpotTimeIncrement,
 		final double dblSpotTimeIncrementSQRT,
-		final java.lang.String strForwardTenor,
+		final String strForwardTenor,
 		final org.drip.analytics.rates.ForwardCurve fc,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.dynamics.lmm.LognormalLIBORVolatility llv)
@@ -499,7 +499,7 @@ public class LognormalLIBORCurveEvolver implements org.drip.dynamics.evolution.C
 
 		org.drip.dynamics.lmm.LognormalLIBORVolatility llv = bgmPrev.lognormalLIBORVolatility();
 
-		java.lang.String strForwardTenor = _lslForward.tenor();
+		String strForwardTenor = _lslForward.tenor();
 
 		try {
 			org.drip.analytics.date.JulianDate dtTargetPoint = new org.drip.analytics.date.JulianDate
@@ -518,9 +518,9 @@ public class LognormalLIBORCurveEvolver implements org.drip.dynamics.evolution.C
 			org.drip.spline.stretch.BoundarySettings bs =
 				org.drip.spline.stretch.BoundarySettings.NaturalStandard();
 
-			java.lang.String strForwardLabelName = _lslForward.fullyQualifiedName();
+			String strForwardLabelName = _lslForward.fullyQualifiedName();
 
-			java.lang.String strFundingLabelName = _lslFunding.fullyQualifiedName();
+			String strFundingLabelName = _lslFunding.fullyQualifiedName();
 
 			double[] adblTenorDate = btns.dates();
 
@@ -599,7 +599,7 @@ public class LognormalLIBORCurveEvolver implements org.drip.dynamics.evolution.C
 		final double dblEvolutionIncrement,
 		final double dblEvolutionIncrementSQRT,
 		final org.drip.analytics.rates.ForwardCurve fc,
-		final java.lang.String strForwardTenor,
+		final String strForwardTenor,
 		final double dblForwardDCF,
 		final org.drip.dynamics.lmm.LognormalLIBORVolatility llv)
 	{
@@ -677,11 +677,11 @@ public class LognormalLIBORCurveEvolver implements org.drip.dynamics.evolution.C
 
 		org.drip.dynamics.lmm.LognormalLIBORVolatility llv = bgmMetrics.lognormalLIBORVolatility();
 
-		java.lang.String strForwardLabel = _lslForward.fullyQualifiedName() + "_QM_LIBOR";
+		String strForwardLabel = _lslForward.fullyQualifiedName() + "_QM_LIBOR";
 
 		org.drip.analytics.rates.ForwardCurve fc = bgmMetrics.forwardCurve();
 
-		java.lang.String strForwardTenor = _lslForward.tenor();
+		String strForwardTenor = _lslForward.tenor();
 
 		int iNumTimeStep = (int) ((dblEvolutionFinishDate - dblEvolutionStartDate) / dblEvolutionIncrement) +
 			1;

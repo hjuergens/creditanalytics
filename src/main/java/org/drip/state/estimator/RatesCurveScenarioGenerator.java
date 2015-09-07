@@ -47,9 +47,9 @@ package org.drip.state.estimator;
 public class RatesCurveScenarioGenerator {
 	private static final boolean s_bBlog = false;
 
-	private java.lang.String _strCurrency = "";
+	private String _strCurrency = "";
 	private org.drip.product.definition.CalibratableFixedIncomeComponent[] _aCalibInst = null;
-	private java.lang.String _strBootstrapMode =
+	private String _strBootstrapMode =
 		org.drip.state.creator.DiscountCurveBuilder.BOOTSTRAP_MODE_CONSTANT_FORWARD;
 
 	private org.drip.state.estimator.NonlinearCurveCalibrator _compCalib = new
@@ -66,8 +66,8 @@ public class RatesCurveScenarioGenerator {
 	 */
 
 	public RatesCurveScenarioGenerator (
-		final java.lang.String strCurrency,
-		final java.lang.String strBootstrapMode,
+		final String strCurrency,
+		final String strBootstrapMode,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst)
 		throws java.lang.Exception
 	{
@@ -112,7 +112,7 @@ public class RatesCurveScenarioGenerator {
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final double[] adblQuotes,
 		final double dblBump,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams)
 	{
@@ -191,7 +191,7 @@ public class RatesCurveScenarioGenerator {
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final double[] adblQuotes,
 		final double dblBump,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams)
 	{
@@ -244,7 +244,7 @@ public class RatesCurveScenarioGenerator {
 			final org.drip.analytics.rates.DiscountCurve dcTSY,
 			final double[] adblQuotes,
 			final double dblBump,
-			final java.lang.String[] astrCalibMeasure,
+			final String[] astrCalibMeasure,
 			final org.drip.param.market.LatentStateFixingsContainer lsfc,
 			final org.drip.param.valuation.ValuationCustomizationParams quotingParams)
 	{

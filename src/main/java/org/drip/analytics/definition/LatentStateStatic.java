@@ -41,101 +41,101 @@ public class LatentStateStatic {
 	 * Forward Latent State
 	 */
 
-	public static final java.lang.String LATENT_STATE_FORWARD = "LATENT_STATE_FORWARD";
+	public static final String LATENT_STATE_FORWARD = "LATENT_STATE_FORWARD";
 
 	/**
 	 * Forward Latent State Quantification Metric - Forward Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_FORWARD_RATE = "FORWARD_QM_FORWARD_RATE";
+	public static final String FORWARD_QM_FORWARD_RATE = "FORWARD_QM_FORWARD_RATE";
 
 	/**
 	 * Forward Latent State Quantification Metric - LIBOR Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_LIBOR_RATE = "FORWARD_QM_LIBOR_RATE";
+	public static final String FORWARD_QM_LIBOR_RATE = "FORWARD_QM_LIBOR_RATE";
 
 	/**
 	 * Forward Latent State Quantification Metric - Shifted Forward Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_SHIFTED_FORWARD_RATE = "FORWARD_QM_SHIFTED_FORWARD_RATE";
+	public static final String FORWARD_QM_SHIFTED_FORWARD_RATE = "FORWARD_QM_SHIFTED_FORWARD_RATE";
 
 	/**
 	 * Forward Latent State Quantification Metric - Instantaneous Forward Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_INSTANTANEOUS_FORWARD_RATE =
+	public static final String FORWARD_QM_INSTANTANEOUS_FORWARD_RATE =
 		"FORWARD_QM_INSTANTANEOUS_FORWARD_RATE";
 
 	/**
 	 * Forward Latent State Quantification Metric - Continuously Compounded Forward Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_CONTINUOUSLY_COMPOUNDED_FORWARD_RATE =
+	public static final String FORWARD_QM_CONTINUOUSLY_COMPOUNDED_FORWARD_RATE =
 		"FORWARD_QM_CONTINUOUSLY_COMPOUNDED_FORWARD_RATE";
 
 	/**
 	 * Forward Latent State Quantification Metric - Instantaneous Effective Annual Forward Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_INSTANTANEOUS_EFFECTIVE_FORWARD_RATE =
+	public static final String FORWARD_QM_INSTANTANEOUS_EFFECTIVE_FORWARD_RATE =
 		"FORWARD_QM_EFFECTIVE_ANNUAL_FORWARD_RATE";
 
 	/**
 	 * Forward Latent State Quantification Metric - Instantaneous Nominal Annual Forward Rate
 	 */
 
-	public static final java.lang.String FORWARD_QM_INSTANTANEOUS_NOMINAL_FORWARD_RATE =
+	public static final String FORWARD_QM_INSTANTANEOUS_NOMINAL_FORWARD_RATE =
 		"FORWARD_QM_NOMINAL_ANNUAL_FORWARD_RATE";
 
 	/**
 	 * Funding Latent State
 	 */
 
-	public static final java.lang.String LATENT_STATE_FUNDING = "LATENT_STATE_FUNDING";
+	public static final String LATENT_STATE_FUNDING = "LATENT_STATE_FUNDING";
 
 	/**
 	 * Discount Latent State Quantification Metric - Discount Factor
 	 */
 
-	public static final java.lang.String DISCOUNT_QM_DISCOUNT_FACTOR = "DISCOUNT_QM_DISCOUNT_FACTOR";
+	public static final String DISCOUNT_QM_DISCOUNT_FACTOR = "DISCOUNT_QM_DISCOUNT_FACTOR";
 
 	/**
 	 * Discount Latent State Quantification Metric - Zero Rate
 	 */
 
-	public static final java.lang.String DISCOUNT_QM_ZERO_RATE = "DISCOUNT_QM_ZERO_RATE";
+	public static final String DISCOUNT_QM_ZERO_RATE = "DISCOUNT_QM_ZERO_RATE";
 
 	/**
 	 * Discount Latent State Quantification Metric - Compounded Short Rate
 	 */
 
-	public static final java.lang.String DISCOUNT_QM_COMPOUNDED_SHORT_RATE =
+	public static final String DISCOUNT_QM_COMPOUNDED_SHORT_RATE =
 		"DISCOUNT_QM_COMPOUNDED_SHORT_RATE";
 
 	/**
 	 * Discount Latent State Quantification Metric - Forward Rate
 	 */
 
-	public static final java.lang.String DISCOUNT_QM_FORWARD_RATE = "DISCOUNT_QM_FORWARD_RATE";
+	public static final String DISCOUNT_QM_FORWARD_RATE = "DISCOUNT_QM_FORWARD_RATE";
 
 	/**
 	 * Volatility Latent State
 	 */
 
-	public static final java.lang.String LATENT_STATE_VOLATILITY = "LATENT_STATE_VOLATILITY";
+	public static final String LATENT_STATE_VOLATILITY = "LATENT_STATE_VOLATILITY";
 
 	/**
 	 * Volatility Latent State Quantification Metric - SABR Volatility
 	 */
 
-	public static final java.lang.String VOLATILITY_QM_SABR_VOLATILITY = "VOLATILITY_QM_SABR_VOLATILITY";
+	public static final String VOLATILITY_QM_SABR_VOLATILITY = "VOLATILITY_QM_SABR_VOLATILITY";
 
 	/**
 	 * Volatility Latent State Quantification Metric - Lognormal Volatility
 	 */
 
-	public static final java.lang.String VOLATILITY_QM_LOGNORMAL_VOLATILITY =
+	public static final String VOLATILITY_QM_LOGNORMAL_VOLATILITY =
 		"VOLATILITY_QM_LOGNORMAL_VOLATILITY";
 }

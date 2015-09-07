@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class GovvieLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strSovereign = "";
+	private String _strSovereign = "";
 
 	/**
 	 * Make a Standard Govvie Label from the Sovereign Entity
@@ -48,7 +48,7 @@ public class GovvieLabel implements org.drip.state.identifier.LatentStateLabel {
 	 */
 
 	public static final GovvieLabel Standard (
-		final java.lang.String strSovereign)
+		final String strSovereign)
 	{
 		try {
 			return new GovvieLabel (strSovereign);
@@ -68,14 +68,14 @@ public class GovvieLabel implements org.drip.state.identifier.LatentStateLabel {
 	 */
 
 	private GovvieLabel (
-		final java.lang.String strSovereign)
+		final String strSovereign)
 		throws java.lang.Exception
 	{
 		if (null == (_strSovereign = strSovereign) || _strSovereign.isEmpty())
 			throw new java.lang.Exception ("GovvieLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strSovereign;
 	}

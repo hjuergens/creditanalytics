@@ -43,7 +43,7 @@ package org.drip.regression.curve;
 
 public class ZeroCurveRegressor implements org.drip.regression.core.RegressorSet {
 	private org.drip.analytics.rates.ZeroCurve _zc = null;
-	private java.lang.String _strRegressionScenario = "org.drip.analytics.curve.ZeroCurve";
+	private String _strRegressionScenario = "org.drip.analytics.curve.ZeroCurve";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
 		java.util.ArrayList<org.drip.regression.core.UnitRegressor>();
@@ -282,7 +282,7 @@ public class ZeroCurveRegressor implements org.drip.regression.core.RegressorSet
 		return _setRegressors;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

@@ -52,7 +52,7 @@ public class BondBasketBuilder {
 	 */
 
 	public static final org.drip.product.definition.BasketProduct CreateBondBasket (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.Bond[] aBond,
 		final double[] adblWeights)
 	{

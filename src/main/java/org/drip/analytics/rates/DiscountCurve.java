@@ -51,7 +51,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	org.drip.analytics.definition.Curve {
 	private static final int NUM_DF_QUADRATURES = 5;
 
-	protected java.lang.String _strCurrency = "";
+	protected String _strCurrency = "";
 	protected double _dblEpochDate = java.lang.Double.NaN;
 	protected org.drip.analytics.rates.TurnListDiscountFactor _tldf = null;
 	protected org.drip.analytics.input.CurveConstructionInputSet _ccis = null;
@@ -60,7 +60,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	protected DiscountCurve (
 		final double dblEpochDate,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final org.drip.analytics.rates.TurnListDiscountFactor tldf)
 		throws java.lang.Exception
@@ -78,7 +78,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 		return org.drip.state.identifier.FundingLabel.Standard (_strCurrency);
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _strCurrency;
 	}
@@ -158,7 +158,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	 */
 
 	public org.drip.analytics.rates.ForwardCurve nativeForwardCurve (
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		if (null == strTenor || strTenor.isEmpty()) return null;
 
@@ -189,7 +189,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 				}
 
 				@Override public double forward (
-					final java.lang.String strTenor)
+					final String strTenor)
 					throws java.lang.Exception
 				{
 					if (null == strTenor || strTenor.isEmpty())
@@ -199,7 +199,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 				}
 
 				@Override public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-					final java.lang.String strManifestMeasure,
+					final String strManifestMeasure,
 					final double dblDate)
 				{
 					return null;
@@ -224,7 +224,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	}
 
 	@Override public double df (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -265,8 +265,8 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	}
 
 	@Override public double effectiveDF (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception
 	{
 		if (null == strTenor1 || strTenor1.isEmpty() || null == strTenor2 || strTenor2.isEmpty())
@@ -278,8 +278,8 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	}
 
 	@Override public double forward (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception
 	{
 		if (null == strTenor1 || strTenor1.isEmpty() || null == strTenor2 || strTenor2.isEmpty())
@@ -291,7 +291,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	}
 
 	@Override public double zero (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -331,7 +331,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	@Override public double libor (
 		final double dblStartDate,
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblStartDate) || null == strTenor ||
@@ -344,7 +344,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	@Override public double libor (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == dt) throw new java.lang.Exception ("DiscountCurve::libor => Invalid Inputs");
@@ -359,7 +359,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblDate))
 			throw new java.lang.Exception ("DiscountCurve::liborDV01 => Invalid Dates");
 
-		java.lang.String strCurrency = currency();
+		String strCurrency = currency();
 
 		org.drip.analytics.date.JulianDate dtStart = epoch().addDays (2);
 
@@ -421,7 +421,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	}
 
 	@Override public double estimateManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDate)
 		throws java.lang.Exception
 	{
@@ -511,7 +511,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	 * @return The Latent State Quantification Metric
 	 */
 
-	public abstract java.lang.String latentStateQuantificationMetric();
+	public abstract String latentStateQuantificationMetric();
 
 	/**
 	 * Retrieve the Manifest Measure Jacobian of the Discount Factor to the given date
@@ -524,7 +524,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	public abstract org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure);
+		final String strManifestMeasure);
 
 	/**
 	 * Retrieve the Manifest Measure Jacobian of the Discount Factor to the given date
@@ -537,7 +537,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		if (null == dt) return null;
 
@@ -554,8 +554,8 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	 */
 
 	public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
-		final java.lang.String strTenor,
-		final java.lang.String strManifestMeasure)
+		final String strTenor,
+		final String strManifestMeasure)
 	{
 		if (null == strTenor || strTenor.isEmpty()) return null;
 
@@ -655,7 +655,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
 		final double dblDate1,
 		final double dblDate2,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblElapsedYear)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblDate1) ||
@@ -724,7 +724,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
 		final org.drip.analytics.date.JulianDate dt1,
 		final org.drip.analytics.date.JulianDate dt2,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblElapsedYear)
 	{
 		if (null == dt1 || null == dt2) return null;
@@ -746,8 +746,8 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor,
-		final java.lang.String strManifestMeasure,
+		final String strTenor,
+		final String strManifestMeasure,
 		final double dblElapsedYear)
 	{
 		if (null == dt || null == strTenor || strTenor.isEmpty()) return null;
@@ -767,7 +767,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	public org.drip.quant.calculus.WengertJacobian zeroRateJack (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		double dblEpochDate = epoch().julian();
 
@@ -786,7 +786,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 
 	public org.drip.quant.calculus.WengertJacobian zeroRateJack (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return null == dt? null : zeroRateJack (dt.julian(), strManifestMeasure);
 	}
@@ -800,7 +800,7 @@ public abstract class DiscountCurve implements org.drip.analytics.rates.Discount
 	 */
 
 	public java.util.Map<java.lang.Double, java.lang.Double> canonicalTruthness (
-		final java.lang.String strLatentStateQuantificationMetric)
+		final String strLatentStateQuantificationMetric)
 	{
 		if (null == strLatentStateQuantificationMetric ||
 			(!org.drip.analytics.definition.LatentStateStatic.DISCOUNT_QM_ZERO_RATE.equalsIgnoreCase

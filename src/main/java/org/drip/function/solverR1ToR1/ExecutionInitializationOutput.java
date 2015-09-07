@@ -205,9 +205,9 @@ public abstract class ExecutionInitializationOutput {
 	 * @return String form of the Initializer output
 	 */
 
-	public java.lang.String displayString()
+	public String displayString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		sb.append ("\t\tInitialization Done? " + isDone() + " [" + time() + " msec]");
 

@@ -49,7 +49,7 @@ class BondRefData {
 	private static final boolean m_bDBExec = true;
 
 	private static final org.drip.product.creator.BondRefDataBuilder MakeBRDB (
-		final java.lang.String[] astrFODATA)
+		final String[] astrFODATA)
 	{
 		if (null == astrFODATA || 88 != astrFODATA.length) return null;
 
@@ -205,7 +205,7 @@ class BondRefData {
 	}
 
 	private static final org.drip.product.creator.BondProductBuilder MakeBPB (
-		final java.lang.String[] astrFODATA,
+		final String[] astrFODATA,
 		final org.drip.param.definition.ScenarioMarketParams mpc)
 	{
 		if (null == astrFODATA || 88 != astrFODATA.length || null == mpc) return null;
@@ -312,7 +312,7 @@ class BondRefData {
 	}
 
 	private static final void UploadBondFromFODATA (
-		final java.lang.String strFODATAFile,
+		final String strFODATAFile,
 		final java.sql.Statement stmt,
 		final org.drip.param.definition.ScenarioMarketParams mpc)
 		throws java.lang.Exception
@@ -320,7 +320,7 @@ class BondRefData {
 		int iNumBonds = 0;
 		int iNumFloaters = 0;
 		int iNumFailedToLoad = 0;
-		java.lang.String strBondFODATALine = "";
+		String strBondFODATALine = "";
 
 		java.io.BufferedReader inBondFODATA = new java.io.BufferedReader (new java.io.FileReader
 			(strFODATAFile));
@@ -328,14 +328,14 @@ class BondRefData {
 		while (null != (strBondFODATALine = inBondFODATA.readLine())) {
 			++iNumBonds;
 
-			java.lang.String[] astrBondFODATARecord = strBondFODATALine.split (",");
+			String[] astrBondFODATARecord = strBondFODATALine.split (",");
 
 			org.drip.product.creator.BondRefDataBuilder brdb = MakeBRDB (astrBondFODATARecord);
 
 			if (null != brdb) {
 				System.out.println ("Doing #" + iNumBonds + ": " + brdb._strCUSIP);
 
-				java.lang.String strSQLBRDBDelete = brdb.makeSQLDelete();
+				String strSQLBRDBDelete = brdb.makeSQLDelete();
 
 				if (null != strSQLBRDBDelete) {
 					if (m_bBlog) System.out.println (strSQLBRDBDelete);
@@ -343,7 +343,7 @@ class BondRefData {
 					if (m_bDBExec) stmt.executeUpdate (strSQLBRDBDelete);
 				}
 
-				java.lang.String strSQLBRDBInsert = brdb.makeSQLInsert();
+				String strSQLBRDBInsert = brdb.makeSQLInsert();
 
 				if (null != strSQLBRDBInsert) {
 					if (m_bBlog) System.out.println (strSQLBRDBInsert);
@@ -357,7 +357,7 @@ class BondRefData {
 			if (null != bpb) {
 				if (null != bpb.getFloaterParams()) ++iNumFloaters;
 
-				java.lang.String strSQLBPBDelete = bpb.makeSQLDelete();
+				String strSQLBPBDelete = bpb.makeSQLDelete();
 
 				if (null != strSQLBPBDelete) {
 					if (m_bBlog) System.out.println (strSQLBPBDelete);
@@ -365,7 +365,7 @@ class BondRefData {
 					if (m_bDBExec) stmt.executeUpdate (strSQLBPBDelete);
 				}
 
-				java.lang.String strSQLBPBInsert = bpb.makeSQLInsert();
+				String strSQLBPBInsert = bpb.makeSQLInsert();
 
 				if (null != strSQLBPBInsert) {
 					if (m_bBlog) System.out.println (strSQLBPBInsert);
@@ -385,7 +385,7 @@ class BondRefData {
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		org.drip.analytics.support.AnalyticsHelper.Init();

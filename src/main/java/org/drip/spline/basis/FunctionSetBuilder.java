@@ -346,7 +346,7 @@ public class FunctionSetBuilder {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		org.drip.spline.basis.BSplineSequenceParams bssp = new org.drip.spline.basis.BSplineSequenceParams

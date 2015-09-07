@@ -44,31 +44,31 @@ public class CDXRefData {
 	private static final boolean s_bPrintCDXRefDataDump = false;
 
 	private static final org.drip.product.params.CDXRefDataParams CreateCDXRefDataFromRecord (
-		final java.lang.String[] astrArgs,
+		final String[] astrArgs,
 		final java.io.BufferedWriter bw)
 	{
 		if (null == astrArgs || 43 != astrArgs.length) System.exit (333);
 
-		java.lang.String strCurveID = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[0],
+		String strCurveID = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[0],
 			false);
 
 		if (s_bBlog) System.out.println ("Curve ID: " + strCurveID);
 
-		java.lang.String strSPN = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[1], false);
+		String strSPN = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[1], false);
 
 		if (s_bBlog) System.out.println ("SPN: " + strSPN);
 
-		java.lang.String strIndexLabel = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[2],
+		String strIndexLabel = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[2],
 			false);
 
 		if (s_bBlog) System.out.println ("Index Label: " + strIndexLabel);
 
-		java.lang.String strIndexName = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[3],
+		String strIndexName = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[3],
 			false);
 
 		if (s_bBlog) System.out.println ("Index Name: " + strIndexName);
 
-		java.lang.String strCurveName = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[4],
+		String strCurveName = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[4],
 			false);
 
 		if (s_bBlog) System.out.println ("Curve Name: " + strCurveName);
@@ -109,17 +109,17 @@ public class CDXRefData {
 
 		if (s_bBlog) System.out.println ("Coupon: " + dblCoupon);
 
-		java.lang.String strCurrency = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[8],
+		String strCurrency = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[8],
 			false);
 
 		if (s_bBlog) System.out.println ("Currency: " + strCurrency);
 
-		java.lang.String strDayCount = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[9],
+		String strDayCount = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[9],
 			false);
 
 		if (s_bBlog) System.out.println ("DayCount: " + strDayCount);
 
-		java.lang.String strFullFirstStub = org.drip.quant.common.StringUtil.ProcessInputForNULL
+		String strFullFirstStub = org.drip.quant.common.StringUtil.ProcessInputForNULL
 			(astrArgs[10], false);
 
 		boolean bFullFirstStub = "lf".equalsIgnoreCase (strFullFirstStub);
@@ -140,7 +140,7 @@ public class CDXRefData {
 
 		int iFrequency = 0;
 
-		java.lang.String strFrequency = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[12],
+		String strFrequency = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[12],
 			false);
 
 		if ("Q".equalsIgnoreCase (strFrequency))
@@ -150,12 +150,12 @@ public class CDXRefData {
 
 		if (s_bBlog) System.out.println ("Frequency: " + iFrequency);
 
-		java.lang.String strRedID = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[13],
+		String strRedID = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[13],
 			false);
 
 		if (s_bBlog) System.out.println ("RedID: " + strRedID);
 
-		java.lang.String strIndexClass = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[14],
+		String strIndexClass = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[14],
 			false);
 
 		if (s_bBlog) System.out.println ("Index Class: " + strIndexClass);
@@ -170,17 +170,17 @@ public class CDXRefData {
 
 		if (s_bBlog) System.out.println ("Index Series: " + iIndexSeries);
 
-		java.lang.String strIndexGroupName = org.drip.quant.common.StringUtil.ProcessInputForNULL
+		String strIndexGroupName = org.drip.quant.common.StringUtil.ProcessInputForNULL
 			(astrArgs[16], false);
 
 		if (s_bBlog) System.out.println ("Index Group Name: " + strIndexGroupName);
 
-		java.lang.String strIndexShortName = org.drip.quant.common.StringUtil.ProcessInputForNULL
+		String strIndexShortName = org.drip.quant.common.StringUtil.ProcessInputForNULL
 			(astrArgs[17], false);
 
 		if (s_bBlog) System.out.println ("Index Short Name: " + strIndexShortName);
 
-		java.lang.String strIndexShortGroupName = org.drip.quant.common.StringUtil.ProcessInputForNULL
+		String strIndexShortGroupName = org.drip.quant.common.StringUtil.ProcessInputForNULL
 			(astrArgs[18], false);
 
 		if (s_bBlog) System.out.println ("Index Short Group Name: " + strIndexShortGroupName);
@@ -205,7 +205,7 @@ public class CDXRefData {
 
 		if (s_bBlog) System.out.println ("Index Life Span: " + iIndexLifeSpan);
 
-		java.lang.String strCurvyCurveID = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[21],
+		String strCurvyCurveID = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[21],
 			false);
 
 		if (s_bBlog) System.out.println ("Curvy Curve ID: " + strCurvyCurveID);
@@ -240,7 +240,7 @@ public class CDXRefData {
 
 		if (s_bBlog) System.out.println ("Defaulted Component Count: " + iDefaultedComponentCount);
 
-		java.lang.String strLocation = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[26],
+		String strLocation = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[26],
 			false);
 
 		if (s_bBlog) System.out.println ("Location: " + strLocation);
@@ -257,12 +257,12 @@ public class CDXRefData {
 
 		if (s_bBlog) System.out.println ("Quote As CDS: " + bQuoteAsCDS);
 
-		java.lang.String strBBGTicker = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[41],
+		String strBBGTicker = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[41],
 			false);
 
 		if (s_bBlog) System.out.println ("BBG Ticker: " + strBBGTicker);
 
-		java.lang.String strShortName = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[42],
+		String strShortName = org.drip.quant.common.StringUtil.ProcessInputForNULL (astrArgs[42],
 			false);
 
 		if (s_bBlog) System.out.println ("Short Name: " + strShortName);
@@ -281,7 +281,7 @@ public class CDXRefData {
 
 		if (null == cdxrd) return null;
 
-		java.lang.String strCDXRD = cdxrd.setConstructionString();
+		String strCDXRD = cdxrd.setConstructionString();
 
 		if (s_bPrintCDXRefDataDump) System.out.println (strCDXRD);
 
@@ -299,7 +299,7 @@ public class CDXRefData {
 	}
 
 	private static final boolean LoadCDXDefinitions (
-		final java.lang.String strCDXRefDataFile)
+		final String strCDXRefDataFile)
 	{
 		if (null == strCDXRefDataFile || strCDXRefDataFile.isEmpty()) {
 			System.out.println ("Invalid CDX Ref Data File: " + strCDXRefDataFile);
@@ -312,7 +312,7 @@ public class CDXRefData {
 		int iNumFailedToLoad = 0;
 		int iNumIndicesPerFunction = 100;
 		java.io.BufferedWriter bw = null;
-		java.lang.String strCDXRefDataLine = "";
+		String strCDXRefDataLine = "";
 		java.io.BufferedReader iobrCDXRefData = null;
 
 		try {
@@ -391,7 +391,7 @@ public class CDXRefData {
 
 			bw.write ("java.util.Map<java.lang.Integer, org.drip.analytics.date.JulianDate>>();\n\n\t");
 
-			bw.write ("private static final boolean UpdateCDXRefDataMap (\n\t\tfinal java.lang.String ");
+			bw.write ("private static final boolean UpdateCDXRefDataMap (\n\t\tfinal String ");
 
 			bw.write ("strCDXName,\n\t\tfinal org.drip.product.creator.CDXRefDataBuilder cdxrd)\n\t{\n");
 
@@ -450,7 +450,7 @@ public class CDXRefData {
 			while (null != (strCDXRefDataLine = iobrCDXRefData.readLine())) {
 				++iNumIndices;
 
-				java.lang.String[] astrCDXRefDataRecord = strCDXRefDataLine.split (",");
+				String[] astrCDXRefDataRecord = strCDXRefDataLine.split (",");
 
 				org.drip.product.params.CDXRefDataParams cdxrd = CreateCDXRefDataFromRecord
 					(astrCDXRefDataRecord, bw);
@@ -489,7 +489,7 @@ public class CDXRefData {
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 	{
 		LoadCDXDefinitions ("C:\\Lakshmi\\RefDataAndMarks\\CDXRefData1Raw.csv");
 	}

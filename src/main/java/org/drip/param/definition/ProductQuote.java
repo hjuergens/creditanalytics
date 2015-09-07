@@ -51,7 +51,7 @@ public abstract class ProductQuote {
 	 */
 
 	public abstract void addQuote (
-		final java.lang.String strQuoteField,
+		final String strQuoteField,
 		final org.drip.param.definition.Quote q,
 		final boolean bIsMarketQuote);
 
@@ -65,7 +65,7 @@ public abstract class ProductQuote {
 	 */
 
 	public abstract boolean setMarketQuote (
-		final java.lang.String strMarketQuoteField,
+		final String strMarketQuoteField,
 		final org.drip.param.definition.Quote q);
 
 	/**
@@ -83,7 +83,7 @@ public abstract class ProductQuote {
 	 */
 
 	public abstract org.drip.param.definition.Quote quote (
-		final java.lang.String strQuoteField);
+		final String strQuoteField);
 
 	/**
 	 * Return the market quote object
@@ -99,7 +99,7 @@ public abstract class ProductQuote {
 	 * @return Field name
 	 */
 
-	public abstract java.lang.String marketQuoteField();
+	public abstract String marketQuoteField();
 
 	/**
 	 * Remove the named Quote
@@ -110,7 +110,7 @@ public abstract class ProductQuote {
 	 */
 
 	public abstract boolean removeQuote (
-		final java.lang.String strQuoteField);
+		final String strQuoteField);
 
 	/**
 	 * Indicate if the named quote is available
@@ -121,5 +121,5 @@ public abstract class ProductQuote {
 	 */
 
 	public abstract boolean containsQuote (
-		final java.lang.String strQuoteField);
+		final String strQuoteField);
 }

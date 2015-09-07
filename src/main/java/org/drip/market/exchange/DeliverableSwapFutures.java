@@ -35,8 +35,8 @@ package org.drip.market.exchange;
  */
 
 public class DeliverableSwapFutures {
-	private java.lang.String _strTenor = "";
-	private java.lang.String _strCurrency = "";
+	private String _strTenor = "";
+	private String _strCurrency = "";
 	private double _dblNominal = java.lang.Double.NaN;
 	private double _dblRateIncrement = java.lang.Double.NaN;
 	private org.drip.product.params.LastTradingDateSetting _ltds = null;
@@ -54,8 +54,8 @@ public class DeliverableSwapFutures {
 	 */
 
 	public DeliverableSwapFutures (
-		final java.lang.String strCurrency,
-		final java.lang.String strTenor,
+		final String strCurrency,
+		final String strTenor,
 		final double dblNominal,
 		final double dblRateIncrement,
 		final org.drip.product.params.LastTradingDateSetting ltds)
@@ -75,7 +75,7 @@ public class DeliverableSwapFutures {
 	 * @return The Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -86,7 +86,7 @@ public class DeliverableSwapFutures {
 	 * @return The Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		return _strTenor;
 	}

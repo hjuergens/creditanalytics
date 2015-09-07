@@ -45,7 +45,7 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 	private static final int MINIMA_PREDICTOR_ORDINATE_NODE = 2;
 	private static final int MONOTONE_PREDICTOR_ORDINATE_NODE = 4;
 
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.spline.stretch.SegmentSequenceBuilder _ssb = null;
 	private org.drip.spline.segment.LatentStateResponseModel[] _aLSRM = null;
 	private org.drip.spline.params.SegmentCustomBuilderControl[] _aSCBC = null;
@@ -118,7 +118,7 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 	 */
 
 	public CalibratableMultiSegmentSequence (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.spline.segment.LatentStateResponseModel[] aCS,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC)
 		throws java.lang.Exception
@@ -141,7 +141,7 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 		}
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
@@ -457,7 +457,7 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDResponseDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder)
 	{
@@ -719,7 +719,7 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 	}
 
 	@Override public CalibratableMultiSegmentSequence clipLeft (
-		final java.lang.String strName,
+		final String strName,
 		final double dblPredictorOrdinate)
 	{
 		int iNumSegment = _aLSRM.length;
@@ -758,7 +758,7 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 	}
 
 	@Override public CalibratableMultiSegmentSequence clipRight (
-		final java.lang.String strName,
+		final String strName,
 		final double dblPredictorOrdinate)
 	{
 		int iContainingPredictorOrdinateIndex = 0;
@@ -835,9 +835,9 @@ public class CalibratableMultiSegmentSequence extends org.drip.function.definiti
 		return null;
 	}
 
-	@Override public java.lang.String displayString()
+	@Override public String displayString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		for (int i = 0; i < _aLSRM.length; ++i)
 			sb.append (_aLSRM[i].displayString() + " \n");

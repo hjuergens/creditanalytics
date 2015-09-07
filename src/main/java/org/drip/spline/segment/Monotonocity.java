@@ -102,7 +102,7 @@ public class Monotonocity {
 		return _iMonotoneType;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		if (org.drip.spline.segment.Monotonocity.NON_MONOTONIC == _iMonotoneType) return "NON_MONOTONIC";
 

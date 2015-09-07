@@ -89,7 +89,7 @@ public class OverlappingStretchSpan implements org.drip.spline.grid.Span {
 	}
 
 	@Override public org.drip.spline.stretch.MultiSegmentSequence getStretch (
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null == strName) return null;
 
@@ -163,7 +163,7 @@ public class OverlappingStretchSpan implements org.drip.spline.grid.Span {
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDResponseDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder)
 	{
@@ -250,9 +250,9 @@ public class OverlappingStretchSpan implements org.drip.spline.grid.Span {
 		return oss;
 	}
 
-	@Override public java.lang.String displayString()
+	@Override public String displayString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		for (org.drip.spline.stretch.MultiSegmentSequence mss : _lsMSS) {
 			try {

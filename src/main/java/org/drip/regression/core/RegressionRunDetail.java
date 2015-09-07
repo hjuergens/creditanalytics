@@ -38,8 +38,8 @@ package org.drip.regression.core;
  */
 
 public class RegressionRunDetail {
-	private org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> _mapNVDetails = new
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+	private org.drip.analytics.support.CaseInsensitiveTreeMap<String> _mapNVDetails = new
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 	/**
 	 * Empty constructor: Regression detail fields will be initialized
@@ -59,8 +59,8 @@ public class RegressionRunDetail {
 	 */
 
 	public boolean set (
-		final java.lang.String strKey,
-		final java.lang.String strValue)
+		final String strKey,
+		final String strValue)
 	{
 		if (null == strKey || strKey.isEmpty() || null == strValue || strValue.isEmpty()) return false;
 
@@ -75,7 +75,7 @@ public class RegressionRunDetail {
 	 * @return The Field Map
 	 */
 
-	public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> getFieldMap()
+	public org.drip.analytics.support.CaseInsensitiveTreeMap<String> getFieldMap()
 	{
 		return _mapNVDetails;
 	}

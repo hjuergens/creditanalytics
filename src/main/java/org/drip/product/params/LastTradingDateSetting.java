@@ -56,7 +56,7 @@ public class LastTradingDateSetting {
 	public static final int MID_CURVE_OPTION = 2;
 
 	private int _iMidCurveOptionType = -1;
-	private java.lang.String _strLastTradeExerciseLag = "";
+	private String _strLastTradeExerciseLag = "";
 	private double _dblLastTradingDate = java.lang.Double.NaN;
 
 	/**
@@ -67,7 +67,7 @@ public class LastTradingDateSetting {
 	 * @return String Version of the Mid Curve Option Setting
 	 */
 
-	public static final java.lang.String MidCurveOptionString (
+	public static final String MidCurveOptionString (
 		final int iMidCurveOptionType)
 	{
 		if (MID_CURVE_OPTION_QUARTERLY == iMidCurveOptionType) return "QUARTERLY";
@@ -91,7 +91,7 @@ public class LastTradingDateSetting {
 
 	public LastTradingDateSetting (
 		final int iMidCurveOptionType,
-		final java.lang.String strLastTradeExerciseLag,
+		final String strLastTradeExerciseLag,
 		final double dblLastTradingDate)
 		throws java.lang.Exception
 	{
@@ -125,7 +125,7 @@ public class LastTradingDateSetting {
 	 * @return The Lag between the Last Trading and Exercise Date
 	 */
 
-	public java.lang.String lastTradeExerciseLag()
+	public String lastTradeExerciseLag()
 	{
 		return _strLastTradeExerciseLag;
 	}
@@ -154,7 +154,7 @@ public class LastTradingDateSetting {
 
 	public double lastTradingDate (
 		final double dblUnderlyingLastTradingDate,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (MID_CURVE_OPTION_SERIAL == _iMidCurveOptionType) return _dblLastTradingDate;
@@ -168,9 +168,9 @@ public class LastTradingDateSetting {
 			(_strLastTradeExerciseLag, strCalendar).julian();
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
-		java.lang.String str = "MID CURVE OPTION::" + MidCurveOptionString (_iMidCurveOptionType);
+		String str = "MID CURVE OPTION::" + MidCurveOptionString (_iMidCurveOptionType);
 
 		if (MID_CURVE_OPTION_QUARTERLY == _iMidCurveOptionType) return str;
 

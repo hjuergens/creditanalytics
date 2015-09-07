@@ -380,7 +380,7 @@ public class ComplexNumber {
 	 * @return The Real/Imaginary Contents
 	 */
 
-	public java.lang.String display()
+	public String display()
 	{
 		return "\t[" + _dblReal + ", " + _dblImaginary + "]";
 	}

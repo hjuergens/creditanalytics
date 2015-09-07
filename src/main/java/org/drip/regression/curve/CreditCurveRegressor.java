@@ -51,11 +51,11 @@ package org.drip.regression.curve;
  */
 
 public class CreditCurveRegressor implements org.drip.regression.core.RegressorSet {
-	private java.lang.String _strCurrency = "";
+	private String _strCurrency = "";
 	private org.drip.analytics.rates.DiscountCurve _dc = null;
 	private org.drip.analytics.date.JulianDate _dtStart = null;
 	private org.drip.analytics.definition.CreditCurve _cc = null;
-	private java.lang.String _strRegressionScenario = "org.drip.analytics.curve.CreditCurve";
+	private String _strRegressionScenario = "org.drip.analytics.curve.CreditCurve";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
 		java.util.ArrayList<org.drip.regression.core.UnitRegressor>();
@@ -84,7 +84,7 @@ public class CreditCurveRegressor implements org.drip.regression.core.RegressorS
 				_strRegressionScenario)
 			{
 				private double[] _adblQuotes = new double[5];
-				private java.lang.String[] _astrCalibMeasure = new java.lang.String[5];
+				private String[] _astrCalibMeasure = new String[5];
 				private org.drip.product.definition.CreditDefaultSwap[] _aCDS = new
 					org.drip.product.definition.CreditDefaultSwap[5];
 
@@ -320,7 +320,7 @@ public class CreditCurveRegressor implements org.drip.regression.core.RegressorS
 					for (int i = 0; i < _aCalibComp.length; ++i) {
 						org.drip.analytics.date.JulianDate dt = _aCalibComp[i].maturityDate();
 
-						java.lang.String strCode = _aCalibComp[i].primaryCode();
+						String strCode = _aCalibComp[i].primaryCode();
 
 						if (null == dt || null == strCode || strCode.isEmpty()) return false;
 
@@ -758,7 +758,7 @@ public class CreditCurveRegressor implements org.drip.regression.core.RegressorS
 		return _setRegressors;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

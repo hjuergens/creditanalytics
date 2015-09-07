@@ -527,7 +527,7 @@ public class StretchEstimator {
 	private static final MultiSegmentSequence ConstructSpecifiedC1Stretch (
 		final double[] adblX,
 		final double[] adblY,
-		final java.lang.String strGeneratorType,
+		final String strGeneratorType,
 		final SegmentCustomBuilderControl scbc,
 		final boolean bEliminateSpuriousExtrema,
 		final boolean bApplyMonotoneFilter)

@@ -50,7 +50,7 @@ public class FRAStandardComponent extends org.drip.product.rates.SingleStreamCom
 	 */
 
 	public FRAStandardComponent (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.rates.Stream stream,
 		final double dblStrike,
 		final org.drip.param.valuation.CashSettleParams csp)
@@ -169,9 +169,9 @@ public class FRAStandardComponent extends org.drip.product.rates.SingleStreamCom
 		return mapResult;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("AdditiveQuantoAdjustment");
 
@@ -218,7 +218,7 @@ public class FRAStandardComponent extends org.drip.product.rates.SingleStreamCom
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

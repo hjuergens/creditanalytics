@@ -42,7 +42,7 @@ package org.drip.regression.spline;
  */
 
 public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressionExecutor {
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.spline.segment.LatentStateResponseModel _seg1 = null;
 	private org.drip.spline.segment.LatentStateResponseModel _seg2 = null;
 	private org.drip.quant.calculus.WengertJacobian _wjLeft = null;
@@ -61,8 +61,8 @@ public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressio
 	 */
 
 	public static final BasisSplineRegressor CreatePolynomialSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final int iNumBasis,
 		final int iCk)
 	{
@@ -91,8 +91,8 @@ public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressio
 	 */
 
 	public static final BasisSplineRegressor CreateBernsteinPolynomialSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final int iNumBasis,
 		final int iCk)
 	{
@@ -120,8 +120,8 @@ public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressio
 	 */
 
 	public static final BasisSplineRegressor CreateExponentialTensionSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final double dblTension)
 	{
 		try {
@@ -148,8 +148,8 @@ public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressio
 	 */
 
 	public static final BasisSplineRegressor CreateHyperbolicTensionSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final double dblTension)
 	{
 		try {
@@ -176,8 +176,8 @@ public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressio
 	 */
 
 	public static final BasisSplineRegressor CreateKaklisPandelisSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final int iKPPolynomialTension)
 	{
 		try {
@@ -194,8 +194,8 @@ public class BasisSplineRegressor extends org.drip.regression.core.UnitRegressio
 	}
 
 	protected BasisSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final org.drip.spline.basis.FunctionSet fs,
 		final int iCk)
 		throws java.lang.Exception

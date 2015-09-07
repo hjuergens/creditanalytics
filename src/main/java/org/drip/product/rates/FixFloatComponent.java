@@ -48,7 +48,7 @@ package org.drip.product.rates;
  */
 
 public class FixFloatComponent extends org.drip.product.rates.DualStreamComponent {
-	private java.lang.String _strCode = "";
+	private String _strCode = "";
 	private org.drip.product.rates.Stream _fixReference = null;
 	private org.drip.product.rates.Stream _floatDerived = null;
 	private org.drip.param.valuation.CashSettleParams _csp = null;
@@ -85,25 +85,25 @@ public class FixFloatComponent extends org.drip.product.rates.DualStreamComponen
 	}
 
 	@Override public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		_strCode = strCode;
 	}
 
-	@Override public java.lang.String primaryCode()
+	@Override public String primaryCode()
 	{
 		return _strCode;
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strCode;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCouponCurrency = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCouponCurrency = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		mapCouponCurrency.put ("DERIVED", _floatDerived.couponCurrency());
 
@@ -112,12 +112,12 @@ public class FixFloatComponent extends org.drip.product.rates.DualStreamComponen
 		return mapCouponCurrency;
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _fixReference.payCurrency();
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return null;
 	}
@@ -478,9 +478,9 @@ public class FixFloatComponent extends org.drip.product.rates.DualStreamComponen
 		return mapResult;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("Accrued");
 
@@ -660,7 +660,7 @@ public class FixFloatComponent extends org.drip.product.rates.DualStreamComponen
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

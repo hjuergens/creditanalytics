@@ -36,12 +36,12 @@ package org.drip.market.definition;
  */
 
 abstract public class FloaterIndex {
-	private java.lang.String _strName = "";
-	private java.lang.String _strFamily = "";
+	private String _strName = "";
+	private String _strFamily = "";
 	private int _iAccrualCompoundingRule = -1;
-	private java.lang.String _strCalendar = "";
-	private java.lang.String _strCurrency = "";
-	private java.lang.String _strDayCount = "";
+	private String _strCalendar = "";
+	private String _strCurrency = "";
+	private String _strDayCount = "";
 
 	/**
 	 * IBORIndex Constructor
@@ -58,11 +58,11 @@ abstract public class FloaterIndex {
 	 */
 
 	public FloaterIndex (
-		final java.lang.String strName,
-		final java.lang.String strFamily,
-		final java.lang.String strCurrency,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar,
+		final String strName,
+		final String strFamily,
+		final String strCurrency,
+		final String strDayCount,
+		final String strCalendar,
 		final int iSpotLag,
 		final int iAccrualCompoundingRule)
 		throws java.lang.Exception
@@ -83,7 +83,7 @@ abstract public class FloaterIndex {
 	 * @return The Index Name
 	 */
 
-	public java.lang.String name()
+	public String name()
 	{
 		return _strName;
 	}
@@ -94,7 +94,7 @@ abstract public class FloaterIndex {
 	 * @return The Index Family
 	 */
 
-	public java.lang.String family()
+	public String family()
 	{
 		return _strFamily;
 	}
@@ -105,7 +105,7 @@ abstract public class FloaterIndex {
 	 * @return The Index Holiday Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}
@@ -116,7 +116,7 @@ abstract public class FloaterIndex {
 	 * @return The Index Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -127,7 +127,7 @@ abstract public class FloaterIndex {
 	 * @return The Index Day Count Convention
 	 */
 
-	public java.lang.String dayCount()
+	public String dayCount()
 	{
 		return _strDayCount;
 	}

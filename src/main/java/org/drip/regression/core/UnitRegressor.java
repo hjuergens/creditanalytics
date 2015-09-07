@@ -54,5 +54,5 @@ public interface UnitRegressor {
 	 * @return Name of the regressor
 	 */
 
-	public abstract java.lang.String getName();
+	public abstract String getName();
 }

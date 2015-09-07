@@ -48,13 +48,13 @@ public class BSplineSequenceParams {
 	private int _iNumBasis = -1;
 	private int _iBSplineOrder = -1;
 	private int _iProcBasisDerivOrder = -1;
-	private java.lang.String _strHatType = "";
+	private String _strHatType = "";
 	private double _dblTension = java.lang.Double.NaN;
-	private java.lang.String _strShapeControlType = "";
+	private String _strShapeControlType = "";
 
 	public BSplineSequenceParams (
-		final java.lang.String strHatType,
-		final java.lang.String strShapeControlType,
+		final String strHatType,
+		final String strShapeControlType,
 		final int iNumBasis,
 		final int iBSplineOrder,
 		final double dblTension,
@@ -108,7 +108,7 @@ public class BSplineSequenceParams {
 	 * @return The Basis Hat Type
 	 */
 
-	public java.lang.String hat()
+	public String hat()
 	{
 		return _strHatType;
 	}
@@ -119,7 +119,7 @@ public class BSplineSequenceParams {
 	 * @return The Shape Control Type
 	 */
 
-	public java.lang.String shapeControl()
+	public String shapeControl()
 	{
 		return _strShapeControlType;
 	}

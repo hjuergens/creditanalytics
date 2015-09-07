@@ -246,7 +246,7 @@ public class ForwardCurveDerivedBasis {
 		CalibratableFixedIncomeComponent[] aSwapComp = SwapInstrumentsFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"9M",
 				"1Y",
 				"18M",

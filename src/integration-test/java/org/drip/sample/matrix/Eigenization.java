@@ -68,7 +68,7 @@ public class Eigenization {
 		System.out.println ("\t|----------------------------------------|");
 
 		for (int i = 0; i < aadblA.length; ++i) {
-			java.lang.String strDump = "\t[" + FormatUtil.FormatDouble (eo.eigenvalue()[i], 1, 4, 1.) + "] => ";
+			String strDump = "\t[" + FormatUtil.FormatDouble (eo.eigenvalue()[i], 1, 4, 1.) + "] => ";
 
 			for (int j = 0; j < aadblA.length; ++j)
 				strDump += FormatUtil.FormatDouble (eo.eigenvector()[i][j], 1, 4, 1.) + " | ";
@@ -80,7 +80,7 @@ public class Eigenization {
 
 		double[] adblEigenvector = ec.eigenvector();
 
-		java.lang.String strDump = "[" + FormatUtil.FormatDouble (ec.eigenvalue(), 1, 4, 1.) + "] => ";
+		String strDump = "[" + FormatUtil.FormatDouble (ec.eigenvalue(), 1, 4, 1.) + "] => ";
 
 		for (int i = 0; i < adblEigenvector.length; ++i)
 			strDump += FormatUtil.FormatDouble (adblEigenvector[i], 1, 4, 1.) + " | ";

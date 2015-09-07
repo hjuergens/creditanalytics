@@ -48,7 +48,7 @@ public class BootCurveConstructionInput implements org.drip.analytics.input.Curv
 	private org.drip.param.market.LatentStateFixingsContainer _lsfc = null;
 	private org.drip.param.valuation.ValuationCustomizationParams _quotingParam = null;
 	private org.drip.product.definition.CalibratableFixedIncomeComponent[] _aCalibInst = null;
-	private org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> _mapMeasures = null;
+	private org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> _mapMeasures = null;
 	private
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>
 			_mapQuote = null;
@@ -71,7 +71,7 @@ public class BootCurveConstructionInput implements org.drip.analytics.input.Curv
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParam,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst,
 		final double[] adblCalibQuote,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 	{
 		if (null == aCalibInst || null == adblCalibQuote || null == astrCalibMeasure) return null;
@@ -85,13 +85,13 @@ public class BootCurveConstructionInput implements org.drip.analytics.input.Curv
 			mapQuote = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>();
 
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> mapMeasures = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> mapMeasures = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String[]>();
 
 		for (int i = 0; i < iNumInst; ++i) {
 			if (null == aCalibInst[i]) return null;
 
-			java.lang.String strInstrumentCode = aCalibInst[i].primaryCode();
+			String strInstrumentCode = aCalibInst[i].primaryCode();
 
 			if (null == strInstrumentCode || strInstrumentCode.isEmpty() || null == astrCalibMeasure[i] ||
 				astrCalibMeasure[i].isEmpty() || !org.drip.quant.common.NumberUtil.IsValid
@@ -103,17 +103,17 @@ public class BootCurveConstructionInput implements org.drip.analytics.input.Curv
 
 			mapCalibManifestMeasureQuote.put (astrCalibMeasure[i], adblCalibQuote[i]);
 
-			mapMeasures.put (strInstrumentCode, new java.lang.String[] {astrCalibMeasure[i]});
+			mapMeasures.put (strInstrumentCode, new String[] {astrCalibMeasure[i]});
 
 			mapQuote.put (strInstrumentCode, mapCalibManifestMeasureQuote);
 
-			java.lang.String[] astrSecCode = aCalibInst[i].secondaryCode();
+			String[] astrSecCode = aCalibInst[i].secondaryCode();
 
 			if (null != astrSecCode) {
 				int iNumSecCode = astrSecCode.length;
 
 				for (int j = 0; j < iNumSecCode; ++j) {
-					java.lang.String strSecCode = astrSecCode[j];
+					String strSecCode = astrSecCode[j];
 
 					if (null == strSecCode || strSecCode.isEmpty())
 						mapQuote.put (strSecCode, mapCalibManifestMeasureQuote);
@@ -151,7 +151,7 @@ public class BootCurveConstructionInput implements org.drip.analytics.input.Curv
 		final
 			org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>
 				mapQuote,
-		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> mapMeasures,
+		final org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> mapMeasures,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 		throws java.lang.Exception
 	{
@@ -200,7 +200,7 @@ public class BootCurveConstructionInput implements org.drip.analytics.input.Curv
 		return _mapQuote;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> measures()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> measures()
 	{
 		return _mapMeasures;
 	}

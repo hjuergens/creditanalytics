@@ -202,19 +202,19 @@ public class BGMTenorNodeSequence {
 		return _adblSpotRateIncrement;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		int iNumTenor = _adblDate.length;
-		java.lang.String strDateDump = "\t |";
-		java.lang.String strPartition = "\t |";
-		java.lang.String strLIBORDump = "\t |";
-		java.lang.String strLIBORIncrementDump = "\t |";
-		java.lang.String strDiscountFactorDump = "\t |";
-		java.lang.String strSpotRateIncrementDump = "\t |";
-		java.lang.String strDiscountFactorIncrementDump = "\t |";
-		java.lang.String strContinuousForwardIncrementDump = "\t |";
-		java.lang.String strInstantaneousNominalForwardDump = "\t |";
-		java.lang.String strInstantaneousEffectiveForwardDump = "\t |";
+		String strDateDump = "\t |";
+		String strPartition = "\t |";
+		String strLIBORDump = "\t |";
+		String strLIBORIncrementDump = "\t |";
+		String strDiscountFactorDump = "\t |";
+		String strSpotRateIncrementDump = "\t |";
+		String strDiscountFactorIncrementDump = "\t |";
+		String strContinuousForwardIncrementDump = "\t |";
+		String strInstantaneousNominalForwardDump = "\t |";
+		String strInstantaneousEffectiveForwardDump = "\t |";
 
 		for (int i = 0; i < iNumTenor; ++i) {
 			try {

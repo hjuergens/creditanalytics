@@ -58,12 +58,12 @@ public class BondManager {
 			org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.product.credit.BondComponent>();
 
 	private static org.drip.analytics.support.CaseInsensitiveTreeMap<java.util.SortedMap<java.lang.Double,
-		java.lang.String>> s_mapTickerMatCUSIP = new
+		String>> s_mapTickerMatCUSIP = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.util.SortedMap<java.lang.Double,
-				java.lang.String>>();
+				String>>();
 
 	private static final boolean AppendField (
-		final java.lang.StringBuilder sb,
+		final StringBuilder sb,
 		final double dblValue,
 		final boolean bLast)
 	{
@@ -84,7 +84,7 @@ public class BondManager {
 
 	private static final org.drip.product.params.EmbeddedOptionSchedule ExtractEOS (
 		final java.sql.Statement stmt,
-		final java.lang.String strISIN,
+		final String strISIN,
 		final double dblScheduleStart,
 		final boolean bIsPut)
 	{
@@ -94,7 +94,7 @@ public class BondManager {
 
 		int i = 0;
 		boolean bIsAmerican = false;
-		java.lang.String strCallOrPut = "C";
+		String strCallOrPut = "C";
 
 		if (bIsPut) strCallOrPut = "P";
 
@@ -152,7 +152,7 @@ public class BondManager {
 
 	private static final org.drip.product.params.EmbeddedOptionSchedule ExtractEOS2 (
 		final java.sql.Statement stmt,
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblScheduleStart,
 		final boolean bIsPut)
 	{
@@ -162,7 +162,7 @@ public class BondManager {
 
 		int i = 0;
 		boolean bIsAmerican = false;
-		java.lang.String strCallOrPut = "C";
+		String strCallOrPut = "C";
 
 		if (bIsPut) strCallOrPut = "P";
 
@@ -222,7 +222,7 @@ public class BondManager {
 
 	private static final org.drip.quant.common.Array2D ExtractAmortizationSchedule (
 		final java.sql.Statement stmt,
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		if (null == stmt || null == strBondId || strBondId.isEmpty()) return null;
 
@@ -282,7 +282,7 @@ public class BondManager {
 
 		long lStart = System.nanoTime();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.credit.BondComponent> me :
+		for (java.util.Map.Entry<String, org.drip.product.credit.BondComponent> me :
 			s_mapBonds.entrySet()) {
 			if (null == me.getValue()) continue;
 
@@ -318,7 +318,7 @@ public class BondManager {
 
 	public static org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.output.BondRVMeasures>
 		CalcBondMeasures
-			(final java.lang.String strBondDescription,
+			(final String strBondDescription,
 			final org.drip.product.definition.Bond bond,
 			final org.drip.param.valuation.ValuationParams valParams,
 			final org.drip.param.definition.ScenarioMarketParams mpc,
@@ -368,7 +368,7 @@ public class BondManager {
 
 	public static org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.output.BondRVMeasures>
 		CalcBondAnalyticsFromPrice (
-			final java.lang.String strCUSIPIn,
+			final String strCUSIPIn,
 			final org.drip.param.definition.ScenarioMarketParams mpc,
 			final org.drip.analytics.date.JulianDate dt,
 			final double dblBidPrice,
@@ -394,7 +394,7 @@ public class BondManager {
 	        java.text.DecimalFormat df2p = new java.text.DecimalFormat ("#00.000");
 
 			try {
-				java.lang.String strRunName = bond.ticker() + "  " + df2p.format (100. * bond.couponMetrics
+				String strRunName = bond.ticker() + "  " + df2p.format (100. * bond.couponMetrics
 					(valParams.valueDate(), valParams, null).rate()) + " " +
 						(org.drip.analytics.date.DateUtil.Year (bond.maturityDate().julian()) - 2000);
 
@@ -455,18 +455,18 @@ public class BondManager {
 
 		java.text.DecimalFormat df2_3p = new java.text.DecimalFormat ("#00.000");
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.credit.BondComponent> me :
+		for (java.util.Map.Entry<String, org.drip.product.credit.BondComponent> me :
 			s_mapBonds.entrySet()) {
 			org.drip.product.definition.Bond bond = me.getValue();
 
 			if (bond.maturityDate().julian() > dt.julian()) {
-				java.lang.String strRunTicker = bond.ticker();
+				String strRunTicker = bond.ticker();
 
 				for (int i = bond.ticker().length() - 1; i < 6; ++i)
 					strRunTicker += " ";
 
 				try {
-					java.lang.String strRunName = strRunTicker + "  " + df2_3p.format (100. *
+					String strRunName = strRunTicker + "  " + df2_3p.format (100. *
 						bond.couponMetrics (valParams.valueDate(), valParams, null).rate()) + " " +
 							(org.drip.analytics.date.DateUtil.Year (bond.maturityDate().julian()) - 2000);
 
@@ -512,18 +512,18 @@ public class BondManager {
 
         java.text.DecimalFormat df2_3p = new java.text.DecimalFormat ("#00.000");
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.credit.BondComponent> me :
+		for (java.util.Map.Entry<String, org.drip.product.credit.BondComponent> me :
 			s_mapBonds.entrySet()) {
 			org.drip.product.definition.Bond bond = me.getValue();
 
 			if (bond.maturityDate().julian() > dt.julian()) {
-				java.lang.String strRunTicker = bond.ticker();
+				String strRunTicker = bond.ticker();
 
 				for (int i = bond.ticker().length() - 1; i < 6; ++i)
 					strRunTicker += " ";
 
 				try {
-					java.lang.String strRunName = strRunTicker + "  " + df2_3p.format (100. *
+					String strRunName = strRunTicker + "  " + df2_3p.format (100. *
 						bond.couponMetrics (dt.julian(), null, null).rate()) + " " +
 							(org.drip.analytics.date.DateUtil.Year (bond.maturityDate().julian()) - 2000);
 
@@ -580,7 +580,7 @@ public class BondManager {
 	 */
 
 	public static final double GetMidMarksForCUSIP (
-		final java.lang.String strCUSIP,
+		final String strCUSIP,
 		final org.drip.analytics.date.JulianDate dt,
 		final java.sql.Statement stmt)
 		throws java.lang.Exception
@@ -722,7 +722,7 @@ public class BondManager {
 	public static final org.drip.product.definition.Bond LoadFromBondId (
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblScheduleStart)
 	{
 		if (null == stmt) return null;
@@ -801,7 +801,7 @@ public class BondManager {
 
 	public static final org.drip.product.creator.BondRefDataBuilder LoadBondRefData (
 		final java.sql.Statement stmt,
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		if (null == stmt) return null;
 
@@ -851,13 +851,13 @@ public class BondManager {
 	 * @return Set of the tickers
 	 */
 
-	public static final java.util.Set<java.lang.String> GetAvailableTickers (
+	public static final java.util.Set<String> GetAvailableTickers (
 		final java.sql.Statement stmt)
 	{
 		if (null == stmt) return null;
 
 		try {
-			java.util.Set<java.lang.String> setstrTickers = new java.util.HashSet<java.lang.String>();
+			java.util.Set<String> setstrTickers = new java.util.HashSet<String>();
 
 			java.sql.ResultSet rs = stmt.executeQuery
 				("SELECT distinct Ticker FROM BondValData order by Ticker");
@@ -882,14 +882,14 @@ public class BondManager {
 	 * @return Set of ISINs
 	 */
 
-	public static final java.util.List<java.lang.String> GetISINsForTicker (
+	public static final java.util.List<String> GetISINsForTicker (
 		final java.sql.Statement stmt,
-		final java.lang.String strTicker)
+		final String strTicker)
 	{
 		if (null == stmt || null == strTicker || strTicker.isEmpty()) return null;
 
 		try {
-			java.util.List<java.lang.String> lsstrISIN = new java.util.ArrayList<java.lang.String>();
+			java.util.List<String> lsstrISIN = new java.util.ArrayList<String>();
 
 			java.sql.ResultSet rs = stmt.executeQuery ("SELECT ISIN FROM BondValData where Ticker = '" +
 				strTicker + "' order by Maturity");
@@ -940,11 +940,11 @@ public class BondManager {
 
 				s_mapBonds.put (bond.identifierSet().isin(), bond);
 
-				java.util.SortedMap<java.lang.Double, java.lang.String> mapMatBond = s_mapTickerMatCUSIP.get
+				java.util.SortedMap<java.lang.Double, String> mapMatBond = s_mapTickerMatCUSIP.get
 					(bond.identifierSet().ticker());
 
 				if (null == mapMatBond)
-					mapMatBond = new java.util.TreeMap<java.lang.Double, java.lang.String>();
+					mapMatBond = new java.util.TreeMap<java.lang.Double, String>();
 
 				mapMatBond.put (bond.maturityDate().julian(), bond.identifierSet().cusip());
 
@@ -983,7 +983,7 @@ public class BondManager {
 	 */
 
 	public static final boolean CalcMeasuresForTicker (
-		final java.lang.String strTicker,
+		final String strTicker,
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final org.drip.analytics.date.JulianDate dt,
 		final double dblBidPrice,
@@ -1001,11 +1001,11 @@ public class BondManager {
 
 		long lTestStart = System.nanoTime();
 
-		java.util.SortedMap<java.lang.Double, java.lang.String> mapMatCUSIP = s_mapTickerMatCUSIP.get
+		java.util.SortedMap<java.lang.Double, String> mapMatCUSIP = s_mapTickerMatCUSIP.get
 			(strTicker);
 
 		if (null != mapMatCUSIP) {
-			for (java.util.SortedMap.Entry<java.lang.Double, java.lang.String> me : mapMatCUSIP.entrySet()) {
+			for (java.util.SortedMap.Entry<java.lang.Double, String> me : mapMatCUSIP.entrySet()) {
 				++iNumBonds;
 
 				if (null != CalcBondAnalyticsFromPrice (me.getValue(), mpc, dt, dblBidPrice, dblAskPrice))
@@ -1030,7 +1030,7 @@ public class BondManager {
 	 */
 
 	public static final boolean CalcMarketMeasuresForTicker (
-		final java.lang.String strTicker,
+		final String strTicker,
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final org.drip.analytics.date.JulianDate dt)
 	{
@@ -1042,11 +1042,11 @@ public class BondManager {
 
 		long lTestStart = System.nanoTime();
 
-		java.util.SortedMap<java.lang.Double, java.lang.String> mapMatCUSIP = s_mapTickerMatCUSIP.get
+		java.util.SortedMap<java.lang.Double, String> mapMatCUSIP = s_mapTickerMatCUSIP.get
 			(strTicker);
 
 		if (null != mapMatCUSIP) {
-			for (java.util.SortedMap.Entry<java.lang.Double, java.lang.String> me : mapMatCUSIP.entrySet()) {
+			for (java.util.SortedMap.Entry<java.lang.Double, String> me : mapMatCUSIP.entrySet()) {
 				if (null == me || null == me.getValue() || null == s_mapBonds.get (me.getValue())) continue;
 
 				org.drip.product.definition.Bond bond = s_mapBonds.get (me.getValue());
@@ -1103,7 +1103,7 @@ public class BondManager {
 			return false;
 		}
 
-		java.lang.String strOracleEOD = "";
+		String strOracleEOD = "";
 		double dblZSpread = java.lang.Double.NaN;
 		double dblGSpread = java.lang.Double.NaN;
 		double dblISpread = java.lang.Double.NaN;
@@ -1128,7 +1128,7 @@ public class BondManager {
 			return false;
 		}
 
-		java.lang.StringBuilder sbSQLInsertBondClose = new java.lang.StringBuilder();
+		StringBuilder sbSQLInsertBondClose = new StringBuilder();
 
 		sbSQLInsertBondClose.append ("insert into BondHist values('").append (bond.isin()).append
 			("', '").append (bond.cusip()).append ("', '").append (strOracleEOD).append ("', ").append
@@ -1243,7 +1243,7 @@ public class BondManager {
 
 		CDSManager.LoadFullCreditCurves (mpc, stmt, dtEOD);
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.credit.BondComponent> me :
+		for (java.util.Map.Entry<String, org.drip.product.credit.BondComponent> me :
 			s_mapBonds.entrySet()) {
 			org.drip.product.definition.Bond bond = me.getValue();
 
@@ -1410,9 +1410,9 @@ public class BondManager {
 
 			bw.write ("\n\tprivate static final org.drip.param.product.BondTSYParams CreateTSYParams ");
 
-			bw.write ("(final java.lang.String\n\t\tstrBmkPrimary, final ");
+			bw.write ("(final String\n\t\tstrBmkPrimary, final ");
 
-			bw.write ("java.lang.String strIRTSY, final java.lang.String strIREDSF) {\n");
+			bw.write ("String strIRTSY, final String strIREDSF) {\n");
 
 			bw.write ("\t\torg.drip.param.product.BondTSYParams tsyParams = new ");
 
@@ -1430,7 +1430,7 @@ public class BondManager {
 
 			bw.write (" (final\n\t\torg.drip.param.product.FactorSchedule fs, final ");
 
-			bw.write ("java.lang.String strCouponType, final double\n");
+			bw.write ("String strCouponType, final double\n");
 
 			bw.write ("\t\t\tdblCoupon) {\n");
 
@@ -1466,9 +1466,9 @@ public class BondManager {
 
 			bw.write ("\n\tprivate static final org.drip.param.product.BondFloaterParams ");
 
-			bw.write ("CreateFloaterParams (final\n\t\tjava.lang.String strRateIndex, ");
+			bw.write ("CreateFloaterParams (final\n\t\tString strRateIndex, ");
 
-			bw.write ("final java.lang.String strFloatDayCount");
+			bw.write ("final String strFloatDayCount");
 
 			bw.write (", final double dblFloatSpread,\n\t\t\tfinal double dblCurrentCoupon) {\n");
 
@@ -1486,9 +1486,9 @@ public class BondManager {
 
 			bw.write ("\n\tprivate static final org.drip.param.product.BondCurrencyParams ");
 
-			bw.write ("CreateCurrencyParams (final\n\t\tjava.lang.String strTradeCurrency, ");
+			bw.write ("CreateCurrencyParams (final\n\t\tString strTradeCurrency, ");
 
-			bw.write ("final java.lang.String strCouponCurrency, final java.lang.String\n");
+			bw.write ("final String strCouponCurrency, final String\n");
 
 			bw.write ("\t\t\tstrRedemptionCurrency) {\n");
 
@@ -1506,11 +1506,11 @@ public class BondManager {
 
 			bw.write ("\n\tprivate static final org.drip.param.product.BondIdentifierParams ");
 
-			bw.write ("CreateIdentifierParams (final\n\t\tjava.lang.String strISIN, final java.lang.String");
+			bw.write ("CreateIdentifierParams (final\n\t\tString strISIN, final String");
 
-			bw.write (" strCUSIP, final java.lang.String strBondID, final\n");
+			bw.write (" strCUSIP, final String strBondID, final\n");
 
-			bw.write ("\t\t\tjava.lang.String strTicker) {\n");
+			bw.write ("\t\t\tString strTicker) {\n");
 
 			bw.write ("\t\torg.drip.param.product.BondIdentifierParams idParams = new \n");
 
@@ -1524,15 +1524,15 @@ public class BondManager {
 
 			bw.write ("\n\tprivate static final org.drip.param.product.BondIRValuationParams ");
 
-			bw.write ("CreateIRValuationParams (final\n\t\tjava.lang.String strIR, final java.lang.String");
+			bw.write ("CreateIRValuationParams (final\n\t\tString strIR, final String");
 
-			bw.write (" strQuoteConv, final java.lang.String\n");
+			bw.write (" strQuoteConv, final String\n");
 
 			bw.write ("\t\t\tstrCalculationType, final double");
 
 			bw.write (" dblFirstSettle, final double dblRedemptionValue, final int\n");
 
-			bw.write ("\t\t\t\tiSettleLag, final java.lang.String strSettleCalendar, final int ");
+			bw.write ("\t\t\t\tiSettleLag, final String strSettleCalendar, final int ");
 
 			bw.write ("iSettleAdjustMode) {\n");
 
@@ -1554,7 +1554,7 @@ public class BondManager {
 
 			bw.write ("CreateCRValParams (final int iDefPayLag,\n");
 
-			bw.write ("\t\tfinal double dblRecovery, final boolean bUseCurveRec, final java.lang.String");
+			bw.write ("\t\tfinal double dblRecovery, final boolean bUseCurveRec, final String");
 
 			bw.write ("strCC, final boolean\n\t\t\tbAccrOnDefault) {\n");
 
@@ -1592,7 +1592,7 @@ public class BondManager {
 
 			bw.write ("CreatePeriodGenParams (final\n");
 
-			bw.write ("\t\tdouble dblEffective, final java.lang.String strDC, final int iFreq, final\n");
+			bw.write ("\t\tdouble dblEffective, final String strDC, final int iFreq, final\n");
 
 			bw.write ("\t\t\tjava.util.List<org.drip.analytics.period.Period> lPeriods) {\n");
 
@@ -1634,7 +1634,7 @@ public class BondManager {
 					" = new org.drip.product.credit.Bond();\n\n");
 
 				if (null != bond.treasuryBenchmark()) {
-					java.lang.String strPrimaryBmk = "";
+					String strPrimaryBmk = "";
 
 					if (null != bond.treasuryBenchmark()) strPrimaryBmk = bond.treasuryBenchmark().primary();
 
@@ -1666,7 +1666,7 @@ public class BondManager {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 	{
 		org.drip.param.definition.ScenarioMarketParams mpc =
 			org.drip.param.creator.MarketParamsBuilder.CreateMarketParams();

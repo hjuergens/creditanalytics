@@ -41,7 +41,7 @@ package org.drip.param.valuation;
 
 public class CashSettleParams {
 	private int _iLag = 3;
-	private java.lang.String _strCalendar = "";
+	private String _strCalendar = "";
 	private int _iAdjustMode = org.drip.analytics.daycount.Convention.DATE_ROLL_FOLLOWING;
 
 	/**
@@ -54,7 +54,7 @@ public class CashSettleParams {
 
 	public CashSettleParams (
 		final int iLag,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final int iAdjustMode)
 	{
 		_iLag = iLag;
@@ -79,7 +79,7 @@ public class CashSettleParams {
 	 * @return The Settle Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}

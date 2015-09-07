@@ -243,7 +243,7 @@ public class OTCFloatFloatSwaps {
 		CalibratableFixedIncomeComponent[] aSwapComp = SwapFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"9M",
 				"1Y",
 				"18M",

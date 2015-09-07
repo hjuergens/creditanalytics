@@ -42,13 +42,13 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 	 * Basis Latent State
 	 */
 
-	public static final java.lang.String LATENT_STATE_BASIS = "LATENT_STATE_BASIS";
+	public static final String LATENT_STATE_BASIS = "LATENT_STATE_BASIS";
 
 	/**
 	 * Basis Latent State Quantification Metric - Discount Factor
 	 */
 
-	public static final java.lang.String QUANTIFICATION_METRIC_FORWARD_RATE =
+	public static final String QUANTIFICATION_METRIC_FORWARD_RATE =
 		"QUANTIFICATION_METRIC_FORWARD_RATE";
 
 	private boolean _bBasisOnReference = false;
@@ -77,7 +77,7 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 				_friDerived.fullyQualifiedName() + "::" + _friReference.fullyQualifiedName());
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _bBasisOnReference ? _friReference.currency() : _friDerived.currency();
 	}
@@ -113,7 +113,7 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 	}
 
 	@Override public double basis (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -134,13 +134,13 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstr)
+		final String strInstr)
 	{
 		return null;
 	}
 
 	@Override public org.drip.state.representation.LatentState parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
@@ -148,14 +148,14 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 
 	@Override public org.drip.state.representation.LatentState shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
 	}
 
 	@Override public org.drip.state.representation.LatentState customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		return null;
@@ -183,7 +183,7 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 	 */
 
 	public abstract org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDate);
 
 	/**
@@ -196,7 +196,7 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 	 */
 
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == dt) return null;
@@ -214,8 +214,8 @@ public abstract class BasisCurve implements org.drip.analytics.rates.BasisEstima
 	 */
 
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
-		final java.lang.String strTenor)
+		final String strManifestMeasure,
+		final String strTenor)
 	{
 		if (null == strTenor || strTenor.isEmpty()) return null;
 

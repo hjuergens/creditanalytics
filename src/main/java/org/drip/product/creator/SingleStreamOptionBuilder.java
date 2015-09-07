@@ -54,7 +54,7 @@ public class SingleStreamOptionBuilder {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.state.identifier.ForwardLabel forwardLabel,
 		final double dblStrike,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final boolean bIsCaplet)
 	{
 		if (null == forwardLabel) return null;
@@ -94,10 +94,10 @@ public class SingleStreamOptionBuilder {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.state.identifier.ForwardLabel forwardLabel,
 		final double dblStrike,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final boolean bIsCaplet,
-		final java.lang.String strTradingMode,
-		final java.lang.String strExchange)
+		final String strTradingMode,
+		final String strExchange)
 	{
 		if (null == forwardLabel) return null;
 
@@ -107,7 +107,7 @@ public class SingleStreamOptionBuilder {
 
 		if (null == fo) return null;
 
-		java.util.Set<java.lang.String> setExchanges = fo.exchanges();
+		java.util.Set<String> setExchanges = fo.exchanges();
 
 		if (null == setExchanges || !setExchanges.contains (strExchange)) return null;
 

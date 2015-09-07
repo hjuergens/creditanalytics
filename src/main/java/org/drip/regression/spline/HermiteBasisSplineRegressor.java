@@ -42,7 +42,7 @@ package org.drip.regression.spline;
  */
 
 public class HermiteBasisSplineRegressor extends org.drip.regression.spline.BasisSplineRegressor {
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.spline.segment.LatentStateResponseModel _seg1 = null;
 	private org.drip.spline.segment.LatentStateResponseModel _seg2 = null;
 	private org.drip.quant.calculus.WengertJacobian _wjLeft = null;
@@ -61,8 +61,8 @@ public class HermiteBasisSplineRegressor extends org.drip.regression.spline.Basi
 	 */
 
 	public static final org.drip.regression.spline.BasisSplineRegressor CreateHermiteSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final int iNumBasis,
 		final int iCk)
 	{
@@ -80,8 +80,8 @@ public class HermiteBasisSplineRegressor extends org.drip.regression.spline.Basi
 	}
 
 	private HermiteBasisSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
+		final String strName,
+		final String strScenarioName,
 		final org.drip.spline.basis.FunctionSet fs,
 		final int iCk)
 		throws java.lang.Exception

@@ -231,7 +231,7 @@ public class CreditAnalyticsTestSuite {
 	 */
 
 	public static final org.drip.product.definition.Bond CreateCustomBond (
-		final java.lang.String strName,
+		final String strName,
 		final int iBondType)
 	{
 		boolean bEOSOn = false;
@@ -326,7 +326,7 @@ public class CreditAnalyticsTestSuite {
 	@Test(enabled = false)
 	public static final void CalenderAPISample()
 	{
-		java.util.Set<java.lang.String> setLoc = org.drip.service.api.CreditAnalytics.GetHolLocations();
+		java.util.Set<String> setLoc = org.drip.service.api.CreditAnalytics.GetHolLocations();
 
 		org.drip.analytics.date.JulianDate[] adtHols = org.drip.service.api.CreditAnalytics.GetHolsInYear
 			("USD,GBP", 2011);
@@ -361,7 +361,7 @@ public class CreditAnalyticsTestSuite {
 		if (s_bPrintHolLoc) {
 			System.out.println ("Num Hol Locations: " + setLoc.size());
 
-			for (java.lang.String strLoc : setLoc)
+			for (String strLoc : setLoc)
 				System.out.println (strLoc);
 		}
 
@@ -430,7 +430,7 @@ public class CreditAnalyticsTestSuite {
 	@Test
 	public static final void DayCountAPISample()
 	{
-		java.lang.String strDCList = org.drip.service.api.CreditAnalytics.GetAvailableDC();
+		String strDCList = org.drip.service.api.CreditAnalytics.GetAvailableDC();
 
 		double dblYF = java.lang.Double.NaN;
 
@@ -479,7 +479,7 @@ public class CreditAnalyticsTestSuite {
 		org.drip.analytics.date.JulianDate dt2 = org.drip.analytics.date.DateUtil.CreateFromYMD (2012, 1,
 			17);
 
-		java.util.Set<java.lang.String> setstrIRCurves =
+		java.util.Set<String> setstrIRCurves =
 			org.drip.service.api.CreditAnalytics.GetEODIRCurveNames (dt1);
 
 		org.drip.analytics.rates.DiscountCurve dc =
@@ -529,7 +529,7 @@ public class CreditAnalyticsTestSuite {
 		org.drip.analytics.rates.DiscountCurve dcFromFlatRate =
 			org.drip.state.creator.DiscountCurveBuilder.CreateFromFlatRate (dtStart, "DKK", null, 0.04);
 
-		java.util.Set<java.lang.String> setstrTSYCurves =
+		java.util.Set<String> setstrTSYCurves =
 			org.drip.service.api.CreditAnalytics.GetEODTSYCurveNames (dt1);
 
 		org.drip.analytics.rates.DiscountCurve dcTSY =
@@ -542,7 +542,7 @@ public class CreditAnalyticsTestSuite {
 			try {
 				System.out.println ("2011.1.14 has " + setstrIRCurves.size() + " IR Curves. They are:");
 
-				for (java.lang.String strIRCurveName : setstrIRCurves)
+				for (String strIRCurveName : setstrIRCurves)
 					System.out.println (strIRCurveName);
 			} catch (java.lang.Exception e) {
 				if (s_bSupressErrMsg) {
@@ -559,7 +559,7 @@ public class CreditAnalyticsTestSuite {
 			try {
 				System.out.println ("2011.1.14 has " + setstrTSYCurves.size() + " IR Curves. They are:");
 
-				for (java.lang.String strTSYCurveName : setstrTSYCurves)
+				for (String strTSYCurveName : setstrTSYCurves)
 					System.out.println (strTSYCurveName);
 			} catch (java.lang.Exception e) {
 				if (s_bSupressErrMsg) {
@@ -898,7 +898,7 @@ public class CreditAnalyticsTestSuite {
 			org.drip.state.creator.CreditCurveBuilder.FromSurvival (dtStart.julian(), "CC", "USD",
 				adblDate, adblSurvival, 0.4);
 
-		java.util.Set<java.lang.String> setstrCDSCurves =
+		java.util.Set<String> setstrCDSCurves =
 			org.drip.service.api.CreditAnalytics.GetEODCDSCurveNames
 				(org.drip.analytics.date.DateUtil.CreateFromYMD (2011, 7, 21));
 
@@ -915,7 +915,7 @@ public class CreditAnalyticsTestSuite {
 			try {
 				System.out.println ("2011.1.14 has " + setstrCDSCurves.size() + " CDS Curves. They are:");
 
-				for (java.lang.String strCDSCurveName : setstrCDSCurves)
+				for (String strCDSCurveName : setstrCDSCurves)
 					System.out.println (strCDSCurveName);
 			} catch (java.lang.Exception e) {
 				if (s_bSupressErrMsg) {
@@ -1077,15 +1077,15 @@ public class CreditAnalyticsTestSuite {
 	@Test
 	public static final void BondAPISample()
 	{
-		java.util.Set<java.lang.String> setstrTickers =
+		java.util.Set<String> setstrTickers =
 			org.drip.service.api.CreditAnalytics.GetAvailableTickers();
 
-		java.util.List<java.lang.String> lsstrISIN = org.drip.service.api.CreditAnalytics.GetISINsForTicker
+		java.util.List<String> lsstrISIN = org.drip.service.api.CreditAnalytics.GetISINsForTicker
 			("DB");
 
-		// java.lang.String strISIN = "XS0145044193";
-		java.lang.String strISIN = "US78490FPP89"; // EOS
-		// java.lang.String strISIN = "US760677FD19"; // Amortizer
+		// String strISIN = "XS0145044193";
+		String strISIN = "US78490FPP89"; // EOS
+		// String strISIN = "US760677FD19"; // Amortizer
 		org.drip.param.valuation.ValuationCustomizationParams quotingParams = null;
 		boolean bInFirstPeriod = true;
 		boolean bInLastPeriod = true;
@@ -1264,12 +1264,12 @@ public class CreditAnalyticsTestSuite {
 			(strISIN, dtToday);
 
 		if (s_bAvailableTickers) {
-			for (java.lang.String strTicker : setstrTickers)
+			for (String strTicker : setstrTickers)
 				System.out.println (strTicker);
 		}
 
 		if (s_bISINForTicker) {
-			for (java.lang.String strBondISIN : lsstrISIN)
+			for (String strBondISIN : lsstrISIN)
 				System.out.println (strBondISIN);
 		}
 
@@ -1602,7 +1602,7 @@ public class CreditAnalyticsTestSuite {
 	public static final void BondTickerAPISample()
 	{
 		int iNumBonds = 0;
-		java.lang.String strTicker = "GE";
+		String strTicker = "GE";
 
 		org.drip.analytics.date.JulianDate dtToday = org.drip.analytics.date.DateUtil.Today();
 
@@ -1616,7 +1616,7 @@ public class CreditAnalyticsTestSuite {
 			org.drip.state.creator.CreditCurveBuilder.FromFlatHazard (dtToday.julian(), "CC", "USD", 0.02,
 				0.4);
 
-		java.util.List<java.lang.String> lsstrISIN = org.drip.service.api.CreditAnalytics.GetISINsForTicker
+		java.util.List<String> lsstrISIN = org.drip.service.api.CreditAnalytics.GetISINsForTicker
 			(strTicker);
 
 		if (s_bTickerAnalDisplay) {
@@ -1627,7 +1627,7 @@ public class CreditAnalyticsTestSuite {
 				("--------------------------------------------------------------------------------------------------------");
 		}
 
-		for (java.lang.String strISIN : lsstrISIN) {
+		for (String strISIN : lsstrISIN) {
 			org.drip.product.definition.Bond bond = org.drip.service.api.CreditAnalytics.GetBond (strISIN);
 
 			if (null != bond && !bond.variableCoupon() && !bond.exercised() && !bond.defaulted() &&
@@ -1701,7 +1701,7 @@ public class CreditAnalyticsTestSuite {
 
 		System.out.println ("Processed " + iNumBonds + " " + strTicker + " bonds!");
 
-		for (java.lang.String strISIN : lsstrISIN) {
+		for (String strISIN : lsstrISIN) {
 			org.drip.product.definition.Bond bond = org.drip.service.api.CreditAnalytics.GetBond (strISIN);
 
 			try {
@@ -1757,7 +1757,7 @@ public class CreditAnalyticsTestSuite {
 	@Test
 	public static final void BondEODMeasuresAPISample()
 	{
-		java.lang.String strISIN = "008686AA5"; // Amortizer
+		String strISIN = "008686AA5"; // Amortizer
 		double dblEODPrice = 1.0;
 		double dblEODConvexityFromPrice = java.lang.Double.NaN;
 		double dblEODCreditBasisFromPrice = java.lang.Double.NaN;
@@ -2167,7 +2167,7 @@ public class CreditAnalyticsTestSuite {
 			org.drip.service.api.CreditAnalytics.GetEODCDSMeasures (cds, dtEOD);
 
 		if (s_bEODCDSMeasures) {
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapEODCDSMeasures.entrySet())
+			for (java.util.Map.Entry<String, java.lang.Double> me : mapEODCDSMeasures.entrySet())
 				System.out.println (me.getKey() + " => " + me.getValue());
 		}
 	}
@@ -2178,7 +2178,7 @@ public class CreditAnalyticsTestSuite {
 	@Test
 	public static final void BondStaticAPISample()
 	{
-		java.lang.String strBondISIN = "US001383CA43";
+		String strBondISIN = "US001383CA43";
 		boolean bIsBearer = true;
 		boolean bIsCallable = true;
 		boolean bDefaulted = true;
@@ -2205,142 +2205,142 @@ public class CreditAnalyticsTestSuite {
 		double dblRedemptionValue = java.lang.Double.NaN;
 		int iCouponFrequency = 1;
 
-		java.lang.String strAccrualDC = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strAccrualDC = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"AccrualDC");
 
-		java.lang.String strBBG_ID = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strBBG_ID = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"BBG_ID");
 
-		java.lang.String strBBGParent = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strBBGParent = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"BBGParent");
 
-		java.lang.String strBBGUniqueID = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strBBGUniqueID = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "BBGUniqueID");
 
-		java.lang.String strCalculationType = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCalculationType = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CalculationType");
 
-		java.lang.String strCDRCountryCode = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCDRCountryCode = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CDRCountryCode");
 
-		java.lang.String strCDRSettleCode = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCDRSettleCode = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CDRSettleCode");
 
-		java.lang.String strCollateralType = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCollateralType = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CollateralType");
 
-		java.lang.String strCountryOfDomicile = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCountryOfDomicile = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CountryOfDomicile");
 
-		java.lang.String strCountryOfGuarantor = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCountryOfGuarantor = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CountryOfGuarantor");
 
-		java.lang.String strCountryOfIncorporation = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCountryOfIncorporation = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CountryOfIncorporation");
 
-		java.lang.String strCouponCurrency = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCouponCurrency = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CouponCurrency");
 
-		java.lang.String strCouponDC = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strCouponDC = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"CouponDC");
 
-		java.lang.String strCouponType = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCouponType = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CouponType");
 
-		java.lang.String strCreditCurve = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strCreditCurve = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "CreditCurve");
 
-		java.lang.String strCUSIP = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strCUSIP = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"CUSIP");
 
-		java.lang.String strDescription = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strDescription = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "Description");
 
-		java.lang.String strExchangeCode = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strExchangeCode = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "ExchangeCode");
 
-		java.lang.String strFitch = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strFitch = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"Fitch");
 
-		java.lang.String strFloatCouponConvention = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strFloatCouponConvention = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "FloatCouponConvention");
 
-		java.lang.String strIndustryGroup = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIndustryGroup = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IndustryGroup");
 
-		java.lang.String strIndustrySector = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIndustrySector = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IndustrySector");
 
-		java.lang.String strIndustrySubgroup = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIndustrySubgroup = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IndustrySubgroup");
 
-		java.lang.String strIRCurve = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strIRCurve = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"IRCurve");
 
-		java.lang.String strISIN = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strISIN = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"ISIN");
 
-		java.lang.String strIssuer = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strIssuer = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"Issuer");
 
-		java.lang.String strIssuerCategory = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIssuerCategory = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IssuerCategory");
 
-		java.lang.String strIssuerCountry = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIssuerCountry = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IssuerCountry");
 
-		java.lang.String strIssuerCountryCode = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIssuerCountryCode = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IssuerCountryCode");
 
-		java.lang.String strIssuerIndustry = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strIssuerIndustry = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "IssuerIndustry");
 
-		java.lang.String strLeadManager = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strLeadManager = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "LeadManager");
 
-		java.lang.String strLongCompanyName = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strLongCompanyName = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "LongCompanyName");
 
-		java.lang.String strMarketIssueType = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strMarketIssueType = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "MarketIssueType");
 
-		java.lang.String strMaturityType = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strMaturityType = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "MaturityType");
 
-		java.lang.String strMoody = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strMoody = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"Moody");
 
-		java.lang.String strName = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strName = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"Name");
 
-		java.lang.String strRateIndex = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strRateIndex = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"RateIndex");
 
-		java.lang.String strRedemptionCurrency = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strRedemptionCurrency = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "RedemptionCurrency");
 
-		java.lang.String strSecurityType = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strSecurityType = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "SecurityType");
 
-		java.lang.String strSeniorSub = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strSeniorSub = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"SeniorSub");
 
-		java.lang.String strSeries = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strSeries = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"Series");
 
-		java.lang.String strSnP = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strSnP = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"SnP");
 
-		java.lang.String strShortName = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strShortName = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"ShortName");
 
-		java.lang.String strTicker = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
+		String strTicker = org.drip.service.api.CreditAnalytics.GetBondStringField (strBondISIN,
 			"Ticker");
 
-		java.lang.String strTradeCurrency = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strTradeCurrency = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "TradeCurrency");
 
-		java.lang.String strTreasuryCurve = org.drip.service.api.CreditAnalytics.GetBondStringField
+		String strTreasuryCurve = org.drip.service.api.CreditAnalytics.GetBondStringField
 			(strBondISIN, "TreasuryCurve");
 
 		try {
@@ -2668,7 +2668,7 @@ public class CreditAnalyticsTestSuite {
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[2];
-		java.lang.String[] astrCalibMeasure = new java.lang.String[2];
+		String[] astrCalibMeasure = new String[2];
 		double[] adblQuotes = new double[2];
 		aCalibInst[0] = cds;
 		aCalibInst[1] = bond;
@@ -2728,7 +2728,7 @@ public class CreditAnalyticsTestSuite {
 		org.drip.analytics.date.JulianDate dtToday = org.drip.analytics.date.DateUtil.Today();
 
 		org.drip.product.definition.BasketProduct bb = org.drip.service.api.CreditAnalytics.MakeBondBasket
-			("SLMA_ETF", new java.lang.String[] {"US78490FVJ55", "US78490FWD76", "US78490FVL02",
+			("SLMA_ETF", new String[] {"US78490FVJ55", "US78490FWD76", "US78490FVL02",
 				"US78442FAZ18", "US78490FTL30"}, new double[] {1., 2., 3., 4., 5.}, dtToday);
 
 		org.drip.param.market.CurveSurfaceQuoteSet csqs = new org.drip.param.market.CurveSurfaceQuoteSet();
@@ -2948,10 +2948,10 @@ public class CreditAnalyticsTestSuite {
 		org.drip.product.definition.BasketProduct bpCDXOTR = org.drip.service.api.CreditAnalytics.MakeCDX
 			("CDX.NA.IG", dtToday, "5Y");
 
-		java.util.Set<java.lang.String> setstrCDXNames =
+		java.util.Set<String> setstrCDXNames =
 			org.drip.service.env.StandardCDXManager.GetCDXNames();
 
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCDXDescr =
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCDXDescr =
 			org.drip.service.env.StandardCDXManager.GetCDXDescriptions();
 
 		org.drip.product.definition.BasketProduct bpPresetOTR =
@@ -2975,12 +2975,12 @@ public class CreditAnalyticsTestSuite {
 		if (s_bStandardCDXNames) {
 			int i = 0;
 
-			for (java.lang.String strCDX : setstrCDXNames)
+			for (String strCDX : setstrCDXNames)
 				System.out.println ("CDX[" + i++ + "]: " + strCDX);
 		}
 
 		if (s_bNamedCDXMap) {
-			for (java.util.Map.Entry<java.lang.String, java.lang.String> meCDXDescr : mapCDXDescr.entrySet())
+			for (java.util.Map.Entry<String, String> meCDXDescr : mapCDXDescr.entrySet())
 				System.out.println ("[" + meCDXDescr.getKey() + "]: " + meCDXDescr.getValue());
 		}
 
@@ -3000,11 +3000,11 @@ public class CreditAnalyticsTestSuite {
 	}
 
 	public static final void main (
-		final java.lang.String astrArgs[])
+		final String astrArgs[])
 	{
-		java.lang.String strConfig = "build/resources/test/config.xml";
+		String strConfig = "build/resources/test/config.xml";
 
-		// java.lang.String strConfig = "";
+		// String strConfig = "";
 
 		if (null != astrArgs) {
 			if (1 == astrArgs.length)

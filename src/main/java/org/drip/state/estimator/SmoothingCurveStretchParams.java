@@ -42,7 +42,7 @@ package org.drip.state.estimator;
 
 public abstract class SmoothingCurveStretchParams {
 	private int _iCalibrationDetail = -1;
-	private java.lang.String _strSmootheningQuantificationMetric = "";
+	private String _strSmootheningQuantificationMetric = "";
 	private org.drip.spline.params.StretchBestFitResponse _sbfr = null;
 	private org.drip.spline.params.StretchBestFitResponse _sbfrSensitivity = null;
 
@@ -64,7 +64,7 @@ public abstract class SmoothingCurveStretchParams {
 	 */
 
 	public SmoothingCurveStretchParams (
-		final java.lang.String strSmootheningQuantificationMetric,
+		final String strSmootheningQuantificationMetric,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbcDefault,
 		final int iCalibrationDetail,
 		final org.drip.spline.params.StretchBestFitResponse sbfr,
@@ -92,7 +92,7 @@ public abstract class SmoothingCurveStretchParams {
 	 */
 
 	public boolean setStretchSegmentBuilderControl (
-		final java.lang.String strStretchName,
+		final String strStretchName,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbc)
 	{
 		if (null == strStretchName || strStretchName.isEmpty() || null == scbc) return false;
@@ -108,7 +108,7 @@ public abstract class SmoothingCurveStretchParams {
 	 * @return The Curve Smoothening Quantification Metric
 	 */
 
-	public java.lang.String smootheningQuantificationMetric()
+	public String smootheningQuantificationMetric()
 	{
 		return _strSmootheningQuantificationMetric;
 	}
@@ -144,7 +144,7 @@ public abstract class SmoothingCurveStretchParams {
 	 */
 
 	public org.drip.spline.params.SegmentCustomBuilderControl segmentBuilderControl (
-		final java.lang.String strStretchName)
+		final String strStretchName)
 	{
 		return _mapSCBC.containsKey (strStretchName) ? _mapSCBC.get (strStretchName) : _mapSCBC.get
 			("default");

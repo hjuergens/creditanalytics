@@ -71,7 +71,7 @@ public class ResponseValueSensitivityConstraint {
 	 */
 
 	public boolean addManifestMeasureSensitivity (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.spline.params.SegmentResponseValueConstraint srvc)
 	{
 		if (null == strManifestMeasure || strManifestMeasure.isEmpty() || null == srvc) return false;
@@ -101,7 +101,7 @@ public class ResponseValueSensitivityConstraint {
 	 */
 
 	public org.drip.spline.params.SegmentResponseValueConstraint manifestMeasureSensitivity (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return null != strManifestMeasure && _mapSRVCManifestMeasure.containsKey (strManifestMeasure) ?
 			_mapSRVCManifestMeasure.get (strManifestMeasure) : null;
@@ -113,7 +113,7 @@ public class ResponseValueSensitivityConstraint {
 	 * @return The Set of Available Manifest Measures
 	 */
 
-	public java.util.Set<java.lang.String> manifestMeasures()
+	public java.util.Set<String> manifestMeasures()
 	{
 		return _mapSRVCManifestMeasure.keySet();
 	}

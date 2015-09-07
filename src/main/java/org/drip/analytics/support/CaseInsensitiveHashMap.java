@@ -37,10 +37,10 @@ package org.drip.analytics.support;
  */
 
 @SuppressWarnings ("serial") public class CaseInsensitiveHashMap<V> extends
-	java.util.HashMap<java.lang.String, V>
+	java.util.HashMap<String, V>
 {
     @Override public V put (
-    	final java.lang.String strKey,
+    	final String strKey,
     	final V v)
     {
 	    return null == strKey ? null : super.put (strKey.toLowerCase(), v);
@@ -49,18 +49,18 @@ package org.drip.analytics.support;
     @Override public V get (
     	final java.lang.Object objKey)
     {
-    	return null == objKey ? null : super.get (((java.lang.String) objKey).toLowerCase());
+    	return null == objKey ? null : super.get (((String) objKey).toLowerCase());
     }
 
     @Override public boolean containsKey (
     	final java.lang.Object objKey)
     {
-    	return null == objKey ? null : super.containsKey (((java.lang.String) objKey).toLowerCase());
+    	return null == objKey ? null : super.containsKey (((String) objKey).toLowerCase());
     }
 
     @Override public V remove (
     	final java.lang.Object objKey)
     {
-    	return null == objKey ? null : super.remove (((java.lang.String) objKey).toLowerCase());
+    	return null == objKey ? null : super.remove (((String) objKey).toLowerCase());
     }
 }

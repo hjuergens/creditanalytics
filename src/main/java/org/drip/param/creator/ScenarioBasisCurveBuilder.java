@@ -55,13 +55,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve CustomSplineBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbc)
 	{
@@ -78,7 +78,7 @@ public class ScenarioBasisCurveBuilder {
 
 		for (int i = 0; i <= iNumTenor; ++i) {
 			if (0 != i) {
-				java.lang.String strTenor = astrTenor[i - 1];
+				String strTenor = astrTenor[i - 1];
 
 				if (null == strTenor || strTenor.isEmpty()) return null;
 
@@ -125,13 +125,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve CubicPolynomialBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis)
 	{
 		try {
@@ -163,13 +163,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve QuarticPolynomialBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis)
 	{
 		try {
@@ -201,13 +201,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve KaklisPandelisBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis)
 	{
 		try {
@@ -240,13 +240,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve KLKHyperbolicBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis,
 		final double dblTension)
 	{
@@ -280,13 +280,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve KLKRationalLinearBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis,
 		final double dblTension)
 	{
@@ -320,13 +320,13 @@ public class ScenarioBasisCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.BasisCurve KLKRationalQuadraticBasisCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.state.identifier.ForwardLabel friReference,
 		final org.drip.state.identifier.ForwardLabel friDerived,
 		final boolean bBasisOnReference,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblBasis,
 		final double dblTension)
 	{

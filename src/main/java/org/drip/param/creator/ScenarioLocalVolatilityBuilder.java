@@ -56,9 +56,9 @@ public class ScenarioLocalVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface CustomSplineWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final double dblRiskFreeRate,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblStrike,
@@ -129,13 +129,13 @@ public class ScenarioLocalVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface CubicPolynomialWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final double dblRiskFreeRate,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblStrike,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode)
 	{
 		if (null == astrTenor) return null;

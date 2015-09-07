@@ -55,31 +55,31 @@ public class CDXRefDataParams {
 	 * Index Curve ID
 	 */
 
-	public java.lang.String _strCurveID = "";
+	public String _strCurveID = "";
 
 	/**
 	 * Index Curve SPN
 	 */
 
-	public java.lang.String _strSPN = "";
+	public String _strSPN = "";
 
 	/**
 	 * Index Label
 	 */
 
-	public java.lang.String _strIndexLabel = "";
+	public String _strIndexLabel = "";
 
 	/**
 	 * Index Name
 	 */
 
-	public java.lang.String _strIndexName = "";
+	public String _strIndexName = "";
 
 	/**
 	 * Index Curve Name
 	 */
 
-	public java.lang.String _strCurveName = "";
+	public String _strCurveName = "";
 
 	/**
 	 * Index Issue Date
@@ -103,13 +103,13 @@ public class CDXRefDataParams {
 	 * Index Currency
 	 */
 
-	public java.lang.String _strCurrency = "";
+	public String _strCurrency = "";
 
 	/**
 	 * Index DayCount
 	 */
 
-	public java.lang.String _strDayCount = "";
+	public String _strDayCount = "";
 
 	/**
 	 * Index Full First Stub
@@ -133,13 +133,13 @@ public class CDXRefDataParams {
 	 * Index Red ID
 	 */
 
-	public java.lang.String _strRedID = "";
+	public String _strRedID = "";
 
 	/**
 	 * Index Class
 	 */
 
-	public java.lang.String _strIndexClass = "";
+	public String _strIndexClass = "";
 
 	/**
 	 * Index Series
@@ -151,19 +151,19 @@ public class CDXRefDataParams {
 	 * Index Group Name
 	 */
 
-	public java.lang.String _strIndexGroupName = "";
+	public String _strIndexGroupName = "";
 
 	/**
 	 * Index Short Name
 	 */
 
-	public java.lang.String _strIndexShortName = "";
+	public String _strIndexShortName = "";
 
 	/**
 	 * Index Short Group Name
 	 */
 
-	public java.lang.String _strIndexShortGroupName = "";
+	public String _strIndexShortGroupName = "";
 
 	/**
 	 * Index Version
@@ -181,7 +181,7 @@ public class CDXRefDataParams {
 	 * Index Curvy Curve ID
 	 */
 
-	public java.lang.String _strCurvyCurveID = "";
+	public String _strCurvyCurveID = "";
 
 	/**
 	 * Index Factor
@@ -205,7 +205,7 @@ public class CDXRefDataParams {
 	 * Index Location
 	 */
 
-	public java.lang.String _strLocation = "";
+	public String _strLocation = "";
 
 	/**
 	 * Index Pay Accrued
@@ -229,13 +229,13 @@ public class CDXRefDataParams {
 	 * Index Bloomberg Ticker
 	 */
 
-	public java.lang.String _strBBGTicker = "";
+	public String _strBBGTicker = "";
 
 	/**
 	 * Index Short Name
 	 */
 
-	public java.lang.String _strShortName = "";
+	public String _strShortName = "";
 
 	/**
 	 * Create a CDXRefData instance from valid individual parameters (so no additional validation is
@@ -277,37 +277,37 @@ public class CDXRefDataParams {
 	 */
 
 	public static final CDXRefDataParams CreateCDXRefDataBuilder (
-		final java.lang.String strCurveID,
-		final java.lang.String strSPN,
-		final java.lang.String strIndexLabel,
-		final java.lang.String strIndexName,
-		final java.lang.String strCurveName,
+		final String strCurveID,
+		final String strSPN,
+		final String strIndexLabel,
+		final String strIndexName,
+		final String strCurveName,
 		final double dblIssueDate,
 		final double dblMaturityDate,
 		final double dblCoupon,
-		final java.lang.String strCurrency,
-		final java.lang.String strDayCount,
+		final String strCurrency,
+		final String strDayCount,
 		final boolean bFullFirstStub,
 		final double dblRecovery,
 		final int iFrequency,
-		final java.lang.String strRedID,
-		final java.lang.String strIndexClass,
+		final String strRedID,
+		final String strIndexClass,
 		final int iIndexSeries,
-		final java.lang.String strIndexGroupName,
-		final java.lang.String strIndexShortName,
-		final java.lang.String strIndexShortGroupName,
+		final String strIndexGroupName,
+		final String strIndexShortName,
+		final String strIndexShortGroupName,
 		final int iIndexVersion,
 		final int iIndexLifeSpan,
-		final java.lang.String strCurvyCurveID,
+		final String strCurvyCurveID,
 		final double dblIndexFactor,
 		final int iOriginalComponentCount,
 		final int iDefaultedComponentCount,
-		final java.lang.String strLocation,
+		final String strLocation,
 		final boolean bPayAccrued,
 		final boolean bKnockOutOnDefault,
 		final boolean bQuoteAsCDS,
-		final java.lang.String strBBGTicker,
-		final java.lang.String strShortName)
+		final String strBBGTicker,
+		final String strShortName)
 	{
 		CDXRefDataParams cdxrd = new CDXRefDataParams();
 
@@ -401,7 +401,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setCurveID (
-		final java.lang.String strCurveID)
+		final String strCurveID)
 	{
 		if (null == (_strCurveID = strCurveID) || _strCurveID.isEmpty()) return false;
 
@@ -417,7 +417,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setSPN (
-		final java.lang.String strSPN)
+		final String strSPN)
 	{
 		if (null == (_strSPN = strSPN) || _strSPN.isEmpty()) return false;
 
@@ -433,7 +433,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setIndexLabel (
-		final java.lang.String strIndexLabel)
+		final String strIndexLabel)
 	{
 		if (null == (_strIndexLabel = strIndexLabel) || _strIndexLabel.isEmpty()) return false;
 
@@ -449,7 +449,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setIndexName (
-		final java.lang.String strIndexName)
+		final String strIndexName)
 	{
 		if (null == (_strIndexName = strIndexName) || _strIndexName.isEmpty()) return false;
 
@@ -465,7 +465,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setCurveName (
-		final java.lang.String strCurveName)
+		final String strCurveName)
 	{
 		if (null == (_strCurveName = strCurveName) || _strCurveName.isEmpty()) return false;
 
@@ -527,7 +527,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setCurrency (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == (_strCurrency = strCurrency) || _strCurrency.isEmpty()) return false;
 
@@ -543,7 +543,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setDayCount (
-		final java.lang.String strDayCount)
+		final String strDayCount)
 	{
 		if (null == (_strDayCount = strDayCount) || _strDayCount.isEmpty()) return false;
 
@@ -603,7 +603,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setRedID (
-		final java.lang.String strRedID)
+		final String strRedID)
 	{
 		if (null == (_strRedID = strRedID) || _strRedID.isEmpty()) return false;
 
@@ -619,7 +619,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setIndexClass (
-		final java.lang.String strIndexClass)
+		final String strIndexClass)
 	{
 		if (null == (_strIndexClass = strIndexClass) || _strIndexClass.isEmpty()) return false;
 
@@ -650,7 +650,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setIndexGroupName (
-		final java.lang.String strIndexGroupName)
+		final String strIndexGroupName)
 	{
 		if (null == (_strIndexGroupName = strIndexGroupName) || _strIndexGroupName.isEmpty()) return false;
 
@@ -666,7 +666,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setIndexShortName (
-		final java.lang.String strIndexShortName)
+		final String strIndexShortName)
 	{
 		if (null == (_strIndexShortName = strIndexShortName) || _strIndexShortName.isEmpty()) return false;
 
@@ -682,7 +682,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setIndexShortGroupName (
-		final java.lang.String strIndexShortGroupName)
+		final String strIndexShortGroupName)
 	{
 		if (null == (_strIndexShortGroupName = strIndexShortGroupName) || _strIndexShortGroupName.isEmpty())
 			return false;
@@ -729,7 +729,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setCurvyCurveID (
-		final java.lang.String strCurvyCurveID)
+		final String strCurvyCurveID)
 	{
 		if (null == (_strCurvyCurveID = strCurvyCurveID) || _strCurvyCurveID.isEmpty()) return false;
 
@@ -789,7 +789,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setLocation (
-		final java.lang.String strLocation)
+		final String strLocation)
 	{
 		if (null == (_strLocation = strLocation) || _strLocation.isEmpty()) return false;
 
@@ -850,7 +850,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setBBGTicker (
-		final java.lang.String strBBGTicker)
+		final String strBBGTicker)
 	{
 		if (null == (_strBBGTicker = strBBGTicker) || strBBGTicker.isEmpty()) return false;
 
@@ -866,7 +866,7 @@ public class CDXRefDataParams {
 	 */
 
 	public boolean setShortName (
-		final java.lang.String strShortName)
+		final String strShortName)
 	{
 		if (null == (_strShortName = strShortName) || _strShortName.isEmpty()) return false;
 
@@ -903,11 +903,11 @@ public class CDXRefDataParams {
 	 * @return Set of Stringified parameters as a java call. 
 	 */
 
-	public java.lang.String setConstructionString()
+	public String setConstructionString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
-		java.lang.String strCDXCode = _strIndexClass + "." + _strIndexGroupName + "." + _iIndexLifeSpan +
+		String strCDXCode = _strIndexClass + "." + _strIndexGroupName + "." + _iIndexLifeSpan +
 			"Y." + _iIndexSeries + "." + _iIndexVersion;
 
 		sb.append ("\t\tUpdateCDXRefDataMap (" + org.drip.quant.common.StringUtil.MakeStringArg (strCDXCode) +

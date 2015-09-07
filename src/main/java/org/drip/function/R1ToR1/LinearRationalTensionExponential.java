@@ -58,7 +58,7 @@ public class LinearRationalTensionExponential extends org.drip.function.R1ToR1.U
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		LinearRationalTensionExponential lret = new LinearRationalTensionExponential (-1., 1.);

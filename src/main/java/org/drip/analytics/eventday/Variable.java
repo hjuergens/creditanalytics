@@ -33,7 +33,7 @@ package org.drip.analytics.eventday;
  */
 
 /**
- * Variable class contains the rule characterizing the variable holiday’s month, day in week, week in month,
+ * Variable class contains the rule characterizing the variable holidayï¿½s month, day in week, week in month,
  * 	and the weekend days. Specific holidays in the given year are generated using these rules.
  *
  * @author Lakshmi Krishnamurthy
@@ -63,7 +63,7 @@ public class Variable extends Base {
 		final int iMonth,
 		final boolean bFromFront,
 		final Weekend wkend,
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		super (strDescription);
 

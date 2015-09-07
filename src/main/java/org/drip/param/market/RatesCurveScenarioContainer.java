@@ -73,7 +73,7 @@ public class RatesCurveScenarioContainer extends org.drip.param.definition.Scena
 	@Override public boolean cookScenarioDC (
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblQuote,
 		final double dblBump,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
@@ -117,11 +117,11 @@ public class RatesCurveScenarioContainer extends org.drip.param.definition.Scena
 	}
 
 	@Override public boolean cookCustomDC (
-		final java.lang.String strCurveName,
-		final java.lang.String strCustomName,
+		final String strCurveName,
+		final String strCustomName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblQuote,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,

@@ -50,7 +50,7 @@ public class StandardCDXParams {
 	 * Currency
 	 */
 
-	public java.lang.String _strCurrency = "";
+	public String _strCurrency = "";
 
 	/**
 	 * CDX Coupon
@@ -70,7 +70,7 @@ public class StandardCDXParams {
 
 	public StandardCDXParams (
 		final int iNumComponents,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final double dblCoupon)
 		throws java.lang.Exception
 	{

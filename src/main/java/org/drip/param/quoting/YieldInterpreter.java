@@ -43,7 +43,7 @@ public class YieldInterpreter extends org.drip.param.quoting.MeasureInterpreter 
 	 * Quote Day Count
 	 */
 
-	private java.lang.String _strDC = "";
+	private String _strDC = "";
 
 	/*
 	 * Quote Frequency
@@ -67,7 +67,7 @@ public class YieldInterpreter extends org.drip.param.quoting.MeasureInterpreter 
 	 * Quote Calendar
 	 */
 
-	private java.lang.String _strCalendar = "";
+	private String _strCalendar = "";
 
 	/**
 	 * Construct YieldInterpreter from the Day Count and the Frequency parameters
@@ -79,11 +79,11 @@ public class YieldInterpreter extends org.drip.param.quoting.MeasureInterpreter 
 	 */
 
 	public YieldInterpreter (
-		final java.lang.String strDC,
+		final String strDC,
 		final int iFreq,
 		final boolean bApplyEOMAdj,
 		final org.drip.analytics.daycount.ActActDCParams aap,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == (_strDC = strDC) || _strDC.isEmpty() || 0 == (_iFreq = iFreq))
@@ -100,7 +100,7 @@ public class YieldInterpreter extends org.drip.param.quoting.MeasureInterpreter 
 	 * @return The Day Count Convention
 	 */
 
-	public java.lang.String dayCount()
+	public String dayCount()
 	{
 		return _strDC;
 	}
@@ -144,7 +144,7 @@ public class YieldInterpreter extends org.drip.param.quoting.MeasureInterpreter 
 	 * @return The Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}

@@ -233,7 +233,7 @@ public class BGMForwardTenorSnap {
 		return _dblContinuouslyCompoundedForwardVolatility;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return org.drip.quant.common.FormatUtil.FormatDouble (_dblLIBOR, 1, 2, 100.) + "% | " +
 			org.drip.quant.common.FormatUtil.FormatDouble (_dblLIBORIncrement, 2, 2, 10000.) + " | " +

@@ -218,7 +218,7 @@ public class SWPM_NEW {
 		CalibratableFixedIncomeComponent[] aShortEndOISComp = OISFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"1W", "2W", "3W", "1M"
 			},
 			adblShortEndOISQuote
@@ -250,10 +250,10 @@ public class SWPM_NEW {
 		CalibratableFixedIncomeComponent[] aOISFutureComp = OISFuturesFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"1M", "2M", "3M", "4M", "5M"
 			},
-			new java.lang.String[] {
+			new String[] {
 				"1M", "1M", "1M", "1M", "1M"
 			},
 			adblOISFutureQuote
@@ -298,7 +298,7 @@ public class SWPM_NEW {
 		CalibratableFixedIncomeComponent[] aLongEndOISComp = OISFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"15M", "18M", "21M", "2Y", "3Y", "4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y"
 			},
 			adblLongEndOISQuote

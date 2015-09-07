@@ -122,7 +122,7 @@ public class BondFuturesEventDates {
 		return _dtLastTrading;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return _dtExpiry + " | " + _dtFirstDelivery + "  | " + _dtFirstDelivery + " |  " + _dtDeliveryNotice
 			+ "  | " + _dtLastTrading;

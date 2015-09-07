@@ -38,7 +38,7 @@ package org.drip.regression.curveJacobian;
  */
 
 public class DiscountCurveJacobianRegressorSet implements org.drip.regression.core.RegressorSet {
-	private java.lang.String _strRegressionScenario =
+	private String _strRegressionScenario =
 		"org.drip.analytics.definition.IRSDiscountCurve.CompPVDFJacobian";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
@@ -71,7 +71,7 @@ public class DiscountCurveJacobianRegressorSet implements org.drip.regression.co
 					double adblRate[] = new double[NUM_DC_INSTR];
 					double adblCompCalibValue[] = new double[NUM_DC_INSTR];
 					aWJComp = new org.drip.quant.calculus.WengertJacobian[NUM_DC_INSTR];
-					java.lang.String astrCalibMeasure[] = new java.lang.String[NUM_DC_INSTR];
+					String astrCalibMeasure[] = new String[NUM_DC_INSTR];
 					aCompCalib = new org.drip.product.definition.CalibratableFixedIncomeComponent[NUM_DC_INSTR];
 
 					if (null == (dtStart = org.drip.analytics.date.DateUtil.CreateFromYMD (2011, 4, 6)))
@@ -233,7 +233,7 @@ public class DiscountCurveJacobianRegressorSet implements org.drip.regression.co
 		return true;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

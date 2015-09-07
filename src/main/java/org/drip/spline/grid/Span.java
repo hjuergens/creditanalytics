@@ -143,7 +143,7 @@ public interface Span {
 	 */
 
 	public abstract org.drip.spline.stretch.MultiSegmentSequence getStretch (
-		final java.lang.String strName);
+		final String strName);
 
 	/**
 	 * Calculate the Response Derivative to the Manifest Measure at the specified Ordinate
@@ -156,7 +156,7 @@ public interface Span {
 	 */
 
 	public abstract org.drip.quant.calculus.WengertJacobian jackDResponseDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder);
 
@@ -178,5 +178,5 @@ public interface Span {
 	 * Display the Span Edge Coordinates
 	 */
 
-	public java.lang.String displayString();
+	public String displayString();
 }

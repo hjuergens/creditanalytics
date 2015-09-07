@@ -227,7 +227,7 @@ public class DateUtil {
 	 * @return MM/DD/YYYY date string
 	 */
 
-	public static java.lang.String FromJulian (
+	public static String FromJulian (
 		final double dblJulianIn)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblJulianIn)) return null;
@@ -512,7 +512,7 @@ public class DateUtil {
 	 * @return String of the English word
 	 */
 
-	public static final java.lang.String MonthChar (
+	public static final String MonthChar (
 		final int iMonth)
 	{
 		if (JANUARY == iMonth) return "January";
@@ -550,7 +550,7 @@ public class DateUtil {
 	 * @return String representing the Oracle DB trigram
 	 */
 
-	public static java.lang.String MonthOracleChar (
+	public static String MonthOracleChar (
 		final int iMonth)
 	{
 		if (JANUARY == iMonth) return "JAN";
@@ -591,7 +591,7 @@ public class DateUtil {
 	 */
 
 	public static final int MonthFromMonthChars (
-		final java.lang.String strMonth)
+		final String strMonth)
 		throws java.lang.Exception
 	{
 		if (null == strMonth || strMonth.isEmpty())
@@ -636,7 +636,7 @@ public class DateUtil {
 	 * @throws java.lang.Exception Thrown if the input day is invalid
 	 */
 
-	public static java.lang.String DayChars (
+	public static String DayChars (
 		final int iDay)
 	{
 		if (MONDAY == iDay) return "Monday";
@@ -771,11 +771,11 @@ public class DateUtil {
 	 */
 
 	public static final JulianDate CreateFromDDMMMYYYY (
-		final java.lang.String strDate)
+		final String strDate)
 	{
 		if (null == strDate || strDate.isEmpty()) return null;
 
-		java.lang.String[] astrParts = strDate.split ("-");
+		String[] astrParts = strDate.split ("-");
 
 		if (3 != astrParts.length) return null;
 
@@ -798,12 +798,12 @@ public class DateUtil {
 	 */
 
 	public static final JulianDate CreateFromMDY (
-		final java.lang.String strMDY,
-		final java.lang.String strDelim)
+		final String strMDY,
+		final String strDelim)
 	{
 		if (null == strMDY || strMDY.isEmpty() || null == strDelim || strDelim.isEmpty()) return null;
 
-		java.lang.String[] astrParts = strMDY.split (strDelim);
+		String[] astrParts = strMDY.split (strDelim);
 
 		if (3 != astrParts.length) return null;
 
@@ -916,8 +916,8 @@ public class DateUtil {
 	 * @return Oracle Date Trigram String
 	 */
 
-	public static java.lang.String MakeOracleDateFromYYYYMMDD (
-		final java.lang.String strYYYYMMDD)
+	public static String MakeOracleDateFromYYYYMMDD (
+		final String strYYYYMMDD)
 	{
 		if (null == strYYYYMMDD || strYYYYMMDD.isEmpty()) return null;
 
@@ -939,15 +939,15 @@ public class DateUtil {
 	 * @return Oracle date trigram string
 	 */
 
-	public static java.lang.String MakeOracleDateFromBBGDate (
-		final java.lang.String strBBGDate)
+	public static String MakeOracleDateFromBBGDate (
+		final String strBBGDate)
 	{
 		if (null == strBBGDate || strBBGDate.isEmpty()) return null;
 
 		java.util.StringTokenizer st = new java.util.StringTokenizer (strBBGDate, "/");
 
 		try {
-			java.lang.String strMonth = MonthOracleChar ((new java.lang.Integer
+			String strMonth = MonthOracleChar ((new java.lang.Integer
 				(st.nextToken())).intValue());
 
 			if (null == strMonth) return null;
@@ -1020,13 +1020,13 @@ public class DateUtil {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate MakeJulianFromDDMMMYY (
-		final java.lang.String strDDMMMYY,
-		final java.lang.String strDelim)
+		final String strDDMMMYY,
+		final String strDelim)
 	{
 		if (null == strDDMMMYY || strDDMMMYY.isEmpty() || null == strDelim || strDelim.isEmpty())
 			return null;
 
-		java.lang.String[] astrDMY = strDDMMMYY.split (strDelim);
+		String[] astrDMY = strDDMMMYY.split (strDelim);
 
 		if (null == astrDMY || 3 != astrDMY.length) return null;
 
@@ -1050,13 +1050,13 @@ public class DateUtil {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate MakeJulianFromYYYYMMDD (
-		final java.lang.String strYYYYMMDD,
-		final java.lang.String strDelim)
+		final String strYYYYMMDD,
+		final String strDelim)
 	{
 		if (null == strYYYYMMDD || strYYYYMMDD.isEmpty() || null == strDelim || strDelim.isEmpty())
 			return null;
 
-		java.lang.String[] astrYYYYMMDD = strYYYYMMDD.split (strDelim);
+		String[] astrYYYYMMDD = strYYYYMMDD.split (strDelim);
 
 		if (null == astrYYYYMMDD || 3 != astrYYYYMMDD.length) return null;
 
@@ -1079,11 +1079,11 @@ public class DateUtil {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate MakeJulianDateFromBBGDate (
-		final java.lang.String strBBGDate)
+		final String strBBGDate)
 	{
 		if (null == strBBGDate || strBBGDate.isEmpty()) return null;
 
-		java.lang.String[] astrFields = strBBGDate.split ("/");
+		String[] astrFields = strBBGDate.split ("/");
 
 		if (3 != astrFields.length) return null;
 

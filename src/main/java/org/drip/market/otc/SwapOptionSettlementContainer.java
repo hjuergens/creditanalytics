@@ -36,8 +36,8 @@ package org.drip.market.otc;
  */
 
 public class SwapOptionSettlementContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.otc.SwapOptionSettlement>
-		_mapConvention = new java.util.TreeMap<java.lang.String, org.drip.market.otc.SwapOptionSettlement>();
+	private static final java.util.Map<String, org.drip.market.otc.SwapOptionSettlement>
+		_mapConvention = new java.util.TreeMap<String, org.drip.market.otc.SwapOptionSettlement>();
 
 	/**
 	 * Initialize the Swap Option Settlement Conventions Container with the pre-set Swap Option Settlement
@@ -101,7 +101,7 @@ public class SwapOptionSettlementContainer {
 	 */
 
 	public static final org.drip.market.otc.SwapOptionSettlement ConventionFromJurisdiction (
-		final java.lang.String strJurisdictionName)
+		final String strJurisdictionName)
 	{
 		return null == strJurisdictionName || strJurisdictionName.isEmpty() || !_mapConvention.containsKey
 			(strJurisdictionName) ? null : _mapConvention.get (strJurisdictionName);

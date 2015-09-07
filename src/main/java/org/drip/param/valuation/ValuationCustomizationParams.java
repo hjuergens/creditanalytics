@@ -44,9 +44,9 @@ package org.drip.param.valuation;
 public class ValuationCustomizationParams {
 	private int _iYieldFrequency = 0;
 	private boolean _bSpreadQuoted = false;
-	private java.lang.String _strYieldDC = "";
+	private String _strYieldDC = "";
 	private boolean _bYieldApplyEOMAdj = false;
-	private java.lang.String _strYieldCalendar = "";
+	private String _strYieldCalendar = "";
 	private org.drip.analytics.daycount.ActActDCParams _aapYield = null;
 	private org.drip.param.valuation.CollateralizationParams _collatParamsCore = null;
 	private java.util.Set<org.drip.param.valuation.CollateralizationParams> _setSwitchableCollateralBasket =
@@ -68,11 +68,11 @@ public class ValuationCustomizationParams {
 	 */
 
 	public ValuationCustomizationParams (
-		final java.lang.String strDC,
+		final String strDC,
 		final int iFrequency,
 		final boolean bApplyEOMAdj,
 		final org.drip.analytics.daycount.ActActDCParams aap,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final boolean bSpreadQuoted,
 		final org.drip.param.valuation.CollateralizationParams collatParamsCore,
 		final java.util.Set<org.drip.param.valuation.CollateralizationParams> setSwitchableCollateralBasket)
@@ -108,7 +108,7 @@ public class ValuationCustomizationParams {
 	 * @return The Yield Day Count
 	 */
 
-	public java.lang.String yieldDayCount()
+	public String yieldDayCount()
 	{
 		return _strYieldDC;
 	}
@@ -141,7 +141,7 @@ public class ValuationCustomizationParams {
 	 * @return The Yield Calendar
 	 */
 
-	public java.lang.String yieldCalendar()
+	public String yieldCalendar()
 	{
 		return _strYieldCalendar;
 	}

@@ -66,7 +66,7 @@ public interface Curve extends org.drip.state.representation.LatentState {
 	 * @return Currency
 	 */
 
-	public abstract java.lang.String currency();
+	public abstract String currency();
 
 	/**
 	 * Retrieve the Collateralization Setting used to Construct the Curve
@@ -104,5 +104,5 @@ public interface Curve extends org.drip.state.representation.LatentState {
 	 */
 
 	public abstract org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstrumentCode);
+		final String strInstrumentCode);
 }

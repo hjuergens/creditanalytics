@@ -37,14 +37,14 @@ package org.drip.analytics.definition;
  */
 
 public abstract class MarketSurface implements org.drip.analytics.definition.Curve {
-	protected java.lang.String _strCurrency = "";
+	protected String _strCurrency = "";
 	protected double _dblEpochDate = java.lang.Double.NaN;
 	protected org.drip.state.identifier.CustomMetricLabel _label = null;
 
 	protected MarketSurface (
 		final double dblEpochDate,
 		final org.drip.state.identifier.CustomMetricLabel label,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (_dblEpochDate = dblEpochDate) || null == (_label =
@@ -57,7 +57,7 @@ public abstract class MarketSurface implements org.drip.analytics.definition.Cur
 		return _label;
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _strCurrency;
 	}
@@ -85,13 +85,13 @@ public abstract class MarketSurface implements org.drip.analytics.definition.Cur
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstr)
+		final String strInstr)
 	{
 		return null;
 	}
 
 	@Override public org.drip.state.representation.LatentState parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
@@ -99,14 +99,14 @@ public abstract class MarketSurface implements org.drip.analytics.definition.Cur
 
 	@Override public org.drip.state.representation.LatentState shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
 	}
 
 	@Override public org.drip.state.representation.LatentState customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		return null;
@@ -153,7 +153,7 @@ public abstract class MarketSurface implements org.drip.analytics.definition.Cur
 
 	public double node (
 		final double dblStrike,
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -193,7 +193,7 @@ public abstract class MarketSurface implements org.drip.analytics.definition.Cur
 	 */
 
 	public org.drip.analytics.definition.TermStructure maturityAnchorTermStructure (
-		final java.lang.String strTenorAnchor)
+		final String strTenorAnchor)
 	{
 		return null == strTenorAnchor || strTenorAnchor.isEmpty() ? null : yAnchorTermStructure
 			(epoch().addTenor (strTenorAnchor).julian());

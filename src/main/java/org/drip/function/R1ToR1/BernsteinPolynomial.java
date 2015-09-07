@@ -59,7 +59,7 @@ public class BernsteinPolynomial extends org.drip.function.R1ToR1.UnivariateConv
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		BernsteinPolynomial bp = new BernsteinPolynomial (3, 3);

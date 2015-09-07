@@ -60,7 +60,7 @@ public class LatentStateSequenceBuilder implements org.drip.spline.stretch.Segme
 			java.util.HashMap<java.lang.Double, org.drip.spline.params.ResponseValueSensitivityConstraint>();
 
 	private org.drip.spline.params.PreceedingManifestSensitivityControl getPMSC (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return _mapPMSC.containsKey (strManifestMeasure) ? _mapPMSC.get (strManifestMeasure) : null;
 	}
@@ -129,7 +129,7 @@ public class LatentStateSequenceBuilder implements org.drip.spline.stretch.Segme
 
 	private org.drip.spline.params.SegmentResponseValueConstraint segmentSensResponseConstraint (
 		final org.drip.state.estimator.PredictorResponseWeightConstraint prwc,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		java.util.TreeMap<java.lang.Double, java.lang.Double> mapPredictorSensLoading =
 			prwc.getDResponseWeightDManifestMeasure (strManifestMeasure);
@@ -209,7 +209,7 @@ public class LatentStateSequenceBuilder implements org.drip.spline.stretch.Segme
 			return false;
 		}
 
-		java.util.Set<java.lang.String> setstrSensitivity = prwc.sensitivityKeys();
+		java.util.Set<String> setstrSensitivity = prwc.sensitivityKeys();
 
 		if (null == setstrSensitivity || 0 == setstrSensitivity.size()) {
 			_mapRVSC.put (dblSegmentRight, rvsc);
@@ -217,7 +217,7 @@ public class LatentStateSequenceBuilder implements org.drip.spline.stretch.Segme
 			return true;
 		}
 
-		for (java.lang.String strManifestMeasure : setstrSensitivity) {
+		for (String strManifestMeasure : setstrSensitivity) {
 			org.drip.spline.params.SegmentResponseValueConstraint srvcSensitivity =
 				segmentSensResponseConstraint (prwc, strManifestMeasure);
 
@@ -373,11 +373,11 @@ public class LatentStateSequenceBuilder implements org.drip.spline.stretch.Segme
 
 			org.drip.spline.params.ResponseValueSensitivityConstraint rvsc = _mapRVSC.get (dblSegmentRight);
 
-			java.util.Set<java.lang.String> setstrManifestMeasures = rvsc.manifestMeasures();
+			java.util.Set<String> setstrManifestMeasures = rvsc.manifestMeasures();
 
 			if (null == setstrManifestMeasures || 0 == setstrManifestMeasures.size()) return false;
 
-			for (java.lang.String strManifestMeasure : setstrManifestMeasures) {
+			for (String strManifestMeasure : setstrManifestMeasures) {
 				if (!aLSRM[iSegment].setPreceedingManifestSensitivityControl (strManifestMeasure, getPMSC
 					(strManifestMeasure)))
 					return false;

@@ -36,8 +36,8 @@ package org.drip.dynamics.evolution;
  */
 
 public class LSQMCurveIncrement {
-	private java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.drip.spline.grid.Span>>
-		_mmIncrement = new java.util.HashMap<java.lang.String, java.util.Map<java.lang.String,
+	private java.util.Map<String, java.util.Map<String, org.drip.spline.grid.Span>>
+		_mmIncrement = new java.util.HashMap<String, java.util.Map<String,
 			org.drip.spline.grid.Span>>();
 
 	/**
@@ -54,7 +54,7 @@ public class LSQMCurveIncrement {
 	 * @return The Latent State Labels
 	 */
 
-	public java.util.Set<java.lang.String> latentStateLabel()
+	public java.util.Set<String> latentStateLabel()
 	{
 		return _mmIncrement.keySet();
 	}
@@ -84,11 +84,11 @@ public class LSQMCurveIncrement {
 
 	public boolean containsQM (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM)
+		final String strQM)
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty()) return false;
 
-		java.lang.String strLabel = lsl.fullyQualifiedName();
+		String strLabel = lsl.fullyQualifiedName();
 
 		return _mmIncrement.containsKey (strLabel) && _mmIncrement.get (strLabel).containsKey (strQM);
 	}
@@ -105,16 +105,16 @@ public class LSQMCurveIncrement {
 
 	public boolean setQMSpan (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM,
+		final String strQM,
 		final org.drip.spline.grid.Span spanIncrement)
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty() || null == spanIncrement) return false;
 
-		java.lang.String strLabel = lsl.fullyQualifiedName();
+		String strLabel = lsl.fullyQualifiedName();
 
-		java.util.Map<java.lang.String, org.drip.spline.grid.Span> mapSpanIncrement =
+		java.util.Map<String, org.drip.spline.grid.Span> mapSpanIncrement =
 			_mmIncrement.containsKey (strLabel) ? _mmIncrement.get (strLabel) : new
-				java.util.HashMap<java.lang.String, org.drip.spline.grid.Span>();
+				java.util.HashMap<String, org.drip.spline.grid.Span>();
 
 		mapSpanIncrement.put (strQM, spanIncrement);
 
@@ -134,13 +134,13 @@ public class LSQMCurveIncrement {
 
 	public org.drip.spline.grid.Span span (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM)
+		final String strQM)
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty()) return null;
 
-		java.lang.String strLabel = lsl.fullyQualifiedName();
+		String strLabel = lsl.fullyQualifiedName();
 
-		java.util.Map<java.lang.String, org.drip.spline.grid.Span> mapSpanIncrement = _mmIncrement.get
+		java.util.Map<String, org.drip.spline.grid.Span> mapSpanIncrement = _mmIncrement.get
 			(strLabel);
 
 		return mapSpanIncrement.containsKey (strQM) ? mapSpanIncrement.get (strQM) : null;

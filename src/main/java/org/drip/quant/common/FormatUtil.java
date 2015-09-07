@@ -47,7 +47,7 @@ public class FormatUtil {
 	 * @return String representing the padded output
 	 */
 
-	public static final java.lang.String PrePad (
+	public static final String PrePad (
 		final int i)
 	{
 		if (i > 9) return "" + i;
@@ -66,14 +66,14 @@ public class FormatUtil {
 	 * @return String representing the formatted input
 	 */
 
-	public static final java.lang.String FormatDouble (
+	public static final String FormatDouble (
 		final double dblValue,
 		final int iNumLeft,
 		final int iNumRight,
 		final double dblMultiplier)
 	{
-		java.lang.String strFormat = "#";
-		java.lang.String strLeading = "";
+		String strFormat = "#";
+		String strLeading = "";
 
 		if (0 <= dblMultiplier * dblValue) strLeading = " ";
 

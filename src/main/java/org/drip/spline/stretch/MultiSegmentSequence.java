@@ -72,7 +72,7 @@ public interface MultiSegmentSequence extends org.drip.spline.stretch.SingleSegm
 	 * @return The Stretch Name
 	 */
 
-	public abstract java.lang.String name();
+	public abstract String name();
 
 	/**
 	 * Retrieve the Segment Builder Parameters
@@ -266,7 +266,7 @@ public interface MultiSegmentSequence extends org.drip.spline.stretch.SingleSegm
 	 */
 
 	public abstract MultiSegmentSequence clipLeft (
-		final java.lang.String strName,
+		final String strName,
 		final double dblPredictorOrdinate);
 
 	/**
@@ -280,7 +280,7 @@ public interface MultiSegmentSequence extends org.drip.spline.stretch.SingleSegm
 	 */
 
 	public abstract MultiSegmentSequence clipRight (
-		final java.lang.String strName,
+		final String strName,
 		final double dblPredictorOrdinate);
 
 	/**
@@ -331,5 +331,5 @@ public interface MultiSegmentSequence extends org.drip.spline.stretch.SingleSegm
 	 * Display the Segments
 	 */
 
-	public abstract java.lang.String displayString();
+	public abstract String displayString();
 }

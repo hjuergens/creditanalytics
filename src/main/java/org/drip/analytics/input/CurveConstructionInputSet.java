@@ -101,7 +101,7 @@ public interface CurveConstructionInputSet {
 	 * @return The Map containing the array of the Calibration Measures
 	 */
 
-	public abstract org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> measures();
+	public abstract org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> measures();
 
 	/**
 	 * Retrieve the Latent State Fixings Container

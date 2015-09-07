@@ -42,7 +42,7 @@ package org.drip.product.params;
  */
 
 public class BondStream extends org.drip.product.rates.Stream {
-	private java.lang.String _strMaturityType = "";
+	private String _strMaturityType = "";
 	private double _dblFinalMaturity = java.lang.Double.NaN;
 
 	/**
@@ -83,8 +83,8 @@ public class BondStream extends org.drip.product.rates.Stream {
 		final double dblInterestAccrualStart,
 		final int iFreq,
 		final double dblCoupon,
-		final java.lang.String strCouponDC,
-		final java.lang.String strAccrualDC,
+		final String strCouponDC,
+		final String strAccrualDC,
 		final org.drip.analytics.daycount.DateAdjustParams dapPay,
 		final org.drip.analytics.daycount.DateAdjustParams dapReset,
 		final org.drip.analytics.daycount.DateAdjustParams dapMaturity,
@@ -93,10 +93,10 @@ public class BondStream extends org.drip.product.rates.Stream {
 		final org.drip.analytics.daycount.DateAdjustParams dapAccrualEnd,
 		final org.drip.analytics.daycount.DateAdjustParams dapPeriodStart,
 		final org.drip.analytics.daycount.DateAdjustParams dapAccrualStart,
-		final java.lang.String strMaturityType,
+		final String strMaturityType,
 		final boolean bPeriodsFromForward,
-		final java.lang.String strCalendar,
-		final java.lang.String strCurrency,
+		final String strCalendar,
+		final String strCurrency,
 		final org.drip.state.identifier.ForwardLabel forwardLabel,
 		final org.drip.state.identifier.CreditLabel creditLabel)
 	{
@@ -104,14 +104,14 @@ public class BondStream extends org.drip.product.rates.Stream {
 
 		int iCouponDCIndex = null == strCouponDC ? -1 : strCouponDC.indexOf (" NON");
 
-		java.lang.String strCouponDCAdj = -1 != iCouponDCIndex ? strCouponDC.substring (0, iCouponDCIndex) :
+		String strCouponDCAdj = -1 != iCouponDCIndex ? strCouponDC.substring (0, iCouponDCIndex) :
 			strCouponDC;
 
 		boolean bAccrualEOMAdj = null == strAccrualDC ? false : strAccrualDC.toUpperCase().contains ("EOM");
 
 		int iAccrualDCIndex = null == strAccrualDC ? -1 : strAccrualDC.indexOf (" NON");
 
-		java.lang.String strAccrualDCAdj = -1 != iAccrualDCIndex ? strAccrualDC.substring (0,
+		String strAccrualDCAdj = -1 != iAccrualDCIndex ? strAccrualDC.substring (0,
 			iAccrualDCIndex) : strAccrualDC;
 
 		try {
@@ -126,7 +126,7 @@ public class BondStream extends org.drip.product.rates.Stream {
 					strAccrualDCAdj, bAccrualEOMAdj, strCurrency, true,
 						org.drip.analytics.support.CompositePeriodBuilder.ACCRUAL_COMPOUNDING_RULE_GEOMETRIC);
 
-			java.lang.String strTenor = (12 / iFreq) + "M";
+			String strTenor = (12 / iFreq) + "M";
 			java.util.List<org.drip.analytics.cashflow.CompositePeriod> lsCouponPeriod = null;
 
 			org.drip.param.period.CompositePeriodSetting cps = new
@@ -181,7 +181,7 @@ public class BondStream extends org.drip.product.rates.Stream {
 	public BondStream (
 		final java.util.List<org.drip.analytics.cashflow.CompositePeriod> lsCouponPeriod,
 		final double dblFinalMaturity,
-		final java.lang.String strMaturityType)
+		final String strMaturityType)
 		throws java.lang.Exception
 	{
 		super (lsCouponPeriod);
@@ -267,7 +267,7 @@ public class BondStream extends org.drip.product.rates.Stream {
 	 * @return The Maturity Type
 	 */
 
-	public java.lang.String maturityType()
+	public String maturityType()
 	{
 		return _strMaturityType;
 	}

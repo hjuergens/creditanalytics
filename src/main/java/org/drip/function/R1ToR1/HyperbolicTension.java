@@ -142,7 +142,7 @@ public class HyperbolicTension extends org.drip.function.definition.R1ToR1 {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		HyperbolicTension e = new HyperbolicTension (SINH, 2.);

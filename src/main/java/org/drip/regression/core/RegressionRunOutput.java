@@ -62,7 +62,7 @@ public class RegressionRunOutput {
 	 * Completion Status for the Regression Module
 	 */
 
-	public java.lang.String _strRegressionScenarioName = "";
+	public String _strRegressionScenarioName = "";
 
 	/**
 	 * Completion Time for the Regression Module
@@ -80,7 +80,7 @@ public class RegressionRunOutput {
 	 */
 
 	public RegressionRunOutput (
-		final java.lang.String strRegressionScenarioName)
+		final String strRegressionScenarioName)
 		throws java.lang.Exception
 	{
 		if (null == (_strRegressionScenarioName = strRegressionScenarioName) ||
@@ -124,19 +124,19 @@ public class RegressionRunOutput {
 	 * @return String representing the Regression output
 	 */
 
-	public java.lang.String displayString (
+	public String displayString (
 		final boolean bDetailed)
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		sb.append ("\n");
 
 		sb.append ("\t\t" + _strRegressionScenarioName + ".Success=").append (_bStatus).append ("\n");
 
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapDetails = _rnvd.getFieldMap();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapDetails = _rnvd.getFieldMap();
 
 		if (null != mapDetails && 0 != mapDetails.size() && null != mapDetails.entrySet()) {
-			for (java.util.Map.Entry<java.lang.String, java.lang.String> me : mapDetails.entrySet()) {
+			for (java.util.Map.Entry<String, String> me : mapDetails.entrySet()) {
 				if (null != me && null != me.getKey() && !me.getKey().isEmpty() && null != me.getValue() &&
 					!me.getValue().isEmpty())
 					sb.append ("\t\t" + _strRegressionScenarioName + "." + me.getKey() + "=").append

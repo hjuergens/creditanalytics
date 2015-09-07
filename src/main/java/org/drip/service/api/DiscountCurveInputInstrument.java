@@ -39,11 +39,11 @@ package org.drip.service.api;
 public class DiscountCurveInputInstrument {
 	private org.drip.analytics.date.JulianDate _dt = null;
 	private java.util.List<java.lang.Double> _lsCashQuote = null;
-	private java.util.List<java.lang.String> _lsCashTenor = null;
+	private java.util.List<String> _lsCashTenor = null;
 	private java.util.List<java.lang.Double> _lsSwapQuote = null;
-	private java.util.List<java.lang.String> _lsSwapTenor = null;
+	private java.util.List<String> _lsSwapTenor = null;
 	private java.util.List<java.lang.Double> _lsFutureQuote = null;
-	private java.util.List<java.lang.String> _lsFutureTenor = null;
+	private java.util.List<String> _lsFutureTenor = null;
 
 	/**
 	 * DiscountCurveInputInstrument constructor
@@ -61,11 +61,11 @@ public class DiscountCurveInputInstrument {
 
 	public DiscountCurveInputInstrument (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.util.List<java.lang.String> lsCashTenor,
+		final java.util.List<String> lsCashTenor,
 		final java.util.List<java.lang.Double> lsCashQuote,
-		final java.util.List<java.lang.String> lsFutureTenor,
+		final java.util.List<String> lsFutureTenor,
 		final java.util.List<java.lang.Double> lsFutureQuote,
-		final java.util.List<java.lang.String> lsSwapTenor,
+		final java.util.List<String> lsSwapTenor,
 		final java.util.List<java.lang.Double> lsSwapQuote)
 		throws java.lang.Exception
 	{
@@ -129,7 +129,7 @@ public class DiscountCurveInputInstrument {
 	 * @return The Array of Cash Tenors
 	 */
 
-	public java.lang.String[] cashTenor()
+	public String[] cashTenor()
 	{
 		if (null == _lsCashTenor) return null;
 
@@ -138,9 +138,9 @@ public class DiscountCurveInputInstrument {
 		if (0 == iNumTenor) return null;
 
 		int i = 0;
-		java.lang.String[] astrTenor = new java.lang.String[iNumTenor];
+		String[] astrTenor = new String[iNumTenor];
 
-		for (java.lang.String strTenor : _lsCashTenor)
+		for (String strTenor : _lsCashTenor)
 			astrTenor[i++] = strTenor;
 
 		return astrTenor;
@@ -175,7 +175,7 @@ public class DiscountCurveInputInstrument {
 	 * @return The Array of Future Tenors
 	 */
 
-	public java.lang.String[] futureTenor()
+	public String[] futureTenor()
 	{
 		if (null == _lsFutureTenor) return null;
 
@@ -184,9 +184,9 @@ public class DiscountCurveInputInstrument {
 		if (0 == iNumTenor) return null;
 
 		int i = 0;
-		java.lang.String[] astrTenor = new java.lang.String[iNumTenor];
+		String[] astrTenor = new String[iNumTenor];
 
-		for (java.lang.String strTenor : _lsFutureTenor)
+		for (String strTenor : _lsFutureTenor)
 			astrTenor[i++] = strTenor;
 
 		return astrTenor;
@@ -221,7 +221,7 @@ public class DiscountCurveInputInstrument {
 	 * @return The Array of Swap Tenors
 	 */
 
-	public java.lang.String[] swapTenor()
+	public String[] swapTenor()
 	{
 		if (null == _lsSwapTenor) return null;
 
@@ -230,9 +230,9 @@ public class DiscountCurveInputInstrument {
 		if (0 == iNumTenor) return null;
 
 		int i = 0;
-		java.lang.String[] astrTenor = new java.lang.String[iNumTenor];
+		String[] astrTenor = new String[iNumTenor];
 
-		for (java.lang.String strTenor : _lsSwapTenor)
+		for (String strTenor : _lsSwapTenor)
 			astrTenor[i++] = strTenor;
 
 		return astrTenor;

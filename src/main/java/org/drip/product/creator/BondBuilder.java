@@ -135,12 +135,12 @@ public class BondBuilder {
 	 */
 
 	public static final org.drip.product.credit.BondComponent CreateSimpleFixed (
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
-		final java.lang.String strCreditCurveName,
+		final String strName,
+		final String strCurrency,
+		final String strCreditCurveName,
 		final double dblCoupon,
 		final int iFreq,
-		final java.lang.String strDayCount,
+		final String strDayCount,
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final org.drip.quant.common.Array2D fsPrincipalOutstanding,
@@ -189,13 +189,13 @@ public class BondBuilder {
 	 */
 
 	public static final org.drip.product.credit.BondComponent CreateSimpleFloater (
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
-		final java.lang.String strRateIndex,
-		final java.lang.String strCreditCurveName,
+		final String strName,
+		final String strCurrency,
+		final String strRateIndex,
+		final String strCreditCurveName,
 		final double dblSpread,
 		final int iFreq,
-		final java.lang.String strDayCount,
+		final String strDayCount,
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final org.drip.quant.common.Array2D fsPrincipalOutstanding,
@@ -244,11 +244,11 @@ public class BondBuilder {
 	 */
 
 	public static final org.drip.product.credit.BondComponent CreateBondFromCF (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strCurrency,
-		final java.lang.String strCreditCurveName,
-		final java.lang.String strDC,
+		final String strCurrency,
+		final String strCreditCurveName,
+		final String strDC,
 		final int iFreq,
 		final org.drip.analytics.date.JulianDate[] adt,
 		final double[] adblCouponAmount,

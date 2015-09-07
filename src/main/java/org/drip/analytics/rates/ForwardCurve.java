@@ -65,7 +65,7 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 		return _fri;
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _fri.currency();
 	}
@@ -81,7 +81,7 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 		return null;
 	}
 
-	@Override public java.lang.String tenor()
+	@Override public String tenor()
 	{
 		return _fri.tenor();
 	}
@@ -101,7 +101,7 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 	}
 
 	@Override public double forward (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -122,13 +122,13 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstrumentCode)
+		final String strInstrumentCode)
 	{
 		return null;
 	}
 
 	@Override public org.drip.state.representation.LatentState parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
@@ -136,14 +136,14 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 
 	@Override public org.drip.state.representation.LatentState shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
 	}
 
 	@Override public org.drip.state.representation.LatentState customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		return null;
@@ -171,7 +171,7 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 	 */
 
 	public abstract org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDate);
 
 	/**
@@ -184,7 +184,7 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 	 */
 
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == dt) return null;
@@ -202,8 +202,8 @@ public abstract class ForwardCurve implements org.drip.analytics.rates.ForwardRa
 	 */
 
 	public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
-		final java.lang.String strTenor)
+		final String strManifestMeasure,
+		final String strTenor)
 	{
 		if (null == strTenor || strTenor.isEmpty()) return null;
 

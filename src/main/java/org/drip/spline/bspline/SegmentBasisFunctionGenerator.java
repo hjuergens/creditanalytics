@@ -55,8 +55,8 @@ public class SegmentBasisFunctionGenerator {
 	 */
 
 	public static final org.drip.spline.bspline.SegmentBasisFunction Monic (
-		final java.lang.String strHatType,
-		final java.lang.String strShapeControlType,
+		final String strHatType,
+		final String strShapeControlType,
 		final double[] adblPredictorOrdinate,
 		final int iDerivOrder,
 		final double dblTension)
@@ -90,8 +90,8 @@ public class SegmentBasisFunctionGenerator {
 	 */
 
 	public static final org.drip.spline.bspline.SegmentBasisFunction[] MonicSequence (
-		final java.lang.String strHatType,
-		final java.lang.String strShapeControlType,
+		final String strHatType,
+		final String strShapeControlType,
 		final double[] adblPredictorOrdinate,
 		final int iDerivOrder,
 		final double dblTension)

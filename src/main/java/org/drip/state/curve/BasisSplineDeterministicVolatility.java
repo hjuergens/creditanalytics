@@ -56,7 +56,7 @@ public class BasisSplineDeterministicVolatility extends org.drip.analytics.defin
 	public BasisSplineDeterministicVolatility (
 		final double dblEpochDate,
 		final org.drip.state.identifier.CustomMetricLabel label,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.spline.grid.Span spanImpliedVolatility,
 		final org.drip.param.valuation.CollateralizationParams collatParams)
 		throws java.lang.Exception

@@ -36,7 +36,7 @@ package org.drip.market.otc;
  */
 
 public class FloatStreamConvention {
-	private java.lang.String _strCompositePeriodTenor = "";
+	private String _strCompositePeriodTenor = "";
 	private org.drip.state.identifier.ForwardLabel _forwardLabel = null;
 
 	/**
@@ -50,7 +50,7 @@ public class FloatStreamConvention {
 
 	public FloatStreamConvention (
 		final org.drip.state.identifier.ForwardLabel forwardLabel,
-		final java.lang.String strCompositePeriodTenor)
+		final String strCompositePeriodTenor)
 		throws java.lang.Exception
 	{
 		if (null == (_forwardLabel = forwardLabel) || null == (_strCompositePeriodTenor =
@@ -75,7 +75,7 @@ public class FloatStreamConvention {
 	 * @return The Composite Period Tenor
 	 */
 
-	public java.lang.String compositePeriodTenor()
+	public String compositePeriodTenor()
 	{
 		return _strCompositePeriodTenor;
 	}
@@ -93,7 +93,7 @@ public class FloatStreamConvention {
 
 	public org.drip.product.rates.Stream createStream (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final double dblBasis,
 		final double dblNotional)
 	{
@@ -131,7 +131,7 @@ public class FloatStreamConvention {
 		return null;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return "[FLOAT: " + _forwardLabel.fullyQualifiedName() + " | " + _strCompositePeriodTenor + "]";
 	}

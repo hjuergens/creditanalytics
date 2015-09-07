@@ -49,7 +49,7 @@ package org.drip.analytics.definition;
 public abstract class CreditCurve implements org.drip.analytics.definition.Curve {
 	private static final int NUM_DF_QUADRATURES = 5;
 
-	protected java.lang.String _strCurrency = "";
+	protected String _strCurrency = "";
 	protected double _dblEpochDate = java.lang.Double.NaN;
 	protected org.drip.state.identifier.CreditLabel _label = null;
 	protected double _dblSpecificDefaultDate = java.lang.Double.NaN;
@@ -60,7 +60,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 
 	protected boolean _bFlat = false;
 	protected double[] _adblCalibQuote = null;
-	protected java.lang.String[] _astrCalibMeasure = null;
+	protected String[] _astrCalibMeasure = null;
 	protected org.drip.analytics.rates.DiscountCurve _dc = null;
 	protected org.drip.analytics.rates.DiscountCurve _dcTSY = null;
 	protected org.drip.param.pricer.CreditPricerParams _pricerParam = null;
@@ -68,14 +68,14 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	protected org.drip.param.market.LatentStateFixingsContainer _lsfc = null;
 	protected org.drip.param.valuation.ValuationCustomizationParams _quotingParams = null;
 	protected org.drip.product.definition.CalibratableFixedIncomeComponent[] _aCalibInst = null;
-	protected org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> _mapMeasure = null;
+	protected org.drip.analytics.support.CaseInsensitiveTreeMap<String> _mapMeasure = null;
 	protected org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>
 		_mapQuote = null;
 
 	protected CreditCurve (
 		final double dblEpochDate,
 		final org.drip.state.identifier.CreditLabel label,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (_dblEpochDate = dblEpochDate) || null == (_label =
@@ -88,7 +88,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 		return _label;
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _strCurrency;
 	}
@@ -175,7 +175,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	 */
 
 	public double survival (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -249,8 +249,8 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	 */
 
 	public double effectiveSurvival (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception
 	{
 		if (null == strTenor1 || strTenor1.isEmpty() || null == strTenor2 || strTenor2.isEmpty())
@@ -304,7 +304,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	 */
 
 	public double recovery (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -378,8 +378,8 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	 */
 
 	public double effectiveRecovery (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception
 	{
 		if (null == strTenor1 || strTenor1.isEmpty() || null == strTenor2 || strTenor2.isEmpty())
@@ -441,7 +441,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	 */
 
 	public double hazard (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -488,7 +488,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 		final org.drip.param.pricer.CreditPricerParams pricerParam,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst,
 		final double[] adblCalibQuote,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams)
 	{
@@ -506,7 +506,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 		_mapQuote = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>();
 
-		_mapMeasure = new org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		_mapMeasure = new org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		for (int i = 0; i < aCalibInst.length; ++i) {
 			_mapMeasure.put (_aCalibInst[i].primaryCode(), astrCalibMeasure[i]);
@@ -518,7 +518,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 
 			_mapQuote.put (_aCalibInst[i].primaryCode(), mapManifestMeasureCalibQuote);
 
-			java.lang.String[] astrSecCode = _aCalibInst[i].secondaryCode();
+			String[] astrSecCode = _aCalibInst[i].secondaryCode();
 
 			if (null != astrSecCode) {
 				for (int j = 0; j < astrSecCode.length; ++j)
@@ -539,7 +539,7 @@ public abstract class CreditCurve implements org.drip.analytics.definition.Curve
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstr)
+		final String strInstr)
 	{
 		if (null == _mapQuote || 0 == _mapQuote.size() || null == strInstr || strInstr.isEmpty() ||
 			!_mapQuote.containsKey (strInstr))

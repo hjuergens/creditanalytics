@@ -274,16 +274,16 @@ public class StretchAdjuster {
 		System.out.println ("-----------------------------------------------------------------------------------------------------");
 
 		while (dblX <= dblXMax) {
-			java.lang.String strLeftClippedValue = "         ";
-			java.lang.String strRightClippedValue = "         ";
-			java.lang.String strLeftClippedMonotonocity = "             ";
-			java.lang.String strRightClippedMonotonocity = "             ";
+			String strLeftClippedValue = "         ";
+			String strRightClippedValue = "         ";
+			String strLeftClippedMonotonocity = "             ";
+			String strRightClippedMonotonocity = "             ";
 
 			/*
 			 * Unclipped
 			 */
 
-			java.lang.String strDisplay = "Y[" + FormatUtil.FormatDouble (dblX, 2, 3, 1.) + "] => "
+			String strDisplay = "Y[" + FormatUtil.FormatDouble (dblX, 2, 3, 1.) + "] => "
 				+ FormatUtil.FormatDouble (mssBase.responseValue (dblX), 2, 6, 1.) + " | "
 				+ mssBase.monotoneType (dblX);
 

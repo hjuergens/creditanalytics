@@ -35,13 +35,13 @@ package org.drip.market.otc;
  */
 
 public class IBORFixedFloatContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.otc.FixedFloatSwapConvention>
-		_mapConvention = new java.util.TreeMap<java.lang.String,
+	private static final java.util.Map<String, org.drip.market.otc.FixedFloatSwapConvention>
+		_mapConvention = new java.util.TreeMap<String,
 			org.drip.market.otc.FixedFloatSwapConvention>();
 
-	private static final java.lang.String TenorSubKey (
-		final java.lang.String strCurrency,
-		final java.lang.String strMaturityTenor)
+	private static final String TenorSubKey (
+		final String strCurrency,
+		final String strMaturityTenor)
 	{
 		if (null == strCurrency) return null;
 
@@ -299,11 +299,11 @@ public class IBORFixedFloatContainer {
 	 */
 
 	public static final org.drip.market.otc.FixedFloatSwapConvention ConventionFromJurisdiction (
-		final java.lang.String strJurisdictionName)
+		final String strJurisdictionName)
 	{
 		if (null == strJurisdictionName) return null;
 
-		java.lang.String strKey = strJurisdictionName + "|ALL|MAX|MAIN";
+		String strKey = strJurisdictionName + "|ALL|MAX|MAIN";
 
 		return _mapConvention.containsKey (strKey) ? _mapConvention.get (strKey) : null;
 	}
@@ -318,12 +318,12 @@ public class IBORFixedFloatContainer {
 	 */
 
 	public static final org.drip.market.otc.FixedFloatSwapConvention ConventionFromJurisdictionMaturity (
-		final java.lang.String strJurisdictionName,
-		final java.lang.String strMaturityTenor)
+		final String strJurisdictionName,
+		final String strMaturityTenor)
 	{
 		if (null == strJurisdictionName || null == strMaturityTenor) return null;
 
-		java.lang.String strKey = strJurisdictionName + "|ALL|" + TenorSubKey (strJurisdictionName,
+		String strKey = strJurisdictionName + "|ALL|" + TenorSubKey (strJurisdictionName,
 			strMaturityTenor) + "|MAIN";
 
 		return _mapConvention.containsKey (strKey) ? _mapConvention.get (strKey) : null;
@@ -339,12 +339,12 @@ public class IBORFixedFloatContainer {
 	 */
 
 	public static final org.drip.market.otc.FixedFloatSwapConvention ConventionFromJurisdictionLocation (
-		final java.lang.String strJurisdictionName,
-		final java.lang.String strLocation)
+		final String strJurisdictionName,
+		final String strLocation)
 	{
 		if (null == strJurisdictionName || null == strLocation) return null;
 
-		java.lang.String strKey = strJurisdictionName + "|" + strLocation + "|MAX|MAIN";
+		String strKey = strJurisdictionName + "|" + strLocation + "|MAX|MAIN";
 
 		return _mapConvention.containsKey (strKey) ? _mapConvention.get (strKey) : null;
 	}
@@ -359,12 +359,12 @@ public class IBORFixedFloatContainer {
 	 */
 
 	public static final org.drip.market.otc.FixedFloatSwapConvention ConventionFromJurisdictionIndex (
-		final java.lang.String strJurisdictionName,
-		final java.lang.String strIndexName)
+		final String strJurisdictionName,
+		final String strIndexName)
 	{
 		if (null == strJurisdictionName || null == strIndexName) return null;
 
-		java.lang.String strKey = strJurisdictionName + "|ALL|MAX|" + strIndexName;
+		String strKey = strJurisdictionName + "|ALL|MAX|" + strIndexName;
 
 		return _mapConvention.containsKey (strKey) ? _mapConvention.get (strKey) : null;
 	}
@@ -382,16 +382,16 @@ public class IBORFixedFloatContainer {
 	 */
 
 	public static final org.drip.market.otc.FixedFloatSwapConvention ConventionFromJurisdiction (
-		final java.lang.String strJurisdictionName,
-		final java.lang.String strLocation,
-		final java.lang.String strMaturityTenor,
-		final java.lang.String strIndexName)
+		final String strJurisdictionName,
+		final String strLocation,
+		final String strMaturityTenor,
+		final String strIndexName)
 	{
 		if (null == strJurisdictionName || null == strLocation || null == strMaturityTenor || null ==
 			strIndexName)
 			return null;
 
-		java.lang.String strKey = strJurisdictionName + "|" + strLocation + "|" + TenorSubKey
+		String strKey = strJurisdictionName + "|" + strLocation + "|" + TenorSubKey
 			(strJurisdictionName, strMaturityTenor) + "|" + strIndexName;
 
 		return _mapConvention.containsKey (strKey) ? _mapConvention.get (strKey) : null;

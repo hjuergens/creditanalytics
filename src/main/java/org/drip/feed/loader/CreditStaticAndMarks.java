@@ -47,21 +47,21 @@ package org.drip.feed.loader;
 
 class CreditStaticAndMarks {
 	private static final boolean m_bBlog = false;
-	private static java.lang.String INVALID_BBG_FIELD_START = "#N/A";
+	private static String INVALID_BBG_FIELD_START = "#N/A";
 
-	public static java.lang.String makeSQLClearISINOrCUSIP (
-		final java.lang.String[] astrRecord)
+	public static String makeSQLClearISINOrCUSIP (
+		final String[] astrRecord)
 	{
 		if (null == astrRecord || 0 == astrRecord.length) return null;
 
-		java.lang.String strISIN = astrRecord[1];
-		java.lang.String strCUSIP = astrRecord[0];
+		String strISIN = astrRecord[1];
+		String strCUSIP = astrRecord[0];
 
 		if (null == strISIN || strISIN.isEmpty()) return null;
 
 		if (null == strCUSIP || strCUSIP.isEmpty()) return null;
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("delete from BondRef where ISIN = '").append (strISIN).append ("' or CUSIP = '").append
 			(strCUSIP).append ("'");
@@ -69,12 +69,12 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	private static java.lang.String makeSQLClearMarksForBondDate (
-		final java.lang.String[] astrRecord)
+	private static String makeSQLClearMarksForBondDate (
+		final String[] astrRecord)
 	{
 		if (null == astrRecord || 0 == astrRecord.length) return null;
 
-		java.lang.String strIDType = astrRecord[6];
+		String strIDType = astrRecord[6];
 
 		if (null == strIDType || 0 == strIDType.length() || (!"ISIN".equalsIgnoreCase (strIDType) &&
 			!"CUSIP".equalsIgnoreCase (strIDType))) {
@@ -83,8 +83,8 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strID = astrRecord[1];
-		java.lang.String strORAMarkDate = "";
+		String strID = astrRecord[1];
+		String strORAMarkDate = "";
 
 		try {
 			strORAMarkDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -95,7 +95,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("delete from BondMarks where ID = '").append (strID).append ("' and MarkDate = '").append
 			(strORAMarkDate).append ("'");
@@ -103,12 +103,12 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	private static java.lang.String makeSQLBondMarksInsert (
-		final java.lang.String[] astrRecord)
+	private static String makeSQLBondMarksInsert (
+		final String[] astrRecord)
 	{
 		if (null == astrRecord || 0 == astrRecord.length) return null;
 
-		java.lang.String strIDType = astrRecord[6];
+		String strIDType = astrRecord[6];
 
 		if (null == strIDType || 0 == strIDType.length() || (!"ISIN".equalsIgnoreCase (strIDType) &&
 			!"CUSIP".equalsIgnoreCase (strIDType))) {
@@ -117,8 +117,8 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strID = astrRecord[1];
-		java.lang.String strORAMarkDate = "";
+		String strID = astrRecord[1];
+		String strORAMarkDate = "";
 
 		try {
 			strORAMarkDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate (astrRecord[3].trim());
@@ -138,7 +138,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("insert into BondMarks values('").append (strIDType).append ("', '").append (strID).append
 			("', '").append (strORAMarkDate).append ("', ").append (dblMarkValue).append (")");
@@ -146,28 +146,28 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	/* private static java.lang.String makeSQLInsert (
-		final java.lang.String[] astrValRecord)
+	/* private static String makeSQLInsert (
+		final String[] astrValRecord)
 	{
 		if (null == astrValRecord || 0 == astrValRecord.length) return null;
 
-		java.lang.String strCUSIP = astrValRecord[0];
+		String strCUSIP = astrValRecord[0];
 
 		if (null == strCUSIP || strCUSIP.isEmpty()) return null;
 
-		java.lang.String strISIN = astrValRecord[1];
+		String strISIN = astrValRecord[1];
 
 		if (null == strISIN || strISIN.isEmpty()) return null;
 
-		java.lang.String strName = astrValRecord[2];
+		String strName = astrValRecord[2];
 
 		if (null == strName || strName.isEmpty()) return null;
 
-		java.lang.String strDescription = astrValRecord[3];
+		String strDescription = astrValRecord[3];
 
 		if (null == strDescription || strDescription.isEmpty()) return null;
 
-		java.lang.String strTicker = astrValRecord[4];
+		String strTicker = astrValRecord[4];
 
 		if (null == strTicker || strTicker.isEmpty()) return null;
 
@@ -180,7 +180,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad coupon " + astrValRecord[5] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleMaturity = "";
+		String strOracleMaturity = "";
 
 		try {
 			strOracleMaturity = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -191,7 +191,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleAnnounce = "";
+		String strOracleAnnounce = "";
 
 		try {
 			strOracleAnnounce = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -201,7 +201,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad announce date " + astrValRecord[7] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleFirstSettle = "";
+		String strOracleFirstSettle = "";
 
 		try {
 			strOracleFirstSettle = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -212,7 +212,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleFirstCoupon = "";
+		String strOracleFirstCoupon = "";
 
 		try {
 			strOracleFirstCoupon = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -226,7 +226,7 @@ class CreditStaticAndMarks {
 		if (null == strOracleAnnounce || strOracleAnnounce.isEmpty())
 			strOracleAnnounce = strOracleFirstCoupon;
 
-		java.lang.String strCurrency = astrValRecord[10];
+		String strCurrency = astrValRecord[10];
 
 		if (null == strCurrency || strCurrency.isEmpty()) return null;
 
@@ -239,7 +239,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad coupon freq " + astrValRecord[11] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strDayCount = astrValRecord[13];
+		String strDayCount = astrValRecord[13];
 
 		if (null == strDayCount || strDayCount.isEmpty()) return null;
 
@@ -252,21 +252,21 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad float spread " + astrValRecord[11] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strRateIndex = astrValRecord[15];
+		String strRateIndex = astrValRecord[15];
 
 		if (strRateIndex.startsWith (INVALID_BBG_FIELD_START)) strRateIndex = "";
 
-		java.lang.String strCalendar = astrValRecord[16];
+		String strCalendar = astrValRecord[16];
 
 		if (strCalendar.startsWith (INVALID_BBG_FIELD_START)) strCalendar = "";
 
-		java.lang.String strMoodys = astrValRecord[17];
-		java.lang.String strSnP = astrValRecord[18];
-		java.lang.String strFitch = astrValRecord[19];
-		java.lang.String strIndustrySector = astrValRecord[20];
-		java.lang.String strIndustryGroup = astrValRecord[21];
-		java.lang.String strSnrSub = astrValRecord[22];
-		java.lang.String strIssuer = astrValRecord[23];
+		String strMoodys = astrValRecord[17];
+		String strSnP = astrValRecord[18];
+		String strFitch = astrValRecord[19];
+		String strIndustrySector = astrValRecord[20];
+		String strIndustryGroup = astrValRecord[21];
+		String strSnrSub = astrValRecord[22];
+		String strIssuer = astrValRecord[23];
 		double dblAmountIssued = 0.;
 
 		try {
@@ -285,7 +285,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad outstanding amt " + astrValRecord[25] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleIssue = "";
+		String strOracleIssue = "";
 
 		try {
 			strOracleIssue = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -294,14 +294,14 @@ class CreditStaticAndMarks {
 			if (m_bBlog) System.out.println ("Bad issue date " + astrValRecord[26] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strCouponDates = "";
-		java.lang.String strCouponFactors = "";
-		java.lang.String strNotionalDates = "";
-		java.lang.String strNotionalFactors = "";
-		java.lang.String strIssuerSPN = "";
-		java.lang.String strFloatQuote = "FloatSpread";
+		String strCouponDates = "";
+		String strCouponFactors = "";
+		String strNotionalDates = "";
+		String strNotionalFactors = "";
+		String strIssuerSPN = "";
+		String strFloatQuote = "FloatSpread";
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("INSERT INTO BondRef VALUES (");
 
@@ -372,40 +372,40 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	} */
 
-	private static java.lang.String makeSQLClear_FODATA (
-		final java.lang.String[] astrValRecord)
+	private static String makeSQLClear_FODATA (
+		final String[] astrValRecord)
 	{
 		if (null == astrValRecord || 0 == astrValRecord.length) return null;
 
-		java.lang.String strISIN = astrValRecord[40];
+		String strISIN = astrValRecord[40];
 
 		if (null == strISIN || strISIN.isEmpty()) return null;
 
 		return "delete from BondRef where ISIN = '" + strISIN + "'";
 	}
 
-	private static java.lang.String makeSQLInsert_FODATA (
-		final java.lang.String[] astrValRecord)
+	private static String makeSQLInsert_FODATA (
+		final String[] astrValRecord)
 	{
 		if (null == astrValRecord || 0 == astrValRecord.length) return null;
 
-		java.lang.String strCUSIP = astrValRecord[42];
+		String strCUSIP = astrValRecord[42];
 
 		if (null == strCUSIP || strCUSIP.isEmpty()) return null;
 
-		java.lang.String strISIN = astrValRecord[40];
+		String strISIN = astrValRecord[40];
 
 		if (null == strISIN || strISIN.isEmpty()) return null;
 
-		java.lang.String strName = astrValRecord[59];
+		String strName = astrValRecord[59];
 
 		if (null == strName || strName.isEmpty()) return null;
 
-		java.lang.String strDescription = astrValRecord[59];
+		String strDescription = astrValRecord[59];
 
 		if (null == strDescription || strDescription.isEmpty()) return null;
 
-		java.lang.String strTicker = astrValRecord[3];
+		String strTicker = astrValRecord[3];
 
 		if (null == strTicker || strTicker.isEmpty()) return null;
 
@@ -417,7 +417,7 @@ class CreditStaticAndMarks {
 			if (m_bBlog) System.out.println ("Bad coupon " + astrValRecord[4] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleMaturity = "";
+		String strOracleMaturity = "";
 
 		try {
 			strOracleMaturity = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -428,7 +428,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleAnnounce = "";
+		String strOracleAnnounce = "";
 
 		try {
 			strOracleAnnounce = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -438,7 +438,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad announce date " + astrValRecord[29] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleFirstSettle = "";
+		String strOracleFirstSettle = "";
 
 		try {
 			strOracleFirstSettle = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -449,7 +449,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleFirstCoupon = "";
+		String strOracleFirstCoupon = "";
 
 		try {
 			strOracleFirstCoupon = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -463,7 +463,7 @@ class CreditStaticAndMarks {
 		if (null == strOracleAnnounce || strOracleAnnounce.isEmpty())
 			strOracleAnnounce = strOracleFirstCoupon;
 
-		java.lang.String strCurrency = astrValRecord[67];
+		String strCurrency = astrValRecord[67];
 
 		if (null == strCurrency || strCurrency.isEmpty()) return null;
 
@@ -476,7 +476,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad coupon freq " + astrValRecord[12] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strDayCount = org.drip.analytics.support.AnalyticsHelper.GetDayCountFromBBGCode
+		String strDayCount = org.drip.analytics.support.AnalyticsHelper.GetDayCountFromBBGCode
 			(astrValRecord[16]);
 
 		if (null == strDayCount || strDayCount.isEmpty()) return null;
@@ -490,21 +490,21 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad float spread " + astrValRecord[78] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strRateIndex =
+		String strRateIndex =
 			org.drip.analytics.support.AnalyticsHelper.RateIndexFromCcyAndCouponFreq (strCurrency,
 				iCouponFreq);
 
-		java.lang.String strCalendar = astrValRecord[19];
+		String strCalendar = astrValRecord[19];
 
 		if (strCalendar.startsWith (INVALID_BBG_FIELD_START)) strCalendar = "";
 
-		java.lang.String strMoodys = "";
-		java.lang.String strSnP = "";
-		java.lang.String strFitch = "";
-		java.lang.String strIndustrySector = astrValRecord[54];
-		java.lang.String strIndustryGroup = astrValRecord[55];
-		java.lang.String strSnrSub = astrValRecord[20];
-		java.lang.String strIssuer = astrValRecord[0];
+		String strMoodys = "";
+		String strSnP = "";
+		String strFitch = "";
+		String strIndustrySector = astrValRecord[54];
+		String strIndustryGroup = astrValRecord[55];
+		String strSnrSub = astrValRecord[20];
+		String strIssuer = astrValRecord[0];
 		double dblAmountIssued = 0.;
 
 		try {
@@ -522,7 +522,7 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad outstanding amt " + astrValRecord[22] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleIssue = "";
+		String strOracleIssue = "";
 
 		try {
 			strOracleIssue = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -531,14 +531,14 @@ class CreditStaticAndMarks {
 			if (m_bBlog) System.out.println ("Bad issue date " + astrValRecord[29] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strCouponDates = "";
-		java.lang.String strCouponFactors = "";
-		java.lang.String strNotionalDates = "";
-		java.lang.String strNotionalFactors = "";
-		java.lang.String strIssuerSPN = "";
-		java.lang.String strFloatQuote = "FullCoupon";
+		String strCouponDates = "";
+		String strCouponFactors = "";
+		String strNotionalDates = "";
+		String strNotionalFactors = "";
+		String strIssuerSPN = "";
+		String strFloatQuote = "FullCoupon";
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("INSERT INTO BondRef VALUES (");
 
@@ -609,12 +609,12 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	private static final java.lang.String ClearISINDateTypeFromEOS (
-		final java.lang.String[] astrEOS)
+	private static final String ClearISINDateTypeFromEOS (
+		final String[] astrEOS)
 	{
-		java.lang.String strISIN = astrEOS[1].trim();
+		String strISIN = astrEOS[1].trim();
 
-		java.lang.String strOracleExerciseStartDate = "";
+		String strOracleExerciseStartDate = "";
 
 		try {
 			strOracleExerciseStartDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -625,7 +625,7 @@ class CreditStaticAndMarks {
 			return "";
 		}
 
-		java.lang.String strOracleExerciseEndDate = "";
+		String strOracleExerciseEndDate = "";
 
 		try {
 			strOracleExerciseEndDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -636,21 +636,21 @@ class CreditStaticAndMarks {
 			return "";
 		}
 
-		java.lang.String strCallOrPut = astrEOS[8].trim();
+		String strCallOrPut = astrEOS[8].trim();
 
-		java.lang.String strEuroOrAmer = astrEOS[9].trim();
+		String strEuroOrAmer = astrEOS[9].trim();
 
 		return "delete from EOS where ISIN = '" + strISIN + "' and ExerciseStartDate = '" +
 			strOracleExerciseStartDate + "' and ExerciseEndDate = '" + strOracleExerciseEndDate +
 				"' and CallOrPut = '" + strCallOrPut + "' and EuroAmer = '" + strEuroOrAmer + "'";
 	}
 
-	private static final java.lang.String InsertIntoEOS (
-		final java.lang.String[] astrEOS)
+	private static final String InsertIntoEOS (
+		final String[] astrEOS)
 	{
-		java.lang.String strISIN = astrEOS[1].trim();
+		String strISIN = astrEOS[1].trim();
 
-		java.lang.String strOracleExerciseStartDate = "";
+		String strOracleExerciseStartDate = "";
 
 		try {
 			strOracleExerciseStartDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -661,7 +661,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleExerciseEndDate = "";
+		String strOracleExerciseEndDate = "";
 
 		try {
 			strOracleExerciseEndDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -682,11 +682,11 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strExerciseCallOrPut = astrEOS[8].trim();
+		String strExerciseCallOrPut = astrEOS[8].trim();
 
-		java.lang.String strExerciseEuroOrAmer = astrEOS[9].trim();
+		String strExerciseEuroOrAmer = astrEOS[9].trim();
 
-		java.lang.String strStrikeType = astrEOS[12].trim();
+		String strStrikeType = astrEOS[12].trim();
 
 		int iKnockoutOnDefault = 1;
 
@@ -703,14 +703,14 @@ class CreditStaticAndMarks {
 				strExerciseEuroOrAmer + "', '" + strStrikeType + "', " + iKnockoutOnDefault + ", 'N')";
 	}
 
-	private static final java.lang.String ClearFromIREOD (
-		final java.lang.String[] astrIREOD)
+	private static final String ClearFromIREOD (
+		final String[] astrIREOD)
 	{
-		java.lang.String strType = astrIREOD[3].trim();
+		String strType = astrIREOD[3].trim();
 
-		java.lang.String strCurrency = astrIREOD[4].trim();
+		String strCurrency = astrIREOD[4].trim();
 
-		java.lang.String strOracleCloseDate = "";
+		String strOracleCloseDate = "";
 
 		try {
 			strOracleCloseDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -725,14 +725,14 @@ class CreditStaticAndMarks {
 			strCurrency + "' and Type = '" + strType + "'";
 	}
 
-	private static final java.lang.String InsertIntoIREOD (
-		final java.lang.String[] astrIREOD)
+	private static final String InsertIntoIREOD (
+		final String[] astrIREOD)
 	{
-		java.lang.String strType = astrIREOD[3].trim();
+		String strType = astrIREOD[3].trim();
 
-		java.lang.String strCurrency = astrIREOD[4].trim();
+		String strCurrency = astrIREOD[4].trim();
 
-		java.lang.String strOracleCloseDate = "";
+		String strOracleCloseDate = "";
 		double dbl1D = java.lang.Double.NaN;
 		double dbl1M = java.lang.Double.NaN;
 		double dbl2M = java.lang.Double.NaN;
@@ -818,57 +818,57 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String str1DType = astrIREOD[30].trim();
+		String str1DType = astrIREOD[30].trim();
 
-		java.lang.String str1MType = astrIREOD[31].trim();
+		String str1MType = astrIREOD[31].trim();
 
-		java.lang.String str2MType = astrIREOD[32].trim();
+		String str2MType = astrIREOD[32].trim();
 
-		java.lang.String str3MType = astrIREOD[33].trim();
+		String str3MType = astrIREOD[33].trim();
 
-		java.lang.String str4MType = astrIREOD[34].trim();
+		String str4MType = astrIREOD[34].trim();
 
-		java.lang.String str5MType = astrIREOD[35].trim();
+		String str5MType = astrIREOD[35].trim();
 
-		java.lang.String str6MType = astrIREOD[36].trim();
+		String str6MType = astrIREOD[36].trim();
 
-		java.lang.String str9MType = astrIREOD[37].trim();
+		String str9MType = astrIREOD[37].trim();
 
-		java.lang.String str1YType = astrIREOD[38].trim();
+		String str1YType = astrIREOD[38].trim();
 
-		java.lang.String str18MType = astrIREOD[39].trim();
+		String str18MType = astrIREOD[39].trim();
 
-		java.lang.String str2YType = astrIREOD[40].trim();
+		String str2YType = astrIREOD[40].trim();
 
-		java.lang.String str3YType = astrIREOD[41].trim();
+		String str3YType = astrIREOD[41].trim();
 
-		java.lang.String str4YType = astrIREOD[42].trim();
+		String str4YType = astrIREOD[42].trim();
 
-		java.lang.String str5YType = astrIREOD[43].trim();
+		String str5YType = astrIREOD[43].trim();
 
-		java.lang.String str6YType = astrIREOD[44].trim();
+		String str6YType = astrIREOD[44].trim();
 
-		java.lang.String str7YType = astrIREOD[45].trim();
+		String str7YType = astrIREOD[45].trim();
 
-		java.lang.String str8YType = astrIREOD[46].trim();
+		String str8YType = astrIREOD[46].trim();
 
-		java.lang.String str9YType = astrIREOD[47].trim();
+		String str9YType = astrIREOD[47].trim();
 
-		java.lang.String str10YType = astrIREOD[48].trim();
+		String str10YType = astrIREOD[48].trim();
 
-		java.lang.String str12YType = astrIREOD[49].trim();
+		String str12YType = astrIREOD[49].trim();
 
-		java.lang.String str15YType = astrIREOD[50].trim();
+		String str15YType = astrIREOD[50].trim();
 
-		java.lang.String str20YType = astrIREOD[51].trim();
+		String str20YType = astrIREOD[51].trim();
 
-		java.lang.String str25YType = astrIREOD[52].trim();
+		String str25YType = astrIREOD[52].trim();
 
-		java.lang.String str30YType = astrIREOD[53].trim();
+		String str30YType = astrIREOD[53].trim();
 
-		java.lang.String str40YType = astrIREOD[54].trim();
+		String str40YType = astrIREOD[54].trim();
 
-		java.lang.StringBuilder sbInsertIREOD = new java.lang.StringBuilder();
+		StringBuilder sbInsertIREOD = new StringBuilder();
 
 		sbInsertIREOD.append ("insert into IR_EOD values(");
 
@@ -981,12 +981,12 @@ class CreditStaticAndMarks {
 		return sbInsertIREOD.toString();
 	}
 
-	private static final java.lang.String ClearFromCREOD (
-		final java.lang.String[] astrCREOD)
+	private static final String ClearFromCREOD (
+		final String[] astrCREOD)
 	{
-		java.lang.String strSPN = astrCREOD[6].trim();
+		String strSPN = astrCREOD[6].trim();
 
-		java.lang.String strOracleCloseDate = "";
+		String strOracleCloseDate = "";
 
 		try {
 			strOracleCloseDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -1000,14 +1000,14 @@ class CreditStaticAndMarks {
 		return "delete from CR_EOD where EOD = '" + strOracleCloseDate + "' and SPN = '" + strSPN + "'";
 	}
 
-	private static final java.lang.String InsertIntoCREOD (
-		final java.lang.String[] astrCREOD)
+	private static final String InsertIntoCREOD (
+		final String[] astrCREOD)
 	{
-		java.lang.String strName = astrCREOD[4].trim();
+		String strName = astrCREOD[4].trim();
 
-		java.lang.String strSPN = astrCREOD[6].trim();
+		String strSPN = astrCREOD[6].trim();
 
-		java.lang.String strOracleCloseDate = "";
+		String strOracleCloseDate = "";
 		double dblRecRate = java.lang.Double.NaN;
 		double dblCR3M = java.lang.Double.NaN;
 		double dblCR6M = java.lang.Double.NaN;
@@ -1083,7 +1083,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("insert into CR_EOD values(");
 
@@ -1138,40 +1138,40 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	private static java.lang.String makeSQLClearISIN2 (
-		final java.lang.String[] astrBondRef2)
+	private static String makeSQLClearISIN2 (
+		final String[] astrBondRef2)
 	{
-		java.lang.String strISIN = astrBondRef2[0];
+		String strISIN = astrBondRef2[0];
 
 		if (null == strISIN || strISIN.isEmpty()) return null;
 
 		return "delete from BondRef where ISIN = '" + strISIN + "'";
 	}
 
-	private static java.lang.String makeSQLInsert2 (
-		final java.lang.String[] astrBondRef2)
+	private static String makeSQLInsert2 (
+		final String[] astrBondRef2)
 	{
-		java.lang.String strCUSIP = astrBondRef2[40];
+		String strCUSIP = astrBondRef2[40];
 
 		if (null == strCUSIP || strCUSIP.isEmpty()) return null;
 
-		java.lang.String strISIN = astrBondRef2[0];
+		String strISIN = astrBondRef2[0];
 
 		if (null == strISIN || strISIN.isEmpty()) return null;
 
-		java.lang.String strName = astrBondRef2[2];
+		String strName = astrBondRef2[2];
 
 		if (null == strName || strName.isEmpty()) return null;
 
-		java.lang.String strDescription = astrBondRef2[2];
+		String strDescription = astrBondRef2[2];
 
 		if (null == strDescription || strDescription.isEmpty()) return null;
 
 		System.out.println (astrBondRef2[1]);
 
-		java.lang.String[] astrTicker = astrBondRef2[1].split (" ");
+		String[] astrTicker = astrBondRef2[1].split (" ");
 
-		java.lang.String strTicker = astrTicker[0];
+		String strTicker = astrTicker[0];
 		double dblCoupon = 0.;
 
 		try {
@@ -1180,7 +1180,7 @@ class CreditStaticAndMarks {
 			if (m_bBlog) System.out.println ("Bad coupon " + astrBondRef2[11] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strOracleMaturity = "";
+		String strOracleMaturity = "";
 
 		try {
 			strOracleMaturity = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -1191,7 +1191,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleFirstSettle = "";
+		String strOracleFirstSettle = "";
 
 		try {
 			strOracleFirstSettle = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -1202,7 +1202,7 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleFirstCoupon = "";
+		String strOracleFirstCoupon = "";
 
 		try {
 			strOracleFirstCoupon = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -1213,15 +1213,15 @@ class CreditStaticAndMarks {
 			return null;
 		}
 
-		java.lang.String strOracleAnnounce = strOracleFirstCoupon;
+		String strOracleAnnounce = strOracleFirstCoupon;
 
-		java.lang.String strCurrency = astrBondRef2[5];
+		String strCurrency = astrBondRef2[5];
 
 		if (null == strCurrency || strCurrency.isEmpty()) return null;
 
 		int iCouponFreq = 0;
 
-		java.lang.String strCouponFreq = astrBondRef2[13];
+		String strCouponFreq = astrBondRef2[13];
 
 		if ("A".equalsIgnoreCase (strCouponFreq))
 			iCouponFreq = 1;
@@ -1232,7 +1232,7 @@ class CreditStaticAndMarks {
 		else if ("S".equalsIgnoreCase (strCouponFreq))
 			iCouponFreq = 2;
 
-		java.lang.String strDayCount = astrBondRef2[14];
+		String strDayCount = astrBondRef2[14];
 
 		if (null == strDayCount || strDayCount.isEmpty()) return null;
 
@@ -1245,21 +1245,21 @@ class CreditStaticAndMarks {
 				System.out.println ("Bad float spread " + astrBondRef2[12] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strRateIndex = "";
-		java.lang.String strCalendar = astrBondRef2[5];
+		String strRateIndex = "";
+		String strCalendar = astrBondRef2[5];
 
 		if (strCalendar.startsWith (INVALID_BBG_FIELD_START)) strCalendar = "";
 
-		java.lang.String strMoodys = "";
-		java.lang.String strSnP = "";
-		java.lang.String strFitch = "";
-		java.lang.String strIndustrySector = "";
-		java.lang.String strIndustryGroup = "";
-		java.lang.String strSnrSub = "";
-		java.lang.String strIssuer = astrBondRef2[2];
+		String strMoodys = "";
+		String strSnP = "";
+		String strFitch = "";
+		String strIndustrySector = "";
+		String strIndustryGroup = "";
+		String strSnrSub = "";
+		String strIssuer = astrBondRef2[2];
 		double dblAmountIssued = 0.;
 		double dblAmountOutstanding = 0.;
-		java.lang.String strOracleIssue = "";
+		String strOracleIssue = "";
 
 		try {
 			strOracleIssue = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -1268,14 +1268,14 @@ class CreditStaticAndMarks {
 			if (m_bBlog) System.out.println ("Bad issue date " + astrBondRef2[6] + " for ISIN " + strISIN);
 		}
 
-		java.lang.String strCouponDates = "";
-		java.lang.String strCouponFactors = "";
-		java.lang.String strNotionalDates = "";
-		java.lang.String strNotionalFactors = "";
-		java.lang.String strIssuerSPN = astrBondRef2[3];
-		java.lang.String strFloatQuote = "";
+		String strCouponDates = "";
+		String strCouponFactors = "";
+		String strNotionalDates = "";
+		String strNotionalFactors = "";
+		String strIssuerSPN = astrBondRef2[3];
+		String strFloatQuote = "";
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("INSERT INTO BondRef VALUES (");
 
@@ -1346,18 +1346,18 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	private static java.lang.String makeSQLClearAmortScheduleEntry (
-		final java.lang.String[] astrAmortizationSchedule)
+	private static String makeSQLClearAmortScheduleEntry (
+		final String[] astrAmortizationSchedule)
 	{
 		if (null == astrAmortizationSchedule || 5 != astrAmortizationSchedule.length) return null;
 
-		java.lang.String strOracleAmortizationDate = "";
+		String strOracleAmortizationDate = "";
 
-		java.lang.String strCUSIP = astrAmortizationSchedule[1].trim();
+		String strCUSIP = astrAmortizationSchedule[1].trim();
 
 		if (null == strCUSIP || strCUSIP.isEmpty()) return null;
 
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		try {
 			strOracleAmortizationDate = org.drip.analytics.date.DateUtil.MakeOracleDateFromBBGDate
@@ -1374,14 +1374,14 @@ class CreditStaticAndMarks {
 		return sb.toString();
 	}
 
-	private static final java.lang.String InsertIntoAmortizationSchedule (
-		final java.lang.String[] astrAmortizationSchedule)
+	private static final String InsertIntoAmortizationSchedule (
+		final String[] astrAmortizationSchedule)
 	{
 		if (null == astrAmortizationSchedule || 5 != astrAmortizationSchedule.length) return null;
 
-		java.lang.String strCUSIP = astrAmortizationSchedule[1].trim();
+		String strCUSIP = astrAmortizationSchedule[1].trim();
 
-		java.lang.String strOracleAmortizationDate = "";
+		String strOracleAmortizationDate = "";
 		double dblPrincipalPaydown = java.lang.Double.NaN;
 
 		try {
@@ -1410,7 +1410,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		/* int iNumBonds = 0;
-		java.lang.String strValDataLine = "";
+		String strValDataLine = "";
 		java.io.BufferedReader inValData = null;
 
 		System.out.println ("Loading BondRef ...");
@@ -1444,21 +1444,21 @@ class CreditStaticAndMarks {
 
 		while (null != (strValDataLine = inValData.readLine())) {
 			int iNumRecord = 0;
-			java.lang.String astrValRecord[] = new java.lang.String[33];
+			String astrValRecord[] = new String[33];
 
 			java.util.StringTokenizer stValData = new java.util.StringTokenizer (strValDataLine, ",");
 
 			while (stValData.hasMoreTokens()) {
-				java.lang.String stValDataField = stValData.nextToken();
+				String stValDataField = stValData.nextToken();
 
 				astrValRecord[iNumRecord++] = stValDataField;
 			}
 
-			java.lang.String strSQLClear = makeSQLClearISINOrCUSIP (astrValRecord);
+			String strSQLClear = makeSQLClearISINOrCUSIP (astrValRecord);
 
 			if (null != strSQLClear) stmt.executeUpdate (strSQLClear);
 
-			java.lang.String strSQLInsert = makeSQLInsert (astrValRecord);
+			String strSQLInsert = makeSQLInsert (astrValRecord);
 
 			if (null != strSQLInsert) {
 				if (m_bBlog) System.out.println ("SQL[" + iNumBonds + "]: " + strSQLInsert);
@@ -1478,7 +1478,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumBonds = 0;
-		java.lang.String strBondRef2Line = "";
+		String strBondRef2Line = "";
 		java.io.BufferedReader inBondRef2 = null;
 
 		System.out.println ("Loading BondRef2 ...");
@@ -1496,13 +1496,13 @@ class CreditStaticAndMarks {
 		}
 
 		while (null != (strBondRef2Line = inBondRef2.readLine())) {
-			java.lang.String[] astrBondRef2Record = strBondRef2Line.split (",");
+			String[] astrBondRef2Record = strBondRef2Line.split (",");
 
-			java.lang.String strSQLClear = makeSQLClearISIN2 (astrBondRef2Record);
+			String strSQLClear = makeSQLClearISIN2 (astrBondRef2Record);
 
 			if (null != strSQLClear) stmt.executeUpdate (strSQLClear);
 
-			java.lang.String strSQLInsert = makeSQLInsert2 (astrBondRef2Record);
+			String strSQLInsert = makeSQLInsert2 (astrBondRef2Record);
 
 			if (null != strSQLInsert) {
 				if (m_bBlog) System.out.println ("SQL[" + iNumBonds + "]: " + strSQLInsert);
@@ -1522,7 +1522,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumBonds = 0;
-		java.lang.String strBondRefLine = "";
+		String strBondRefLine = "";
 		java.io.BufferedReader inBondRef = null;
 
 		System.out.println ("Loading BondRef_FODATA ...");
@@ -1540,13 +1540,13 @@ class CreditStaticAndMarks {
 		}
 
 		while (null != (strBondRefLine = inBondRef.readLine())) {
-			java.lang.String[] astrBondRefRecord = strBondRefLine.split (",");
+			String[] astrBondRefRecord = strBondRefLine.split (",");
 
-			java.lang.String strSQLClear = makeSQLClear_FODATA (astrBondRefRecord);
+			String strSQLClear = makeSQLClear_FODATA (astrBondRefRecord);
 
 			if (null != strSQLClear) stmt.executeUpdate (strSQLClear);
 
-			java.lang.String strSQLInsert = makeSQLInsert_FODATA (astrBondRefRecord);
+			String strSQLInsert = makeSQLInsert_FODATA (astrBondRefRecord);
 
 			if (null != strSQLInsert) {
 				if (m_bBlog) System.out.println ("SQL[" + iNumBonds + "]: " + strSQLInsert);
@@ -1566,7 +1566,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumMarks = 0;
-		java.lang.String strMarksLine = "";
+		String strMarksLine = "";
 		java.io.BufferedReader inMarks = null;
 
 		System.out.println ("Loading BondMark ...");
@@ -1585,17 +1585,17 @@ class CreditStaticAndMarks {
 
 		while (null != (strMarksLine = inMarks.readLine())) {
 			int iNumMarksRecord = 0;
-			java.lang.String astrMarks[] = new java.lang.String[9];
+			String astrMarks[] = new String[9];
 
 			java.util.StringTokenizer stMarks = new java.util.StringTokenizer (strMarksLine, ",");
 
 			while (stMarks.hasMoreTokens()) {
-				java.lang.String strMarks = stMarks.nextToken();
+				String strMarks = stMarks.nextToken();
 
 				astrMarks[iNumMarksRecord++] = strMarks;
 			}
 
-			java.lang.String strSQLClearMarks = makeSQLClearMarksForBondDate (astrMarks);
+			String strSQLClearMarks = makeSQLClearMarksForBondDate (astrMarks);
 
 			if (null != strSQLClearMarks) {
 				if (m_bBlog) System.out.println ("SQL[" + iNumMarks + "]: " + strSQLClearMarks);
@@ -1603,7 +1603,7 @@ class CreditStaticAndMarks {
 				stmt.executeUpdate (strSQLClearMarks);
 			}
 
-			java.lang.String strSQLInsertMarks = makeSQLBondMarksInsert (astrMarks);
+			String strSQLInsertMarks = makeSQLBondMarksInsert (astrMarks);
 
 			if (null != strSQLInsertMarks) {
 				if (m_bBlog) System.out.println ("SQL[" + iNumMarks + "]: " + strSQLInsertMarks);
@@ -1620,11 +1620,11 @@ class CreditStaticAndMarks {
 	}
 
 	private static void LoadHolidayCalendar (
-		final java.lang.String strHolLoc,
-		final java.lang.String strHolLocFile)
+		final String strHolLoc,
+		final String strHolLocFile)
 		throws java.lang.Exception
 	{
-		java.lang.String strHolsLine = "";
+		String strHolsLine = "";
 		java.io.BufferedReader inHolCal = null;
 
 		System.out.println ("Loading " + strHolLoc + " from " + strHolLocFile);
@@ -1645,15 +1645,15 @@ class CreditStaticAndMarks {
 
 			try {
 				int iFieldNum = 0;
-				java.lang.String[] astrHolFields = new java.lang.String[2];
+				String[] astrHolFields = new String[2];
 				astrHolFields[0] = "";
 				astrHolFields[1] = "";
-				java.lang.String strORAHoliday = "";
+				String strORAHoliday = "";
 
 				while (stHolFields.hasMoreTokens() && iFieldNum < astrHolFields.length)
 					astrHolFields[iFieldNum++] = stHolFields.nextToken();
 
-				java.lang.String strTextHol = astrHolFields[0].trim();
+				String strTextHol = astrHolFields[0].trim();
 
 				try {
 					strORAHoliday = org.drip.analytics.date.DateUtil.MakeOracleDateFromYYYYMMDD (strTextHol);
@@ -1664,7 +1664,7 @@ class CreditStaticAndMarks {
 						(stTextHol.nextToken().trim());
 				}
 
-				java.lang.String strDescription = astrHolFields[1].trim();
+				String strDescription = astrHolFields[1].trim();
 
 				if (null != strDescription && !strDescription.isEmpty())
 					strDescription = strDescription.replaceAll ("'", "");
@@ -1686,11 +1686,11 @@ class CreditStaticAndMarks {
 
 	private static void LoadHolsToHolderSource (
 		final java.io.BufferedWriter bw,
-		final java.lang.String strHolLoc,
-		final java.lang.String strHolLocFile)
+		final String strHolLoc,
+		final String strHolLocFile)
 		throws java.lang.Exception
 	{
-		java.lang.String strHolsLine = "";
+		String strHolsLine = "";
 		java.io.BufferedReader inHolCal = null;
 
 		System.out.println ("Loading " + strHolLoc + " from " + strHolLocFile);
@@ -1707,8 +1707,8 @@ class CreditStaticAndMarks {
 			java.util.StringTokenizer stHolFields = new java.util.StringTokenizer (strHolsLine, "	");
 
 			try {
-				java.lang.String[] astrHolFields = new java.lang.String[2];
-				java.lang.String strORAHoliday = "";
+				String[] astrHolFields = new String[2];
+				String strORAHoliday = "";
 				astrHolFields[0] = "";
 				astrHolFields[1] = "";
 				int iFieldNum = 0;
@@ -1716,7 +1716,7 @@ class CreditStaticAndMarks {
 				while (stHolFields.hasMoreTokens() && iFieldNum < astrHolFields.length)
 					astrHolFields[iFieldNum++] = stHolFields.nextToken();
 
-				java.lang.String strTextHol = astrHolFields[0].trim();
+				String strTextHol = astrHolFields[0].trim();
 
 				try {
 					strORAHoliday = org.drip.analytics.date.DateUtil.MakeOracleDateFromYYYYMMDD (strTextHol);
@@ -1727,14 +1727,14 @@ class CreditStaticAndMarks {
 						(stTextHol.nextToken().trim());
 				}
 
-				java.lang.String strDescription = astrHolFields[1].trim();
+				String strDescription = astrHolFields[1].trim();
 
 				if (null != strDescription && !strDescription.isEmpty())
 					strDescription = strDescription.replaceAll ("'", "");
 				else
 					strDescription = "";
 
-				java.lang.String strLocHolDates = "lh.addStaticHoliday (\"" + strORAHoliday + "\", \"" +
+				String strLocHolDates = "lh.addStaticHoliday (\"" + strORAHoliday + "\", \"" +
 					strDescription + "\");";
 
 				if (m_bBlog) System.out.println (strLocHolDates);
@@ -1753,16 +1753,16 @@ class CreditStaticAndMarks {
 	private static final void LoadHolCals()
 		throws java.lang.Exception
 	{
-		java.lang.String strHolDir = "c:\\Lakshmi\\java\\BondAnal\\Data\\Holidays\\";
+		String strHolDir = "c:\\Lakshmi\\java\\BondAnal\\Data\\Holidays\\";
 
 		java.io.File f = new java.io.File (strHolDir);
 
-		java.lang.String[] astrFile = f.list();
+		String[] astrFile = f.list();
 
 		for (int i = 0; i < astrFile.length; ++i) {
 			java.util.StringTokenizer stLoc = new java.util.StringTokenizer (astrFile[i], ".");
 
-			java.lang.String strPrefix = stLoc.nextToken();
+			String strPrefix = stLoc.nextToken();
 
 			if (!"holiday".equalsIgnoreCase (strPrefix)) continue;
 
@@ -1773,20 +1773,20 @@ class CreditStaticAndMarks {
 	private static final void AccumulateHolidays()
 		throws java.lang.Exception
 	{
-		java.lang.String strHolDir = "c:\\Lakshmi\\BondAnal\\Data\\Holidays\\";
+		String strHolDir = "c:\\Lakshmi\\BondAnal\\Data\\Holidays\\";
 
 		java.io.File f = new java.io.File (strHolDir);
 
-		java.lang.String[] astrFile = f.list();
+		String[] astrFile = f.list();
 
 		for (int i = 0; i < astrFile.length; ++i) {
 			java.util.StringTokenizer stLoc = new java.util.StringTokenizer (astrFile[i], ".");
 
-			java.lang.String strPrefix = stLoc.nextToken();
+			String strPrefix = stLoc.nextToken();
 
 			if (!"holiday".equalsIgnoreCase (strPrefix)) continue;
 
-			java.lang.String strSuffix = stLoc.nextToken().toUpperCase();
+			String strSuffix = stLoc.nextToken().toUpperCase();
 
 			java.io.BufferedWriter bw = new java.io.BufferedWriter (new java.io.FileWriter
 				("c:\\DRIP\\CreditAnalytics\\org\\drip\\analytics\\holset\\" + strSuffix + "Holiday.java"));
@@ -1838,7 +1838,7 @@ class CreditStaticAndMarks {
 
 			bw.write ("\tpublic " + strSuffix + "Holiday()\n\t{\n\t}\n\n");
 
-			bw.write ("\tpublic java.lang.String getHolidayLoc()\n\t{\n");
+			bw.write ("\tpublic String getHolidayLoc()\n\t{\n");
 
 			bw.write ("\t\treturn \"" + strSuffix + "\";\n\t}\n\n");
 
@@ -1862,7 +1862,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumSchedules = 0;
-		java.lang.String strEOSLine = "";
+		String strEOSLine = "";
 		java.io.BufferedReader inEOS = null;
 
 		java.sql.Statement stmt = org.drip.param.config.ConfigLoader.OracleInit
@@ -1881,21 +1881,21 @@ class CreditStaticAndMarks {
 
 		while (null != (strEOSLine = inEOS.readLine())) {
 			int iNumRecord = 0;
-			java.lang.String astrEOS[] = new java.lang.String[14];
+			String astrEOS[] = new String[14];
 
 			java.util.StringTokenizer stEOS = new java.util.StringTokenizer (strEOSLine, ",");
 
 			while (stEOS.hasMoreTokens()) {
-				java.lang.String strEOS = stEOS.nextToken();
+				String strEOS = stEOS.nextToken();
 
 				astrEOS[iNumRecord++] = strEOS;
 			}
 
-			java.lang.String strClearEOS = ClearISINDateTypeFromEOS (astrEOS);
+			String strClearEOS = ClearISINDateTypeFromEOS (astrEOS);
 
 			if (null != strClearEOS && !strClearEOS.isEmpty()) stmt.executeQuery (strClearEOS);
 
-			java.lang.String strInsertEOS = InsertIntoEOS (astrEOS);
+			String strInsertEOS = InsertIntoEOS (astrEOS);
 
 			if (null != strInsertEOS && !strInsertEOS.isEmpty())
 				stmt.executeQuery (strInsertEOS);
@@ -1912,7 +1912,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumSchedules = 0;
-		java.lang.String strAmortizationScheduleLine = "";
+		String strAmortizationScheduleLine = "";
 		java.io.BufferedReader inAmortizationSchedule = null;
 
 		java.sql.Statement stmt = org.drip.param.config.ConfigLoader.OracleInit
@@ -1931,24 +1931,24 @@ class CreditStaticAndMarks {
 
 		while (null != (strAmortizationScheduleLine = inAmortizationSchedule.readLine())) {
 			int iNumRecord = 0;
-			java.lang.String astrAmortizationSchedule[] = new java.lang.String[5];
+			String astrAmortizationSchedule[] = new String[5];
 
 			java.util.StringTokenizer stAmortizationSchedule = new java.util.StringTokenizer
 				(strAmortizationScheduleLine, ",");
 
 			while (stAmortizationSchedule.hasMoreTokens()) {
-				java.lang.String strAmortizationSchedule = stAmortizationSchedule.nextToken();
+				String strAmortizationSchedule = stAmortizationSchedule.nextToken();
 
 				astrAmortizationSchedule[iNumRecord++] = strAmortizationSchedule;
 			}
 
-			java.lang.String strClearAmortizationSchedule = makeSQLClearAmortScheduleEntry
+			String strClearAmortizationSchedule = makeSQLClearAmortScheduleEntry
 				(astrAmortizationSchedule);
 
 			if (null != strClearAmortizationSchedule && !strClearAmortizationSchedule.isEmpty())
 				stmt.executeQuery (strClearAmortizationSchedule);
 
-			java.lang.String strInsertAmortizationSchedule = InsertIntoAmortizationSchedule
+			String strInsertAmortizationSchedule = InsertIntoAmortizationSchedule
 				(astrAmortizationSchedule);
 
 			if (null != strInsertAmortizationSchedule && !strInsertAmortizationSchedule.isEmpty())
@@ -1966,7 +1966,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumIREOD = 0;
-		java.lang.String strIREODLine = "";
+		String strIREODLine = "";
 		java.io.BufferedReader inIREOD = null;
 
 		System.out.println ("Loading IREOD ...");
@@ -1985,18 +1985,18 @@ class CreditStaticAndMarks {
 
 		while (null != (strIREODLine = inIREOD.readLine())) {
 			int iNumRecord = 0;
-			java.lang.String astrIREOD[] = new java.lang.String[58];
+			String astrIREOD[] = new String[58];
 
 			java.util.StringTokenizer stIREOD = new java.util.StringTokenizer (strIREODLine, ",");
 
 			while (stIREOD.hasMoreTokens())
 				astrIREOD[iNumRecord++] = stIREOD.nextToken();
 
-			java.lang.String strClearIREOD = ClearFromIREOD (astrIREOD);
+			String strClearIREOD = ClearFromIREOD (astrIREOD);
 
 			if (null != strClearIREOD && !strClearIREOD.isEmpty()) stmt.executeQuery (strClearIREOD);
 
-			java.lang.String strInsertIREOD = InsertIntoIREOD (astrIREOD);
+			String strInsertIREOD = InsertIntoIREOD (astrIREOD);
 
 			if (null != strInsertIREOD && !strInsertIREOD.isEmpty()) stmt.executeQuery (strInsertIREOD);
 
@@ -2012,7 +2012,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumSPN = 0;
-		java.lang.String strSPNLine = "";
+		String strSPNLine = "";
 		java.io.BufferedReader inSPN = null;
 
 		System.out.println ("Loading SPN ...");
@@ -2030,10 +2030,10 @@ class CreditStaticAndMarks {
 		}
 
 		while (null != (strSPNLine = inSPN.readLine())) {
-			java.lang.String[] astrSPN = strSPNLine.split (",");
+			String[] astrSPN = strSPNLine.split (",");
 
-			java.lang.String strISIN = astrSPN[0];
-			java.lang.String strSPN = astrSPN[3];
+			String strISIN = astrSPN[0];
+			String strSPN = astrSPN[3];
 
 			if (null != strSPN && !strSPN.isEmpty() && null != strSPN && !strSPN.isEmpty()) {
 				stmt.executeQuery ("update BondRef set IssuerSPN = '" + strSPN + "' where ISIN = '" + strISIN
@@ -2052,7 +2052,7 @@ class CreditStaticAndMarks {
 		throws java.lang.Exception
 	{
 		int iNumCREOD = 0;
-		java.lang.String strCREODLine = "";
+		String strCREODLine = "";
 		java.io.BufferedReader inCREOD = null;
 
 		System.out.println ("Loading CREOD ...");
@@ -2070,13 +2070,13 @@ class CreditStaticAndMarks {
 		}
 
 		while (null != (strCREODLine = inCREOD.readLine())) {
-			java.lang.String[] astrCREOD = strCREODLine.split (",");
+			String[] astrCREOD = strCREODLine.split (",");
 
-			java.lang.String strClearCREOD = ClearFromCREOD (astrCREOD);
+			String strClearCREOD = ClearFromCREOD (astrCREOD);
 
 			if (null != strClearCREOD && !strClearCREOD.isEmpty()) stmt.executeQuery (strClearCREOD);
 
-			java.lang.String strInsertCREOD = InsertIntoCREOD (astrCREOD);
+			String strInsertCREOD = InsertIntoCREOD (astrCREOD);
 
 			if (null != strInsertCREOD && !strInsertCREOD.isEmpty()) {
 				System.out.println (strInsertCREOD);
@@ -2093,7 +2093,7 @@ class CreditStaticAndMarks {
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		if (0 < astrArgs.length && "-loadbondref2".equalsIgnoreCase (astrArgs[0])) {

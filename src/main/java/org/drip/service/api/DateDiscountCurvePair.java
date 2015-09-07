@@ -39,7 +39,7 @@ package org.drip.service.api;
 public class DateDiscountCurvePair {
 	private org.drip.analytics.date.JulianDate _dt = null;
 	private org.drip.analytics.rates.DiscountCurve _dc = null;
-	private java.util.List<java.lang.String> _lsstrDump = null;
+	private java.util.List<String> _lsstrDump = null;
 
 	/**
 	 * DateDiscountCurvePair constructor
@@ -54,7 +54,7 @@ public class DateDiscountCurvePair {
 	public DateDiscountCurvePair (
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
-		final java.util.List<java.lang.String> lsstrDump)
+		final java.util.List<String> lsstrDump)
 		throws java.lang.Exception
 	{
 		if (null == (_dt = dt)) throw new java.lang.Exception ("DateDiscountCurvePair ctr: Invalid Inputs");
@@ -91,7 +91,7 @@ public class DateDiscountCurvePair {
 	 * @return The Output Dump
 	 */
 
-	public java.util.List<java.lang.String> output()
+	public java.util.List<String> output()
 	{
 		return _lsstrDump;
 	}

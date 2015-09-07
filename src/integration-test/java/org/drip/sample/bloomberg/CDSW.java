@@ -62,7 +62,7 @@ import org.testng.annotations.Test;
  */
 
 public class CDSW {
-	private static final java.lang.String FIELD_SEPARATOR = "   ";
+	private static final String FIELD_SEPARATOR = "   ";
 
 	private static final FixFloatComponent OTCIRS (
 		final JulianDate dtSpot,

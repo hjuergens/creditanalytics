@@ -51,7 +51,7 @@ public class WireSurfaceStretch {
 	 */
 
 	public WireSurfaceStretch (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbc,
 		final java.util.TreeMap<java.lang.Double, org.drip.spline.grid.Span> mapWireSpan)
 		throws java.lang.Exception

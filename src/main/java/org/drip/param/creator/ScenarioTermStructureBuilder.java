@@ -53,9 +53,9 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure CustomSplineTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblDate,
 		final double[] adblNode,
@@ -103,11 +103,11 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure CubicPolynomialTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblNode)
 	{
 		if (null == dtStart || null == astrTenor) return null;
@@ -147,11 +147,11 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure QuarticPolynomialTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblNode)
 	{
 		if (null == dtStart || null == astrTenor) return null;
@@ -191,11 +191,11 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure KaklisPandelisTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblNode)
 	{
 		if (null == dtStart || null == astrTenor) return null;
@@ -236,11 +236,11 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure KLKHyperbolicTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblNode,
 		final double dblTension)
 	{
@@ -282,11 +282,11 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure KLKRationalLinearTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblNode,
 		final double dblTension)
 	{
@@ -328,11 +328,11 @@ public class ScenarioTermStructureBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.TermStructure KLKRationalQuadraticTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblNode,
 		final double dblTension)
 	{

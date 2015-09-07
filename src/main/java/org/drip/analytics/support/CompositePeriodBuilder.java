@@ -155,13 +155,13 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> ForwardEdgeDates (
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap,
 		final int iPSEC)
 	{
 		if (null == dtEffective || null == dtMaturity || null == strTenor || strTenor.isEmpty()) return null;
 
-		java.lang.String strPeriodRollTenor = "";
+		String strPeriodRollTenor = "";
 		org.drip.analytics.date.JulianDate dtEdge = dtEffective;
 
 		double dblMaturityDate = dtMaturity.julian();
@@ -225,7 +225,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> BackwardEdgeDates (
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap,
 		final int iPSEC)
 	{
@@ -233,7 +233,7 @@ public class CompositePeriodBuilder {
 
 		double dblEffectiveDate = dtEffective.julian();
 
-		java.lang.String strPeriodRollTenor = "";
+		String strPeriodRollTenor = "";
 		org.drip.analytics.date.JulianDate dtEdge = dtMaturity;
 
 		double dblEdgeDate = dtEdge.julian();
@@ -295,8 +295,8 @@ public class CompositePeriodBuilder {
 
 	public static final java.util.List<java.lang.Double> RegularEdgeDates (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strPeriodTenor,
-		final java.lang.String strMaturityTenor,
+		final String strPeriodTenor,
+		final String strMaturityTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap)
 	{
 		if (null == dtEffective || null == strPeriodTenor || strPeriodTenor.isEmpty() || null ==
@@ -375,7 +375,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> RegularEdgeDates (
 		final double dblStartDate,
 		final double dblEndDate,
-		final java.lang.String strPeriodTenor,
+		final String strPeriodTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblStartDate) ||
@@ -424,8 +424,8 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> IMMEdgeDates (
 		final org.drip.analytics.date.JulianDate dtSpot,
 		final int iRollMonths,
-		final java.lang.String strPeriodTenor,
-		final java.lang.String strMaturityTenor,
+		final String strPeriodTenor,
+		final String strMaturityTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap)
 	{
 		if (null == dtSpot) return null;
@@ -453,7 +453,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> OvernightEdgeDates (
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.analytics.date.JulianDate dtEnd,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		if (null == dtStart || null == dtEnd) return null;
 
@@ -530,7 +530,7 @@ public class CompositePeriodBuilder {
 	{
 		if (null == dtStart || null == dtEnd || null == forwardLabel) return null;
 
-		java.lang.String strForwardTenor = forwardLabel.tenor();
+		String strForwardTenor = forwardLabel.tenor();
 
 		double dblReferencePeriodStartDate = REFERENCE_PERIOD_IN_ARREARS == iReferencePeriodArrearsType ?
 			dtStart.addTenor (strForwardTenor).julian() : dtStart.julian();
@@ -563,7 +563,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> ForwardEdgeDates (
 		final double dblEffective,
 		final double dblMaturity,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap,
 		final int iPSEC)
 	{
@@ -592,7 +592,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> BackwardEdgeDates (
 		final double dblEffective,
 		final double dblMaturity,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap,
 		final int iPSEC)
 	{
@@ -619,8 +619,8 @@ public class CompositePeriodBuilder {
 
 	public static final java.util.List<java.lang.Double> RegularEdgeDates (
 		final double dblEffective,
-		final java.lang.String strPeriodTenor,
-		final java.lang.String strMaturityTenor,
+		final String strPeriodTenor,
+		final String strMaturityTenor,
 		final org.drip.analytics.daycount.DateAdjustParams dap)
 	{
 		try {
@@ -646,7 +646,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> OvernightEdgeDates (
 		final double dblStartDate,
 		final double dblEndDate,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		try {
 			return OvernightEdgeDates (new org.drip.analytics.date.JulianDate (dblStartDate), new
@@ -700,7 +700,7 @@ public class CompositePeriodBuilder {
 	public static final java.util.List<java.lang.Double> UnitDateEdges (
 		final double dblUnitPeriodStartDate,
 		final double dblUnitPeriodEndDate,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final org.drip.param.period.ComposableUnitBuilderSetting cubs)
 	{
 		if (null == cubs) return null;
@@ -800,7 +800,7 @@ public class CompositePeriodBuilder {
 
 		org.drip.state.identifier.ForwardLabel forwardLabel = cfus.forwardLabel();
 
-		java.lang.String strCalendar = forwardLabel.floaterIndex().calendar();
+		String strCalendar = forwardLabel.floaterIndex().calendar();
 
 		java.util.List<java.lang.Double> lsUnitEdgeDate = UnitDateEdges (dblUnitPeriodStartDate,
 			dblUnitPeriodEndDate, strCalendar, cfus);
@@ -816,9 +816,9 @@ public class CompositePeriodBuilder {
 
 		double dblSpread = cfus.spread();
 
-		java.lang.String strUnitTenor = cfus.tenor();
+		String strUnitTenor = cfus.tenor();
 
-		java.lang.String strForwardTenor = forwardLabel.tenor();
+		String strForwardTenor = forwardLabel.tenor();
 
 		int iReferencePeriodArrearsType = cfus.referencePeriodArrearsType();
 

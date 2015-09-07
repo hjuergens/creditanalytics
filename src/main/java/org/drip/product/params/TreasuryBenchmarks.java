@@ -40,8 +40,8 @@ package org.drip.product.params;
  */
 
 public class TreasuryBenchmarks {
-	private java.lang.String _strPrimary = "";
-	private java.lang.String[] _astrSecondary = null;
+	private String _strPrimary = "";
+	private String[] _astrSecondary = null;
 
 	/**
 	 * Construct the treasury benchmark set from the primary treasury benchmark, and an array of secondary
@@ -52,8 +52,8 @@ public class TreasuryBenchmarks {
 	 */
 
 	public TreasuryBenchmarks (
-		final java.lang.String strPrimary,
-		final java.lang.String[] astrSecondary)
+		final String strPrimary,
+		final String[] astrSecondary)
 	{
 		_strPrimary = strPrimary;
 		_astrSecondary = astrSecondary;
@@ -65,7 +65,7 @@ public class TreasuryBenchmarks {
 	 * @return Primary Treasury Benchmark
 	 */
 
-	public java.lang.String primary()
+	public String primary()
 	{
 		return _strPrimary;
 	}
@@ -76,7 +76,7 @@ public class TreasuryBenchmarks {
 	 * @return Array of Secondary Treasury Benchmarks
 	 */
 
-	public java.lang.String[] secondary()
+	public String[] secondary()
 	{
 		return _astrSecondary;
 	}

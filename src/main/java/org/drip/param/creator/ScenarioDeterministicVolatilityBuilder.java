@@ -53,9 +53,9 @@ public class ScenarioDeterministicVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure CustomSplineTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblDate,
 		final double[] adblImpliedVolatility,
@@ -103,11 +103,11 @@ public class ScenarioDeterministicVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure CubicPolynomialTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblImpliedVolatility)
 	{
 		if (null == dtStart || null == astrTenor) return null;
@@ -148,11 +148,11 @@ public class ScenarioDeterministicVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure QuarticPolynomialTermStructure
-		(final java.lang.String strName,
+		(final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblImpliedVolatility)
 	{
 		if (null == dtStart || null == astrTenor) return null;
@@ -194,11 +194,11 @@ public class ScenarioDeterministicVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure KaklisPandelisTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblImpliedVolatility)
 	{
 		if (null == dtStart || null == astrTenor) return null;
@@ -241,11 +241,11 @@ public class ScenarioDeterministicVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure KLKHyperbolicTermStructure (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblImpliedVolatility,
 		final double dblTension)
 	{
@@ -289,11 +289,11 @@ public class ScenarioDeterministicVolatilityBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure KLKRationalLinearTermStructure
-		(final java.lang.String strName,
+		(final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[] adblImpliedVolatility,
 		final double dblTension)
 	{
@@ -338,11 +338,11 @@ public class ScenarioDeterministicVolatilityBuilder {
 
 	public static final org.drip.analytics.definition.VolatilityTermStructure
 		KLKRationalQuadraticTermStructure (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
-			final java.lang.String strCurrency,
+			final String strCurrency,
 			final org.drip.param.valuation.CollateralizationParams collatParams,
-			final java.lang.String[] astrTenor,
+			final String[] astrTenor,
 			final double[] adblImpliedVolatility,
 			final double dblTension)
 	{

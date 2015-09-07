@@ -39,7 +39,7 @@ public class ARSHoliday implements org.drip.analytics.holset.LocationHoliday {
 	{
 	}
 
-	public java.lang.String getHolidayLoc()
+	public String getHolidayLoc()
 	{
 		return "ARS";
 	}

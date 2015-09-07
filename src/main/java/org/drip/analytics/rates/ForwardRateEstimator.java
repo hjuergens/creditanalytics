@@ -54,7 +54,7 @@ public interface ForwardRateEstimator {
 	 * @return The Forward Rate Tenor
 	 */
 
-	public abstract java.lang.String tenor();
+	public abstract String tenor();
 
 	/**
 	 * Calculate the Forward Rate to the given Date
@@ -95,6 +95,6 @@ public interface ForwardRateEstimator {
 	 */
 
 	public abstract double forward (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception;
 }

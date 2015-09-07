@@ -50,7 +50,7 @@ public abstract class Quote {
 	 */
 
 	public abstract double value (
-		final java.lang.String strSide);
+		final String strSide);
 
 	/**
 	 * Get the quote size for the given side
@@ -61,7 +61,7 @@ public abstract class Quote {
 	 */
 
 	public abstract double size (
-		final java.lang.String strSide);
+		final String strSide);
 
 	/**
 	 * Get the time of the quote
@@ -72,7 +72,7 @@ public abstract class Quote {
 	 */
 
 	public abstract org.drip.analytics.date.DateTime time (
-		final java.lang.String strSide);
+		final String strSide);
 
 	/**
 	 * Set the quote for the specified side
@@ -85,7 +85,7 @@ public abstract class Quote {
 	 */
 
 	public abstract boolean setSide (
-		final java.lang.String strSide,
+		final String strSide,
 		final double dblQuote,
 		final double dblSize);
 }

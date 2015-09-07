@@ -40,9 +40,9 @@ package org.drip.param.period;
 public class UnitCouponAccrualSetting {
 	private int _iFreq = -1;
 	private int _iAccrualCompoundingRule = -1;
-	private java.lang.String _strCalendar = "";
-	private java.lang.String _strCouponDC = "";
-	private java.lang.String _strAccrualDC = "";
+	private String _strCalendar = "";
+	private String _strCouponDC = "";
+	private String _strAccrualDC = "";
 	private boolean _bCouponDCFOffOfFreq = false;
 	private boolean _bCouponEOMAdjustment = false;
 	private boolean _bAccrualEOMAdjustment = false;
@@ -64,11 +64,11 @@ public class UnitCouponAccrualSetting {
 
 	public UnitCouponAccrualSetting (
 		final int iFreq,
-		final java.lang.String strCouponDC,
+		final String strCouponDC,
 		final boolean bCouponEOMAdjustment,
-		final java.lang.String strAccrualDC,
+		final String strAccrualDC,
 		final boolean bAccrualEOMAdjustment,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final boolean bCouponDCFOffOfFreq,
 		final int iAccrualCompoundingRule)
 		throws java.lang.Exception
@@ -102,7 +102,7 @@ public class UnitCouponAccrualSetting {
 	 * @return The Coupon Day Count
 	 */
 
-	public java.lang.String couponDC()
+	public String couponDC()
 	{
 		return _strCouponDC;
 	}
@@ -124,7 +124,7 @@ public class UnitCouponAccrualSetting {
 	 * @return The Accrual Day Count
 	 */
 
-	public java.lang.String accrualDC()
+	public String accrualDC()
 	{
 		return _strAccrualDC;
 	}
@@ -157,7 +157,7 @@ public class UnitCouponAccrualSetting {
 	 * @return The Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}

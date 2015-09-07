@@ -42,8 +42,8 @@ package org.drip.product.params;
 public class CDXIdentifier {
 	public int _iSeries = 0;
 	public int _iVersion = 0;
-	public java.lang.String _strIndex = "";
-	public java.lang.String _strTenor = "";
+	public String _strIndex = "";
+	public String _strTenor = "";
 
 	/**
 	 * Create the CDX Identifier from the CDX Code
@@ -54,11 +54,11 @@ public class CDXIdentifier {
 	 */
 
 	public static final CDXIdentifier CreateCDXIdentifierFromCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		if (null == strCode || strCode.isEmpty()) return null;
 
-		java.lang.String[] astrFields = strCode.split (".");
+		String[] astrFields = strCode.split (".");
 
 		if (null == astrFields || 4 > astrFields.length) return null;
 
@@ -87,8 +87,8 @@ public class CDXIdentifier {
 	public CDXIdentifier (
 		final int iSeries,
 		final int iVersion,
-		final java.lang.String strIndex,
-		final java.lang.String strTenor)
+		final String strIndex,
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == (_strIndex = strIndex) || _strIndex.isEmpty() || null == (_strTenor = strTenor) ||
@@ -105,7 +105,7 @@ public class CDXIdentifier {
 	 * @return The CDX Code string
 	 */
 
-	public java.lang.String getCode()
+	public String getCode()
 	{
 		return _strIndex + "." + _strTenor + "." + _iSeries + "." + _iVersion;
 	}

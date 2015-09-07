@@ -217,12 +217,12 @@ public class ShapeOvernightZeroLocalSmooth {
 		);
 
 		for (int i = 0; i < astrMaturityTenor.length; ++i) {
-			java.lang.String strFixedTenor = AnalyticsHelper.LEFT_TENOR_LESSER == AnalyticsHelper.TenorCompare (
+			String strFixedTenor = AnalyticsHelper.LEFT_TENOR_LESSER == AnalyticsHelper.TenorCompare (
 				astrMaturityTenor[i],
 				"6M"
 			) ? astrMaturityTenor[i] : "6M";
 
-			java.lang.String strFloatingTenor = AnalyticsHelper.LEFT_TENOR_LESSER == AnalyticsHelper.TenorCompare (
+			String strFloatingTenor = AnalyticsHelper.LEFT_TENOR_LESSER == AnalyticsHelper.TenorCompare (
 				astrMaturityTenor[i],
 				"3M"
 			) ? astrMaturityTenor[i] : "3M";
@@ -495,7 +495,7 @@ public class ShapeOvernightZeroLocalSmooth {
 		CalibratableFixedIncomeComponent[] aShortEndOISComp = OISFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"1W", "2W", "3W", "1M"
 			},
 			adblShortEndOISQuote
@@ -527,10 +527,10 @@ public class ShapeOvernightZeroLocalSmooth {
 		CalibratableFixedIncomeComponent[] aOISFutureComp = OISFuturesFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"1M", "2M", "3M", "4M", "5M"
 			},
-			new java.lang.String[] {
+			new String[] {
 				"1M", "1M", "1M", "1M", "1M"
 			},
 			adblOISFutureQuote
@@ -575,7 +575,7 @@ public class ShapeOvernightZeroLocalSmooth {
 		CalibratableFixedIncomeComponent[] aLongEndOISComp = OISFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"15M", "18M", "21M", "2Y", "3Y", "4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y"
 			},
 			adblLongEndOISQuote
@@ -1246,7 +1246,7 @@ public class ShapeOvernightZeroLocalSmooth {
 
 		CalibratableFixedIncomeComponent[] aCC = OvernightIndexFromMaturityTenor (
 			dtSpot,
-			new java.lang.String[] {
+			new String[] {
 				"3Y", "6Y", "9Y", "12Y", "15Y", "18Y", "21Y", "24Y", "27Y", "30Y"
 			},
 			new double[] {

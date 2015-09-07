@@ -57,7 +57,7 @@ public class GlobalControlCurveParams extends org.drip.state.estimator.Smoothing
 	 */
 
 	public GlobalControlCurveParams (
-		final java.lang.String strSmootheningQuantificationMetric,
+		final String strSmootheningQuantificationMetric,
 		final org.drip.spline.params.SegmentCustomBuilderControl prbp,
 		final org.drip.spline.stretch.BoundarySettings bs,
 		final int iCalibrationDetail,

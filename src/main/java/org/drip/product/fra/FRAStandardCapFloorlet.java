@@ -58,13 +58,13 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 
 	public FRAStandardCapFloorlet (
 		final org.drip.product.fra.FRAStandardComponent fra,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final boolean bIsCaplet,
 		final double dblStrike,
 		final double dblNotional,
 		final org.drip.product.params.LastTradingDateSetting ltds,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar,
+		final String strDayCount,
+		final String strCalendar,
 		final org.drip.pricer.option.FokkerPlanckGenerator fpg)
 		throws java.lang.Exception
 	{
@@ -159,7 +159,7 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFRAOutput = _fra.value
 			(valParams, pricerParams, csqs, quotingParams);
 
-		java.lang.String strManifestMeasure = manifestMeasure();
+		String strManifestMeasure = manifestMeasure();
 
 		if (null == mapFRAOutput || !mapFRAOutput.containsKey (strManifestMeasure)) return null;
 
@@ -272,17 +272,17 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 		return null;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
 		return _fra.couponCurrency();
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _fra.payCurrency();
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return _fra.principalCurrency();
 	}
@@ -312,9 +312,9 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 		return null;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("ATMFRA");
 
@@ -415,7 +415,7 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFRAOutput = _fra.value
 			(valParams, pricerParams, csqs, quotingParams);
 
-		java.lang.String strManifestMeasure = manifestMeasure();
+		String strManifestMeasure = manifestMeasure();
 
 		if (null == mapFRAOutput || !mapFRAOutput.containsKey (strManifestMeasure))
 			throw new java.lang.Exception ("FRAStandardCapFloorlet::price => No ATM Metric");
@@ -463,7 +463,7 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
-		final java.lang.String strCalibMeasure,
+		final String strCalibMeasure,
 		final double dblCalibValue)
 		throws java.lang.Exception
 	{
@@ -483,7 +483,7 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFRAOutput = _fra.value
 			(valParams, pricerParams, csqs, quotingParams);
 
-		java.lang.String strManifestMeasure = manifestMeasure();
+		String strManifestMeasure = manifestMeasure();
 
 		if (null == mapFRAOutput || !mapFRAOutput.containsKey (strManifestMeasure))
 			throw new java.lang.Exception ("FRAStandardCapFloorlet::implyVolatility => No ATM Metric");
@@ -524,7 +524,7 @@ public class FRAStandardCapFloorlet extends org.drip.product.option.FixedIncomeO
 						dblExerciseDate, dblATMManifestMeasure, dcFunding, dblATMManifestMeasure,
 							!_bIsCaplet, true, dblVolatility, false);
 
-				java.util.Map<java.lang.String, java.lang.Double> mapOutput = valueFromSurfaceVariance 
+				java.util.Map<String, java.lang.Double> mapOutput = valueFromSurfaceVariance
 					(valParams, pricerParams, csqs, quotingParams, dblVolatility * dblVolatility *
 						(dblExerciseDate - dblValueDate) / 365.25);
 

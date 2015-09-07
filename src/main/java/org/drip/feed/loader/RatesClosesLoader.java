@@ -37,29 +37,29 @@ package org.drip.feed.loader;
  */
 
 public class RatesClosesLoader {
-	private static java.util.Map<java.lang.String, java.lang.Boolean> _mapIsON = new
-		java.util.HashMap<java.lang.String, java.lang.Boolean>();
+	private static java.util.Map<String, java.lang.Boolean> _mapIsON = new
+		java.util.HashMap<String, java.lang.Boolean>();
 
-	private static java.util.Map<java.lang.String, java.lang.String> _mapFixedDC = new
-		java.util.HashMap<java.lang.String, java.lang.String>();
+	private static java.util.Map<String, String> _mapFixedDC = new
+		java.util.HashMap<String, String>();
 
-	private static java.util.Map<java.lang.String, java.lang.String> _mapFixedTenor = new
-		java.util.HashMap<java.lang.String, java.lang.String>();
+	private static java.util.Map<String, String> _mapFixedTenor = new
+		java.util.HashMap<String, String>();
 
-	private static java.util.Map<java.lang.String, java.lang.String> _mapFloatingDC = new
-		java.util.HashMap<java.lang.String, java.lang.String>();
+	private static java.util.Map<String, String> _mapFloatingDC = new
+		java.util.HashMap<String, String>();
 
-	private static java.util.Map<java.lang.String, java.lang.String> _mapFloatingTenor = new
-		java.util.HashMap<java.lang.String, java.lang.String>();
+	private static java.util.Map<String, String> _mapFloatingTenor = new
+		java.util.HashMap<String, String>();
 
-	private static java.util.Map<java.lang.String, java.lang.Integer> _mapFixedFrequency = new
-		java.util.HashMap<java.lang.String, java.lang.Integer>();
+	private static java.util.Map<String, java.lang.Integer> _mapFixedFrequency = new
+		java.util.HashMap<String, java.lang.Integer>();
 
-	private static java.util.Map<java.lang.String, java.lang.Integer> _mapFloatingFrequency = new
-		java.util.HashMap<java.lang.String, java.lang.Integer>();
+	private static java.util.Map<String, java.lang.Integer> _mapFloatingFrequency = new
+		java.util.HashMap<String, java.lang.Integer>();
 
 	private static java.io.BufferedWriter _writeCOB = null;
-	private static final java.lang.String[] s_astrFwdTenor = new java.lang.String[] {"1Y", "2Y", "3Y", "4Y",
+	private static final String[] s_astrFwdTenor = new String[] {"1Y", "2Y", "3Y", "4Y",
 		"5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y"};
 
 	public static final boolean InitStatic()
@@ -322,17 +322,17 @@ public class RatesClosesLoader {
 	}
 
 	private static final boolean IsON (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		return _mapIsON.containsKey (strCurrency) && _mapIsON.get (strCurrency);
 	}
 
 	private static final org.drip.product.definition.CalibratableFixedIncomeComponent CreateIRS (
 		final org.drip.analytics.date.JulianDate dtEffectiveUnadjusted,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final int iNumDaysSubtract,
 		final double dblCoupon,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == dtEffectiveUnadjusted || null == strMaturityTenor || strMaturityTenor.isEmpty() ||
 			!org.drip.quant.common.NumberUtil.IsValid (dblCoupon))
@@ -345,7 +345,7 @@ public class RatesClosesLoader {
 
 		if (null == dtMaturity) return null;
 
-		java.lang.String strFixedDC = _mapFixedDC.get (strCurrency);
+		String strFixedDC = _mapFixedDC.get (strCurrency);
 
 		boolean bApplyEOMAdjustmentFixed = "30/360".equalsIgnoreCase (strFixedDC);
 
@@ -413,10 +413,10 @@ public class RatesClosesLoader {
 
 	private static final org.drip.product.definition.CalibratableFixedIncomeComponent CreateDIS (
 		final org.drip.analytics.date.JulianDate dtEffectiveUnadjusted,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final int iNumDaysSubtract,
 		final double dblCoupon,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == dtEffectiveUnadjusted || null == strMaturityTenor || strMaturityTenor.isEmpty() ||
 			!org.drip.quant.common.NumberUtil.IsValid (dblCoupon))
@@ -429,7 +429,7 @@ public class RatesClosesLoader {
 
 		if (null == dtMaturity) return null;
 
-		java.lang.String strFixedDC = _mapFixedDC.get (strCurrency);
+		String strFixedDC = _mapFixedDC.get (strCurrency);
 
 		try {
 			org.drip.param.period.UnitCouponAccrualSetting ucasFixed = new
@@ -490,8 +490,8 @@ public class RatesClosesLoader {
 		final org.drip.product.rates.Stream stream,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
-		final java.lang.String strMeasure,
-		final java.lang.String strCurrency,
+		final String strMeasure,
+		final String strCurrency,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 		throws java.lang.Exception
 	{
@@ -506,8 +506,8 @@ public class RatesClosesLoader {
 		final org.drip.product.definition.FixedIncomeComponent comp,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
-		final java.lang.String strMeasure,
-		final java.lang.String strCurrency,
+		final String strMeasure,
+		final String strCurrency,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 		throws java.lang.Exception
 	{
@@ -524,7 +524,7 @@ public class RatesClosesLoader {
 		final org.drip.analytics.date.JulianDate dt2,
 		final org.drip.analytics.rates.DiscountCurve dc1,
 		final org.drip.analytics.rates.DiscountCurve dc2,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 		throws java.lang.Exception
 	{
@@ -538,7 +538,7 @@ public class RatesClosesLoader {
 		final org.drip.analytics.date.JulianDate dt2,
 		final org.drip.analytics.rates.DiscountCurve dc1,
 		final org.drip.analytics.rates.DiscountCurve dc2,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 		throws java.lang.Exception
 	{
@@ -557,7 +557,7 @@ public class RatesClosesLoader {
 		return dc.forward (dt1.julian(), dt2.julian());
 	}
 
-	private static final java.lang.String ComputePnLMetrics (
+	private static final String ComputePnLMetrics (
 		final org.drip.analytics.date.JulianDate dtPrev,
 		final org.drip.analytics.date.JulianDate dtCurr,
 		final org.drip.analytics.date.JulianDate dt1MPast,
@@ -574,7 +574,7 @@ public class RatesClosesLoader {
 		final org.drip.analytics.rates.DiscountCurve dcDate1MPastQuotePrev,
 		final org.drip.analytics.rates.DiscountCurve dcDate3MPastQuotePrev,
 		final double dblBaselineSwapRate,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		org.drip.product.rates.FixFloatComponent irs = (org.drip.product.rates.FixFloatComponent) comp;
@@ -741,7 +741,7 @@ public class RatesClosesLoader {
 		return null;
 	}
 
-	private static final java.lang.String ComputeForwardMetric (
+	private static final String ComputeForwardMetric (
 		final org.drip.product.definition.FixedIncomeComponent[] aComp,
 		final org.drip.analytics.rates.DiscountCurve dc)
 		throws java.lang.Exception
@@ -759,7 +759,7 @@ public class RatesClosesLoader {
 		return fmOP.toString();
 	}
 
-	private static final java.util.List<java.lang.String> GenerateMetrics (
+	private static final java.util.List<String> GenerateMetrics (
 		final org.drip.analytics.date.JulianDate dtPrev,
 		final org.drip.analytics.date.JulianDate dtCurr,
 		final org.drip.analytics.date.JulianDate dt1MPast,
@@ -771,10 +771,10 @@ public class RatesClosesLoader {
 		final org.drip.analytics.rates.DiscountCurve dcDateCurrQuoteCurr,
 		final org.drip.analytics.rates.DiscountCurve dcDate1MPastQuotePrev,
 		final org.drip.analytics.rates.DiscountCurve dcDate3MPastQuotePrev,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
-		java.util.List<java.lang.String> lsstrDump = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsstrDump = new java.util.ArrayList<String>();
 
 		double[] adblBaselineSwapRate = new double[s_astrFwdTenor.length];
 		org.drip.product.definition.FixedIncomeComponent[] aComp = new
@@ -876,9 +876,9 @@ public class RatesClosesLoader {
 	}
 
 	private static final org.drip.state.inference.LatentStateStretchSpec LatentStateStretch (
-		final java.lang.String strStretchName,
+		final String strStretchName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aComp,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == aComp || null == adblCalibQuote) return null;
@@ -914,9 +914,9 @@ public class RatesClosesLoader {
 	}
 
 	private static final org.drip.state.inference.LatentStateStretchSpec LatentStateStretch (
-		final java.lang.String strStretchName,
+		final String strStretchName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aComp,
-		final java.lang.String[] astrManifestMeasure,
+		final String[] astrManifestMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == aComp || null == adblCalibQuote || null == astrManifestMeasure) return null;
@@ -955,8 +955,8 @@ public class RatesClosesLoader {
 	private static final org.drip.product.definition.CalibratableFixedIncomeComponent[]
 		CashInstrumentsFromTenor (
 			final org.drip.analytics.date.JulianDate dtEffective,
-			final java.lang.String[] astrTenor,
-			final java.lang.String strCurrency)
+			final String[] astrTenor,
+			final String strCurrency)
 	{
 		if (null == astrTenor) return null;
 
@@ -974,7 +974,7 @@ public class RatesClosesLoader {
 		return aCalibComp;
 	}
 
-	private static final java.lang.String DIMaturityTenorFromIndex (
+	private static final String DIMaturityTenorFromIndex (
 		final int iIndex)
 	{
 		 return iIndex <= 3 ? "" + (iIndex + 1) + "M" : "" + (3 * iIndex - 5) + "M";
@@ -983,9 +983,9 @@ public class RatesClosesLoader {
 	private static final org.drip.product.definition.CalibratableFixedIncomeComponent[]
 		FutureInstrumentsFromTenor (
 			final org.drip.analytics.date.JulianDate dtEffective,
-			final java.lang.String[] astrTenor,
+			final String[] astrTenor,
 			final double[] adblQuote,
-			final java.lang.String strCurrency)
+			final String strCurrency)
 	{
 		if (null == astrTenor) return null;
 
@@ -1005,9 +1005,9 @@ public class RatesClosesLoader {
 	private static final org.drip.product.definition.CalibratableFixedIncomeComponent[]
 		SwapInstrumentsFromTenor (
 			final org.drip.analytics.date.JulianDate dtEffective,
-			final java.lang.String[] astrTenor,
+			final String[] astrTenor,
 			final double[] adblQuote,
-			final java.lang.String strCurrency)
+			final String strCurrency)
 	{
 		if (null == astrTenor) return null;
 
@@ -1026,13 +1026,13 @@ public class RatesClosesLoader {
 
 	public static final org.drip.analytics.rates.DiscountCurve BuildCurve (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String[] astrCashTenor,
+		final String[] astrCashTenor,
 		final double[] adblCashQuote,
-		final java.lang.String[] astrFutureTenor,
+		final String[] astrFutureTenor,
 		final double[] adblFutureQuote,
-		final java.lang.String[] astrSwapTenor,
+		final String[] astrSwapTenor,
 		final double[] adblSwapQuote,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		org.drip.state.inference.LatentStateStretchSpec depositStretch = LatentStateStretch ("DEPOSIT",
 			CashInstrumentsFromTenor (dt, astrCashTenor, strCurrency), "Rate", adblCashQuote);
@@ -1098,13 +1098,13 @@ public class RatesClosesLoader {
 
 	public static final org.drip.analytics.rates.DiscountCurve BuildCurveSingleStretch (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String[] astrCashTenor,
+		final String[] astrCashTenor,
 		final double[] adblCashQuote,
-		final java.lang.String[] astrFutureTenor,
+		final String[] astrFutureTenor,
 		final double[] adblFutureQuote,
-		final java.lang.String[] astrSwapTenor,
+		final String[] astrSwapTenor,
 		final double[] adblSwapQuote,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCFICCash = CashInstrumentsFromTenor
 			(dt, astrCashTenor, strCurrency);
@@ -1120,7 +1120,7 @@ public class RatesClosesLoader {
 		int iNumSwap = null == aCFICSwap ? 0 : aCFICSwap.length;
 		int iNumCFIC = iNumCash + iNumFuture + iNumSwap;
 		double[] adblQuote = new double[iNumCFIC];
-		java.lang.String[] astrManifestMeasure = new java.lang.String[iNumCFIC];
+		String[] astrManifestMeasure = new String[iNumCFIC];
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCFIC = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[iNumCFIC];
 
@@ -1211,8 +1211,8 @@ public class RatesClosesLoader {
 	}
 
 	private static final org.drip.service.api.DiscountCurveInputInstrument ProcessCOBInput (
-		final java.lang.String[] astrTenor,
-		final java.lang.String[] astrCOBRecord)
+		final String[] astrTenor,
+		final String[] astrCOBRecord)
 	{
 		if (null == astrCOBRecord) return null;
 
@@ -1220,11 +1220,11 @@ public class RatesClosesLoader {
 
 		if (iNumQuote != astrTenor.length + 1) return null;
 
-		java.util.List<java.lang.String> lsCashTenor = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsCashTenor = new java.util.ArrayList<String>();
 
-		java.util.List<java.lang.String> lsFutureTenor = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsFutureTenor = new java.util.ArrayList<String>();
 
-		java.util.List<java.lang.String> lsSwapTenor = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsSwapTenor = new java.util.ArrayList<String>();
 
 		java.util.List<java.lang.Double> lsCashQuote = new java.util.ArrayList<java.lang.Double>();
 
@@ -1274,10 +1274,10 @@ public class RatesClosesLoader {
 	}
 
 	public static final org.drip.service.api.DiscountCurveInputInstrument[] ProcessCOBInput (
-		final java.lang.String[] astrTenor,
-		final java.lang.String[] astrCOBRecord1,
-		final java.lang.String[] astrCOBRecord2,
-		final java.lang.String strCurrency)
+		final String[] astrTenor,
+		final String[] astrCOBRecord1,
+		final String[] astrCOBRecord2,
+		final String strCurrency)
 	{
 		if (null == strCurrency || strCurrency.isEmpty() || null == astrCOBRecord1 || null == astrCOBRecord2)
 			return null;
@@ -1287,11 +1287,11 @@ public class RatesClosesLoader {
 
 		if (iNumQuote2 != astrTenor.length + 1 || iNumQuote1 != iNumQuote2) return null;
 
-		java.util.List<java.lang.String> lsCashTenor = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsCashTenor = new java.util.ArrayList<String>();
 
-		java.util.List<java.lang.String> lsFutureTenor = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsFutureTenor = new java.util.ArrayList<String>();
 
-		java.util.List<java.lang.String> lsSwapTenor = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsSwapTenor = new java.util.ArrayList<String>();
 
 		java.util.List<java.lang.Double> lsCashQuote1 = new java.util.ArrayList<java.lang.Double>();
 
@@ -1381,11 +1381,11 @@ public class RatesClosesLoader {
 		return null;
 	}
 
-	public static final java.util.List<java.lang.String> ProcessRecord (
-		final java.lang.String[] astrTenor,
-		final java.lang.String[] astrCOBRecord1,
-		final java.lang.String[] astrCOBRecord2,
-		final java.lang.String strCurrency,
+	public static final java.util.List<String> ProcessRecord (
+		final String[] astrTenor,
+		final String[] astrCOBRecord1,
+		final String[] astrCOBRecord2,
+		final String strCurrency,
 		final boolean bBuildSingleStretch,
 		final boolean bDumpOnDemand)
 	{
@@ -1403,11 +1403,11 @@ public class RatesClosesLoader {
 
 		org.drip.analytics.date.JulianDate dtCurr = dciiCurr.date();
 
-		java.lang.String[] astrCashTenorPrev = dciiPrev.cashTenor();
+		String[] astrCashTenorPrev = dciiPrev.cashTenor();
 
-		java.lang.String[] astrFutureTenorPrev = dciiPrev.futureTenor();
+		String[] astrFutureTenorPrev = dciiPrev.futureTenor();
 
-		java.lang.String[] astrSwapTenorPrev = dciiPrev.swapTenor();
+		String[] astrSwapTenorPrev = dciiPrev.swapTenor();
 
 		double[] adblCashQuotePrev = dciiPrev.cashQuote();
 
@@ -1415,11 +1415,11 @@ public class RatesClosesLoader {
 
 		double[] adblSwapQuotePrev = dciiPrev.swapQuote();
 
-		java.lang.String[] astrCashTenorCurr = dciiCurr.cashTenor();
+		String[] astrCashTenorCurr = dciiCurr.cashTenor();
 
-		java.lang.String[] astrFutureTenorCurr = dciiCurr.futureTenor();
+		String[] astrFutureTenorCurr = dciiCurr.futureTenor();
 
-		java.lang.String[] astrSwapTenorCurr = dciiCurr.swapTenor();
+		String[] astrSwapTenorCurr = dciiCurr.swapTenor();
 
 		double[] adblCashQuoteCurr = dciiCurr.cashQuote();
 
@@ -1497,7 +1497,7 @@ public class RatesClosesLoader {
 
 		if (null == dcDateCurrQuoteCurr) return null;
 
-		java.util.List<java.lang.String> lsstrDump = null;
+		java.util.List<String> lsstrDump = null;
 
 		if (null != dtPast && null != dtPrev && null != dtCurr && null != dcDatePastQuotePrev && null !=
 			dcDatePrevQuotePrev && null != dcDateCurrQuotePrev && null != dcDatePrevQuoteCurr && null !=
@@ -1509,7 +1509,7 @@ public class RatesClosesLoader {
 					dcDatePrevQuotePrev, dcDateCurrQuotePrev, dcDatePrevQuoteCurr, dcDateCurrQuoteCurr,
 						dcDate1MPastQuotePrev, dcDate3MPastQuotePrev, strCurrency);
 
-				for (java.lang.String strDump : lsstrDump) {
+				for (String strDump : lsstrDump) {
 					if (bDumpOnDemand) {
 						_writeCOB.write (strDump);
 
@@ -1531,19 +1531,19 @@ public class RatesClosesLoader {
 	public static final boolean ExecUnitSequence()
 	{
 		boolean bSingleStretch = true;
-		java.lang.String[] astrTenor = new java.lang.String[] {"1M", "1Y", "5Y", "10Y"};
-		java.lang.String[][] aastrCOBRecord = new java.lang.String[][] {
-			new java.lang.String[] {"3/28/2013", "0.21", "0.52", "1.17", "1.68"},
-			new java.lang.String[] {"3/29/2013", "0.21", "0.53", "1.19", "1.71"}
+		String[] astrTenor = new String[] {"1M", "1Y", "5Y", "10Y"};
+		String[][] aastrCOBRecord = new String[][] {
+			new String[] {"3/28/2013", "0.21", "0.52", "1.17", "1.68"},
+			new String[] {"3/29/2013", "0.21", "0.53", "1.19", "1.71"}
 		};
 
 		for (int i = 1; i < aastrCOBRecord.length; ++i) {
-			java.util.List<java.lang.String> lsstrDump = ProcessRecord (astrTenor, aastrCOBRecord[i - 1],
+			java.util.List<String> lsstrDump = ProcessRecord (astrTenor, aastrCOBRecord[i - 1],
 				aastrCOBRecord[i], "USD", bSingleStretch, false);
 
 			if (null == lsstrDump || 0 == lsstrDump.size()) return false;
 
-			for (java.lang.String strDump : lsstrDump)
+			for (String strDump : lsstrDump)
 				System.out.println (strDump);
 		}
 
@@ -1551,14 +1551,14 @@ public class RatesClosesLoader {
 	}
 
 	public static final void GenerateDiscountCurveMetrics (
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final boolean bSingleStretch)
 	{
 		boolean bIsHeader = true;
-		java.lang.String strCOBQuote = "";
-		java.lang.String[] astrTenor = null;
+		String strCOBQuote = "";
+		String[] astrTenor = null;
 		java.io.BufferedReader brSwapCOB = null;
-		java.lang.String[] astrCOBRecordPrev = null;
+		String[] astrCOBRecordPrev = null;
 
 		try {
 			brSwapCOB = new java.io.BufferedReader (new java.io.FileReader ("C:\\IFA\\G10Rates\\" +
@@ -1568,7 +1568,7 @@ public class RatesClosesLoader {
 				("C:\\IFA\\G10Rates\\FinancialBoundary\\" + strCurrency + "_Single_Stretch_PnL.csv"));
 
 			while (null != (strCOBQuote = brSwapCOB.readLine())) {
-				java.lang.String[] astrCOBRecord = strCOBQuote.split (",");
+				String[] astrCOBRecord = strCOBQuote.split (",");
 
 				if (null == astrCOBRecord) {
 					brSwapCOB.close();
@@ -1586,7 +1586,7 @@ public class RatesClosesLoader {
 
 				if (bIsHeader) {
 					bIsHeader = false;
-					astrTenor = new java.lang.String[iNumQuote - 1];
+					astrTenor = new String[iNumQuote - 1];
 
 					for (int i = 1; i < iNumQuote; ++i)
 						astrTenor[i - 1] = astrCOBRecord[i];
@@ -1650,13 +1650,13 @@ public class RatesClosesLoader {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		java.util.List<org.drip.service.api.CDXCOB>> LoadCDXCloses (
-			final java.lang.String strFile)
+			final String strFile)
 	{
 		int iNumCDX = 0;
 		int iLineNum = 0;
 		boolean bHeader = true;
-		java.lang.String strCDXCloses = "";
-		java.lang.String[] astrCDXName = null;
+		String strCDXCloses = "";
+		String[] astrCDXName = null;
 		java.io.BufferedReader brCDXCloses = null;
 
 		java.util.Map<org.drip.analytics.date.JulianDate, java.util.List<org.drip.service.api.CDXCOB>>
@@ -1667,7 +1667,7 @@ public class RatesClosesLoader {
 			brCDXCloses = new java.io.BufferedReader (new java.io.FileReader (strFile));
 
 			while (null != (strCDXCloses = brCDXCloses.readLine())) {
-				java.lang.String[] astrCDXCloses = strCDXCloses.split (",");
+				String[] astrCDXCloses = strCDXCloses.split (",");
 
 				if (null == astrCDXCloses || 0 == astrCDXCloses.length) continue;
 
@@ -1678,7 +1678,7 @@ public class RatesClosesLoader {
 				if (bHeader) {
 					bHeader = false;
 					iNumCDX = astrCDXCloses.length;
-					astrCDXName = new java.lang.String[iNumCDX - 1];
+					astrCDXName = new String[iNumCDX - 1];
 
 					for (int i = 1; i < iNumCDX; ++i) {
 						astrCDXName[i - 1] = astrCDXCloses[i];
@@ -1734,8 +1734,8 @@ public class RatesClosesLoader {
 			mapDatedCDXClose)
 	{
 		boolean bIsHeader = true;
-		java.lang.String strCOBQuote = "";
-		java.lang.String[] astrTenor = null;
+		String strCOBQuote = "";
+		String[] astrTenor = null;
 		java.io.BufferedReader brSwapCOB = null;
 
 		org.drip.param.pricer.CreditPricerParams pricerParams = org.drip.param.pricer.CreditPricerParams.Standard();
@@ -1747,7 +1747,7 @@ public class RatesClosesLoader {
 			_writeCOB = new java.io.BufferedWriter (new java.io.FileWriter ("C:\\IFA\\CDXOP\\HY5Y.LAST"));
 
 			while (null != (strCOBQuote = brSwapCOB.readLine())) {
-				java.lang.String[] astrCOBRecord = strCOBQuote.split (",");
+				String[] astrCOBRecord = strCOBQuote.split (",");
 
 				if (null == astrCOBRecord) {
 					brSwapCOB.close();
@@ -1765,7 +1765,7 @@ public class RatesClosesLoader {
 
 				if (bIsHeader) {
 					bIsHeader = false;
-					astrTenor = new java.lang.String[iNumQuote - 1];
+					astrTenor = new String[iNumQuote - 1];
 
 					for (int i = 1; i < iNumQuote; ++i)
 						astrTenor[i - 1] = astrCOBRecord[i];
@@ -1798,7 +1798,7 @@ public class RatesClosesLoader {
 									org.drip.param.creator.CreditScenarioCurveBuilder.CreateCreditCurve
 										("CC", dtCOB, new org.drip.product.definition.CreditDefaultSwap[]
 											{cdx}, dc, new double[] {100. * cdxNP.price()}, new
-												java.lang.String[] {"Price"}, 0.04, false);
+												String[] {"Price"}, 0.04, false);
 
 								org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 									mapCDXMeasures = cdx.value (valParams, pricerParams,
@@ -1831,7 +1831,7 @@ public class RatesClosesLoader {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 	{
 		long lStartTime = System.nanoTime();
 

@@ -59,7 +59,7 @@ public class CurveStretch extends org.drip.spline.stretch.CalibratableMultiSegme
 	 */
 
 	public CurveStretch (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.spline.segment.LatentStateResponseModel[] aCS,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC)
 		throws java.lang.Exception

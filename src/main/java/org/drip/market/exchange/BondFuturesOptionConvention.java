@@ -37,9 +37,9 @@ package org.drip.market.exchange;
 
 public class BondFuturesOptionConvention {
 	private boolean _bPremiumType = false;
-	private java.lang.String[] _astrCode = null;
+	private String[] _astrCode = null;
 	private double _dblNotional = java.lang.Double.NaN;
-	private java.lang.String _strBondFuturesIndex = "";
+	private String _strBondFuturesIndex = "";
 	private org.drip.product.params.LastTradingDateSetting[] _aLTDS = null;
 
 	/**
@@ -55,8 +55,8 @@ public class BondFuturesOptionConvention {
 	 */
 
 	public BondFuturesOptionConvention (
-		final java.lang.String[] astrCode,
-		final java.lang.String strBondFuturesIndex,
+		final String[] astrCode,
+		final String strBondFuturesIndex,
 		final double dblNotional,
 		final boolean bPremiumType,
 		final org.drip.product.params.LastTradingDateSetting[] aLTDS)
@@ -74,7 +74,7 @@ public class BondFuturesOptionConvention {
 		if (0 == iNumLTDS || 0 == iNumCode)
 			throw new java.lang.Exception ("BondFuturesOptionConvention ctr: Invalid Inputs!");
 
-		for (java.lang.String strCode : _astrCode) {
+		for (String strCode : _astrCode) {
 			if (null == strCode || strCode.isEmpty())
 				throw new java.lang.Exception ("BondFuturesOptionConvention ctr: Invalid Inputs!");
 		}
@@ -91,7 +91,7 @@ public class BondFuturesOptionConvention {
 	 * @return The Array of the Exchange Codes
 	 */
 
-	public java.lang.String[] codes()
+	public String[] codes()
 	{
 		return _astrCode;
 	}
@@ -113,7 +113,7 @@ public class BondFuturesOptionConvention {
 	 * @return The Bond Futures Index
 	 */
 
-	public java.lang.String bondFuturesIndex()
+	public String bondFuturesIndex()
 	{
 		return _strBondFuturesIndex;
 	}
@@ -140,9 +140,9 @@ public class BondFuturesOptionConvention {
 		return _bPremiumType;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
-		java.lang.String strDump = "BondFuturesIndex: " + _strBondFuturesIndex + " | Premium Type: " +
+		String strDump = "BondFuturesIndex: " + _strBondFuturesIndex + " | Premium Type: " +
 			(_bPremiumType ? "PREMIUM" : "MARGIN ");
 
 		for (int i = 0; i < _astrCode.length; ++i) {

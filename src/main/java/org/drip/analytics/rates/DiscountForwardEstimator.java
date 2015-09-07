@@ -65,7 +65,7 @@ public class DiscountForwardEstimator implements org.drip.analytics.rates.Forwar
 		return _fri;
 	}
 
-	@Override public java.lang.String tenor()
+	@Override public String tenor()
 	{
 		return _fri.tenor();
 	}
@@ -91,7 +91,7 @@ public class DiscountForwardEstimator implements org.drip.analytics.rates.Forwar
 	}
 
 	@Override public double forward (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())

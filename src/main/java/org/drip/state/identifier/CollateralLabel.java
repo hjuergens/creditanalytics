@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class CollateralLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strCurrency = "";
+	private String _strCurrency = "";
 
 	/**
 	 * Make a Standard Collateral Label from the Collateral Currency
@@ -48,7 +48,7 @@ public class CollateralLabel implements org.drip.state.identifier.LatentStateLab
 	 */
 
 	public static final CollateralLabel Standard (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		try {
 			return new CollateralLabel (strCurrency);
@@ -68,14 +68,14 @@ public class CollateralLabel implements org.drip.state.identifier.LatentStateLab
 	 */
 
 	private CollateralLabel (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		if (null == (_strCurrency = strCurrency) || _strCurrency.isEmpty())
 			throw new java.lang.Exception ("CollateralLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strCurrency;
 	}

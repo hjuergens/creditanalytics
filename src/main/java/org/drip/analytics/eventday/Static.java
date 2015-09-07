@@ -51,8 +51,8 @@ public class Static extends Base {
 	 */
 
 	public static final Static CreateFromDateDescription (
-		final java.lang.String strDate,
-		final java.lang.String strDescription)
+		final String strDate,
+		final String strDescription)
 	{
 		org.drip.analytics.date.JulianDate dtHol = org.drip.analytics.date.DateUtil.CreateFromDDMMMYYYY
 			(strDate);
@@ -79,7 +79,7 @@ public class Static extends Base {
 
 	public Static (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strDescription)
+		final String strDescription)
 		throws java.lang.Exception
 	{
 		super (strDescription);

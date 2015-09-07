@@ -50,8 +50,8 @@ public class Bullet {
 	 * Period Latent State Identification Support Fields
 	 */
 
-	private java.lang.String _strPayCurrency = "";
-	private java.lang.String _strCouponCurrency = "";
+	private String _strPayCurrency = "";
+	private String _strCouponCurrency = "";
 	private org.drip.state.identifier.CreditLabel _creditLabel = null;
 
 	/*
@@ -121,8 +121,8 @@ public class Bullet {
 		final double dblFXFixingDate,
 		final double dblBaseNotional,
 		final org.drip.quant.common.Array2D notlSchedule,
-		final java.lang.String strPayCurrency,
-		final java.lang.String strCouponCurrency,
+		final String strPayCurrency,
+		final String strCouponCurrency,
 		final org.drip.state.identifier.CreditLabel creditLabel)
 		throws java.lang.Exception
 	{
@@ -220,7 +220,7 @@ public class Bullet {
 	 * @return The Pay Currency
 	 */
 
-	public java.lang.String payCurrency()
+	public String payCurrency()
 	{
 		return _strPayCurrency;
 	}
@@ -231,7 +231,7 @@ public class Bullet {
 	 * @return The Coupon Currency
 	 */
 
-	public java.lang.String couponCurrency()
+	public String couponCurrency()
 	{
 		return _strCouponCurrency;
 	}

@@ -41,7 +41,7 @@ package org.drip.state.identifier;
  */
 
 public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strTenor = "";
+	private String _strTenor = "";
 	private org.drip.market.definition.FloaterIndex _floaterIndex = null;
 
 	/**
@@ -53,16 +53,16 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 	 */
 
 	public static final ForwardLabel Standard (
-		final java.lang.String strFullyQualifiedName)
+		final String strFullyQualifiedName)
 	{
 		if (null == strFullyQualifiedName || strFullyQualifiedName.isEmpty()) return null;
 
-		java.lang.String[] astr = strFullyQualifiedName.split ("-");
+		String[] astr = strFullyQualifiedName.split ("-");
 
 		if (null == astr || 2 != astr.length) return null;
 
-		java.lang.String strTenor = astr[1];
-		java.lang.String strCurrency = astr[0];
+		String strTenor = astr[1];
+		String strCurrency = astr[0];
 
 		org.drip.market.definition.FloaterIndex floaterIndex = "ON".equalsIgnoreCase (strTenor) ||
 			"1D".equalsIgnoreCase (strTenor) ?
@@ -89,7 +89,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 
 	public static final ForwardLabel Create (
 		final org.drip.market.definition.FloaterIndex floaterIndex,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		try {
 			return new ForwardLabel (floaterIndex, strTenor);
@@ -110,8 +110,8 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 	 */
 
 	public static final ForwardLabel Create (
-		final java.lang.String strCurrency,
-		final java.lang.String strTenor)
+		final String strCurrency,
+		final String strTenor)
 	{
 		return Standard (strCurrency + "-" + strTenor);
 	}
@@ -127,7 +127,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 
 	private ForwardLabel (
 		final org.drip.market.definition.FloaterIndex floaterIndex,
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == (_floaterIndex = floaterIndex) || null == (_strTenor = strTenor) || _strTenor.isEmpty())
@@ -140,7 +140,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 	 * @return The Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _floaterIndex.currency();
 	}
@@ -151,7 +151,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 	 * @return The Family
 	 */
 
-	public java.lang.String family()
+	public String family()
 	{
 		return _floaterIndex.family();
 	}
@@ -162,7 +162,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 	 * @return The Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		return _strTenor;
 	}
@@ -197,7 +197,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 
 	public org.drip.param.period.UnitCouponAccrualSetting ucas()
 	{
-		java.lang.String strDayCount = _floaterIndex.dayCount();
+		String strDayCount = _floaterIndex.dayCount();
 
 		try {
 			return new org.drip.param.period.UnitCouponAccrualSetting (overnight() ? 360 :
@@ -211,7 +211,7 @@ public class ForwardLabel implements org.drip.state.identifier.LatentStateLabel 
 		return null;
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _floaterIndex.currency() + "-" + _floaterIndex.family() + "-" + _strTenor;
 	}

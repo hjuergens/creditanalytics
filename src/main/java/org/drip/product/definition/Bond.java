@@ -98,7 +98,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return ISIN string
 	 */
 
-	public abstract java.lang.String isin();
+	public abstract String isin();
 
 	/**
 	 * Get the CUSIP
@@ -106,7 +106,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return CUSIP string
 	 */
 
-	public abstract java.lang.String cusip();
+	public abstract String cusip();
 
 	/**
 	 * Get the bond's loss flow from price
@@ -141,7 +141,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Rate index
 	 */
 
-	public abstract java.lang.String rateIndex();
+	public abstract String rateIndex();
 
 	/**
 	 * Return the current bond coupon
@@ -165,7 +165,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond Ticker
 	 */
 
-	public abstract java.lang.String ticker();
+	public abstract String ticker();
 
 	/**
 	 * Indicate if the bond is callable
@@ -259,7 +259,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond's coupon Type
 	 */
 
-	public abstract java.lang.String couponType();
+	public abstract String couponType();
 
 	/**
 	 * Return the bond's coupon day count
@@ -267,7 +267,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Coupon day count string
 	 */
 
-	public abstract java.lang.String couponDC();
+	public abstract String couponDC();
 
 	/**
 	 * Return the bond's accrual day count
@@ -275,7 +275,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Accrual day count string
 	 */
 
-	public abstract java.lang.String accrualDC();
+	public abstract String accrualDC();
 
 	/**
 	 * Return the bond's maturity type
@@ -283,7 +283,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond's maturity type
 	 */
 
-	public abstract java.lang.String maturityType();
+	public abstract String maturityType();
 
 	/**
 	 * Return the bond's coupon frequency
@@ -307,7 +307,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond's calculation type
 	 */
 
-	public abstract java.lang.String calculationType();
+	public abstract String calculationType();
 
 	/**
 	 * Return the bond's redemption value
@@ -323,7 +323,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond's coupon currency
 	 */
 
-	public abstract java.lang.String currency();
+	public abstract String currency();
 
 	/**
 	 * Return the bond's redemption currency
@@ -331,7 +331,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond's redemption currency
 	 */
 
-	public abstract java.lang.String redemptionCurrency();
+	public abstract String redemptionCurrency();
 
 	/**
 	 * Indicate whether the given date is in the first coupon period
@@ -367,7 +367,7 @@ public abstract class Bond extends CreditComponent {
 	 * @return Bond's floating coupon convention
 	 */
 
-	public abstract java.lang.String floatCouponConvention();
+	public abstract String floatCouponConvention();
 
 	/**
 	 * Get the bond's reset date for the period identified by the valuation date

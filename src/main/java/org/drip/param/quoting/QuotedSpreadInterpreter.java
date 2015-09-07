@@ -43,21 +43,21 @@ public class QuotedSpreadInterpreter extends org.drip.param.quoting.MeasureInter
 	 * SNAC CDS Contract
 	 */
 
-	public static final java.lang.String SNAC_CDS = "SNAC";
+	public static final String SNAC_CDS = "SNAC";
 
 	/**
 	 * Conventional CDS Contract
 	 */
 
-	public static final java.lang.String CONV_CDS = "CONV";
+	public static final String CONV_CDS = "CONV";
 
 	/**
 	 * STEM CDS Contract
 	 */
 
-	public static final java.lang.String STEM_CDS = "CONV";
+	public static final String STEM_CDS = "CONV";
 
-	private java.lang.String _strCDSContractType = "";
+	private String _strCDSContractType = "";
 	private double _dblCouponStrike = java.lang.Double.NaN;
 
 	/**
@@ -70,7 +70,7 @@ public class QuotedSpreadInterpreter extends org.drip.param.quoting.MeasureInter
 	 */
 
 	public QuotedSpreadInterpreter (
-		final java.lang.String strCDSContractType,
+		final String strCDSContractType,
 		final double dblCouponStrike)
 		throws java.lang.Exception
 	{
@@ -88,7 +88,7 @@ public class QuotedSpreadInterpreter extends org.drip.param.quoting.MeasureInter
 	 * @return The CDS Contract Type
 	 */
 
-	public java.lang.String cdsContractType()
+	public String cdsContractType()
 	{
 		return _strCDSContractType;
 	}

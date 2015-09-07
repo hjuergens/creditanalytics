@@ -333,7 +333,7 @@ public class InArrearsSwap {
 		FixFloatComponent[] aSwapInAdvance = SwapInstrumentsFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y", "40Y", "50Y"
 			},
 			CompositePeriodBuilder.REFERENCE_PERIOD_IN_ADVANCE
@@ -346,7 +346,7 @@ public class InArrearsSwap {
 		FixFloatComponent[] aSwapInArrears = SwapInstrumentsFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y", "40Y", "50Y"
 			},
 			CompositePeriodBuilder.REFERENCE_PERIOD_IN_ARREARS

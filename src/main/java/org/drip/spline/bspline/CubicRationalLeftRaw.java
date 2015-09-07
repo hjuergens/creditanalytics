@@ -55,7 +55,7 @@ public class CubicRationalLeftRaw extends org.drip.spline.bspline.TensionBasisHa
 	public CubicRationalLeftRaw (
 		final double dblLeftPredictorOrdinate,
 		final double dblRightPredictorOrdinate,
-		final java.lang.String strShapeControlType,
+		final String strShapeControlType,
 		final double dblTension)
 		throws java.lang.Exception
 	{

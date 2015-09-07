@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class CustomMetricLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strLabel = "";
+	private String _strLabel = "";
 
 	/**
 	 * Make a Standard Custom Metric Label from the Reference Entity Name
@@ -48,7 +48,7 @@ public class CustomMetricLabel implements org.drip.state.identifier.LatentStateL
 	 */
 
 	public static final CustomMetricLabel Standard (
-		final java.lang.String strLabel)
+		final String strLabel)
 	{
 		try {
 			return new CustomMetricLabel (strLabel);
@@ -68,14 +68,14 @@ public class CustomMetricLabel implements org.drip.state.identifier.LatentStateL
 	 */
 
 	private CustomMetricLabel (
-		final java.lang.String strLabel)
+		final String strLabel)
 		throws java.lang.Exception
 	{
 		if (null == (_strLabel = strLabel) || _strLabel.isEmpty())
 			throw new java.lang.Exception ("CustomMetricLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strLabel;
 	}

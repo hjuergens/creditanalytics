@@ -174,7 +174,7 @@ public class DateInMonth {
 	public org.drip.analytics.date.JulianDate instanceDay (
 		final int iYear,
 		final int iMonth,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		try {
 			if (INSTANCE_GENERATOR_RULE_EDGE_LAG == _iInstanceGeneratorRule) {
@@ -235,7 +235,7 @@ public class DateInMonth {
 		return _bFromBack ? dtBase.subtractBusDays (0, strCalendar) : dtBase.addBusDays (0, strCalendar);
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return "[DateInMonth => Instance Generator Rule: " + _iInstanceGeneratorRule + " | From Back Flag: "
 			+ _bFromBack + " | Day Of Week: " + _iDayOfWeek + " | Week In Month: " + _iWeekInMonth +

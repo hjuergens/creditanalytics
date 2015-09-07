@@ -44,8 +44,8 @@ package org.drip.service.env;
 
 public class StaticBACurves {
 	private static final org.drip.product.definition.Bond CreateTSYBond (
-		final java.lang.String strTSYName,
-		final java.lang.String strCurrency,
+		final String strTSYName,
+		final String strCurrency,
 		final double dblCoupon,
 		final org.drip.analytics.date.JulianDate dt,
 		int iNumYears)
@@ -216,13 +216,13 @@ public class StaticBACurves {
 	public static final boolean BuildTSYCurve (
 		org.drip.param.definition.ScenarioMarketParams mpc,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == mpc || null == dt || null == strCurrency || strCurrency.isEmpty()) return false;
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent aCompCalib[] = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[6];
-		java.lang.String astrCalibMeasure[] = new java.lang.String[6];
+		String astrCalibMeasure[] = new String[6];
 		double adblCompCalibValue[] = new double[6];
 		org.drip.param.definition.ScenarioDiscountCurve irscTSY = null;
 		adblCompCalibValue[0] = .0200;
@@ -296,11 +296,11 @@ public class StaticBACurves {
 	public static final boolean BuildEDSFCurve (
 		org.drip.param.definition.ScenarioMarketParams mpc,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == mpc || null == dt || null == strCurrency || strCurrency.isEmpty()) return false;
 
-		java.lang.String astrCalibMeasure[] = new java.lang.String[8];
+		String astrCalibMeasure[] = new String[8];
 		double adblCompCalibValue[] = new double[8];
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCompCalib = null;
 		org.drip.param.definition.ScenarioDiscountCurve irsc = null;
@@ -369,13 +369,13 @@ public class StaticBACurves {
 	public static boolean setDC (
 		org.drip.param.definition.ScenarioMarketParams mpc,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == mpc || null == dt || null == strCurrency || strCurrency.isEmpty()) return false;
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent aCompCalib[] = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[30];
-		java.lang.String astrCalibMeasure[] = new java.lang.String[30];
+		String astrCalibMeasure[] = new String[30];
 		double adblCompCalibValue[] = new double[30];
 		org.drip.param.definition.ScenarioDiscountCurve irsc = null;
 		double adblDate[] = new double[30];
@@ -645,8 +645,8 @@ public class StaticBACurves {
 	public static boolean setCC (
 		org.drip.param.definition.ScenarioMarketParams mpc,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCC,
-		final java.lang.String strIR,
+		final String strCC,
+		final String strIR,
 		final double dblFixedCoupon,
 		final double dblFairPremium,
 		final double dblRecovery)
@@ -658,7 +658,7 @@ public class StaticBACurves {
 
 		double[] adblQuotes = new double[5];
 		org.drip.param.definition.ScenarioCreditCurve ccsc = null;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[5];
+		String[] astrCalibMeasure = new String[5];
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCDS = new
 			org.drip.product.definition.CreditDefaultSwap[5];
 

@@ -43,7 +43,7 @@ package org.drip.analytics.daycount;
 public class DateAdjustParams {
 	private int _iRollMode = 0;
 	private int _iNumDaysToRoll = -1;
-	private java.lang.String _strCalendar = "";
+	private String _strCalendar = "";
 
 	/**
 	 * Create a DateAdjustParams instance from the roll mode and the calendar
@@ -56,7 +56,7 @@ public class DateAdjustParams {
 	public DateAdjustParams (
 		final int iRollMode,
 		final int iNumDaysToRoll,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		_iRollMode = iRollMode;
 		_strCalendar = strCalendar;
@@ -80,7 +80,7 @@ public class DateAdjustParams {
 	 * @return The Roll Holiday Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}

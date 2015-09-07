@@ -38,7 +38,7 @@ package org.drip.regression.curveJacobian;
  */
 
 public class CashJacobianRegressorSet implements org.drip.regression.core.RegressorSet {
-	private java.lang.String _strRegressionScenario =
+	private String _strRegressionScenario =
 		"org.drip.analytics.definition.CashDiscountCurve.CompPVDFJacobian";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
@@ -66,7 +66,7 @@ public class CashJacobianRegressorSet implements org.drip.regression.core.Regres
 					double adblRate[] = new double[NUM_CASH_INSTR];
 					double adblCompCalibValue[] = new double[NUM_CASH_INSTR];
 					aWJComp = new org.drip.quant.calculus.WengertJacobian[NUM_CASH_INSTR];
-					java.lang.String astrCalibMeasure[] = new java.lang.String[NUM_CASH_INSTR];
+					String astrCalibMeasure[] = new String[NUM_CASH_INSTR];
 					aCompCalib = new
 						org.drip.product.definition.CalibratableFixedIncomeComponent[NUM_CASH_INSTR];
 
@@ -153,7 +153,7 @@ public class CashJacobianRegressorSet implements org.drip.regression.core.Regres
 		return true;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

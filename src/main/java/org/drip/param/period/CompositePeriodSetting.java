@@ -37,8 +37,8 @@ package org.drip.param.period;
 
 public class CompositePeriodSetting {
 	private int _iFreq = -1;
-	private java.lang.String _strTenor = "";
-	private java.lang.String _strPayCurrency = "";
+	private String _strTenor = "";
+	private String _strPayCurrency = "";
 	private double _dblBaseNotional = java.lang.Double.NaN;
 	private org.drip.quant.common.Array2D _fsCoupon = null;
 	private org.drip.quant.common.Array2D _fsNotional = null;
@@ -64,8 +64,8 @@ public class CompositePeriodSetting {
 
 	public CompositePeriodSetting (
 		final int iFreq,
-		final java.lang.String strTenor,
-		final java.lang.String strPayCurrency,
+		final String strTenor,
+		final String strPayCurrency,
 		final org.drip.analytics.daycount.DateAdjustParams dapPay,
 		final double dblBaseNotional,
 		final org.drip.quant.common.Array2D fsCoupon,
@@ -107,7 +107,7 @@ public class CompositePeriodSetting {
 	 * @return The Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		return _strTenor;
 	}
@@ -118,7 +118,7 @@ public class CompositePeriodSetting {
 	 * @return The Pay Currency
 	 */
 
-	public java.lang.String payCurrency()
+	public String payCurrency()
 	{
 		return _strPayCurrency;
 	}

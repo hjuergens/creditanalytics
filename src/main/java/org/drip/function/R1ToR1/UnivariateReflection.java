@@ -90,7 +90,7 @@ public class UnivariateReflection extends org.drip.function.definition.R1ToR1 {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		UnivariateReflection ur = new UnivariateReflection (new Polynomial (4));

@@ -47,14 +47,14 @@ public class DCAct_Act implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DCAct_Act";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"Actual/Actual", "Actual/Actual ICMA", "Act/Act", "Act/Act ICMA",
+		return new String[] {"Actual/Actual", "Actual/Actual ICMA", "Act/Act", "Act/Act ICMA",
 			"ISMA-99", "Act/Act ISMA", "DCAct_Act"};
 	}
 
@@ -63,7 +63,7 @@ public class DCAct_Act implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		double dblDCF = 0.;
@@ -115,7 +115,7 @@ public class DCAct_Act implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		int iNumLeapDays = 0;

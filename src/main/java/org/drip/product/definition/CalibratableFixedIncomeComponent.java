@@ -34,7 +34,7 @@ package org.drip.product.definition;
 
 /**
  * CalibratableFixedIncomeComponent abstract class provides implementation of Component's calibration
- * 	interface. It exposes stubs for getting/setting the component’s calibration code, generate calibrated
+ * 	interface. It exposes stubs for getting/setting the componentï¿½s calibration code, generate calibrated
  * 	measure values from the market inputs, and compute micro-Jacobians (QuoteDF and PVDF micro-Jacks).
  * 
  * @author Lakshmi Krishnamurthy
@@ -54,7 +54,7 @@ public abstract class CalibratableFixedIncomeComponent extends
 	 * @return Primary Code
 	 */
 
-	public abstract java.lang.String primaryCode();
+	public abstract String primaryCode();
 
 	/**
 	 * Set the component's primary code
@@ -63,7 +63,7 @@ public abstract class CalibratableFixedIncomeComponent extends
 	 */
 
 	public abstract void setPrimaryCode (
-		final java.lang.String strCode);
+		final String strCode);
 
 	/**
 	 * Get the component's secondary codes
@@ -71,19 +71,19 @@ public abstract class CalibratableFixedIncomeComponent extends
 	 * @return Array of strings containing the secondary codes
 	 */
 
-	public java.lang.String[] secondaryCode()
+	public String[] secondaryCode()
 	{
-		java.lang.String strPrimaryCode = primaryCode();
+		String strPrimaryCode = primaryCode();
 
 		int iNumTokens = 0;
-		java.lang.String astrCodeTokens[] = new java.lang.String[3];
+		String astrCodeTokens[] = new String[3];
 
 		java.util.StringTokenizer stCodeTokens = new java.util.StringTokenizer (strPrimaryCode, ".");
 
 		while (stCodeTokens.hasMoreTokens())
 			astrCodeTokens[iNumTokens++] = stCodeTokens.nextToken();
 
-		java.lang.String[] astrSecCode = new java.lang.String[2];
+		String[] astrSecCode = new String[2];
 		astrSecCode[1] = astrCodeTokens[0] + "." + astrCodeTokens[1];
 		astrSecCode[0] = astrCodeTokens[1];
 		return astrSecCode;
@@ -119,7 +119,7 @@ public abstract class CalibratableFixedIncomeComponent extends
 	 */
 
 	public abstract org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strMainfestMeasure,
+		final String strMainfestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

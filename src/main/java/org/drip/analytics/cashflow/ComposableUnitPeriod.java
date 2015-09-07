@@ -58,7 +58,7 @@ public abstract class ComposableUnitPeriod {
 	public static final int NODE_RIGHT_OF_SEGMENT = 4;
 
 	private int _iFreq = -1;
-	private java.lang.String _strTenor = "";
+	private String _strTenor = "";
 	private double _dblEndDate = java.lang.Double.NaN;
 	private double _dblStartDate = java.lang.Double.NaN;
 	private double _dblFullCouponDCF = java.lang.Double.NaN;
@@ -67,7 +67,7 @@ public abstract class ComposableUnitPeriod {
 	protected ComposableUnitPeriod (
 		final double dblStartDate,
 		final double dblEndDate,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.param.period.UnitCouponAccrualSetting ucas)
 		throws java.lang.Exception
 	{
@@ -123,7 +123,7 @@ public abstract class ComposableUnitPeriod {
 	 * @return The Coupon Day Count
 	 */
 
-	public java.lang.String couponDC()
+	public String couponDC()
 	{
 		return _ucas.couponDC();
 	}
@@ -145,7 +145,7 @@ public abstract class ComposableUnitPeriod {
 	 * @return The Accrual Day Count
 	 */
 
-	public java.lang.String accrualDC()
+	public String accrualDC()
 	{
 		return _ucas.accrualDC();
 	}
@@ -178,7 +178,7 @@ public abstract class ComposableUnitPeriod {
 	 * @return The Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _ucas.calendar();
 	}
@@ -211,7 +211,7 @@ public abstract class ComposableUnitPeriod {
 	 * @return The Coupon Frequency converted into a Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		return _strTenor;
 	}
@@ -312,5 +312,5 @@ public abstract class ComposableUnitPeriod {
 	 * @return The Period Coupon Currency
 	 */
 
-	public abstract java.lang.String couponCurrency();
+	public abstract String couponCurrency();
 }

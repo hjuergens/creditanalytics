@@ -61,7 +61,7 @@ import org.drip.state.creator.*;
  */
 
 public class CreditAnalyticsAPI {
-	private static final java.lang.String FIELD_SEPARATOR = "   ";
+	private static final String FIELD_SEPARATOR = "   ";
 
 	/*
 	 * Sample API demonstrating the creation/usage of the credit curve from survival and hazard rates

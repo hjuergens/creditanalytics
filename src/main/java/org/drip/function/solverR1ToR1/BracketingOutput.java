@@ -147,9 +147,9 @@ public class BracketingOutput extends org.drip.function.solverR1ToR1.ExecutionIn
 		return cop.done (getStartingVariate()) ? cop : null;
 	}
 
-	@Override public java.lang.String displayString()
+	@Override public String displayString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		sb.append (super.displayString());
 

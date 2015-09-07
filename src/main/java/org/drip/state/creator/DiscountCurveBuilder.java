@@ -48,13 +48,13 @@ public class DiscountCurveBuilder {
 	 * Constant Forward Bootstrap mode
 	 */
 
-	public static final java.lang.String BOOTSTRAP_MODE_CONSTANT_FORWARD = "ConstantForward";
+	public static final String BOOTSTRAP_MODE_CONSTANT_FORWARD = "ConstantForward";
 
 	/**
 	 * Polynomial Spline DF Bootstrap mode
 	 */
 
-	public static final java.lang.String BOOTSTRAP_MODE_POLYNOMIAL_SPLINE_DF = "PolynomialSplineDF";
+	public static final String BOOTSTRAP_MODE_POLYNOMIAL_SPLINE_DF = "PolynomialSplineDF";
 
 	/**
 	 * Build a Discount Curve from an array of discount factors
@@ -72,11 +72,11 @@ public class DiscountCurveBuilder {
 
 	public static final org.drip.analytics.rates.DiscountCurve BuildFromDF (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double adblDate[],
 		final double adblDF[],
-		final java.lang.String strBootstrapMode)
+		final String strBootstrapMode)
 	{
 		if (null == adblDate || 0 == adblDate.length || null == adblDF || adblDate.length != adblDF.length ||
 			null == dtStart || null == strCurrency || strCurrency.isEmpty())
@@ -128,7 +128,7 @@ public class DiscountCurveBuilder {
 
 	public static final org.drip.analytics.rates.ExplicitBootDiscountCurve CreateFromFlatRate (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double dblRate)
 	{
@@ -159,10 +159,10 @@ public class DiscountCurveBuilder {
 
 	public static final org.drip.analytics.rates.ExplicitBootDiscountCurve CreateFromFlatYield (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double dblYield,
-		final java.lang.String strCompoundingDayCount,
+		final String strCompoundingDayCount,
 		final int iCompoundingFreq)
 	{
 		if (null == dtStart || !org.drip.quant.common.NumberUtil.IsValid (dblYield)) return null;
@@ -194,11 +194,11 @@ public class DiscountCurveBuilder {
 
 	public static final org.drip.analytics.rates.ExplicitBootDiscountCurve CreateDC (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblDate,
 		final double[] adblRate,
-		final java.lang.String strBootstrapMode)
+		final String strBootstrapMode)
 	{
 		try {
 			if (null == strBootstrapMode)

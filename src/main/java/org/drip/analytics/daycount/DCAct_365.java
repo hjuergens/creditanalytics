@@ -47,14 +47,14 @@ public class DCAct_365 implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DCAct_365";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"Actual/365 Fixed", "Act/365 Fixed", "A/365 Fixed", "A/365F",
+		return new String[] {"Actual/365 Fixed", "Act/365 Fixed", "A/365 Fixed", "A/365F",
 			"English", "Act/365", "DCAct_365"};
 	}
 
@@ -63,7 +63,7 @@ public class DCAct_365 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA (dblStart, dblEnd, bApplyEOMAdj);
@@ -79,7 +79,7 @@ public class DCAct_365 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA (dblStart, dblEnd, bApplyEOMAdj);

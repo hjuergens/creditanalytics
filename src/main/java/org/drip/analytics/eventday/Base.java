@@ -40,7 +40,7 @@ package org.drip.analytics.eventday;
  */
 
 public abstract class Base {
-	private java.lang.String _strDescription = "";
+	private String _strDescription = "";
 
 	/**
 	 * Constructs the Base instance from the description
@@ -49,7 +49,7 @@ public abstract class Base {
 	 */
 
 	public Base (
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		_strDescription = strDescription;
 	}
@@ -94,7 +94,7 @@ public abstract class Base {
 	 * @return Description
 	 */
 
-	public java.lang.String description()
+	public String description()
 	{
 		return _strDescription;
 	}

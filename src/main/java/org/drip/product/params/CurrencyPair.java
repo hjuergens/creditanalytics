@@ -40,9 +40,9 @@ package org.drip.product.params;
  */
 
 public class CurrencyPair {
-	private java.lang.String _strNumCcy = "";
-	private java.lang.String _strDenomCcy = "";
-	private java.lang.String _strQuoteCcy = "";
+	private String _strNumCcy = "";
+	private String _strDenomCcy = "";
+	private String _strQuoteCcy = "";
 	private double _dblPIPFactor = java.lang.Double.NaN;
 
 	/**
@@ -54,11 +54,11 @@ public class CurrencyPair {
 	 */
 
 	public static final CurrencyPair FromCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		if (null == strCode || strCode.isEmpty()) return null;
 
-		java.lang.String[] astrCcy = strCode.split ("/");
+		String[] astrCcy = strCode.split ("/");
 
 		if (null == astrCcy || 2 != astrCcy.length || null == astrCcy[0] || astrCcy[0].isEmpty() || null ==
 			astrCcy[1] || astrCcy[1].isEmpty())
@@ -86,9 +86,9 @@ public class CurrencyPair {
 	 */
 
 	public CurrencyPair (
-		final java.lang.String strNumCcy,
-		final java.lang.String strDenomCcy,
-		final java.lang.String strQuoteCcy,
+		final String strNumCcy,
+		final String strDenomCcy,
+		final String strQuoteCcy,
 		final double dblPIPFactor)
 		throws java.lang.Exception
 	{
@@ -110,7 +110,7 @@ public class CurrencyPair {
 	 * @return Numerator currency
 	 */
 
-	public java.lang.String numCcy()
+	public String numCcy()
 	{
 		return _strNumCcy;
 	}
@@ -121,7 +121,7 @@ public class CurrencyPair {
 	 * @return Denominator currency
 	 */
 
-	public java.lang.String denomCcy()
+	public String denomCcy()
 	{
 		return _strDenomCcy;
 	}
@@ -132,7 +132,7 @@ public class CurrencyPair {
 	 * @return Quote currency
 	 */
 
-	public java.lang.String quoteCcy()
+	public String quoteCcy()
 	{
 		return _strQuoteCcy;
 	}
@@ -143,7 +143,7 @@ public class CurrencyPair {
 	 * @return Currency pair code
 	 */
 
-	public java.lang.String code()
+	public String code()
 	{
 		return _strNumCcy + "/" + _strDenomCcy;
 	}
@@ -154,7 +154,7 @@ public class CurrencyPair {
 	 * @return The Inverse Currency pair code
 	 */
 
-	public java.lang.String inverseCode()
+	public String inverseCode()
 	{
 		return _strDenomCcy + "/" + _strNumCcy;
 	}
@@ -170,7 +170,7 @@ public class CurrencyPair {
 		return _dblPIPFactor;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return _strNumCcy + " | " + _strDenomCcy + " | " + _strQuoteCcy + " | " + _dblPIPFactor;
 	}

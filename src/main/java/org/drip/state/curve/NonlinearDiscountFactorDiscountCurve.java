@@ -68,7 +68,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst = _ccis.components();
 
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> mapMeasures =
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> mapMeasures =
 			_ccis.measures();
 
 		org.drip.param.market.LatentStateFixingsContainer lsfc = _ccis.fixing();
@@ -77,7 +77,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 			org.drip.state.estimator.NonlinearCurveCalibrator();
 
 		int iNumComp = aCalibInst.length;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iNumComp];
+		String[] astrCalibMeasure = new String[iNumComp];
 
 		try {
 			NonlinearDiscountFactorDiscountCurve nldfdc = new NonlinearDiscountFactorDiscountCurve (new
@@ -85,7 +85,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 					_adblDate, adblShiftedManifestMeasure);
 
 			for (int i = 0; i < iNumComp; ++i) {
-				java.lang.String strInstrumentCode = aCalibInst[i].primaryCode();
+				String strInstrumentCode = aCalibInst[i].primaryCode();
 
 				calibrator.calibrateIRNode (nldfdc, null, aCalibInst[i], i, valParam, astrCalibMeasure[i] =
 					mapMeasures.get (strInstrumentCode)[0], adblShiftedManifestMeasure[i], lsfc,
@@ -116,7 +116,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 
 	public NonlinearDiscountFactorDiscountCurve (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblDate,
 		final double[] adblRate)
@@ -226,7 +226,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 	}
 
 	@Override public NonlinearDiscountFactorDiscountCurve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift) || null == _ccis) return null;
@@ -248,7 +248,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 
 	@Override public NonlinearDiscountFactorDiscountCurve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift) || null == _ccis) return null;
@@ -271,7 +271,7 @@ public class NonlinearDiscountFactorDiscountCurve extends
 	}
 
 	@Override public org.drip.analytics.rates.ExplicitBootDiscountCurve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		if (null == rvtp) return null;
@@ -326,14 +326,14 @@ public class NonlinearDiscountFactorDiscountCurve extends
 		return null;
 	}
 
-	@Override public java.lang.String latentStateQuantificationMetric()
+	@Override public String latentStateQuantificationMetric()
 	{
 		return org.drip.analytics.definition.LatentStateStatic.DISCOUNT_QM_ZERO_RATE;
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblDate)) return null;
 

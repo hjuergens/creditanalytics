@@ -61,9 +61,9 @@ public class CDSBuilder {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final double dblCoupon,
-		final java.lang.String strIR,
+		final String strIR,
 		final org.drip.product.params.CreditSetting crValParams,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final boolean bAdjustDates)
 	{
 		if (null == dtEffective || null == dtMaturity || null == strIR || strIR.isEmpty() || null ==
@@ -115,10 +115,10 @@ public class CDSBuilder {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final double dblCoupon,
-		final java.lang.String strIR,
+		final String strIR,
 		final double dblRecovery,
-		final java.lang.String strCC,
-		final java.lang.String strCalendar,
+		final String strCC,
+		final String strCalendar,
 		final boolean bAdjustDates)
 	{
 		if (null == dtEffective || null == dtMaturity || null == strIR || strIR.isEmpty() || null == strCC ||
@@ -153,9 +153,9 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateSNAC (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strCC)
+		final String strCC)
 	{
 		return CreateSNAC (dtEffective, strTenor, dblCoupon, "USD", strCC, "USD");
 	}
@@ -175,11 +175,11 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateSNAC (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strIR,
-		final java.lang.String strCC,
-		final java.lang.String strCalendar)
+		final String strIR,
+		final String strCC,
+		final String strCalendar)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty()) return null;
 
@@ -208,9 +208,9 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateSEUC (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strCC)
+		final String strCC)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty()) return null;
 
@@ -239,9 +239,9 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateSAPC (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strCC)
+		final String strCC)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty()) return null;
 
@@ -270,10 +270,10 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateSTEM (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strCC,
-		final java.lang.String strLocation)
+		final String strCC,
+		final String strLocation)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty()) return null;
 
@@ -305,11 +305,11 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateCDS (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strIR,
+		final String strIR,
 		final org.drip.product.params.CreditSetting crValParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty() || null == strIR || strIR.isEmpty()
 			|| null == crValParams || !org.drip.quant.common.NumberUtil.IsValid (dblCoupon)) {
@@ -350,11 +350,11 @@ public class CDSBuilder {
 
 	public static final org.drip.product.definition.CreditDefaultSwap CreateCDS (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final double dblCoupon,
-		final java.lang.String strIR,
-		final java.lang.String strCC,
-		final java.lang.String strCalendar)
+		final String strIR,
+		final String strCC,
+		final String strCalendar)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty() || null == strIR || strIR.isEmpty()
 			|| null == strCC || strCC.isEmpty() || !org.drip.quant.common.NumberUtil.IsValid (dblCoupon)) {

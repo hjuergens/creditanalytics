@@ -109,16 +109,16 @@ public class ScenarioForwardCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.ForwardCurve ShapePreservingForwardCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.state.identifier.ForwardLabel fri,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParam,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParam,
-		final java.lang.String strBasisType,
+		final String strBasisType,
 		final org.drip.spline.basis.FunctionSetBuilderParams fsbp,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double[] adblQuote,
 		final double dblEpochResponse)
 	{

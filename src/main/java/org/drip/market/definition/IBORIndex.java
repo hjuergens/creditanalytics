@@ -37,8 +37,8 @@ package org.drip.market.definition;
 
 public class IBORIndex extends org.drip.market.definition.FloaterIndex {
 	private int _iSpotLag = 0;
-	private java.lang.String _strLongestMaturity = "";
-	private java.lang.String _strShortestMaturity = "";
+	private String _strLongestMaturity = "";
+	private String _strShortestMaturity = "";
 
 	/**
 	 * IBORIndex Constructor
@@ -56,14 +56,14 @@ public class IBORIndex extends org.drip.market.definition.FloaterIndex {
 	 */
 
 	public IBORIndex (
-		final java.lang.String strName,
-		final java.lang.String strFamily,
-		final java.lang.String strCurrency,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar,
+		final String strName,
+		final String strFamily,
+		final String strCurrency,
+		final String strDayCount,
+		final String strCalendar,
 		final int iSpotLag,
-		final java.lang.String strShortestMaturity,
-		final java.lang.String strLongestMaturity,
+		final String strShortestMaturity,
+		final String strLongestMaturity,
 		final int iAccrualCompoundingRule)
 		throws java.lang.Exception
 	{
@@ -86,7 +86,7 @@ public class IBORIndex extends org.drip.market.definition.FloaterIndex {
 	 * @return The Index Shortest Maturity
 	 */
 
-	public java.lang.String shortestMaturity()
+	public String shortestMaturity()
 	{
 		return _strShortestMaturity;
 	}
@@ -97,7 +97,7 @@ public class IBORIndex extends org.drip.market.definition.FloaterIndex {
 	 * @return The Index Longest Maturity
 	 */
 
-	public java.lang.String longestMaturity()
+	public String longestMaturity()
 	{
 		return _strLongestMaturity;
 	}

@@ -112,7 +112,7 @@ public class Convention {
 	private static final boolean UpdateDCCalcMap (
 		final org.drip.analytics.daycount.DCFCalculator dcfCalc)
 	{
-		for (java.lang.String strDC : dcfCalc.alternateNames())
+		for (String strDC : dcfCalc.alternateNames())
 			s_mapDCCalc.put (strDC, dcfCalc);
 
 		return true;
@@ -163,7 +163,7 @@ public class Convention {
 	{
 		if (null == lh || null == mapHols) return false;
 
-		java.lang.String strLocation = lh.getHolidayLoc();
+		String strLocation = lh.getHolidayLoc();
 
 		org.drip.analytics.eventday.Locale locHols = lh.getHolidaySet();
 
@@ -428,7 +428,7 @@ public class Convention {
 	}
 
 	private static final boolean LocationHoliday (
-		final java.lang.String strCalendarSet,
+		final String strCalendarSet,
 		final double dblDate,
 		final int iHolType)
 	{
@@ -436,9 +436,9 @@ public class Convention {
 			(dblDate))
 			return false;
 
-		java.lang.String[] astrCalendars = strCalendarSet.split (",");
+		String[] astrCalendars = strCalendarSet.split (",");
 
-		for (java.lang.String strCalendar : astrCalendars) {
+		for (String strCalendar : astrCalendars) {
 			if (null != strCalendar && null != s_mapLocHols.get (strCalendar)) {
 				org.drip.analytics.eventday.Locale lh = s_mapLocHols.get (strCalendar);
 
@@ -474,7 +474,7 @@ public class Convention {
 	 */
 
 	public static final boolean Init (
-		final java.lang.String strCalendarSetLoc)
+		final String strCalendarSetLoc)
 	{
 		if (!SetDCCalc()) return false;
 
@@ -508,7 +508,7 @@ public class Convention {
 	 * @return Set of holiday locations
 	 */
 
-	public static final java.util.Set<java.lang.String> HolidayLocations()
+	public static final java.util.Set<String> HolidayLocations()
 	{
 		return s_mapLocHols.keySet();
 	}
@@ -522,15 +522,15 @@ public class Convention {
 	 */
 
 	public static final int[] WeekendDays (
-		final java.lang.String strCalendarSet)
+		final String strCalendarSet)
 	{
 		if (null == strCalendarSet || strCalendarSet.isEmpty()) return null;
 
-		java.lang.String[] astrCalendars = strCalendarSet.split (",");
+		String[] astrCalendars = strCalendarSet.split (",");
 
 		java.util.Set<java.lang.Integer> si = new java.util.HashSet<java.lang.Integer>();
 
-		for (java.lang.String strCalendar : astrCalendars) {
+		for (String strCalendar : astrCalendars) {
 			if (null != strCalendar && null != s_mapLocHols.get (strCalendar)) {
 				org.drip.analytics.eventday.Locale lh = s_mapLocHols.get (strCalendar);
 
@@ -557,11 +557,11 @@ public class Convention {
 	 * @return Available DRIP day count conventions
 	 */
 
-	public static final java.lang.String AvailableDC()
+	public static final String AvailableDC()
 	{
-		java.lang.StringBuffer sbDCSet = new java.lang.StringBuffer();
+		StringBuffer sbDCSet = new StringBuffer();
 
-		for (java.lang.String strDC : s_mapDCCalc.keySet())
+		for (String strDC : s_mapDCCalc.keySet())
 			sbDCSet.append (strDC + " | ");
 
 		return sbDCSet.toString();
@@ -586,10 +586,10 @@ public class Convention {
 	public static final double YearFraction (
 		final double dblStart,
 		final double dblEnd,
-		final java.lang.String strDayCount,
+		final String strDayCount,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if ("BUS252".equalsIgnoreCase (strDayCount) || "BUS DAYS252".equalsIgnoreCase (strDayCount) ||
@@ -626,10 +626,10 @@ public class Convention {
 	public static final int DaysAccrued (
 		final double dblStart,
 		final double dblEnd,
-		final java.lang.String strDayCount,
+		final String strDayCount,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if ("BUS252".equalsIgnoreCase (strDayCount) || "BUS DAYS252".equalsIgnoreCase (strDayCount) ||
@@ -660,7 +660,7 @@ public class Convention {
 	public static final double RollDate (
 		final double dblDate,
 		final int iRollMode,
-		final java.lang.String strCalendarSet,
+		final String strCalendarSet,
 		int iNumDaysToRoll)
 		throws java.lang.Exception
 	{
@@ -731,7 +731,7 @@ public class Convention {
 
 	public static final boolean IsHoliday (
 		final double dblDate,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final int iHolType)
 		throws java.lang.Exception
 	{
@@ -755,7 +755,7 @@ public class Convention {
 
 	public static final boolean IsHoliday (
 		final double dblDate,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		return IsHoliday (dblDate, strCalendar, WEEKDAY_HOLS | WEEKEND_HOLS);
@@ -776,7 +776,7 @@ public class Convention {
 	public static final int BusinessDays (
 		final double dblStart,
 		final double dblFinish,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblStart) || !org.drip.quant.common.NumberUtil.IsValid
@@ -812,7 +812,7 @@ public class Convention {
 	public static final java.util.List<java.lang.Double> HolidaySet (
 		final double dblStart,
 		final double dblFinish,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblStart) || !org.drip.quant.common.NumberUtil.IsValid
 			(dblFinish))
@@ -854,7 +854,7 @@ public class Convention {
 	public static final int Holidays (
 		final double dblStart,
 		final double dblFinish,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblStart) || !org.drip.quant.common.NumberUtil.IsValid
@@ -891,7 +891,7 @@ public class Convention {
 
 	public static final double Adjust (
 		final double dblDate,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final int iAdjustMode)
 		throws java.lang.Exception
 	{
@@ -920,14 +920,14 @@ public class Convention {
 	public static final double AddBusinessDays (
 		final double dblDate,
         final int iNumDays,
-        final java.lang.String strCalendar)
+        final String strCalendar)
         throws java.lang.Exception
     {
         return Adjust (dblDate + iNumDays, strCalendar, DATE_ROLL_FOLLOWING);
     }
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		Convention.Init ("c:\\DRIP\\CreditProduct\\Config.xml");

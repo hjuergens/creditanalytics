@@ -39,9 +39,9 @@ package org.drip.param.market;
 
 public class ProductTickQuote {
 	private boolean _bIsMark = false;
-	private java.lang.String _strSource = "";
-	private java.lang.String _strProductID = "";
-	private java.lang.String _strCounterParty = "";
+	private String _strSource = "";
+	private String _strProductID = "";
+	private String _strCounterParty = "";
 	private org.drip.param.definition.ProductQuote _pq = null;
 
 	/**
@@ -65,10 +65,10 @@ public class ProductTickQuote {
 	 */
 
 	public ProductTickQuote (
-		final java.lang.String strProductID,
+		final String strProductID,
 		final org.drip.param.definition.ProductQuote pq,
-		final java.lang.String strCounterParty,
-		final java.lang.String strSource,
+		final String strCounterParty,
+		final String strSource,
 		final boolean bIsMark)
 		throws java.lang.Exception
 	{
@@ -86,7 +86,7 @@ public class ProductTickQuote {
 	 * @return Product ID
 	 */
 
-	public java.lang.String productID()
+	public String productID()
 	{
 		return _strProductID;
 	}
@@ -108,7 +108,7 @@ public class ProductTickQuote {
 	 * @return Quote Source
 	 */
 
-	public java.lang.String source()
+	public String source()
 	{
 		return _strSource;
 	}
@@ -119,7 +119,7 @@ public class ProductTickQuote {
 	 * @return Counter Party
 	 */
 
-	public java.lang.String counterParty()
+	public String counterParty()
 	{
 		return _strCounterParty;
 	}

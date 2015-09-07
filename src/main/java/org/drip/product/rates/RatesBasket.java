@@ -48,7 +48,7 @@ package org.drip.product.rates;
  */
 
 public class RatesBasket extends org.drip.product.definition.CalibratableFixedIncomeComponent {
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.product.rates.Stream[] _aCompFixedStream = null;
 	private org.drip.product.rates.Stream[] _aCompFloatStream = null;
 
@@ -63,7 +63,7 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 	 */
 
 	public RatesBasket (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.rates.Stream[] aCompFixedStream,
 		final org.drip.product.rates.Stream[] aCompFloatStream)
 		throws java.lang.Exception
@@ -74,12 +74,12 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 			throw new java.lang.Exception ("RatesBasket ctr => Invalid Inputs");
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
 
-	@Override public java.lang.String primaryCode()
+	@Override public String primaryCode()
 	{
 		return _strName;
 	}
@@ -107,10 +107,10 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 		return _aCompFloatStream;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCouponCurrency = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCouponCurrency = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		if (null != _aCompFixedStream) {
 			int iFixedStreamLength = _aCompFixedStream.length;
@@ -133,7 +133,7 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 		return mapCouponCurrency;
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		if (null != _aCompFixedStream && 0 != _aCompFixedStream.length)
 			return _aCompFixedStream[0].payCurrency();
@@ -144,7 +144,7 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 		return null;
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return null;
 	}
@@ -229,7 +229,7 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 	}
 
 	@Override public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 	}
 
@@ -243,7 +243,7 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strMainfestMeasure,
+		final String strMainfestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
@@ -398,7 +398,7 @@ public class RatesBasket extends org.drip.product.definition.CalibratableFixedIn
 		return mapResult;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
 		return null;
 	}

@@ -46,11 +46,11 @@ package org.drip.state.estimator;
 
 public class CreditCurveScenarioGenerator {
 	class TranslatedQuoteMeasure {
-		java.lang.String _strMeasure = "";
+		String _strMeasure = "";
 		double _dblQuote = java.lang.Double.NaN;
 
 		TranslatedQuoteMeasure (
-			final java.lang.String strMeasure,
+			final String strMeasure,
 			final double dblQuote)
 		{
 			_dblQuote = dblQuote;
@@ -64,7 +64,7 @@ public class CreditCurveScenarioGenerator {
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final double dblQuote)
 	{
 		if (!(comp instanceof org.drip.product.definition.CreditDefaultSwap) ||
@@ -130,13 +130,13 @@ public class CreditCurveScenarioGenerator {
 	 */
 
 	public org.drip.analytics.definition.CreditCurve createCC (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final double[] adblQuotes,
 		final double dblRecovery,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
 		final boolean bFlat)
@@ -209,14 +209,14 @@ public class CreditCurveScenarioGenerator {
 	 */
 
 	public org.drip.analytics.definition.CreditCurve[] createTenorCC (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final double[] adblQuotes,
 		final double dblBump,
 		final double dblRecovery,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
 		final boolean bFlat)
@@ -266,14 +266,14 @@ public class CreditCurveScenarioGenerator {
 
 	public org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.definition.CreditCurve>
 		createTenorCCMap (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.param.valuation.ValuationParams valParams,
 			final org.drip.analytics.rates.DiscountCurve dc,
 			final org.drip.analytics.rates.DiscountCurve dcTSY,
 			final double[] adblQuotes,
 			final double dblBump,
 			final double dblRecovery,
-			final java.lang.String[] astrCalibMeasure,
+			final String[] astrCalibMeasure,
 			final org.drip.param.market.LatentStateFixingsContainer lsfc,
 			final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
 			final boolean bFlat)

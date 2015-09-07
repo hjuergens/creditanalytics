@@ -68,7 +68,7 @@ public class FXLabel implements org.drip.state.identifier.LatentStateLabel {
 	 */
 
 	public static final FXLabel Standard (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		try {
 			return new FXLabel (org.drip.product.params.CurrencyPair.FromCode (strCode));
@@ -94,7 +94,7 @@ public class FXLabel implements org.drip.state.identifier.LatentStateLabel {
 		if (null == (_cp = cp)) throw new java.lang.Exception ("FXLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _cp.code();
 	}

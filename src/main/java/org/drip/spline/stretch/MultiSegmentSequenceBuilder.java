@@ -53,68 +53,68 @@ public class MultiSegmentSequenceBuilder {
 	 * Polynomial Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_POLYNOMIAL = "Polynomial";
+	public static final String BASIS_SPLINE_POLYNOMIAL = "Polynomial";
 
 	/**
 	 * Bernstein Polynomial Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_BERNSTEIN_POLYNOMIAL = "BernsteinPolynomial";
+	public static final String BASIS_SPLINE_BERNSTEIN_POLYNOMIAL = "BernsteinPolynomial";
 
 	/**
 	 * Hyperbolic Tension Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_HYPERBOLIC_TENSION = "HyperbolicTension";
+	public static final String BASIS_SPLINE_HYPERBOLIC_TENSION = "HyperbolicTension";
 
 	/**
 	 * Exponential Tension Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_EXPONENTIAL_TENSION = "ExponentialTension";
+	public static final String BASIS_SPLINE_EXPONENTIAL_TENSION = "ExponentialTension";
 
 	/**
 	 * Kaklis Pandelis Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_KAKLIS_PANDELIS = "KaklisPandelis";
+	public static final String BASIS_SPLINE_KAKLIS_PANDELIS = "KaklisPandelis";
 
 	/**
 	 * Exponential Rational Basis Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_EXPONENTIAL_RATIONAL = "ExponentialRational";
+	public static final String BASIS_SPLINE_EXPONENTIAL_RATIONAL = "ExponentialRational";
 
 	/**
 	 * Exponential Mixture Basis Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_EXPONENTIAL_MIXTURE = "ExponentialMixture";
+	public static final String BASIS_SPLINE_EXPONENTIAL_MIXTURE = "ExponentialMixture";
 
 	/**
 	 * Koch-Lyche-Kvasov Exponential Tension Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_KLK_EXPONENTIAL_TENSION = "KLKExponentialTension";
+	public static final String BASIS_SPLINE_KLK_EXPONENTIAL_TENSION = "KLKExponentialTension";
 
 	/**
 	 * Koch-Lyche-Kvasov Hyperbolic Tension Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_KLK_HYPERBOLIC_TENSION = "KLKHyperbolicTension";
+	public static final String BASIS_SPLINE_KLK_HYPERBOLIC_TENSION = "KLKHyperbolicTension";
 
 	/**
 	 * Koch-Lyche-Kvasov Rational Linear Tension Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_KLK_RATIONAL_LINEAR_TENSION =
+	public static final String BASIS_SPLINE_KLK_RATIONAL_LINEAR_TENSION =
 		"KLKRationalLinearTension";
 
 	/**
 	 * Koch-Lyche-Kvasov Rational Quadratic Tension Spline
 	 */
 
-	public static final java.lang.String BASIS_SPLINE_KLK_RATIONAL_QUADRATIC_TENSION =
+	public static final String BASIS_SPLINE_KLK_RATIONAL_QUADRATIC_TENSION =
 		"KLKRationalQuadraticTension";
 
 	/**
@@ -143,7 +143,7 @@ public class MultiSegmentSequenceBuilder {
 		for (int i = 0; i < iNumSegment; ++i) {
 			if (null == aSCBC[i]) return null;
 
-			java.lang.String strBasisSpline = aSCBC[i].basisSpline();
+			String strBasisSpline = aSCBC[i].basisSpline();
 
 			if (null == strBasisSpline || (!BASIS_SPLINE_POLYNOMIAL.equalsIgnoreCase (strBasisSpline) &&
 				!BASIS_SPLINE_BERNSTEIN_POLYNOMIAL.equalsIgnoreCase (strBasisSpline) &&
@@ -256,7 +256,7 @@ public class MultiSegmentSequenceBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateUncalibratedStretchEstimator (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC)
 	{
@@ -286,7 +286,7 @@ public class MultiSegmentSequenceBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateCalibratedStretchEstimator (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
@@ -328,7 +328,7 @@ public class MultiSegmentSequenceBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateCalibratedStretchEstimator (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double dblStretchLeftResponseValue,
 		final org.drip.spline.params.SegmentResponseValueConstraint[] aSRVC,
@@ -361,7 +361,7 @@ public class MultiSegmentSequenceBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateCalibratedStretchEstimator (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final org.drip.spline.params.SegmentResponseValueConstraint srvcStretchLeft,
 		final org.drip.spline.params.SegmentResponseValueConstraint[] aSRVC,
@@ -392,7 +392,7 @@ public class MultiSegmentSequenceBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateCalibratedStretchEstimator (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblPredictorOrdinate,
 		final double dblResponseValue,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbc,
@@ -437,7 +437,7 @@ public class MultiSegmentSequenceBuilder {
 	 */
 
 	public static final org.drip.spline.stretch.MultiSegmentSequence CreateRegressionSplineEstimator (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblKnotPredictorOrdinate,
 		final org.drip.spline.params.SegmentCustomBuilderControl[] aSCBC,
 		final org.drip.spline.params.StretchBestFitResponse sbfr,

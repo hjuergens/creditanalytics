@@ -37,7 +37,7 @@ package org.drip.service.api;
  */
 
 public class CDXCOB {
-	private java.lang.String _strCDXName = "";
+	private String _strCDXName = "";
 	private double _dblPrice = java.lang.Double.NaN;
 
 	/**
@@ -50,7 +50,7 @@ public class CDXCOB {
 	 */
 
 	public CDXCOB (
-		final java.lang.String strCDXName,
+		final String strCDXName,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -65,7 +65,7 @@ public class CDXCOB {
 	 * @return The CDX Name
 	 */
 
-	public java.lang.String name()
+	public String name()
 	{
 		return _strCDXName;
 	}
@@ -87,7 +87,7 @@ public class CDXCOB {
 	 * @return The CDXCOB Content
 	 */
 
-	public java.lang.String display()
+	public String display()
 	{
 		return _strCDXName + " => " + _dblPrice;
 	}

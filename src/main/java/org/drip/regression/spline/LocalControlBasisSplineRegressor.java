@@ -50,7 +50,7 @@ public class LocalControlBasisSplineRegressor extends org.drip.regression.core.U
 	private org.drip.spline.stretch.MultiSegmentSequence _mssCatmullRomInsert = null;
 
 	private final boolean DumpRNVD (
-		final java.lang.String strStretchName,
+		final String strStretchName,
 		final org.drip.spline.stretch.MultiSegmentSequence mss,
 		final org.drip.regression.core.RegressionRunDetail rrd)
 	{
@@ -92,9 +92,9 @@ public class LocalControlBasisSplineRegressor extends org.drip.regression.core.U
 	 */
 
 	public LocalControlBasisSplineRegressor (
-		final java.lang.String strName,
-		final java.lang.String strScenarioName,
-		final java.lang.String strBasisSpline,
+		final String strName,
+		final String strScenarioName,
+		final String strBasisSpline,
 		final org.drip.spline.basis.FunctionSetBuilderParams fsbp,
 		final int iCk)
 		throws java.lang.Exception

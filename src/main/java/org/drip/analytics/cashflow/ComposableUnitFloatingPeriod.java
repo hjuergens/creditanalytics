@@ -86,7 +86,7 @@ public class ComposableUnitFloatingPeriod extends org.drip.analytics.cashflow.Co
 	public ComposableUnitFloatingPeriod (
 		final double dblStartDate,
 		final double dblEndDate,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.cashflow.ReferenceIndexPeriod refIndexPeriod,
 		final double dblSpread)
 		throws java.lang.Exception
@@ -137,7 +137,7 @@ public class ComposableUnitFloatingPeriod extends org.drip.analytics.cashflow.Co
 
 		if (null != fre) return fre.forward (dblReferencePeriodEndDate);
 
-		java.lang.String strForwardCurrency = forwardLabel.currency();
+		String strForwardCurrency = forwardLabel.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcFunding = csqs.fundingCurve
 			(org.drip.state.identifier.FundingLabel.Standard (strForwardCurrency));
@@ -164,7 +164,7 @@ public class ComposableUnitFloatingPeriod extends org.drip.analytics.cashflow.Co
 		return _dblSpread;
 	}
 
-	@Override public java.lang.String couponCurrency()
+	@Override public String couponCurrency()
 	{
 		return _refIndexPeriod.forwardLabel().currency();
 	}

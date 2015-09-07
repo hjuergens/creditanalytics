@@ -46,7 +46,7 @@ public interface DCFCalculator {
 	 * @return Name of the base calculation type
 	 */
 
-	public abstract java.lang.String baseCalculationType();
+	public abstract String baseCalculationType();
 
 	/**
 	 * Retrieves the full set of alternate names corresponding to the DCF Calculator
@@ -54,7 +54,7 @@ public interface DCFCalculator {
 	 * @return Array of alternate names
 	 */
 
-	public abstract java.lang.String[] alternateNames();
+	public abstract String[] alternateNames();
 
 	/**
 	 * Calculates the accrual fraction in years between 2 given days
@@ -75,7 +75,7 @@ public interface DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception;
 
 	/**
@@ -97,6 +97,6 @@ public interface DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception;
 }

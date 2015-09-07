@@ -44,27 +44,27 @@ package org.drip.product.option;
 
 public abstract class FixedIncomeOptionComponent implements
 	org.drip.product.definition.ComponentMarketParamRef {
-	private java.lang.String _strCalendar = "";
-	private java.lang.String _strDayCount = "";
+	private String _strCalendar = "";
+	private String _strDayCount = "";
 	private double _dblStrike = java.lang.Double.NaN;
-	private java.lang.String _strManifestMeasure = "";
+	private String _strManifestMeasure = "";
 	private double _dblNotional = java.lang.Double.NaN;
 	private org.drip.product.params.LastTradingDateSetting _ltds = null;
 	private org.drip.product.definition.FixedIncomeComponent _comp = null;
 
 	protected double measure (
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCalc)
 		throws java.lang.Exception
 	{
 		if (null == strMeasure || strMeasure.isEmpty() || null == mapCalc)
 			throw new java.lang.Exception ("FixedIncomeComponent::measure => Invalid Inputs");
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> meMesureSet =
+		java.util.Set<java.util.Map.Entry<String, java.lang.Double>> meMesureSet =
 			mapCalc.entrySet();
 
 		if (null != meMesureSet && 0 != meMesureSet.size()) {
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : meMesureSet) {
+			for (java.util.Map.Entry<String, java.lang.Double> me : meMesureSet) {
 				if (me.getKey().equalsIgnoreCase (strMeasure)) return me.getValue();
 			}
 		}
@@ -89,12 +89,12 @@ public abstract class FixedIncomeOptionComponent implements
 
 	public FixedIncomeOptionComponent (
 		final org.drip.product.definition.FixedIncomeComponent comp,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblStrike,
 		final double dblNotional,
 		final org.drip.product.params.LastTradingDateSetting ltds,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar)
+		final String strDayCount,
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == (_comp = comp) || null == (_strManifestMeasure = strManifestMeasure) ||
@@ -124,7 +124,7 @@ public abstract class FixedIncomeOptionComponent implements
 	 * @return The Manifest Measure on which the Option's Strike is quoted
 	 */
 
-	public java.lang.String manifestMeasure()
+	public String manifestMeasure()
 	{
 		return _strManifestMeasure;
 	}
@@ -179,7 +179,7 @@ public abstract class FixedIncomeOptionComponent implements
 	 * @return The Day Count
 	 */
 
-	public java.lang.String dayCount()
+	public String dayCount()
 	{
 		return _strDayCount;
 	}
@@ -190,12 +190,12 @@ public abstract class FixedIncomeOptionComponent implements
 	 * @return The Holiday Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _comp.name();
 	}
@@ -246,7 +246,7 @@ public abstract class FixedIncomeOptionComponent implements
 	 * @return Set of Measure Names
 	 */
 
-	public abstract java.util.Set<java.lang.String> measureNames();
+	public abstract java.util.Set<String> measureNames();
 
 	/**
 	 * Calculate the value of the given component measure
@@ -267,7 +267,7 @@ public abstract class FixedIncomeOptionComponent implements
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,
-		final java.lang.String strMeasure)
+		final String strMeasure)
 		throws java.lang.Exception
 	{
 		return measure (strMeasure, value (valParams, pricerParams, csqs, vcp));

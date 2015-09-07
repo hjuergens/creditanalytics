@@ -58,8 +58,8 @@ public class CreditCurveBuilder {
 
 	public static final org.drip.analytics.definition.ExplicitBootCreditCurve FromFlatHazard (
 		final double dblStartDate,
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
+		final String strName,
+		final String strCurrency,
 		final double dblHazardRate,
 		final double dblRecovery)
 	{
@@ -103,8 +103,8 @@ public class CreditCurveBuilder {
 
 	public static final org.drip.analytics.definition.ExplicitBootCreditCurve FromSurvival (
 		final double dblStartDate,
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
+		final String strName,
+		final String strCurrency,
 		final double[] adblSurvivalDate,
 		final double[] adblSurvivalProbability,
 		final double dblRecovery)
@@ -157,8 +157,8 @@ public class CreditCurveBuilder {
 
 	public static final org.drip.analytics.definition.ExplicitBootCreditCurve FromHazardNode (
 		final double dblStartDate,
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
+		final String strName,
+		final String strCurrency,
 		final double dblHazardRate,
 		final double dblHazardDate,
 		final double dblRecovery)
@@ -204,8 +204,8 @@ public class CreditCurveBuilder {
 
 	public static final org.drip.analytics.definition.ExplicitBootCreditCurve CreateCreditCurve (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
+		final String strName,
+		final String strCurrency,
 		final double[] adblDate,
 		final double[] adblHazardRate,
 		final double dblRecovery)
@@ -248,8 +248,8 @@ public class CreditCurveBuilder {
 
 	public static final org.drip.analytics.definition.ExplicitBootCreditCurve CreateCreditCurve (
 		final double dblStart,
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
+		final String strName,
+		final String strCurrency,
 		final double adblHazardRate[],
 		final double adblHazardDate[],
 		final double[] adblRecoveryRate,

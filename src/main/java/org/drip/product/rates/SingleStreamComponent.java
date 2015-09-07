@@ -36,8 +36,8 @@ package org.drip.product.rates;
  */
 
 public class SingleStreamComponent extends org.drip.product.definition.CalibratableFixedIncomeComponent {
-	private java.lang.String _strCode = "";
-	private java.lang.String _strName = "";
+	private String _strCode = "";
+	private String _strName = "";
 	private org.drip.product.rates.Stream _stream = null;
 	private org.drip.param.valuation.CashSettleParams _csp = null;
 
@@ -61,7 +61,7 @@ public class SingleStreamComponent extends org.drip.product.definition.Calibrata
 	 */
 
 	public SingleStreamComponent (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.rates.Stream stream,
 		final org.drip.param.valuation.CashSettleParams csp)
 		throws java.lang.Exception
@@ -83,27 +83,27 @@ public class SingleStreamComponent extends org.drip.product.definition.Calibrata
 		return _stream;
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCouponCurrency = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCouponCurrency = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		mapCouponCurrency.put (name(), _stream.couponCurrency());
 
 		return mapCouponCurrency;
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _stream.payCurrency();
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return null;
 	}
@@ -222,18 +222,18 @@ public class SingleStreamComponent extends org.drip.product.definition.Calibrata
 		return mapResult;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
 		return null;
 	}
 
 	@Override public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		_strCode = strCode;
 	}
 
-	@Override public java.lang.String primaryCode()
+	@Override public String primaryCode()
 	{
 		return _strCode;
 	}
@@ -293,7 +293,7 @@ public class SingleStreamComponent extends org.drip.product.definition.Calibrata
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

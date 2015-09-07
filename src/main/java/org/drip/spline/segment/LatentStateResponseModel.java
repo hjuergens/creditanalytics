@@ -225,14 +225,14 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	}
 
 	private org.drip.spline.segment.LatentStateManifestSensitivity manifestSensitivity (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return null == strManifestMeasure || strManifestMeasure.isEmpty() || !_mapLSMS.containsKey
 			(strManifestMeasure) ? null : _mapLSMS.get (strManifestMeasure);
 	}
 
 	private double[] CkDBasisCoeffDPreceedingManifestMeasure (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		org.drip.spline.segment.LatentStateManifestSensitivity lsms = manifestSensitivity
 			(strManifestMeasure);
@@ -261,7 +261,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public boolean setPreceedingManifestSensitivityControl (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.spline.params.PreceedingManifestSensitivityControl pmsc)
 	{
 		if (null == strManifestMeasure || strManifestMeasure.isEmpty()) return false;
@@ -588,7 +588,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public boolean calibrateLocalManifestJacobian (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.spline.params.SegmentStateCalibrationInputs ssciManifestSensitivity,
 		final org.drip.spline.params.SegmentBasisFlexureConstraint[] aSBFCState)
 	{
@@ -617,7 +617,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public boolean calibratePreceedingManifestJacobian (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.spline.params.SegmentStateCalibrationInputs ssciPreceedingManifestSensitivity)
 	{
 		org.drip.spline.segment.LatentStateManifestSensitivity lsms = manifestSensitivity
@@ -814,7 +814,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 
 	public boolean manifestMeasureSensitivity (
 		final org.drip.spline.segment.LatentStateResponseModel csPreceeding,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.spline.params.SegmentResponseValueConstraint srvcState,
 		final org.drip.spline.params.SegmentResponseValueConstraint srvcManifestSensitivity,
 		final org.drip.spline.params.SegmentBestFitResponse sbfrManifestSensitivity)
@@ -885,7 +885,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 
 	public boolean manifestMeasureSensitivity (
 		final LatentStateResponseModel csPreceeding,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblRightStateManifestSensitivity,
 		final org.drip.spline.params.SegmentBestFitResponse sbfrManifestSensitivity)
 	{
@@ -945,7 +945,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public boolean manifestMeasureSensitivity (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblLeftManifestSensitivity,
 		final double dblLeftSlopeManifestSensitivity,
 		final double dblRightManifestSensitivity,
@@ -986,7 +986,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public boolean manifestMeasureSensitivity (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.spline.params.SegmentResponseValueConstraint wrvcStateLeft,
 		final org.drip.spline.params.SegmentResponseValueConstraint wrvcStateRight,
 		final double dblLeftSlopeManifestSensitivity,
@@ -1169,7 +1169,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public double calcDResponseDManifest (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder)
 		throws java.lang.Exception
@@ -1202,7 +1202,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public double calcDResponseDPreceedingManifest (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder)
 		throws java.lang.Exception
@@ -1243,7 +1243,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 */
 
 	public boolean impactFade (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 		throws java.lang.Exception
 	{
 		org.drip.spline.segment.LatentStateManifestSensitivity lsms = manifestSensitivity
@@ -1463,7 +1463,7 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 
 	public org.drip.quant.calculus.WengertJacobian jackDCoeffDEdgeParams (
 		final LatentStateResponseModel csPreceeding,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblRightStateValue,
 		final org.drip.spline.params.SegmentBestFitResponse sbfrState,
 		final double dblRightStateManifestSensitivity,
@@ -1642,9 +1642,9 @@ public class LatentStateResponseModel extends org.drip.spline.segment.LatentStat
 	 * @return The string representation
 	 */
 
-	public java.lang.String displayString()
+	public String displayString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		sb.append ("\t\t\t[" + left() + " => " + right() + "\n");
 

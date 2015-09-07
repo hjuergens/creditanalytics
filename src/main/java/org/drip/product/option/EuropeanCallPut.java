@@ -326,9 +326,9 @@ public class EuropeanCallPut {
 	 * @return The Set of the Measure Names
 	 */
 
-	public java.util.Set<java.lang.String> getMeasureNames()
+	public java.util.Set<String> getMeasureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("BlackScholesCallVolatility");
 

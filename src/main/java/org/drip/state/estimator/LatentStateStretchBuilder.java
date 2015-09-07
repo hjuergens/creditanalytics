@@ -49,9 +49,9 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec ForwardStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == aCalibComp || null == astrCalibMeasure || null == adblCalibQuote) return null;
@@ -106,9 +106,9 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec ForwardFundingStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == aCalibComp || null == astrCalibMeasure || null == adblCalibQuote) return null;
@@ -176,9 +176,9 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec FundingStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == aCalibComp || null == astrCalibMeasure || null == adblCalibQuote) return null;
@@ -234,15 +234,15 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec ForwardStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String strCalibMeasure,
+		final String strCalibMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == strCalibMeasure || strCalibMeasure.isEmpty() || null == adblCalibQuote) return null;
 
 		int iNumComp = adblCalibQuote.length;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iNumComp];
+		String[] astrCalibMeasure = new String[iNumComp];
 
 		for (int i = 0; i < iNumComp; ++i)
 			astrCalibMeasure[i] = strCalibMeasure;
@@ -262,15 +262,15 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec ForwardFundingStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String strCalibMeasure,
+		final String strCalibMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == strCalibMeasure || strCalibMeasure.isEmpty() || null == adblCalibQuote) return null;
 
 		int iNumComp = adblCalibQuote.length;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iNumComp];
+		String[] astrCalibMeasure = new String[iNumComp];
 
 		for (int i = 0; i < iNumComp; ++i)
 			astrCalibMeasure[i] = strCalibMeasure;
@@ -290,15 +290,15 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec FundingStretchSpec (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp,
-		final java.lang.String strCalibMeasure,
+		final String strCalibMeasure,
 		final double[] adblCalibQuote)
 	{
 		if (null == strCalibMeasure || strCalibMeasure.isEmpty() || null == adblCalibQuote) return null;
 
 		int iNumComp = adblCalibQuote.length;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iNumComp];
+		String[] astrCalibMeasure = new String[iNumComp];
 
 		for (int i = 0; i < iNumComp; ++i)
 			astrCalibMeasure[i] = strCalibMeasure;
@@ -322,7 +322,7 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec ComponentPairForwardStretch (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.fx.ComponentPair[] aCCSP,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet mktParams,
@@ -378,7 +378,7 @@ public class LatentStateStretchBuilder {
 	 */
 
 	public static final org.drip.state.inference.LatentStateStretchSpec ComponentPairDiscountStretch (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.fx.ComponentPair[] aCCSP,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet mktParams,

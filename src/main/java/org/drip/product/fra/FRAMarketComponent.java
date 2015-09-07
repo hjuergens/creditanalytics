@@ -50,7 +50,7 @@ public class FRAMarketComponent extends org.drip.product.fra.FRAStandardComponen
 	 */
 
 	public FRAMarketComponent (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.rates.Stream stream,
 		final double dblStrike,
 		final org.drip.param.valuation.CashSettleParams csp)

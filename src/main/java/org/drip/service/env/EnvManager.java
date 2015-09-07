@@ -51,7 +51,7 @@ public class EnvManager {
 	 */
 
 	public static final java.sql.Statement InitEnv (
-		final java.lang.String strConfig)
+		final String strConfig)
 	{
 		org.drip.analytics.support.Logger.Init (strConfig);
 

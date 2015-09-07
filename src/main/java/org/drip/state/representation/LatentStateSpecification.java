@@ -38,9 +38,9 @@ package org.drip.state.representation;
  */
 
 public class LatentStateSpecification {
-	private java.lang.String _strLatentState = "";
+	private String _strLatentState = "";
 	private org.drip.state.identifier.LatentStateLabel _label = null;
-	private java.lang.String _strLatentStateQuantificationMetric = "";
+	private String _strLatentStateQuantificationMetric = "";
 
 	/**
 	 * LatentStateSpecification constructor
@@ -53,8 +53,8 @@ public class LatentStateSpecification {
 	 */
 
 	public LatentStateSpecification (
-		final java.lang.String strLatentState,
-		final java.lang.String strLatentStateQuantificationMetric,
+		final String strLatentState,
+		final String strLatentStateQuantificationMetric,
 		final org.drip.state.identifier.LatentStateLabel label)
 		throws java.lang.Exception
 	{
@@ -70,7 +70,7 @@ public class LatentStateSpecification {
 	 * @return The Latent State
 	 */
 
-	public java.lang.String latentState()
+	public String latentState()
 	{
 		return _strLatentState;
 	}
@@ -92,7 +92,7 @@ public class LatentStateSpecification {
 	 * @return The Latent State Quantification Metric
 	 */
 
-	public java.lang.String latentStateQuantificationMetric()
+	public String latentStateQuantificationMetric()
 	{
 		return _strLatentStateQuantificationMetric;
 	}
@@ -120,7 +120,7 @@ public class LatentStateSpecification {
 	 */
 
 	public void displayString (
-		final java.lang.String strComment)
+		final String strComment)
 	{
 		System.out.println ("\t[LatentStateSpecification]: " + _strLatentState + " | " +
 			_strLatentStateQuantificationMetric + " | " + _label.fullyQualifiedName());

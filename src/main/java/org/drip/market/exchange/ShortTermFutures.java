@@ -36,7 +36,7 @@ package org.drip.market.exchange;
  */
 
 public class ShortTermFutures {
-	private java.lang.String[] _astrExchange = null;
+	private String[] _astrExchange = null;
 	private double _dblNotional = java.lang.Double.NaN;
 
 	/**
@@ -49,7 +49,7 @@ public class ShortTermFutures {
 	 */
 
 	public ShortTermFutures (
-		final java.lang.String[] astrExchange,
+		final String[] astrExchange,
 		final double dblNotional)
 		throws java.lang.Exception
 	{
@@ -64,7 +64,7 @@ public class ShortTermFutures {
 	 * @return The List of Exchanges
 	 */
 
-	public java.lang.String[] exchanges()
+	public String[] exchanges()
 	{
 		return _astrExchange;
 	}

@@ -395,7 +395,7 @@ public class StepUpStepDown {
 			dtSpot,
 			strCurrency,
 			null,
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y", "40Y", "50Y"
 			}
 		);
@@ -404,7 +404,7 @@ public class StepUpStepDown {
 			dtSpot,
 			strCurrency,
 			StepUp (dtSpot),
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y", "40Y", "50Y"
 			}
 		);
@@ -413,7 +413,7 @@ public class StepUpStepDown {
 			dtSpot,
 			strCurrency,
 			StepDown (dtSpot),
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y", "40Y", "50Y"
 			}
 		);

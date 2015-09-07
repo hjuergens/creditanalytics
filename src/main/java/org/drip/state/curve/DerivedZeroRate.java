@@ -46,9 +46,9 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 	private void updateMapEntries (
 		final double dblDate,
 		final int iFreq,
-		final java.lang.String strDC,
+		final String strDC,
 		final boolean bApplyCpnEOMAdj,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final double dblZCBump,
 		final java.util.Map<org.drip.analytics.date.JulianDate, java.lang.Double> mapDF,
 		final java.util.Map<org.drip.analytics.date.JulianDate, java.lang.Double> mapZeroRate)
@@ -98,8 +98,8 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 
 	public DerivedZeroRate (
 		final int iFreqZC,
-		final java.lang.String strDCZC,
-		final java.lang.String strCalendarZC,
+		final String strDCZC,
+		final String strCalendarZC,
 		final boolean bApplyEOMAdjZC,
 		final java.util.List<org.drip.analytics.cashflow.CompositePeriod> lsCouponPeriod,
 		final double dblWorkoutDate,
@@ -120,9 +120,9 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 
 		int iFreq = 0 == iFreqZC ? 2 : iFreqZC;
 		boolean bApplyCpnEOMAdj = bApplyEOMAdjZC;
-		java.lang.String strCalendar = strCalendarZC;
+		String strCalendar = strCalendarZC;
 
-		java.lang.String strDC = null == strDCZC || strDCZC.isEmpty() ? "30/360" : strDCZC;
+		String strDC = null == strDCZC || strDCZC.isEmpty() ? "30/360" : strDCZC;
 
 		if (null != vcp) {
 			strDC = vcp.yieldDayCount();
@@ -206,7 +206,7 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return _dc.jackDDFDManifestMeasure (dblDate, strManifestMeasure);
 	}
@@ -223,13 +223,13 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 		return _mssZeroRate.responseValue (dblDate);
 	}
 
-	@Override public java.lang.String latentStateQuantificationMetric()
+	@Override public String latentStateQuantificationMetric()
 	{
 		return org.drip.analytics.definition.LatentStateStatic.DISCOUNT_QM_ZERO_RATE;
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstr)
+		final String strInstr)
 	{
 		return _dc.manifestMeasure (strInstr);
 	}
@@ -245,7 +245,7 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 	}
 
 	@Override public org.drip.analytics.definition.Curve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
@@ -253,14 +253,14 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 
 	@Override public org.drip.analytics.definition.Curve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		return null;
 	}
 
 	@Override public org.drip.analytics.definition.Curve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams mmtp)
 	{
 		return null;
@@ -289,7 +289,7 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 		return (org.drip.analytics.rates.DiscountCurve) _dc.customTweakQuantificationMetric (rvtp);
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _dc.currency();
 	}
@@ -316,8 +316,8 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 	}
 
 	@Override public double effectiveDF (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception
 	{
 		return _dc.effectiveDF (strTenor1, strTenor2);
@@ -332,8 +332,8 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 	}
 
 	@Override public double forward (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception
 	{
 		return _dc.forward (strTenor1, strTenor2);
@@ -347,7 +347,7 @@ public class DerivedZeroRate extends org.drip.analytics.rates.ZeroCurve {
 	}
 
 	@Override public double zero (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		return _dc.zero (strTenor);

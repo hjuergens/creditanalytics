@@ -94,9 +94,9 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.rates.DiscountCurve> mapDC =
 			new org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.rates.DiscountCurve>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioDiscountCurve> meSDC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioDiscountCurve> meSDC :
 			_mapScenarioDiscountCurve.entrySet()) {
-			java.lang.String strKey = meSDC.getKey();
+			String strKey = meSDC.getKey();
 
 			org.drip.param.definition.ScenarioDiscountCurve sdc = meSDC.getValue();
 
@@ -121,9 +121,9 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.rates.ForwardCurve> mapFC =
 			new org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.rates.ForwardCurve>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioForwardCurve> meSFC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioForwardCurve> meSFC :
 			_mapScenarioForwardCurve.entrySet()) {
-			java.lang.String strKey = meSFC.getKey();
+			String strKey = meSFC.getKey();
 
 			org.drip.param.definition.ScenarioForwardCurve sfc = meSFC.getValue();
 
@@ -149,9 +149,9 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.definition.CreditCurve> mapCC =
 			new org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.definition.CreditCurve>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
 			_mapScenarioCreditCurve.entrySet()) {
-			java.lang.String strKey = meSCC.getKey();
+			String strKey = meSCC.getKey();
 
 			org.drip.param.definition.ScenarioCreditCurve scc = meSCC.getValue();
 
@@ -170,7 +170,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 	private org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.rates.DiscountCurve>
 		specificIRFlatBumpDCSet (
-			final java.lang.String strIRCurve,
+			final String strIRCurve,
 			final boolean bBumpUp)
 	{
 		if (null == strIRCurve || strIRCurve.isEmpty() || null == _mapScenarioDiscountCurve.get (strIRCurve))
@@ -192,7 +192,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 	private org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.rates.ForwardCurve>
 		specificForwardFlatBumpFCSet (
-			final java.lang.String strForwardCurve,
+			final String strForwardCurve,
 			final boolean bBumpUp)
 	{
 		if (null == strForwardCurve || strForwardCurve.isEmpty() || null == _mapScenarioForwardCurve.get
@@ -215,7 +215,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 	private org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.definition.CreditCurve>
 		specificCreditFlatBumpCCSet (
-			final java.lang.String strCreditCurve,
+			final String strCreditCurve,
 			final boolean bBumpUp)
 	{
 		if (null == strCreditCurve || strCreditCurve.isEmpty() || null == _mapScenarioCreditCurve.get (strCreditCurve))
@@ -237,7 +237,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 	private org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.definition.CreditCurve>
 		specificCreditFlatBumpRRSet (
-			final java.lang.String strCreditCurve,
+			final String strCreditCurve,
 			final boolean bBumpUp)
 	{
 		if (null == strCreditCurve || strCreditCurve.isEmpty() || null == _mapScenarioCreditCurve.get (strCreditCurve))
@@ -265,7 +265,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		org.drip.param.market.CurveSurfaceQuoteSet csqs = new org.drip.param.market.CurveSurfaceQuoteSet();
 
 		if (null != mapDC && 0 != mapDC.size()) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.DiscountCurve>
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.DiscountCurve>
 				meDC : mapDC.entrySet()) {
 				if (null == meDC) continue;
 
@@ -276,7 +276,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		}
 
 		if (null != mapFC && 0 != mapFC.size()) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.ForwardCurve>
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.ForwardCurve>
 				meFC : mapFC.entrySet()) {
 				if (null == meFC) continue;
 
@@ -287,7 +287,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		}
 
 		if (null != mapCC && 0 != mapCC.size()) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.definition.CreditCurve>
+			for (java.util.Map.Entry<String, org.drip.analytics.definition.CreditCurve>
 				meCC : mapCC.entrySet()) {
 				if (null == meCC) continue;
 
@@ -309,7 +309,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean addScenarioDiscountCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.definition.ScenarioDiscountCurve sdc)
 	{
 		if (null != strName && !strName.isEmpty() && null != sdc) {
@@ -322,7 +322,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean removeScenarioDiscountCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null != strName && !strName.isEmpty()) {
 			_mapScenarioDiscountCurve.remove (strName);
@@ -334,7 +334,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean addScenarioForwardCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.definition.ScenarioForwardCurve sfc)
 	{
 		if (null != strName && !strName.isEmpty() && null != sfc) {
@@ -347,7 +347,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean removeScenarioForwardCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null != strName && !strName.isEmpty()) {
 			_mapScenarioForwardCurve.remove (strName);
@@ -359,7 +359,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean addScenarioCreditCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.definition.ScenarioCreditCurve scc)
 	{
 		if (null != strName && !strName.isEmpty() && null != scc) {
@@ -372,7 +372,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean removeScenarioCreditCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null != strName && !strName.isEmpty()) {
 			_mapScenarioCreditCurve.remove (strName);
@@ -384,7 +384,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean addTSYQuote (
-		final java.lang.String strBenchmark,
+		final String strBenchmark,
 		final org.drip.param.definition.ProductQuote pqTSY)
 	{
 		if (null == strBenchmark || strBenchmark.isEmpty() || null == pqTSY) return false;
@@ -399,7 +399,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean removeTSYQuote (
-		final java.lang.String strBenchmark)
+		final String strBenchmark)
 	{
 		if (null == strBenchmark || strBenchmark.isEmpty()) return false;
 
@@ -418,7 +418,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public org.drip.param.definition.ProductQuote tsyQuote (
-		final java.lang.String strBenchmark)
+		final String strBenchmark)
 	{
 		if (null == _mapTSYQuote || null == strBenchmark || strBenchmark.isEmpty()) return null;
 
@@ -453,7 +453,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean addComponentQuote (
-		final java.lang.String strComponentID,
+		final String strComponentID,
 		final org.drip.param.definition.ProductQuote cqComponent)
 	{
 		if (null == strComponentID || strComponentID.isEmpty() || null == cqComponent) return false;
@@ -468,7 +468,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean removeComponentQuote (
-		final java.lang.String strComponentID)
+		final String strComponentID)
 	{
 		if (null == strComponentID || strComponentID.isEmpty()) return false;
 
@@ -488,7 +488,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public org.drip.param.definition.ProductQuote componentQuote (
-		final java.lang.String strComponentID)
+		final String strComponentID)
 	{
 		if (null == _mapQuote || null == strComponentID || strComponentID.isEmpty()) return null;
 
@@ -503,7 +503,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public boolean addScenarioMarketParams (
-		final java.lang.String strScenarioName,
+		final String strScenarioName,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs)
 	{
 		if (null == strScenarioName || strScenarioName.isEmpty() || null == csqs) return false;
@@ -514,7 +514,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	}
 
 	@Override public org.drip.param.market.CurveSurfaceQuoteSet scenarioMarketParams (
-		final java.lang.String strScenarioName)
+		final String strScenarioName)
 	{
 		return null == strScenarioName || strScenarioName.isEmpty() ? null : _mapScenarioMarketParams.get
 			(strScenarioName);
@@ -522,7 +522,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 	@Override public org.drip.param.market.CurveSurfaceQuoteSet scenarioMarketParams (
 		final org.drip.product.definition.FixedIncomeComponent comp,
-		final java.lang.String strScenario)
+		final String strScenario)
 	{
 		if (null == comp || null == strScenario || strScenario.isEmpty()) return null;
 
@@ -531,7 +531,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 		org.drip.analytics.definition.CreditCurve cc = null;
 
-		java.lang.String strPayCurrency = comp.payCurrency();
+		String strPayCurrency = comp.payCurrency();
 
 		org.drip.param.definition.ScenarioDiscountCurve sdc = _mapScenarioDiscountCurve.get (strPayCurrency);
 
@@ -588,7 +588,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	{
 		if (null == comp) return null;
 
-		java.lang.String strPayCurrency = comp.payCurrency();
+		String strPayCurrency = comp.payCurrency();
 
 		org.drip.param.definition.ScenarioDiscountCurve sdc = _mapScenarioDiscountCurve.get (strPayCurrency);
 
@@ -628,14 +628,14 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			= new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		java.lang.String strComponentName = comp.name();
+		String strComponentName = comp.name();
 
 		if (bBumpUp) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.DiscountCurve> meDC :
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.DiscountCurve> meDC :
 				mapDCBumpUp.entrySet()) {
 				if (null == meDC) continue;
 
-				java.lang.String strKey = meDC.getKey();
+				String strKey = meDC.getKey();
 
 				org.drip.analytics.rates.DiscountCurve dc = meDC.getValue();
 
@@ -645,11 +645,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 					strComponentName, _mapQuote.get (strComponentName), _mapTSYQuote, _lsfc));
 			}
 		} else {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.DiscountCurve> meDC :
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.DiscountCurve> meDC :
 				mapDCBumpDown.entrySet()) {
 				if (null == meDC) continue;
 
-				java.lang.String strKey = meDC.getKey();
+				String strKey = meDC.getKey();
 
 				org.drip.analytics.rates.DiscountCurve dc = meDC.getValue();
 
@@ -671,7 +671,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 	{
 		if (null == comp) return null;
 
-		java.lang.String strPayCurrency = comp.payCurrency();
+		String strPayCurrency = comp.payCurrency();
 
 		org.drip.param.definition.ScenarioDiscountCurve sdc = _mapScenarioDiscountCurve.get (strPayCurrency);
 
@@ -715,14 +715,14 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			= new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		java.lang.String strComponentName = comp.name();
+		String strComponentName = comp.name();
 
 		if (bBumpUp) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.ForwardCurve> meFC :
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.ForwardCurve> meFC :
 				mapFCBumpUp.entrySet()) {
 				if (null == meFC) continue;
 
-				java.lang.String strKey = meFC.getKey();
+				String strKey = meFC.getKey();
 
 				org.drip.analytics.rates.ForwardCurve fc = meFC.getValue();
 
@@ -732,11 +732,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 					strComponentName, _mapQuote.get (strComponentName), _mapTSYQuote, _lsfc));
 			}
 		} else {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.ForwardCurve> meFC :
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.ForwardCurve> meFC :
 				mapFCBumpDown.entrySet()) {
 				if (null == meFC) continue;
 
-				java.lang.String strKey = meFC.getKey();
+				String strKey = meFC.getKey();
 
 				org.drip.analytics.rates.ForwardCurve fc = meFC.getValue();
 
@@ -776,7 +776,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 		if (!bBumpUp && (null == mapCCBumpDown || 0 == mapCCBumpDown.size())) return null;
 
-		java.lang.String strPayCurrency = comp.payCurrency();
+		String strPayCurrency = comp.payCurrency();
 
 		org.drip.param.definition.ScenarioDiscountCurve sdc = _mapScenarioDiscountCurve.get (strPayCurrency);
 
@@ -801,14 +801,14 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			= new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		java.lang.String strComponentName = comp.name();
+		String strComponentName = comp.name();
 
 		if (bBumpUp) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.definition.CreditCurve> meCC :
+			for (java.util.Map.Entry<String, org.drip.analytics.definition.CreditCurve> meCC :
 				mapCCBumpUp.entrySet()) {
 				if (null == meCC) continue;
 
-				java.lang.String strKey = meCC.getKey();
+				String strKey = meCC.getKey();
 
 				org.drip.analytics.definition.CreditCurve cc = meCC.getValue();
 
@@ -818,11 +818,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 					strComponentName, _mapQuote.get (strComponentName), _mapTSYQuote, _lsfc));
 			}
 		} else {
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.definition.CreditCurve> meCC :
+			for (java.util.Map.Entry<String, org.drip.analytics.definition.CreditCurve> meCC :
 				mapCCBumpDown.entrySet()) {
 				if (null == meCC) continue;
 
-				java.lang.String strKey = meCC.getKey();
+				String strKey = meCC.getKey();
 
 				org.drip.analytics.definition.CreditCurve cc = meCC.getValue();
 
@@ -838,7 +838,7 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 
 	@Override public org.drip.param.market.CurveSurfaceQuoteSet scenarioMarketParams (
 		final org.drip.product.definition.BasketProduct bp,
-		final java.lang.String strScenario)
+		final String strScenario)
 	{
 		if (null == strScenario || strScenario.isEmpty()) return null;
 
@@ -882,10 +882,10 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			mapCSQS = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioDiscountCurve> meSDC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioDiscountCurve> meSDC :
 			_mapScenarioDiscountCurve.entrySet()) {
 			if (null != meSDC) {
-				java.lang.String strKey = meSDC.getKey();
+				String strKey = meSDC.getKey();
 
 				if (null != strKey && !strKey.isEmpty())
 					mapCSQS.put (strKey, customMarketParams (specificIRFlatBumpDCSet (strKey, bBump), fcSet
@@ -906,10 +906,10 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			mapCSQS = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioForwardCurve> meSFC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioForwardCurve> meSFC :
 			_mapScenarioForwardCurve.entrySet()) {
 			if (null != meSFC) {
-				java.lang.String strKey = meSFC.getKey();
+				String strKey = meSFC.getKey();
 
 				if (null != strKey && !strKey.isEmpty())
 					mapCSQS.put (strKey, customMarketParams (dcSet (BASE), specificForwardFlatBumpFCSet
@@ -930,10 +930,10 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			mapCSQS = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
 			_mapScenarioCreditCurve.entrySet()) {
 			if (null != meSCC) {
-				java.lang.String strKey = meSCC.getKey();
+				String strKey = meSCC.getKey();
 
 				if (null != strKey && !strKey.isEmpty())
 					mapCSQS.put (strKey, customMarketParams (dcSet (BASE), fcSet (BASE),
@@ -954,10 +954,10 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			mapCSQS = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
 			_mapScenarioCreditCurve.entrySet()) {
 			if (null != meSCC) {
-				java.lang.String strKey = meSCC.getKey();
+				String strKey = meSCC.getKey();
 
 				if (null != strKey && !strKey.isEmpty())
 					mapCSQS.put (strKey, customMarketParams (dcSet (BASE), fcSet (BASE),
@@ -980,11 +980,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			mmFundingTenorCSQS = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioDiscountCurve> meSDC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioDiscountCurve> meSDC :
 			_mapScenarioDiscountCurve.entrySet()) {
 			if (null == meSDC) continue;
 
-			java.lang.String strOuterKey = meSDC.getKey();
+			String strOuterKey = meSDC.getKey();
 
 			org.drip.param.definition.ScenarioDiscountCurve sdc = meSDC.getValue();
 
@@ -1004,11 +1004,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 				mapTenorCSQS = new
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.DiscountCurve> meDC : (bBump
+			for (java.util.Map.Entry<String, org.drip.analytics.rates.DiscountCurve> meDC : (bBump
 				? mapDCBumpUp.entrySet() : mapDCBumpDown.entrySet())) {
 				if (null == meDC) continue;
 
-				java.lang.String strInnerKey = meDC.getKey();
+				String strInnerKey = meDC.getKey();
 
 				org.drip.analytics.rates.DiscountCurve dc = meDC.getValue();
 
@@ -1039,11 +1039,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 			mmCreditTenorCSQS = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioCreditCurve> meSCC :
 			_mapScenarioCreditCurve.entrySet()) {
 			if (null == meSCC) continue;
 
-			java.lang.String strOuterKey = meSCC.getKey();
+			String strOuterKey = meSCC.getKey();
 
 			org.drip.param.definition.ScenarioCreditCurve scc = meSCC.getValue();
 
@@ -1063,11 +1063,11 @@ public class ScenarioMarketParamsContainer extends org.drip.param.definition.Sce
 				mapTenorCSQS = new
 					org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.market.CurveSurfaceQuoteSet>();
 
-			for (java.util.Map.Entry<java.lang.String, org.drip.analytics.definition.CreditCurve> meCC :
+			for (java.util.Map.Entry<String, org.drip.analytics.definition.CreditCurve> meCC :
 				(bBump ? mapCCBumpUp.entrySet() : mapCCBumpDown.entrySet())) {
 				if (null == meCC) continue;
 
-				java.lang.String strInnerKey = meCC.getKey();
+				String strInnerKey = meCC.getKey();
 
 				org.drip.analytics.definition.CreditCurve cc = meCC.getValue();
 

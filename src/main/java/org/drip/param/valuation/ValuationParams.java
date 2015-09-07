@@ -41,7 +41,7 @@ package org.drip.param.valuation;
  */
 
 public class ValuationParams {
-	private java.lang.String _strCalendar = "";
+	private String _strCalendar = "";
 	private double _dblValue = java.lang.Double.NaN;
 	private double _dblCashPay = java.lang.Double.NaN;
 
@@ -59,7 +59,7 @@ public class ValuationParams {
 	public static final ValuationParams Spot (
 		final org.drip.analytics.date.JulianDate dtValue,
 		final int iCashSettleLag,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final int iAdjustMode)
 	{
 		if (null == dtValue) return null;
@@ -108,7 +108,7 @@ public class ValuationParams {
 
 	public static final ValuationParams Standard (
 		final org.drip.analytics.date.JulianDate dtValue,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 	{
 		return Spot (dtValue, 2, strCalendar, org.drip.analytics.daycount.Convention.DATE_ROLL_FOLLOWING);
 	}
@@ -126,7 +126,7 @@ public class ValuationParams {
 	public ValuationParams (
 		final org.drip.analytics.date.JulianDate dtValue,
 		final org.drip.analytics.date.JulianDate dtCashPay,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == dtValue || null ==  dtCashPay)
@@ -167,7 +167,7 @@ public class ValuationParams {
 	 * @return The Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}

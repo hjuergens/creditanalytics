@@ -64,7 +64,7 @@ public class NotionalSetting implements org.drip.product.params.Validatable {
 	public static final int PERIOD_AMORT_EFFECTIVE = 3;
 
 	private boolean _bPriceOffOriginalNotional = false;
-	private java.lang.String _strDenominationCurrency = "";
+	private String _strDenominationCurrency = "";
 	private double _dblNotionalAmount = java.lang.Double.NaN;
 	private int _iPeriodAmortizationMode = PERIOD_AMORT_AT_START;
 	private org.drip.quant.common.Array2D _fsOutstanding = null;
@@ -81,7 +81,7 @@ public class NotionalSetting implements org.drip.product.params.Validatable {
 
 	public NotionalSetting (
 		final double dblNotionalAmount,
-		final java.lang.String strDenominationCurrency,
+		final String strDenominationCurrency,
 		final Array2D fsOutstanding,
 		final int iPeriodAmortizationMode,
 		final boolean bPriceOffOriginalNotional)
@@ -154,7 +154,7 @@ public class NotionalSetting implements org.drip.product.params.Validatable {
 	 * @return The Currency of Denomination
 	 */
 
-	public java.lang.String denominationCurrency()
+	public String denominationCurrency()
 	{
 		return _strDenominationCurrency;
 	}

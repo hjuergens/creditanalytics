@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class FundingLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strCurrency = "";
+	private String _strCurrency = "";
 
 	/**
 	 * Make a Standard Funding Label from the Funding Currency
@@ -48,7 +48,7 @@ public class FundingLabel implements org.drip.state.identifier.LatentStateLabel 
 	 */
 
 	public static final FundingLabel Standard (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		try {
 			return new FundingLabel (strCurrency);
@@ -60,14 +60,14 @@ public class FundingLabel implements org.drip.state.identifier.LatentStateLabel 
 	}
 
 	private FundingLabel (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		if (null == (_strCurrency = strCurrency) || _strCurrency.isEmpty())
 			throw new java.lang.Exception ("FundingLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strCurrency;
 	}

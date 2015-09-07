@@ -76,12 +76,12 @@ public class CreditScenarioCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve CreateCreditCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double[] adblQuotes,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double dblRecovery,
 		final boolean bFlat)
 	{

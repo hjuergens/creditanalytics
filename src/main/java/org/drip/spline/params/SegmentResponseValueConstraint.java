@@ -170,7 +170,7 @@ public class SegmentResponseValueConstraint {
 	}
 
 	public void display (
-		final java.lang.String strComment)
+		final String strComment)
 	{
 		for (int i = 0; i < _adblPredictorOrdinate.length; ++i) {
 			try {

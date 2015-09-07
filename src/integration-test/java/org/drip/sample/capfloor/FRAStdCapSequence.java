@@ -199,7 +199,7 @@ public class FRAStdCapSequence {
 		CalibratableFixedIncomeComponent[] aSwapComp = SwapInstrumentsFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"2Y",
 				"3Y",
 				"4Y",

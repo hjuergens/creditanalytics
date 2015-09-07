@@ -47,14 +47,14 @@ public class DC30_365 implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DC30_365";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"30/365", "ISMA 30/365", "ISDA SWAPS:30/365", "ISDA30/365",
+		return new String[] {"30/365", "ISMA 30/365", "ISDA SWAPS:30/365", "ISDA30/365",
 			"ISDA 30E/365", "DC30_365"};
 	}
 
@@ -63,7 +63,7 @@ public class DC30_365 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA30_365 (dblStart, dblEnd, bApplyEOMAdj);
@@ -83,7 +83,7 @@ public class DC30_365 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA30_365 (dblStart, dblEnd, bApplyEOMAdj);

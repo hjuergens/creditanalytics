@@ -65,7 +65,7 @@ public class CurveJacobianRegressionEngine extends org.drip.regression.core.Regr
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		CurveJacobianRegressionEngine cjre = new CurveJacobianRegressionEngine (10,

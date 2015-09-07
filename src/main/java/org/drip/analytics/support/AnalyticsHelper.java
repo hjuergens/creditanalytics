@@ -67,11 +67,11 @@ public class AnalyticsHelper {
 
 	public static int LEFT_TENOR_EQUALS = 4;
 
-	private static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> s_mapIRSwitch =
-		new org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+	private static final org.drip.analytics.support.CaseInsensitiveTreeMap<String> s_mapIRSwitch =
+		new org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
-	private static final java.util.Map<java.lang.Integer, java.lang.String> s_mapDCBBGCode = new
-		java.util.HashMap<java.lang.Integer, java.lang.String>();
+	private static final java.util.Map<java.lang.Integer, String> s_mapDCBBGCode = new
+		java.util.HashMap<java.lang.Integer, String>();
 
 	/**
 	 * Initialize IR switcher and Bloomberg day count maps
@@ -340,7 +340,7 @@ public class AnalyticsHelper {
 		final double dblDIRate,
 		final double dblStartDate,
 		final double dblEndDate,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblDIRate) ||
@@ -369,7 +369,7 @@ public class AnalyticsHelper {
 		final double dblDIPrice,
 		final double dblStartDate,
 		final double dblEndDate,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblDIPrice) ||
@@ -390,7 +390,7 @@ public class AnalyticsHelper {
 	 * @return the standard on-the-run benchmark treasury string
 	 */
 
-	public static final java.lang.String BaseTsyBmk (
+	public static final String BaseTsyBmk (
 		final double dblValue,
 		final double dblMaturity)
 	{
@@ -423,7 +423,7 @@ public class AnalyticsHelper {
 	 * @return String representation of the work out type field
 	 */
 
-	public static final java.lang.String WorkoutTypeToString (
+	public static final String WorkoutTypeToString (
 		final int iWOType)
 	{
 		if (org.drip.param.valuation.WorkoutInfo.WO_TYPE_PUT == iWOType) return "Put";
@@ -443,8 +443,8 @@ public class AnalyticsHelper {
 	 * @return String representing the DRIP day count code.
 	 */
 
-	public static final java.lang.String ParseFromBBGDCCode (
-		final java.lang.String strBBGDCCode)
+	public static final String ParseFromBBGDCCode (
+		final String strBBGDCCode)
 	{
 		if (null == strBBGDCCode) return "Unknown BBG DC";
 
@@ -464,7 +464,7 @@ public class AnalyticsHelper {
 	 * @return String representing the tenor
 	 */
 
-	public static final java.lang.String GetTenorFromFreq (
+	public static final String GetTenorFromFreq (
 		final int iFreq)
 	{
 		if (1 == iFreq) return "1Y";
@@ -491,7 +491,7 @@ public class AnalyticsHelper {
 	 */
 
 	public static final int TenorToYears (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -516,7 +516,7 @@ public class AnalyticsHelper {
 	 */
 
 	public static final int TenorToMonths (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -545,7 +545,7 @@ public class AnalyticsHelper {
 	 */
 
 	public static final int TenorToDays (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -578,7 +578,7 @@ public class AnalyticsHelper {
 	 */
 
 	public static final double TenorToYearFraction (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -611,7 +611,7 @@ public class AnalyticsHelper {
 	 */
 
 	public static final int TenorToFreq (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception
 	{
 		if (null == strTenor || strTenor.isEmpty())
@@ -649,8 +649,8 @@ public class AnalyticsHelper {
 	 */
 
 	public static final int TenorCompare (
-		final java.lang.String strTenorLeft,
-		final java.lang.String strTenorRight)
+		final String strTenorLeft,
+		final String strTenorRight)
 		throws java.lang.Exception
 	{
 		int iLeftTenorDays = TenorToDays (strTenorLeft);
@@ -670,7 +670,7 @@ public class AnalyticsHelper {
 	 * @return String representing the month code
 	 */
 
-	public static final java.lang.String GetMonthCodeFromFreq (
+	public static final String GetMonthCodeFromFreq (
 		final int iFreq)
 	{
 		if (1 == iFreq) return "0012M";
@@ -697,13 +697,13 @@ public class AnalyticsHelper {
 	 * @return String representing the rate index
 	 */
 
-	public static final java.lang.String CalcRateIndex (
-		final java.lang.String strCouponCurrency,
+	public static final String CalcRateIndex (
+		final String strCouponCurrency,
 		final int iCouponFreq)
 	{
 		if (null == strCouponCurrency || strCouponCurrency.isEmpty()) return null;
 
-		java.lang.String strFreqMonthCode = GetMonthCodeFromFreq (iCouponFreq);
+		String strFreqMonthCode = GetMonthCodeFromFreq (iCouponFreq);
 
 		if (null == strFreqMonthCode) return null;
 
@@ -718,8 +718,8 @@ public class AnalyticsHelper {
 	 * @return String representing DRIP day count
 	 */
 
-	public static final java.lang.String GetDayCountFromBBGCode (
-		final java.lang.String strBBGDC)
+	public static final String GetDayCountFromBBGCode (
+		final String strBBGDC)
 	{
 		if (null == strBBGDC || strBBGDC.isEmpty()) return "30/360";
 
@@ -735,13 +735,13 @@ public class AnalyticsHelper {
 	 * @return String representing the rate index
 	 */
 
-	public static final java.lang.String RateIndexFromCcyAndCouponFreq (
-		final java.lang.String strCcy,
+	public static final String RateIndexFromCcyAndCouponFreq (
+		final String strCcy,
 		final int iCouponFreq)
 	{
 		if (null == strCcy || strCcy.isEmpty() || 0 >= iCouponFreq) return "";
 
-		java.lang.String strCcyPrefix = strCcy.substring (0, 2);
+		String strCcyPrefix = strCcy.substring (0, 2);
 
 		if (1 == iCouponFreq)  return strCcyPrefix + "0012M";
 
@@ -766,8 +766,8 @@ public class AnalyticsHelper {
 	 * @return String representing the switched curve
 	 */
 
-	public static final java.lang.String SwitchIRCurve (
-		final java.lang.String strCurveIn)
+	public static final String SwitchIRCurve (
+		final String strCurveIn)
 	{
 		if (null == strCurveIn) return null;
 
@@ -999,20 +999,20 @@ public class AnalyticsHelper {
 
 	public static final boolean AccumulateMeasures (
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapOutput,
-		final java.lang.String strPrefix,
+		final String strPrefix,
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapInput)
 	{
 		if (null == mapOutput || null == strPrefix || strPrefix.isEmpty() || null == mapInput) return false;
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapInputESSingle =
+		java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapInputESSingle =
 			mapInput.entrySet();
 
 		if (null == mapInputESSingle) return false;
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapInputESSingle) {
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapInputESSingle) {
 			if (null == me) continue;
 
-			java.lang.String strKey = me.getKey();
+			String strKey = me.getKey();
 
 			if (null == strKey || strKey.isEmpty()) continue;
 
@@ -1100,9 +1100,9 @@ public class AnalyticsHelper {
 	 * @return The Agrregated Composite Tenor
 	 */
 
-	public static final java.lang.String AggregateTenor (
-		final java.lang.String strBaseTenor,
-		final java.lang.String strRollTenor)
+	public static final String AggregateTenor (
+		final String strBaseTenor,
+		final String strRollTenor)
 	{
 		if (null == strBaseTenor || strBaseTenor.isEmpty()) return strRollTenor;
 

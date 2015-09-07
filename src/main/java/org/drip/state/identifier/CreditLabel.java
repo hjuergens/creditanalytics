@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class CreditLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strReferenceEntity = "";
+	private String _strReferenceEntity = "";
 
 	/**
 	 * Make a Standard Credit Label from the Reference Entity Name
@@ -48,7 +48,7 @@ public class CreditLabel implements org.drip.state.identifier.LatentStateLabel {
 	 */
 
 	public static final CreditLabel Standard (
-		final java.lang.String strReferenceEntity)
+		final String strReferenceEntity)
 	{
 		try {
 			return new CreditLabel (strReferenceEntity);
@@ -68,14 +68,14 @@ public class CreditLabel implements org.drip.state.identifier.LatentStateLabel {
 	 */
 
 	private CreditLabel (
-		final java.lang.String strReferenceEntity)
+		final String strReferenceEntity)
 		throws java.lang.Exception
 	{
 		if (null == (_strReferenceEntity = strReferenceEntity) || _strReferenceEntity.isEmpty())
 			throw new java.lang.Exception ("CreditLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strReferenceEntity;
 	}

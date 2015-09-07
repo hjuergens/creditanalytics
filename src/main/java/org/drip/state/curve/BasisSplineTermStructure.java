@@ -55,7 +55,7 @@ public class BasisSplineTermStructure extends org.drip.analytics.definition.Term
 	public BasisSplineTermStructure (
 		final double dblEpochDate,
 		final org.drip.state.identifier.CustomMetricLabel label,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.spline.grid.Span span,
 		final org.drip.param.valuation.CollateralizationParams collatParams)
 		throws java.lang.Exception

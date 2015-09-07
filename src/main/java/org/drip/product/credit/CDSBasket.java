@@ -43,7 +43,7 @@ package org.drip.product.credit;
 
 public class CDSBasket extends org.drip.product.definition.BasketProduct {
 	private double[] _adblWeight = null;
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private org.drip.product.definition.FixedIncomeComponent[] _aComp = null;
 
 	/**
@@ -59,7 +59,7 @@ public class CDSBasket extends org.drip.product.definition.BasketProduct {
 	public CDSBasket (
 		final org.drip.product.definition.FixedIncomeComponent[] aComp,
 		final double[] adblWeight,
-		final java.lang.String strName)
+		final String strName)
 		throws java.lang.Exception
 	{
 		if (null == aComp || 0 == aComp.length || null == adblWeight || 0 == adblWeight.length ||
@@ -82,7 +82,7 @@ public class CDSBasket extends org.drip.product.definition.BasketProduct {
 		}
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
@@ -93,7 +93,7 @@ public class CDSBasket extends org.drip.product.definition.BasketProduct {
 	}
 
 	@Override public int measureAggregationType (
-		final java.lang.String strMeasureName)
+		final String strMeasureName)
 	{
 		if ("AccrualDays".equalsIgnoreCase (strMeasureName))
 			return org.drip.product.definition.BasketProduct.MEASURE_AGGREGATION_TYPE_UNIT_ACCUMULATE;

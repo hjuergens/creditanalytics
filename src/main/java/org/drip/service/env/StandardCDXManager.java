@@ -523,14 +523,14 @@ public class StandardCDXManager {
 	}
 
 	private static final org.drip.product.definition.BasketProduct ConstructCDX (
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.date.JulianDate dtFirstCoupon,
 		final double dblCoupon,
-		final java.lang.String strIR,
+		final String strIR,
 		final int iNumComponents,
-		final java.lang.String strCDXName)
+		final String strCDXName)
 	{
-		java.lang.String[] astrCC = new java.lang.String[iNumComponents];
+		String[] astrCC = new String[iNumComponents];
 
 		for (int i = 0; i < iNumComponents; ++i)
 			astrCC[i] = "CC" + (i + 1);
@@ -540,21 +540,21 @@ public class StandardCDXManager {
 	}
 
 	private static final org.drip.product.definition.BasketProduct ConstructCDXEM (
-		final java.lang.String strTenor,
+		final String strTenor,
 		final org.drip.analytics.date.JulianDate dtFirstCoupon,
-		final java.lang.String strCDXName)
+		final String strCDXName)
 	{
 		return org.drip.product.creator.CDSBasketBuilder.MakeCDX (dtFirstCoupon.subtractTenor ("3M"),
-			dtFirstCoupon.addTenor (strTenor), 0.05, "USD", new java.lang.String[] {"ARG", "VEN", "BRA",
+			dtFirstCoupon.addTenor (strTenor), 0.05, "USD", new String[] {"ARG", "VEN", "BRA",
 				"MAL", "COL", "HUN", "IND", "PAN", "PER", "SAF", "PHI", "TUR", "RUS", "UKR", "MEX"}, new
 					double[] {0.06, 0.08, 0.13, 0.04, 0.08, 0.03, 0.05, 0.03, 0.05, 0.03, 0.06, 0.11, 0.13,
 						0.03, 0.09}, strCDXName);
 	}
 
 	private static final org.drip.product.definition.BasketProduct MakePresetStandardCDX (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final int iSeries,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		if (null == strIndex || strIndex.isEmpty() || null == strTenor || strTenor.isEmpty()) return null;
 
@@ -568,7 +568,7 @@ public class StandardCDXManager {
 
 		if (null == cdxID) return null;
 
-		java.lang.String strCDXCode = cdxID.getCode();
+		String strCDXCode = cdxID.getCode();
 
 		if (null == strCDXCode || strCDXCode.isEmpty()) return null;
 
@@ -601,9 +601,9 @@ public class StandardCDXManager {
 	}
 
 	private static final org.drip.product.definition.BasketProduct MakePreLoadedStandardCDX (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final int iSeries,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		if (null == strIndex || strIndex.isEmpty() || null == strTenor || strTenor.isEmpty()) return null;
 
@@ -617,7 +617,7 @@ public class StandardCDXManager {
 
 		if (null == cdxID) return null;
 
-		java.lang.String strCDXCode = cdxID.getCode();
+		String strCDXCode = cdxID.getCode();
 
 		if (null == strCDXCode || strCDXCode.isEmpty()) return null;
 
@@ -626,7 +626,7 @@ public class StandardCDXManager {
 
 		if (null == cdxrdb) return null;
 
-		java.lang.String[] astrCC = new java.lang.String[cdxrdb._iOriginalComponentCount];
+		String[] astrCC = new String[cdxrdb._iOriginalComponentCount];
 
 		for (int i = 0; i < cdxrdb._iOriginalComponentCount; ++i)
 			astrCC[i] = "CC" + (i + 1);
@@ -638,9 +638,9 @@ public class StandardCDXManager {
 	}
 
 	private static final org.drip.product.definition.BasketProduct GetPresetOnTheRun (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		if (null == dt || null == strIndex || strIndex.isEmpty() || null == strTenor || strTenor.isEmpty())
 			return null;
@@ -661,9 +661,9 @@ public class StandardCDXManager {
 	}
 
 	private static final org.drip.product.definition.BasketProduct GetPreLoadedOnTheRun (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		if (null == dt || null == strIndex || strIndex.isEmpty() || null == strTenor || strTenor.isEmpty())
 			return null;
@@ -684,7 +684,7 @@ public class StandardCDXManager {
 	}
 
 	private static final boolean DumpIndexDetails (
-		final java.lang.String strCDXCoverageFile)
+		final String strCDXCoverageFile)
 	{
 		if (null == strCDXCoverageFile || strCDXCoverageFile.isEmpty()) return false;
 
@@ -706,13 +706,13 @@ public class StandardCDXManager {
 			return false;
 		}
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.params.CDXRefDataParams> meCDXRefData :
+		for (java.util.Map.Entry<String, org.drip.product.params.CDXRefDataParams> meCDXRefData :
 			org.drip.product.creator.CDXRefDataHolder._mapCDXRefData.entrySet()) {
 			org.drip.product.params.CDXRefDataParams cdxrdb = meCDXRefData.getValue();
 
 			if (null == cdxrdb) continue;
 
-			java.lang.String strIndexDetails = " , " + meCDXRefData.getKey() + ", " + cdxrdb._strIndexName +
+			String strIndexDetails = " , " + meCDXRefData.getKey() + ", " + cdxrdb._strIndexName +
 				", " + cdxrdb._dtIssue + ", " + cdxrdb._dtMaturity + ", " + cdxrdb._iFrequency + ", " + (int)
 					(10000. * cdxrdb._dblCoupon) + "\n";
 
@@ -749,9 +749,9 @@ public class StandardCDXManager {
 	 */
 
 	public static final org.drip.product.definition.BasketProduct MakeStandardCDX (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final int iSeries,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		org.drip.product.definition.BasketProduct bpCDX = MakePresetStandardCDX (strIndex, iSeries,
 			strTenor);
@@ -772,9 +772,9 @@ public class StandardCDXManager {
 	 */
 
 	public static final org.drip.product.definition.BasketProduct GetOnTheRun (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		org.drip.product.definition.BasketProduct bpCDX = GetPresetOnTheRun (strIndex, dt, strTenor);
 
@@ -789,7 +789,7 @@ public class StandardCDXManager {
 	 * @return Set of the pre-set CDX index names
 	 */
 
-	public static final java.util.Set<java.lang.String> GetPresetIndexNames()
+	public static final java.util.Set<String> GetPresetIndexNames()
 	{
 		return _mmIndexFirstCouponSeries.keySet();
 	}
@@ -800,7 +800,7 @@ public class StandardCDXManager {
 	 * @return Set of the pre-loaded CDX index names
 	 */
 
-	public static final java.util.Set<java.lang.String> GetPreLoadedIndexNames()
+	public static final java.util.Set<String> GetPreLoadedIndexNames()
 	{
 		return org.drip.product.creator.CDXRefDataHolder._mmCDXRDBFirstCouponSeries.keySet();
 	}
@@ -811,9 +811,9 @@ public class StandardCDXManager {
 	 * @return Set of the pre-set and the pre-loaded CDX index names
 	 */
 
-	public static final java.util.Set<java.lang.String> GetCDXNames()
+	public static final java.util.Set<String> GetCDXNames()
 	{
-		java.util.Set<java.lang.String> setstrIndex = new java.util.HashSet<java.lang.String>();
+		java.util.Set<String> setstrIndex = new java.util.HashSet<String>();
 
 		setstrIndex.addAll (GetPreLoadedIndexNames());
 
@@ -832,7 +832,7 @@ public class StandardCDXManager {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate, java.lang.Integer>
 		GetPresetCDXSeriesMap (
-			final java.lang.String strCDXName)
+			final String strCDXName)
 	{
 		if (null == strCDXName || strCDXName.isEmpty()) return null;
 
@@ -849,7 +849,7 @@ public class StandardCDXManager {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate, java.lang.Integer>
 		GetPreLoadedCDXSeriesMap (
-			final java.lang.String strCDXName)
+			final String strCDXName)
 	{
 		if (null == strCDXName || strCDXName.isEmpty()) return null;
 
@@ -865,7 +865,7 @@ public class StandardCDXManager {
 	 */
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate, java.lang.Integer> GetCDXSeriesMap(
-		final java.lang.String strCDXName)
+		final String strCDXName)
 	{
 		if (null == strCDXName || strCDXName.isEmpty()) return null;
 
@@ -892,13 +892,13 @@ public class StandardCDXManager {
 	 * @return Name/description map for all the pre-set CDS indices
 	 */
 
-	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>
+	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<String>
 		GetPresetCDXDescriptions()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCDXDescr = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCDXDescr = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.params.StandardCDXParams> meCDXRefData :
+		for (java.util.Map.Entry<String, org.drip.product.params.StandardCDXParams> meCDXRefData :
 			_mapStandardCDXParams.entrySet())
 			mapCDXDescr.put (meCDXRefData.getKey(), meCDXRefData.getKey());
 
@@ -911,13 +911,13 @@ public class StandardCDXManager {
 	 * @return Name/description map for all the pre-loaded CDS indices
 	 */
 
-	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>
+	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<String>
 		GetPreLoadedCDXDescriptions()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCDXDescr = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCDXDescr = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.product.params.CDXRefDataParams> meCDXRefData :
+		for (java.util.Map.Entry<String, org.drip.product.params.CDXRefDataParams> meCDXRefData :
 			org.drip.product.creator.CDXRefDataHolder._mapCDXRefData.entrySet())
 			mapCDXDescr.put (meCDXRefData.getKey(), meCDXRefData.getValue()._strIndexName);
 
@@ -930,11 +930,11 @@ public class StandardCDXManager {
 	 * @return Name/description map for all the CDS indices
 	 */
 
-	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>
+	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<String>
 		GetCDXDescriptions()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCDXDescr = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCDXDescr = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		mapCDXDescr.putAll (GetPreLoadedCDXDescriptions());
 
@@ -944,7 +944,7 @@ public class StandardCDXManager {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		if (!InitStandardCDXSeries()) System.out.println ("Cannot initialize InitStandardCDXSeries!");

@@ -51,61 +51,61 @@ public class LocalMonotoneCkGenerator {
 	 * C1 Type: Vanilla
 	 */
 
-	public static final java.lang.String C1_VANILLA = "C1_VANILLA";
+	public static final String C1_VANILLA = "C1_VANILLA";
 
 	/**
 	 * C1 Type: Akima
 	 */
 
-	public static final java.lang.String C1_AKIMA = "C1_AKIMA";
+	public static final String C1_AKIMA = "C1_AKIMA";
 
 	/**
 	 * C1 Type: Bessel
 	 */
 
-	public static final java.lang.String C1_BESSEL = "C1_BESSEL";
+	public static final String C1_BESSEL = "C1_BESSEL";
 
 	/**
 	 * C1 Type: Harmonic
 	 */
 
-	public static final java.lang.String C1_HARMONIC = "C1_HARMONIC";
+	public static final String C1_HARMONIC = "C1_HARMONIC";
 
 	/**
 	 * C1 Type: Huynh - Le Floch Limiter
 	 */
 
-	public static final java.lang.String C1_HUYNH_LE_FLOCH = "C1_HUYNH_LE_FLOCH";
+	public static final String C1_HUYNH_LE_FLOCH = "C1_HUYNH_LE_FLOCH";
 
 	/**
 	 * C1 Type: Hyman83
 	 */
 
-	public static final java.lang.String C1_HYMAN83 = "C1_HYMAN83";
+	public static final String C1_HYMAN83 = "C1_HYMAN83";
 
 	/**
 	 * C1 Type: Hyman89
 	 */
 
-	public static final java.lang.String C1_HYMAN89 = "C1_HYMAN89";
+	public static final String C1_HYMAN89 = "C1_HYMAN89";
 
 	/**
 	 * C1 Type: Kruger
 	 */
 
-	public static final java.lang.String C1_KRUGER = "C1_KRUGER";
+	public static final String C1_KRUGER = "C1_KRUGER";
 
 	/**
 	 * C1 Type: Monotone Convex
 	 */
 
-	public static final java.lang.String C1_MONOTONE_CONVEX = "C1_MONOTONE_CONVEX";
+	public static final String C1_MONOTONE_CONVEX = "C1_MONOTONE_CONVEX";
 
 	/**
 	 * C1 Type: Van Leer Limiter
 	 */
 
-	public static final java.lang.String C1_VAN_LEER = "C1_VAN_LEER";
+	public static final String C1_VAN_LEER = "C1_VAN_LEER";
 
 	private double[] _adblC1 = null;
 	private double[] _adblResponseValue = null;
@@ -735,7 +735,7 @@ public class LocalMonotoneCkGenerator {
 	public static final LocalMonotoneCkGenerator Create (
 		final double[] adblPredictorOrdinate,
 		final double[] adblResponseValue,
-		final java.lang.String strGeneratorType,
+		final String strGeneratorType,
 		final boolean bEliminateSpuriousExtrema,
 		final boolean bApplyMonotoneFilter)
 	{
@@ -775,7 +775,7 @@ public class LocalMonotoneCkGenerator {
 	}
 
 	private boolean generateC1 (
-		final java.lang.String strGeneratorType)
+		final String strGeneratorType)
 	{
 		if (null == strGeneratorType || strGeneratorType.isEmpty()) return false;
 

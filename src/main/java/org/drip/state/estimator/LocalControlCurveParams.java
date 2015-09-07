@@ -45,7 +45,7 @@ package org.drip.state.estimator;
 public class LocalControlCurveParams extends org.drip.state.estimator.SmoothingCurveStretchParams {
 	private boolean _bApplyMonotoneFilter = false;
 	private boolean _bEliminateSpuriousExtrema = false;
-	private java.lang.String _strC1GeneratorScheme = "";
+	private String _strC1GeneratorScheme = "";
 
 	/**
 	 * LocalControlCurveParams constructor
@@ -63,8 +63,8 @@ public class LocalControlCurveParams extends org.drip.state.estimator.SmoothingC
 	 */
 
 	public LocalControlCurveParams (
-		final java.lang.String strC1GeneratorScheme,
-		final java.lang.String strSmootheningQuantificationMetric,
+		final String strC1GeneratorScheme,
+		final String strSmootheningQuantificationMetric,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbc,
 		final int iCalibrationDetail,
 		final org.drip.spline.params.StretchBestFitResponse sbfr,
@@ -110,7 +110,7 @@ public class LocalControlCurveParams extends org.drip.state.estimator.SmoothingC
 	 * @return The C1 Generator Scheme
 	 */
 
-	public java.lang.String C1GeneratorScheme()
+	public String C1GeneratorScheme()
 	{
 		return _strC1GeneratorScheme;
 	}

@@ -108,7 +108,7 @@ public class BondTestSuite {
 
     @Test(dataProvider = "measures", enabled = false)
 	public static void main (
-		final java.lang.String astrArgs[])
+		final String astrArgs[])
 		throws java.lang.Exception
 	{
 		if (1 > astrArgs.length || null == astrArgs[0] || astrArgs[0].isEmpty()) {
@@ -149,12 +149,12 @@ public class BondTestSuite {
 			return;
 		}
 
-		java.lang.String strBondSetID = "UBS";
+		String strBondSetID = "UBS";
 		double dblMidPriceMark = 100.;
 		double dblBidPriceStart = dblMidPriceMark - 0.;
 		double dblBidPriceFinish = dblMidPriceMark + 0.5;
 		double dblBidPriceIncrement = 10.;
-		java.lang.String strCommand = "TickerAnalFromPrice";
+		String strCommand = "TickerAnalFromPrice";
 
 		if (0 < astrArgs.length) {
 			strCommand = astrArgs[0];

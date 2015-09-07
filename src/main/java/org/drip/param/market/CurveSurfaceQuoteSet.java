@@ -34,7 +34,7 @@ package org.drip.param.market;
 
 /**
  * CurveSurfaceQuoteSet provides implementation of the set of the market curve parameters. It serves as a
- *  place holder for the market parameters needed to value the product – discount curve, forward curve,
+ *  place holder for the market parameters needed to value the product ï¿½ discount curve, forward curve,
  *  treasury curve, credit curve, product quote, treasury quote map, and fixings map.
  *
  * @author Lakshmi Krishnamurthy
@@ -365,8 +365,8 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.analytics.rates.DiscountCurve payCurrencyCollateralCurrencyCurve (
-		final java.lang.String strPayCurrency,
-		final java.lang.String strCollateralCurrency)
+		final String strPayCurrency,
+		final String strCollateralCurrency)
 	{
 		if (null == strPayCurrency || !_mapPayCurrencyForeignCollateralDC.containsKey (strPayCurrency) ||
 			null == strCollateralCurrency)
@@ -388,8 +388,8 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setPayCurrencyCollateralCurrencyCurve (
-		final java.lang.String strPayCurrency,
-		final java.lang.String strCollateralCurrency,
+		final String strPayCurrency,
+		final String strCollateralCurrency,
 		final org.drip.analytics.rates.DiscountCurve dcPayCurrencyCollateralCurrency)
 	{
 		if (null == strPayCurrency || strPayCurrency.isEmpty() || null == strCollateralCurrency ||
@@ -416,7 +416,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.analytics.rates.DiscountCurve collateralChoiceDiscountCurve (
-		final java.lang.String strPayCurrency)
+		final String strPayCurrency)
 	{
 		if (null == strPayCurrency || !_mapPayCurrencyForeignCollateralDC.containsKey (strPayCurrency))
 			return null;
@@ -431,7 +431,7 @@ public class CurveSurfaceQuoteSet {
 
 		int i = 0;
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.analytics.rates.DiscountCurve> me :
+		for (java.util.Map.Entry<String, org.drip.analytics.rates.DiscountCurve> me :
 			mapCollateralCurrencyDC.entrySet()) {
 			org.drip.analytics.rates.DiscountCurve fcdc = me.getValue();
 
@@ -463,7 +463,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel) return null;
 
-		java.lang.String strCreditLabel = creditLabel.fullyQualifiedName();
+		String strCreditLabel = creditLabel.fullyQualifiedName();
 
 		return !_mapCreditCurve.containsKey (strCreditLabel) ? null : _mapCreditCurve.get (strCreditLabel);
 	}
@@ -499,7 +499,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName();
+		String strCode = equityLabel.fullyQualifiedName();
 
 		return _mapEquityCurve.containsKey (strCode) ? _mapEquityCurve.get (strCode) : null;
 	}
@@ -537,7 +537,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel) return null;
 
-		java.lang.String strForwardLabel = forwardLabel.fullyQualifiedName();
+		String strForwardLabel = forwardLabel.fullyQualifiedName();
 
 		return _mapForwardCurve.containsKey (strForwardLabel) ? _mapForwardCurve.get (strForwardLabel) :
 			null;
@@ -574,7 +574,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fundingLabel) return null;
 
-		java.lang.String strFundingLabel = fundingLabel.fullyQualifiedName();
+		String strFundingLabel = fundingLabel.fullyQualifiedName();
 
 		return _mapFundingCurve.containsKey (strFundingLabel) ? _mapFundingCurve.get (strFundingLabel) :
 			null;
@@ -611,7 +611,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fxLabel) return null;
 
-		java.lang.String strCode = fxLabel.fullyQualifiedName();
+		String strCode = fxLabel.fullyQualifiedName();
 
 		return _mapFXCurve.containsKey (strCode) ? _mapFXCurve.get (strCode) : null;
 	}
@@ -658,7 +658,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == govvieLabel) return null;
 
-		java.lang.String strGovvieLabel = govvieLabel.fullyQualifiedName();
+		String strGovvieLabel = govvieLabel.fullyQualifiedName();
 
 		return !_mapGovvieCurve.containsKey (strGovvieLabel) ? null : _mapGovvieCurve.get (strGovvieLabel);
 	}
@@ -694,7 +694,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == paydownLabel) return null;
 
-		java.lang.String strCode = paydownLabel.fullyQualifiedName();
+		String strCode = paydownLabel.fullyQualifiedName();
 
 		return _mapPaydownCurve.containsKey (strCode) ? _mapPaydownCurve.get (strCode) : null;
 	}
@@ -732,7 +732,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == recoveryLabel) return null;
 
-		java.lang.String strRecoveryLabel = recoveryLabel.fullyQualifiedName();
+		String strRecoveryLabel = recoveryLabel.fullyQualifiedName();
 
 		return !_mapRecoveryCurve.containsKey (strRecoveryLabel) ? null : _mapRecoveryCurve.get
 			(strRecoveryLabel);
@@ -767,7 +767,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralCurveVolSurface (
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == strCurrency || strCurrency.isEmpty() || !_mapCollateralVolatilitySurface.containsKey
 			(strCurrency))
@@ -786,7 +786,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralCurveVolSurface (
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.function.definition.R1ToR1 auVolatility)
 	{
 		if (null == strCurrency || strCurrency.isEmpty() || null == auVolatility) return false;
@@ -809,7 +809,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel) return null;
 
-		java.lang.String strCreditLabel = creditLabel.fullyQualifiedName();
+		String strCreditLabel = creditLabel.fullyQualifiedName();
 
 		return  !_mapCreditVolatilitySurface.containsKey (strCreditLabel) ? null :
 			_mapCreditVolatilitySurface.get (strCreditLabel);
@@ -848,7 +848,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel) return null;
 
-		java.lang.String strCustomMetricLabel = customMetricLabel.fullyQualifiedName();
+		String strCustomMetricLabel = customMetricLabel.fullyQualifiedName();
 
 		return _mapCustomMetricVolatilitySurface.containsKey (strCustomMetricLabel) ?
 			_mapCustomMetricVolatilitySurface.get (strCustomMetricLabel) : null;
@@ -887,7 +887,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel) return null;
 
-		java.lang.String strEquityLabel = equityLabel.fullyQualifiedName();
+		String strEquityLabel = equityLabel.fullyQualifiedName();
 
 		return  !_mapEquityVolatilitySurface.containsKey (strEquityLabel) ? null :
 			_mapEquityVolatilitySurface.get (strEquityLabel);
@@ -926,7 +926,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel) return null;
 
-		java.lang.String strForwardLabel = forwardLabel.fullyQualifiedName();
+		String strForwardLabel = forwardLabel.fullyQualifiedName();
 
 		return _mapForwardVolatilitySurface.containsKey (strForwardLabel) ? _mapForwardVolatilitySurface.get
 			(strForwardLabel) : null;
@@ -965,7 +965,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fundingLabel) return null;
 
-		java.lang.String strFundingLabel = fundingLabel.fullyQualifiedName();
+		String strFundingLabel = fundingLabel.fullyQualifiedName();
 
 		return _mapFundingVolatilitySurface.containsKey (strFundingLabel) ? _mapFundingVolatilitySurface.get
 			(strFundingLabel) : null;
@@ -1004,7 +1004,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fxLabel) return null;
 
-		java.lang.String strCode = fxLabel.fullyQualifiedName();
+		String strCode = fxLabel.fullyQualifiedName();
 
 		return !_mapFXVolatilitySurface.containsKey (strCode) ? null : _mapFXVolatilitySurface.get
 			(strCode);
@@ -1043,7 +1043,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == govvieLabel) return null;
 
-		java.lang.String strGovvieLabel = govvieLabel.fullyQualifiedName();
+		String strGovvieLabel = govvieLabel.fullyQualifiedName();
 
 		return !_mapGovvieVolatilitySurface.containsKey (strGovvieLabel) ? null :
 			_mapGovvieVolatilitySurface.get (strGovvieLabel);
@@ -1082,7 +1082,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == paydownLabel) return null;
 
-		java.lang.String strPaydownLabel = paydownLabel.fullyQualifiedName();
+		String strPaydownLabel = paydownLabel.fullyQualifiedName();
 
 		return !_mapPaydownVolatilitySurface.containsKey (strPaydownLabel) ? null :
 			_mapPaydownVolatilitySurface.get (strPaydownLabel);
@@ -1121,7 +1121,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == recoveryLabel) return null;
 
-		java.lang.String strRecoveryLabel = recoveryLabel.fullyQualifiedName();
+		String strRecoveryLabel = recoveryLabel.fullyQualifiedName();
 
 		return !_mapRecoveryVolatilitySurface.containsKey (strRecoveryLabel) ? null :
 			_mapRecoveryVolatilitySurface.get (strRecoveryLabel);
@@ -1157,13 +1157,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralCollateralCorrSurface (
-		final java.lang.String strCurrency1,
-		final java.lang.String strCurrency2)
+		final String strCurrency1,
+		final String strCurrency2)
 	{
 		if (null == strCurrency1 || strCurrency1.isEmpty() || null == strCurrency2 || strCurrency2.isEmpty())
 			return null;
 
-		java.lang.String strCode = strCurrency1 + "@#" + strCurrency2;
+		String strCode = strCurrency1 + "@#" + strCurrency2;
 
 		if (!_mapCollateralCollateralCorrelationSurface.containsKey (strCode)) return null;
 
@@ -1181,8 +1181,8 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralCollateralCorrSurface (
-		final java.lang.String strCurrency1,
-		final java.lang.String strCurrency2,
+		final String strCurrency1,
+		final String strCurrency2,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
 		if (null == strCurrency1 || strCurrency1.isEmpty() || null == strCurrency2 || strCurrency2.isEmpty()
@@ -1211,13 +1211,13 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel1 || null == creditLabel2) return null;
 
-		java.lang.String strCode12 = creditLabel1.fullyQualifiedName() + "@#" +
+		String strCode12 = creditLabel1.fullyQualifiedName() + "@#" +
 			creditLabel2.fullyQualifiedName();
 
 		if (_mapCreditCreditCorrelationSurface.containsKey (strCode12))
 			return _mapCreditCreditCorrelationSurface.get (strCode12);
 
-		java.lang.String strCode21 = creditLabel2.fullyQualifiedName() + "@#" +
+		String strCode21 = creditLabel2.fullyQualifiedName() + "@#" +
 			creditLabel1.fullyQualifiedName();
 
 		return !_mapCreditCreditCorrelationSurface.containsKey (strCode21) ? null :
@@ -1241,9 +1241,9 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel1 || null == creditLabel2 || null == auCorrelation) return false;
 
-		java.lang.String strCreditLabel1 = creditLabel1.fullyQualifiedName();
+		String strCreditLabel1 = creditLabel1.fullyQualifiedName();
 
-		java.lang.String strCreditLabel2 = creditLabel2.fullyQualifiedName();
+		String strCreditLabel2 = creditLabel2.fullyQualifiedName();
 
 		_mapCreditCreditCorrelationSurface.put (strCreditLabel1 + "@#" + strCreditLabel2, auCorrelation);
 
@@ -1267,13 +1267,13 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel1 || null == customMetricLabel2) return null;
 
-		java.lang.String strCode12 = customMetricLabel1.fullyQualifiedName() + "@#" +
+		String strCode12 = customMetricLabel1.fullyQualifiedName() + "@#" +
 			customMetricLabel2.fullyQualifiedName();
 
 		if (_mapCustomMetricCustomMetricCorrelationSurface.containsKey (strCode12))
 			return _mapCustomMetricCustomMetricCorrelationSurface.get (strCode12);
 
-		java.lang.String strCode21 = customMetricLabel2.fullyQualifiedName() + "@#" +
+		String strCode21 = customMetricLabel2.fullyQualifiedName() + "@#" +
 			customMetricLabel1.fullyQualifiedName();
 
 		return _mapCustomMetricCustomMetricCorrelationSurface.containsKey (strCode21) ?
@@ -1323,7 +1323,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel1 || null == equityLabel2) return null;
 
-		java.lang.String strCode = equityLabel1.fullyQualifiedName() + "@#" +
+		String strCode = equityLabel1.fullyQualifiedName() + "@#" +
 			equityLabel2.fullyQualifiedName();
 
 		return _mapEquityEquityCorrelationSurface.containsKey (strCode) ?
@@ -1349,9 +1349,9 @@ public class CurveSurfaceQuoteSet {
 			auCorrelation)
 			return false;
 
-		java.lang.String strEquityLabel1 = equityLabel1.fullyQualifiedName();
+		String strEquityLabel1 = equityLabel1.fullyQualifiedName();
 
-		java.lang.String strEquityLabel2 = equityLabel2.fullyQualifiedName();
+		String strEquityLabel2 = equityLabel2.fullyQualifiedName();
 
 		_mapEquityEquityCorrelationSurface.put (strEquityLabel1 + "@#" + strEquityLabel2, auCorrelation);
 
@@ -1375,7 +1375,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel1 || null == forwardLabel2) return null;
 
-		java.lang.String strCode = forwardLabel1.fullyQualifiedName() + "@#" +
+		String strCode = forwardLabel1.fullyQualifiedName() + "@#" +
 			forwardLabel2.fullyQualifiedName();
 
 		return _mapForwardForwardCorrelationSurface.containsKey (strCode) ?
@@ -1401,9 +1401,9 @@ public class CurveSurfaceQuoteSet {
 			auCorrelation)
 			return false;
 
-		java.lang.String strForwardLabel1 = forwardLabel1.fullyQualifiedName();
+		String strForwardLabel1 = forwardLabel1.fullyQualifiedName();
 
-		java.lang.String strForwardLabel2 = forwardLabel2.fullyQualifiedName();
+		String strForwardLabel2 = forwardLabel2.fullyQualifiedName();
 
 		_mapForwardForwardCorrelationSurface.put (strForwardLabel1 + "@#" + strForwardLabel2, auCorrelation);
 
@@ -1428,7 +1428,7 @@ public class CurveSurfaceQuoteSet {
 		if (null == fundingLabel1 || null == fundingLabel2 || fundingLabel1.match (fundingLabel2))
 			return null;
 
-		java.lang.String strCode = fundingLabel1.fullyQualifiedName() + "@#" +
+		String strCode = fundingLabel1.fullyQualifiedName() + "@#" +
 			fundingLabel2.fullyQualifiedName();
 
 		return _mapFundingFundingCorrelationSurface.containsKey (strCode) ?
@@ -1454,9 +1454,9 @@ public class CurveSurfaceQuoteSet {
 			auCorrelation)
 			return false;
 
-		java.lang.String strFundingLabel1 = fundingLabel1.fullyQualifiedName();
+		String strFundingLabel1 = fundingLabel1.fullyQualifiedName();
 
-		java.lang.String strFundingLabel2 = fundingLabel2.fullyQualifiedName();
+		String strFundingLabel2 = fundingLabel2.fullyQualifiedName();
 
 		_mapFundingFundingCorrelationSurface.put (strFundingLabel1 + "@#" + strFundingLabel2, auCorrelation);
 
@@ -1480,7 +1480,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fxLabel1 || null == fxLabel2 || fxLabel1.match (fxLabel2)) return null;
 
-		java.lang.String strCode = fxLabel1.fullyQualifiedName() + "@#" + fxLabel2.fullyQualifiedName();
+		String strCode = fxLabel1.fullyQualifiedName() + "@#" + fxLabel2.fullyQualifiedName();
 
 		return !_mapFXFXCorrelationSurface.containsKey (strCode) ? null : _mapFXFXCorrelationSurface.get
 			(strCode);
@@ -1504,9 +1504,9 @@ public class CurveSurfaceQuoteSet {
 		if (null == fxLabel1 || null == fxLabel2 || fxLabel1.match (fxLabel2) || null == auCorrelation)
 			return false;
 
-		java.lang.String strCode1 = fxLabel1.fullyQualifiedName();
+		String strCode1 = fxLabel1.fullyQualifiedName();
 
-		java.lang.String strCode2 = fxLabel2.fullyQualifiedName();
+		String strCode2 = fxLabel2.fullyQualifiedName();
 
 		_mapFXFXCorrelationSurface.put (strCode1 + "@#" + strCode2, auCorrelation);
 
@@ -1530,13 +1530,13 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == govvieLabel1 || null == govvieLabel2 || govvieLabel1.match (govvieLabel2)) return null;
 
-		java.lang.String strCode12 = govvieLabel1.fullyQualifiedName() + "@#" +
+		String strCode12 = govvieLabel1.fullyQualifiedName() + "@#" +
 			govvieLabel2.fullyQualifiedName();
 
 		if (_mapGovvieGovvieCorrelationSurface.containsKey (strCode12))
 			return _mapGovvieGovvieCorrelationSurface.get (strCode12);
 
-		java.lang.String strCode21 = govvieLabel2.fullyQualifiedName() + "@#" +
+		String strCode21 = govvieLabel2.fullyQualifiedName() + "@#" +
 			govvieLabel1.fullyQualifiedName();
 
 		return _mapGovvieGovvieCorrelationSurface.containsKey (strCode21) ?
@@ -1562,9 +1562,9 @@ public class CurveSurfaceQuoteSet {
 			auCorrelation)
 			return false;
 
-		java.lang.String strGovvieLabel1 = govvieLabel1.fullyQualifiedName();
+		String strGovvieLabel1 = govvieLabel1.fullyQualifiedName();
 
-		java.lang.String strGovvieLabel2 = govvieLabel2.fullyQualifiedName();
+		String strGovvieLabel2 = govvieLabel2.fullyQualifiedName();
 
 		_mapGovvieGovvieCorrelationSurface.put (strGovvieLabel1 + "@#" + strGovvieLabel2, auCorrelation);
 
@@ -1589,13 +1589,13 @@ public class CurveSurfaceQuoteSet {
 		if (null == paydownLabel1 || null == paydownLabel2 || paydownLabel1.match (paydownLabel2))
 			return null;
 
-		java.lang.String strCode12 = paydownLabel1.fullyQualifiedName() + "@#" +
+		String strCode12 = paydownLabel1.fullyQualifiedName() + "@#" +
 			paydownLabel2.fullyQualifiedName();
 
 		if (_mapPaydownPaydownCorrelationSurface.containsKey (strCode12))
 			return _mapPaydownPaydownCorrelationSurface.get (strCode12);
 
-		java.lang.String strCode21 = paydownLabel2.fullyQualifiedName() + "@#" +
+		String strCode21 = paydownLabel2.fullyQualifiedName() + "@#" +
 			paydownLabel1.fullyQualifiedName();
 
 		return _mapPaydownPaydownCorrelationSurface.containsKey (strCode21) ?
@@ -1621,9 +1621,9 @@ public class CurveSurfaceQuoteSet {
 			auCorrelation)
 			return false;
 
-		java.lang.String strPaydownLabel1 = paydownLabel1.fullyQualifiedName();
+		String strPaydownLabel1 = paydownLabel1.fullyQualifiedName();
 
-		java.lang.String strPaydownLabel2 = paydownLabel2.fullyQualifiedName();
+		String strPaydownLabel2 = paydownLabel2.fullyQualifiedName();
 
 		_mapPaydownPaydownCorrelationSurface.put (strPaydownLabel1 + "@#" + strPaydownLabel2, auCorrelation);
 
@@ -1648,13 +1648,13 @@ public class CurveSurfaceQuoteSet {
 		if (null == recoveryLabel1 || null == recoveryLabel2 || recoveryLabel1.match (recoveryLabel2))
 			return null;
 
-		java.lang.String strCode12 = recoveryLabel1.fullyQualifiedName() + "@#" +
+		String strCode12 = recoveryLabel1.fullyQualifiedName() + "@#" +
 			recoveryLabel2.fullyQualifiedName();
 
 		if (_mapRecoveryRecoveryCorrelationSurface.containsKey (strCode12))
 			return _mapRecoveryRecoveryCorrelationSurface.get (strCode12);
 
-		java.lang.String strCode21 = recoveryLabel2.fullyQualifiedName() + "@#" +
+		String strCode21 = recoveryLabel2.fullyQualifiedName() + "@#" +
 			recoveryLabel1.fullyQualifiedName();
 
 		return _mapRecoveryRecoveryCorrelationSurface.containsKey (strCode21) ?
@@ -1680,9 +1680,9 @@ public class CurveSurfaceQuoteSet {
 			== auCorrelation)
 			return false;
 
-		java.lang.String strRecoveryLabel1 = recoveryLabel1.fullyQualifiedName();
+		String strRecoveryLabel1 = recoveryLabel1.fullyQualifiedName();
 
-		java.lang.String strRecoveryLabel2 = recoveryLabel2.fullyQualifiedName();
+		String strRecoveryLabel2 = recoveryLabel2.fullyQualifiedName();
 
 		_mapRecoveryRecoveryCorrelationSurface.put (strRecoveryLabel1 + "@#" + strRecoveryLabel2,
 			auCorrelation);
@@ -1703,13 +1703,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralCreditCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.CreditLabel creditLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == creditLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + creditLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + creditLabel.fullyQualifiedName();
 
 		return _mapCollateralCreditCorrelationSurface.containsKey (strCode) ? null :
 			_mapCollateralCreditCorrelationSurface.get (strCode);
@@ -1726,7 +1726,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralCreditCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.CreditLabel creditLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -1749,13 +1749,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralCustomMetricCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.CustomMetricLabel customMetricLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == customMetricLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + customMetricLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + customMetricLabel.fullyQualifiedName();
 
 		return _mapCollateralCustomMetricCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralCustomMetricCorrelationSurface.get (strCode) : null;
@@ -1772,7 +1772,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralCustomMetricCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.CustomMetricLabel customMetricLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -1795,13 +1795,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralForwardCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.ForwardLabel forwardLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == forwardLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + forwardLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + forwardLabel.fullyQualifiedName();
 
 		return _mapCollateralForwardCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralForwardCorrelationSurface.get (strCode) : null;
@@ -1818,7 +1818,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralEquityCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.EquityLabel equityLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -1842,13 +1842,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralEquityCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.EquityLabel equityLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == equityLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + equityLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + equityLabel.fullyQualifiedName();
 
 		return _mapCollateralEquityCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralEquityCorrelationSurface.get (strCode) : null;
@@ -1865,7 +1865,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralForwardCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.ForwardLabel forwardLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -1889,13 +1889,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralFundingCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.FundingLabel fundingLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == fundingLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + fundingLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + fundingLabel.fullyQualifiedName();
 
 		return _mapCollateralFundingCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralFundingCorrelationSurface.get (strCode) : null;
@@ -1912,7 +1912,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralFundingCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.FundingLabel fundingLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -1936,12 +1936,12 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralFXCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.FXLabel fxLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == fxLabel) return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + fxLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + fxLabel.fullyQualifiedName();
 
 		return _mapCollateralFXCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralFXCorrelationSurface.get (strCode) : null;
@@ -1958,7 +1958,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralFXCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.FXLabel fxLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -1982,13 +1982,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralGovvieCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.GovvieLabel govvieLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == govvieLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + govvieLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + govvieLabel.fullyQualifiedName();
 
 		return _mapCollateralGovvieCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralGovvieCorrelationSurface.get (strCode) : null;
@@ -2005,7 +2005,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralGovvieCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.GovvieLabel govvieLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -2029,13 +2029,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralPaydownCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.PaydownLabel paydownLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == paydownLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + paydownLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + paydownLabel.fullyQualifiedName();
 
 		return _mapCollateralPaydownCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralPaydownCorrelationSurface.get (strCode) : null;
@@ -2052,7 +2052,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralPaydownCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.PaydownLabel paydownLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -2076,13 +2076,13 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.function.definition.R1ToR1 collateralRecoveryCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.RecoveryLabel recoveryLabel)
 	{
 		if (null == strCollateralCurrency || strCollateralCurrency.isEmpty() || null == recoveryLabel)
 			return null;
 
-		java.lang.String strCode = strCollateralCurrency + "@#" + recoveryLabel.fullyQualifiedName();
+		String strCode = strCollateralCurrency + "@#" + recoveryLabel.fullyQualifiedName();
 
 		return _mapCollateralRecoveryCorrelationSurface.containsKey (strCode) ?
 			_mapCollateralRecoveryCorrelationSurface.get (strCode) : null;
@@ -2099,7 +2099,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setCollateralRecoveryCorrSurface (
-		final java.lang.String strCollateralCurrency,
+		final String strCollateralCurrency,
 		final org.drip.state.identifier.RecoveryLabel recoveryLabel,
 		final org.drip.function.definition.R1ToR1 auCorrelation)
 	{
@@ -2128,7 +2128,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == customMetricLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			customMetricLabel.fullyQualifiedName();
 
 		return _mapCreditCustomMetricCorrelationSurface.containsKey (strCode) ?
@@ -2173,7 +2173,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == equityLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			equityLabel.fullyQualifiedName();
 
 		return _mapCreditEquityCorrelationSurface.containsKey (strCode) ?
@@ -2218,7 +2218,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == forwardLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			forwardLabel.fullyQualifiedName();
 
 		return _mapCreditForwardCorrelationSurface.containsKey (strCode) ?
@@ -2263,7 +2263,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == fundingLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			fundingLabel.fullyQualifiedName();
 
 		return _mapCreditFundingCorrelationSurface.containsKey (strCode) ?
@@ -2308,7 +2308,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == fxLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
+		String strCode = creditLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
 
 		return _mapCreditFXCorrelationSurface.containsKey (strCode) ? _mapCreditFXCorrelationSurface.get
 			(strCode) : null;
@@ -2352,7 +2352,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == govvieLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			govvieLabel.fullyQualifiedName();
 
 		return _mapCreditGovvieCorrelationSurface.containsKey (strCode) ?
@@ -2397,7 +2397,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			paydownLabel.fullyQualifiedName();
 
 		return _mapCreditPaydownCorrelationSurface.containsKey (strCode) ?
@@ -2442,7 +2442,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == creditLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = creditLabel.fullyQualifiedName() + "@#" +
+		String strCode = creditLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapCreditRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -2487,7 +2487,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == equityLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			equityLabel.fullyQualifiedName();
 
 		return _mapCustomMetricEquityCorrelationSurface.containsKey (strCode) ?
@@ -2532,7 +2532,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == forwardLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			forwardLabel.fullyQualifiedName();
 
 		return _mapCustomMetricForwardCorrelationSurface.containsKey (strCode) ?
@@ -2577,7 +2577,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == fundingLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			fundingLabel.fullyQualifiedName();
 
 		return _mapCustomMetricFundingCorrelationSurface.containsKey (strCode) ?
@@ -2622,7 +2622,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == fxLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			fxLabel.fullyQualifiedName();
 
 		return _mapCustomMetricFXCorrelationSurface.containsKey (strCode) ?
@@ -2667,7 +2667,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == govvieLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			govvieLabel.fullyQualifiedName();
 
 		return _mapCustomMetricGovvieCorrelationSurface.containsKey (strCode) ?
@@ -2712,7 +2712,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			paydownLabel.fullyQualifiedName();
 
 		return _mapCustomMetricPaydownCorrelationSurface.containsKey (strCode) ?
@@ -2757,7 +2757,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == customMetricLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
+		String strCode = customMetricLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapCustomMetricRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -2802,7 +2802,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel || null == forwardLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName() + "@#" +
+		String strCode = equityLabel.fullyQualifiedName() + "@#" +
 			forwardLabel.fullyQualifiedName();
 
 		return _mapEquityForwardCorrelationSurface.containsKey (strCode) ?
@@ -2847,7 +2847,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel || null == fundingLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName() + "@#" +
+		String strCode = equityLabel.fullyQualifiedName() + "@#" +
 			fundingLabel.fullyQualifiedName();
 
 		return _mapEquityFundingCorrelationSurface.containsKey (strCode) ?
@@ -2892,7 +2892,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel || null == fxLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
+		String strCode = equityLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
 
 		return _mapEquityFXCorrelationSurface.containsKey (strCode) ? _mapEquityFXCorrelationSurface.get
 			(strCode) : null;
@@ -2936,7 +2936,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel || null == govvieLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName() + "@#" +
+		String strCode = equityLabel.fullyQualifiedName() + "@#" +
 			govvieLabel.fullyQualifiedName();
 
 		return _mapEquityGovvieCorrelationSurface.containsKey (strCode) ?
@@ -2981,7 +2981,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName() + "@#" +
+		String strCode = equityLabel.fullyQualifiedName() + "@#" +
 			paydownLabel.fullyQualifiedName();
 
 		return _mapEquityPaydownCorrelationSurface.containsKey (strCode) ?
@@ -3026,7 +3026,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == equityLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = equityLabel.fullyQualifiedName() + "@#" +
+		String strCode = equityLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapEquityRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -3071,7 +3071,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel || null == fundingLabel) return null;
 
-		java.lang.String strCode = forwardLabel.fullyQualifiedName() + "@#" +
+		String strCode = forwardLabel.fullyQualifiedName() + "@#" +
 			fundingLabel.fullyQualifiedName();
 
 		return _mapForwardFundingCorrelationSurface.containsKey (strCode) ?
@@ -3116,7 +3116,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel || null == fxLabel) return null;
 
-		java.lang.String strCode = forwardLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
+		String strCode = forwardLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
 
 		return _mapForwardFXCorrelationSurface.containsKey (strCode) ? _mapForwardFXCorrelationSurface.get
 			(strCode) : null;
@@ -3160,7 +3160,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel || null == govvieLabel) return null;
 
-		java.lang.String strCode = forwardLabel.fullyQualifiedName() + "@#" +
+		String strCode = forwardLabel.fullyQualifiedName() + "@#" +
 			govvieLabel.fullyQualifiedName();
 
 		return _mapForwardGovvieCorrelationSurface.containsKey (strCode) ?
@@ -3205,7 +3205,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = forwardLabel.fullyQualifiedName() + "@#" +
+		String strCode = forwardLabel.fullyQualifiedName() + "@#" +
 			paydownLabel.fullyQualifiedName();
 
 		return _mapForwardPaydownCorrelationSurface.containsKey (strCode) ?
@@ -3250,7 +3250,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == forwardLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = forwardLabel.fullyQualifiedName() + "@#" +
+		String strCode = forwardLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapForwardRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -3295,7 +3295,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fundingLabel || null == fxLabel) return null;
 
-		java.lang.String strCode = fundingLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
+		String strCode = fundingLabel.fullyQualifiedName() + "@#" + fxLabel.fullyQualifiedName();
 
 		return _mapFundingFXCorrelationSurface.containsKey (strCode) ? _mapFundingFXCorrelationSurface.get
 			(strCode) : null;
@@ -3339,7 +3339,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fundingLabel || null == govvieLabel) return null;
 
-		java.lang.String strCode = fundingLabel.fullyQualifiedName() + "@#" +
+		String strCode = fundingLabel.fullyQualifiedName() + "@#" +
 			govvieLabel.fullyQualifiedName();
 
 		return _mapFundingGovvieCorrelationSurface.containsKey (strCode) ?
@@ -3384,7 +3384,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fundingLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = fundingLabel.fullyQualifiedName() + "@#" +
+		String strCode = fundingLabel.fullyQualifiedName() + "@#" +
 			paydownLabel.fullyQualifiedName();
 
 		return _mapFundingPaydownCorrelationSurface.containsKey (strCode) ?
@@ -3429,7 +3429,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fundingLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = fundingLabel.fullyQualifiedName() + "@#" +
+		String strCode = fundingLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapFundingRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -3474,7 +3474,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fxLabel || null == govvieLabel) return null;
 
-		java.lang.String strCode = fxLabel.fullyQualifiedName() + "@#" + govvieLabel.fullyQualifiedName();
+		String strCode = fxLabel.fullyQualifiedName() + "@#" + govvieLabel.fullyQualifiedName();
 
 		return _mapFXGovvieCorrelationSurface.containsKey (strCode) ? _mapFXGovvieCorrelationSurface.get
 			(strCode) : null;
@@ -3518,7 +3518,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fxLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = fxLabel.fullyQualifiedName() + "@#" + paydownLabel.fullyQualifiedName();
+		String strCode = fxLabel.fullyQualifiedName() + "@#" + paydownLabel.fullyQualifiedName();
 
 		return _mapFXPaydownCorrelationSurface.containsKey (strCode) ? _mapFXPaydownCorrelationSurface.get
 			(strCode) : null;
@@ -3562,7 +3562,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == fxLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = fxLabel.fullyQualifiedName() + "@#" + recoveryLabel.fullyQualifiedName();
+		String strCode = fxLabel.fullyQualifiedName() + "@#" + recoveryLabel.fullyQualifiedName();
 
 		return _mapFXRecoveryCorrelationSurface.containsKey (strCode) ? _mapFXRecoveryCorrelationSurface.get
 			(strCode) : null;
@@ -3606,7 +3606,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == govvieLabel || null == paydownLabel) return null;
 
-		java.lang.String strCode = govvieLabel.fullyQualifiedName() + "@#" +
+		String strCode = govvieLabel.fullyQualifiedName() + "@#" +
 			paydownLabel.fullyQualifiedName();
 
 		return _mapGovviePaydownCorrelationSurface.containsKey (strCode) ?
@@ -3651,7 +3651,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == govvieLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = govvieLabel.fullyQualifiedName() + "@#" +
+		String strCode = govvieLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapGovvieRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -3696,7 +3696,7 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == paydownLabel || null == recoveryLabel) return null;
 
-		java.lang.String strCode = paydownLabel.fullyQualifiedName() + "@#" +
+		String strCode = paydownLabel.fullyQualifiedName() + "@#" +
 			recoveryLabel.fullyQualifiedName();
 
 		return _mapPaydownRecoveryCorrelationSurface.containsKey (strCode) ?
@@ -3735,7 +3735,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public org.drip.param.definition.ProductQuote productQuote (
-		final java.lang.String strProductCode)
+		final String strProductCode)
 	{
 		if (null == strProductCode || strProductCode.isEmpty() || !_mapProductQuote.containsKey
 			(strProductCode))
@@ -3754,7 +3754,7 @@ public class CurveSurfaceQuoteSet {
 	 */
 
 	public boolean setProductQuote (
-		final java.lang.String strProductCode,
+		final String strProductCode,
 		final org.drip.param.definition.ProductQuote pq)
 	{
 		if (null == strProductCode || strProductCode.isEmpty() || null == pq) return false;
@@ -3791,11 +3791,11 @@ public class CurveSurfaceQuoteSet {
 	{
 		if (null == mapQuote || 0 == mapQuote.size()) return false;
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ProductQuote> meCQ :
+		for (java.util.Map.Entry<String, org.drip.param.definition.ProductQuote> meCQ :
 			mapQuote.entrySet()) {
 			if (null == meCQ) continue;
 
-			java.lang.String strKey = meCQ.getKey();
+			String strKey = meCQ.getKey();
 
 			org.drip.param.definition.ProductQuote cq = meCQ.getValue();
 

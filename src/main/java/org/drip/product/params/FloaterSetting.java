@@ -41,7 +41,7 @@ package org.drip.product.params;
  */
 
 public class FloaterSetting implements org.drip.product.params.Validatable {
-	private java.lang.String _strDayCount = "";
+	private String _strDayCount = "";
 	private double _dblSpread = java.lang.Double.NaN;
 	private org.drip.state.identifier.ForwardLabel _fri = null;
 	private double _dblCurrentFullCoupon = java.lang.Double.NaN;
@@ -57,8 +57,8 @@ public class FloaterSetting implements org.drip.product.params.Validatable {
 	 */
 
 	public FloaterSetting (
-		final java.lang.String strRateIndex,
-		final java.lang.String strDayCount,
+		final String strRateIndex,
+		final String strDayCount,
 		final double dblSpread,
 		final double dblCurrentFullCoupon)
 	{
@@ -92,7 +92,7 @@ public class FloaterSetting implements org.drip.product.params.Validatable {
 	 * @return The Floating Day Count
 	 */
 
-	public java.lang.String dayCount()
+	public String dayCount()
 	{
 		return _strDayCount;
 	}

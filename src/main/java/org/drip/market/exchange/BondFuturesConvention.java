@@ -36,14 +36,14 @@ package org.drip.market.exchange;
  */
 
 public class BondFuturesConvention {
-	private java.lang.String _strName = "";
-	private java.lang.String _strCalendar = "";
-	private java.lang.String _strCurrency = "";
-	private java.lang.String[] _astrCode = null;
-	private java.lang.String[] _astrExchange = null;
-	private java.lang.String _strMaturityTenor = "";
-	private java.lang.String _strUnderlierType = "";
-	private java.lang.String _strUnderlierSubtype = "";
+	private String _strName = "";
+	private String _strCalendar = "";
+	private String _strCurrency = "";
+	private String[] _astrCode = null;
+	private String[] _astrExchange = null;
+	private String _strMaturityTenor = "";
+	private String _strUnderlierType = "";
+	private String _strUnderlierSubtype = "";
 	private double _dblBasketNotional = java.lang.Double.NaN;
 	private org.drip.market.exchange.BondFuturesSettle _bfs = null;
 	private org.drip.analytics.eventday.DateInMonth _dimExpiry = null;
@@ -70,16 +70,16 @@ public class BondFuturesConvention {
 	 */
 
 	public BondFuturesConvention (
-		final java.lang.String strName,
-		final java.lang.String[] astrCode,
-		final java.lang.String strCurrency,
-		final java.lang.String strCalendar,
-		final java.lang.String strMaturityTenor,
+		final String strName,
+		final String[] astrCode,
+		final String strCurrency,
+		final String strCalendar,
+		final String strMaturityTenor,
 		final double dblBasketNotional,
 		final double dblComponentNotionalMinimum,
-		final java.lang.String[] astrExchange,
-		final java.lang.String strUnderlierType,
-		final java.lang.String strUnderlierSubtype,
+		final String[] astrExchange,
+		final String strUnderlierType,
+		final String strUnderlierSubtype,
 		final org.drip.analytics.eventday.DateInMonth dimExpiry,
 		final org.drip.market.exchange.BondFuturesEligibility bfe,
 		final org.drip.market.exchange.BondFuturesSettle bfs)
@@ -107,7 +107,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Name
 	 */
 
-	public java.lang.String name()
+	public String name()
 	{
 		return _strName;
 	}
@@ -118,7 +118,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Settle Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}
@@ -129,7 +129,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Code Array
 	 */
 
-	public java.lang.String[] codes()
+	public String[] codes()
 	{
 		return _astrCode;
 	}
@@ -140,7 +140,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -151,7 +151,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Maturity Tenor
 	 */
 
-	public java.lang.String maturityTenor()
+	public String maturityTenor()
 	{
 		return _strMaturityTenor;
 	}
@@ -184,7 +184,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Exchanges Array
 	 */
 
-	public java.lang.String[] exchanges()
+	public String[] exchanges()
 	{
 		return _astrExchange;
 	}
@@ -195,7 +195,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Underlier Type
 	 */
 
-	public java.lang.String underlierType()
+	public String underlierType()
 	{
 		return _strUnderlierType;
 	}
@@ -206,7 +206,7 @@ public class BondFuturesConvention {
 	 * @return The Bond Futures Underlier Sub-type
 	 */
 
-	public java.lang.String underlierSubtype()
+	public String underlierSubtype()
 	{
 		return _strUnderlierSubtype;
 	}
@@ -342,14 +342,14 @@ public class BondFuturesConvention {
 		final org.drip.analytics.date.JulianDate dtValue,
 		final org.drip.product.definition.Bond bond,
 		final double dblOutstandingNotional,
-		final java.lang.String strIssuer)
+		final String strIssuer)
 	{
 		return _bfe.isEligible (dtValue, bond, dblOutstandingNotional, strIssuer);
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
-		java.lang.String strDump = "Name: " + _strName + " | Currency: " + _strCurrency + " | Calendar: " +
+		String strDump = "Name: " + _strName + " | Currency: " + _strCurrency + " | Calendar: " +
 			_strCalendar + " | Underlier Type: " + _strUnderlierType + " | Underlier Sub-type: " +
 				_strUnderlierSubtype + " | Maturity Tenor: " + _strMaturityTenor + " | Basket Notional: " +
 					_dblBasketNotional + " | Component Notional Minimum: " + _dblComponentNotionalMinimum;

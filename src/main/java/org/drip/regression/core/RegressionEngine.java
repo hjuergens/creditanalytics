@@ -108,7 +108,7 @@ public class RegressionEngine {
 				++iNumRegressionsSucceeded;
 				lModuleTime += ro._lExecTime;
 
-				java.lang.String strScenarioQualifiedRegressor = rs.getSetName() + "." + r.getName();
+				String strScenarioQualifiedRegressor = rs.getSetName() + "." + r.getName();
 
 				org.drip.regression.core.UnitRegressionStat urs = _mapURS.get
 					(strScenarioQualifiedRegressor);
@@ -191,7 +191,7 @@ public class RegressionEngine {
 		}
 
 		if (0 != _mapURS.size() && null != _mapURS.entrySet()) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.regression.core.UnitRegressionStat>
+			for (java.util.Map.Entry<String, org.drip.regression.core.UnitRegressionStat>
 				meURS : _mapURS.entrySet()) {
 				if (null == meURS || null == meURS.getKey() || meURS.getKey().isEmpty()) continue;
 

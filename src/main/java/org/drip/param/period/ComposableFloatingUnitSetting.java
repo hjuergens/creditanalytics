@@ -54,7 +54,7 @@ public class ComposableFloatingUnitSetting extends org.drip.param.period.Composa
 	 */
 
 	public ComposableFloatingUnitSetting (
-		final java.lang.String strTenor,
+		final String strTenor,
 		final int iEdgeDateSequenceScheme,
 		final org.drip.analytics.daycount.DateAdjustParams dapEdge,
 		final org.drip.state.identifier.ForwardLabel forwardLabel,

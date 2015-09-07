@@ -36,8 +36,8 @@ package org.drip.market.otc;
  */
 
 public class OvernightFixedFloatContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.otc.FixedFloatSwapConvention>
-		_mapConvention = new java.util.TreeMap<java.lang.String,
+	private static final java.util.Map<String, org.drip.market.otc.FixedFloatSwapConvention>
+		_mapConvention = new java.util.TreeMap<String,
 			org.drip.market.otc.FixedFloatSwapConvention>();
 
 	/**
@@ -131,7 +131,7 @@ public class OvernightFixedFloatContainer {
 	 */
 
 	public static final org.drip.market.otc.FixedFloatSwapConvention ConventionFromJurisdiction (
-		final java.lang.String strJurisdictionName)
+		final String strJurisdictionName)
 	{
 		return null == strJurisdictionName || strJurisdictionName.isEmpty() || !_mapConvention.containsKey
 			(strJurisdictionName) ? null : _mapConvention.get (strJurisdictionName);

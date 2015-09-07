@@ -209,7 +209,7 @@ public class LatentStateFixingsContainer {
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapForwardFixing =
 				_mmForwardFixing.get (dt);
 
-			java.lang.String strLabel = lsl.fullyQualifiedName();
+			String strLabel = lsl.fullyQualifiedName();
 
 			if (!mapForwardFixing.containsKey (strLabel))
 				throw new java.lang.Exception
@@ -226,7 +226,7 @@ public class LatentStateFixingsContainer {
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapFXFixing = _mmFXFixing.get
 				(dt);
 
-			java.lang.String strLabel = lsl.fullyQualifiedName();
+			String strLabel = lsl.fullyQualifiedName();
 
 			if (!mapFXFixing.containsKey (strLabel))
 				throw new java.lang.Exception

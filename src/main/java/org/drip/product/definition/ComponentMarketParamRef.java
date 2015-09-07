@@ -47,7 +47,7 @@ public interface ComponentMarketParamRef {
 	 * @return The component name
 	 */
 
-	public abstract java.lang.String name();
+	public abstract String name();
 
 	/**
 	 * Get the Map of Coupon Currencies
@@ -55,7 +55,7 @@ public interface ComponentMarketParamRef {
 	 * @return The Map of Coupon Currencies
 	 */
 
-	public abstract org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency();
+	public abstract org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency();
 
 	/**
 	 * Get the Pay Currency
@@ -63,7 +63,7 @@ public interface ComponentMarketParamRef {
 	 * @return The Pay Currency
 	 */
 
-	public abstract java.lang.String payCurrency();
+	public abstract String payCurrency();
 
 	/**
 	 * Get the Principal Currency
@@ -71,7 +71,7 @@ public interface ComponentMarketParamRef {
 	 * @return The Principal Currency
 	 */
 
-	public abstract java.lang.String principalCurrency();
+	public abstract String principalCurrency();
 
 	/**
 	 * Get the Credit Curve Latent State Identifier Label

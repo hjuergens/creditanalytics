@@ -49,7 +49,7 @@ public class FixedPointFinderRegressionEngine extends org.drip.regression.core.R
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		FixedPointFinderRegressionEngine fpfre = new FixedPointFinderRegressionEngine (10,

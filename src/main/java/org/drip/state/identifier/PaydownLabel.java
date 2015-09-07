@@ -37,7 +37,7 @@ package org.drip.state.identifier;
  */
 
 public class PaydownLabel implements org.drip.state.identifier.LatentStateLabel {
-	private java.lang.String _strReferenceEntity = "";
+	private String _strReferenceEntity = "";
 
 	/**
 	 * Make a Standard Pay-down Label from the Reference Entity Name
@@ -48,7 +48,7 @@ public class PaydownLabel implements org.drip.state.identifier.LatentStateLabel 
 	 */
 
 	public static final PaydownLabel Standard (
-		final java.lang.String strReferenceEntity)
+		final String strReferenceEntity)
 	{
 		try {
 			return new PaydownLabel (strReferenceEntity);
@@ -68,14 +68,14 @@ public class PaydownLabel implements org.drip.state.identifier.LatentStateLabel 
 	 */
 
 	private PaydownLabel (
-		final java.lang.String strReferenceEntity)
+		final String strReferenceEntity)
 		throws java.lang.Exception
 	{
 		if (null == (_strReferenceEntity = strReferenceEntity) || _strReferenceEntity.isEmpty())
 			throw new java.lang.Exception ("PaydownLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _strReferenceEntity;
 	}

@@ -74,7 +74,7 @@ public class VolatilityLabel implements org.drip.state.identifier.LatentStateLab
 			throw new java.lang.Exception ("VolatilityLabel ctr: Invalid Inputs");
 	}
 
-	@Override public java.lang.String fullyQualifiedName()
+	@Override public String fullyQualifiedName()
 	{
 		return _lslUnderlyingState.fullyQualifiedName() + "::VOL";
 	}

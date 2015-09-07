@@ -43,7 +43,7 @@ import org.drip.quant.common.Array2D;
  */
 
 public class CouponSetting implements org.drip.product.params.Validatable {
-	private java.lang.String _strCouponType = "";
+	private String _strCouponType = "";
 	private double _dblCouponRate = java.lang.Double.NaN;
 	private org.drip.quant.common.Array2D _fs = null;
 	private double _dblCouponFloorRate = java.lang.Double.NaN;
@@ -61,7 +61,7 @@ public class CouponSetting implements org.drip.product.params.Validatable {
 
 	public CouponSetting (
 		final Array2D fs,
-		final java.lang.String strCouponType,
+		final String strCouponType,
 		final double dblCouponRate,
 		final double dblCouponCeilingRate,
 		final double dblCouponFloorRate)
@@ -140,7 +140,7 @@ public class CouponSetting implements org.drip.product.params.Validatable {
 	 * @return The Coupon Type
 	 */
 
-	public java.lang.String couponType()
+	public String couponType()
 	{
 		return _strCouponType;
 	}

@@ -53,8 +53,8 @@ public class Array2D {
 	 */
 
 	public static final Array2D FromStringSet (
-		final java.lang.String strX,
-		final java.lang.String strY)
+		final String strX,
+		final String strY)
 	{
 		if (null == strX || strX.isEmpty() || null == strY || strY.isEmpty()) return null;
 

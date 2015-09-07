@@ -47,7 +47,7 @@ public abstract class ExplicitBootDiscountCurve extends org.drip.analytics.rates
 
 	protected ExplicitBootDiscountCurve (
 		final double dblEpochDate,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams)
 		throws java.lang.Exception
 	{
@@ -79,7 +79,7 @@ public abstract class ExplicitBootDiscountCurve extends org.drip.analytics.rates
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstrumentCode)
+		final String strInstrumentCode)
 	{
 		if (null == _ccis) return null;
 

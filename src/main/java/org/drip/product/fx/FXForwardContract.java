@@ -44,7 +44,7 @@ package org.drip.product.fx;
 public class FXForwardContract extends org.drip.product.definition.FXForward {
 	private static final boolean s_bLog = false;
 
-	private java.lang.String _strCode = "";
+	private String _strCode = "";
 	private double _dblMaturity = java.lang.Double.NaN;
 	private double _dblEffective = java.lang.Double.NaN;
 	private org.drip.product.params.CurrencyPair _ccyPair = null;
@@ -76,23 +76,23 @@ public class FXForwardContract extends org.drip.product.definition.FXForward {
 		_dblEffective = dtEffective.julian();
 	}
 
-	@Override public java.lang.String primaryCode()
+	@Override public String primaryCode()
 	{
 		return _strCode;
 	}
 
 	@Override public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		_strCode = strCode;
 	}
 
-	@Override public java.lang.String[] secondaryCode()
+	@Override public String[] secondaryCode()
 	{
-		java.lang.String strPrimaryCode = primaryCode();
+		String strPrimaryCode = primaryCode();
 
 		int iNumTokens = 0;
-		java.lang.String astrCodeTokens[] = new java.lang.String[2];
+		String astrCodeTokens[] = new String[2];
 
 		java.util.StringTokenizer stCodeTokens = new java.util.StringTokenizer (strPrimaryCode, ".");
 
@@ -101,7 +101,7 @@ public class FXForwardContract extends org.drip.product.definition.FXForward {
 
 		System.out.println (astrCodeTokens[0]);
 
-		return new java.lang.String[] {astrCodeTokens[0]};
+		return new String[] {astrCodeTokens[0]};
 	}
 
 	@Override public org.drip.analytics.date.JulianDate effectiveDate()

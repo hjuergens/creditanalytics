@@ -53,7 +53,7 @@ public class NonlinearCurveCalibrator {
 	class CreditCurveCalibrator extends org.drip.function.definition.R1ToR1 {
 		private int _iInstr = -1;
 		private boolean _bFlat = false;
-		private java.lang.String _strMeasure = "";
+		private String _strMeasure = "";
 		private double _dblCalibValue = java.lang.Double.NaN;
 		private org.drip.analytics.rates.DiscountCurve _dc = null;
 		private org.drip.analytics.rates.DiscountCurve _dcTSY = null;
@@ -72,7 +72,7 @@ public class NonlinearCurveCalibrator {
 			final org.drip.analytics.rates.DiscountCurve dc,
 			final org.drip.analytics.rates.DiscountCurve dcTSY,
 			final org.drip.param.pricer.CreditPricerParams pricerParamsIn,
-			final java.lang.String strMeasure,
+			final String strMeasure,
 			final double dblCalibValue,
 			final org.drip.param.market.LatentStateFixingsContainer lsfc,
 			final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
@@ -135,7 +135,7 @@ public class NonlinearCurveCalibrator {
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.product.definition.FixedIncomeComponent[] aCalibComp,
 		final org.drip.param.valuation.ValuationParams valParams,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibValue,
 		final double dblBump,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
@@ -169,7 +169,7 @@ public class NonlinearCurveCalibrator {
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.product.definition.FixedIncomeComponent[] aCalibComp,
 		final org.drip.param.valuation.ValuationParams valParams,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibValue,
 		final double dblBump,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
@@ -241,7 +241,7 @@ public class NonlinearCurveCalibrator {
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.param.pricer.CreditPricerParams pricerParamsIn,
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final double dblCalibValue,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
@@ -296,7 +296,7 @@ public class NonlinearCurveCalibrator {
 		final org.drip.product.definition.FixedIncomeComponent comp,
 		final int iInstr,
 		final org.drip.param.valuation.ValuationParams valParams,
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final double dblCalibValue,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParams,
@@ -373,7 +373,7 @@ public class NonlinearCurveCalibrator {
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.product.definition.FixedIncomeComponent[] aCalibComp,
 		final org.drip.param.valuation.ValuationParams valParams,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibValue,
 		final double dblBump,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
@@ -428,7 +428,7 @@ public class NonlinearCurveCalibrator {
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.product.definition.FixedIncomeComponent[] aCalibComp,
 		final org.drip.param.valuation.ValuationParams valParams,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblCalibValue,
 		final double dblBump,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,

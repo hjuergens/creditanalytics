@@ -83,11 +83,11 @@ public class CreditCurveScenarioContainer extends org.drip.param.definition.Scen
 	}
 
 	@Override public boolean cookScenarioCC (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblQuote,
 		final double dblRecovery,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
@@ -146,12 +146,12 @@ public class CreditCurveScenarioContainer extends org.drip.param.definition.Scen
 	}
 
 	@Override public boolean cookCustomCC (
-		final java.lang.String strName,
-		final java.lang.String strCustomName,
+		final String strName,
+		final String strCustomName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblQuote,
 		final double dblRecovery,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,

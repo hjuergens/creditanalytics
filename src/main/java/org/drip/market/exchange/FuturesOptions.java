@@ -36,8 +36,8 @@ package org.drip.market.exchange;
  */
 
 public class FuturesOptions {
-	private java.lang.String _strTradingMode = "";
-	private java.lang.String _strFullyQualifiedName = "";
+	private String _strTradingMode = "";
+	private String _strFullyQualifiedName = "";
 	private
 		org.drip.analytics.support.CaseInsensitiveHashMap<org.drip.product.params.LastTradingDateSetting[]>
 			_mapLTDS = new
@@ -53,8 +53,8 @@ public class FuturesOptions {
 	 */
 
 	public FuturesOptions (
-		final java.lang.String strFullyQualifiedName,
-		final java.lang.String strTradingMode)
+		final String strFullyQualifiedName,
+		final String strTradingMode)
 		throws java.lang.Exception
 	{
 		if (null == (_strFullyQualifiedName = strFullyQualifiedName) || _strFullyQualifiedName.isEmpty() ||
@@ -68,7 +68,7 @@ public class FuturesOptions {
 	 * @return The Fully Qualified Name
 	 */
 
-	public java.lang.String fullyQualifiedName()
+	public String fullyQualifiedName()
 	{
 		return _strFullyQualifiedName;
 	}
@@ -79,7 +79,7 @@ public class FuturesOptions {
 	 * @return The Trading Mode
 	 */
 
-	public java.lang.String tradingMode()
+	public String tradingMode()
 	{
 		return _strTradingMode;
 	}
@@ -94,7 +94,7 @@ public class FuturesOptions {
 	 */
 
 	public boolean setLDTS (
-		final java.lang.String strExchange,
+		final String strExchange,
 		final org.drip.product.params.LastTradingDateSetting[] aLTDS)
 	{
 		if (null == strExchange || strExchange.isEmpty() || null == aLTDS || 0 == aLTDS.length) return false;
@@ -113,7 +113,7 @@ public class FuturesOptions {
 	 */
 
 	public org.drip.product.params.LastTradingDateSetting[] ltdsArray (
-		final java.lang.String strExchange)
+		final String strExchange)
 	{
 		if (null == strExchange || strExchange.isEmpty() || !_mapLTDS.containsKey (strExchange)) return null;
 
@@ -126,7 +126,7 @@ public class FuturesOptions {
 	 * @return The Set of Traded Exchanges
 	 */
 
-	public java.util.Set<java.lang.String> exchanges()
+	public java.util.Set<String> exchanges()
 	{
 		return 0 == _mapLTDS.size() ? null : _mapLTDS.keySet();
 	}

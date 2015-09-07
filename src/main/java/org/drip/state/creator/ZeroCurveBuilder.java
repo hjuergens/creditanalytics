@@ -69,8 +69,8 @@ public class ZeroCurveBuilder {
 
 	public static final org.drip.analytics.rates.ZeroCurve CreateZeroCurve (
 		final int iFreqZC,
-		final java.lang.String strDCZC,
-		final java.lang.String strCalendarZC,
+		final String strDCZC,
+		final String strCalendarZC,
 		final boolean bApplyEOMAdjZC,
 		final java.util.List<org.drip.analytics.cashflow.CompositePeriod> lsCouponPeriod,
 		final double dblWorkoutDate,

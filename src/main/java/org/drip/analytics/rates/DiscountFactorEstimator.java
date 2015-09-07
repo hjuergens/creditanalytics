@@ -93,7 +93,7 @@ public interface DiscountFactorEstimator {
 	 */
 
 	public abstract double df (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception;
 
 	/**
@@ -140,8 +140,8 @@ public interface DiscountFactorEstimator {
 	 */
 
 	public abstract double effectiveDF (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception;
 
 	/**
@@ -172,8 +172,8 @@ public interface DiscountFactorEstimator {
 	 */
 
 	public abstract double forward (
-		final java.lang.String strTenor1,
-		final java.lang.String strTenor2)
+		final String strTenor1,
+		final String strTenor2)
 		throws java.lang.Exception;
 
 	/**
@@ -201,7 +201,7 @@ public interface DiscountFactorEstimator {
 	 */
 
 	public abstract double zero (
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception;
 
 	/**
@@ -251,7 +251,7 @@ public interface DiscountFactorEstimator {
 
 	public abstract double libor (
 		final double dblDate,
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception;
 
 	/**
@@ -267,7 +267,7 @@ public interface DiscountFactorEstimator {
 
 	public abstract double libor (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor)
+		final String strTenor)
 		throws java.lang.Exception;
 
 	/**
@@ -296,7 +296,7 @@ public interface DiscountFactorEstimator {
 	 */
 
 	public abstract double estimateManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDate)
 		throws java.lang.Exception;
 }

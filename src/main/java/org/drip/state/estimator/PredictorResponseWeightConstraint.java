@@ -57,7 +57,7 @@ public class PredictorResponseWeightConstraint {
 			org.drip.analytics.support.CaseInsensitiveHashMap<org.drip.state.estimator.PredictorResponseRelationSetup>();
 
 	private org.drip.state.estimator.PredictorResponseRelationSetup getPRRS (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		if (null == strManifestMeasure || strManifestMeasure.isEmpty()) return null;
 
@@ -104,7 +104,7 @@ public class PredictorResponseWeightConstraint {
 	 */
 
 	public boolean addDResponseWeightDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictor,
 		final double dblDResponseWeightDManifestMeasure)
 	{
@@ -136,7 +136,7 @@ public class PredictorResponseWeightConstraint {
 	 */
 
 	public boolean updateDValueDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDValueDManifestMeasure)
 	{
 		return getPRRS (strManifestMeasure).updateValue (dblDValueDManifestMeasure);
@@ -164,7 +164,7 @@ public class PredictorResponseWeightConstraint {
 	 */
 
 	public double getDValueDManifestMeasure (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 		throws java.lang.Exception
 	{
 		if (!_mapPRRSSens.containsKey (strManifestMeasure))
@@ -226,7 +226,7 @@ public class PredictorResponseWeightConstraint {
 	 */
 
 	public java.util.TreeMap<java.lang.Double, java.lang.Double> getDResponseWeightDManifestMeasure (
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		return !_mapPRRSSens.containsKey (strManifestMeasure) ? null : _mapPRRSSens.get
 			(strManifestMeasure).getPredictorResponseWeight();
@@ -248,18 +248,18 @@ public class PredictorResponseWeightConstraint {
 		if (0 == prwcOther._mapPRRSSens.size()) return true;
 
 		if (0 != _mapPRRSSens.size()) {
-			for (java.util.Map.Entry<java.lang.String, org.drip.state.estimator.PredictorResponseRelationSetup>
+			for (java.util.Map.Entry<String, org.drip.state.estimator.PredictorResponseRelationSetup>
 				me : _mapPRRSSens.entrySet()) {
-				java.lang.String strKey = me.getKey();
+				String strKey = me.getKey();
 
 				if (prwcOther._mapPRRSSens.containsKey (strKey))
 					me.getValue().absorb (prwcOther._mapPRRSSens.get (strKey));
 			}
 		}
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.state.estimator.PredictorResponseRelationSetup>
+		for (java.util.Map.Entry<String, org.drip.state.estimator.PredictorResponseRelationSetup>
 			me : prwcOther._mapPRRSSens.entrySet()) {
-			java.lang.String strKey = me.getKey();
+			String strKey = me.getKey();
 
 			if (!_mapPRRSSens.containsKey (strKey)) _mapPRRSSens.put (strKey, me.getValue());
 		}
@@ -281,7 +281,7 @@ public class PredictorResponseWeightConstraint {
 	 * @return The Set of Available Sensitivities
 	 */
 
-	public java.util.Set<java.lang.String> sensitivityKeys()
+	public java.util.Set<String> sensitivityKeys()
 	{
 		return _mapPRRSSens.keySet();
 	}
@@ -291,7 +291,7 @@ public class PredictorResponseWeightConstraint {
 	 */
 
 	public void displayString (
-		final java.lang.String strComment)
+		final String strComment)
 	{
 		java.util.Map<java.lang.Double, java.lang.Double> mapPRW = _prrsCalib.getPredictorResponseWeight();
 
@@ -309,7 +309,7 @@ public class PredictorResponseWeightConstraint {
 		System.out.println ("\t" + strComment + " Constraint: " + _prrsCalib.getValue());
 
 		if (null != _setLSL) {
-			java.lang.String strLabels = "\t" + strComment + " Labels:";
+			String strLabels = "\t" + strComment + " Labels:";
 
 			for (org.drip.state.identifier.LatentStateLabel lsl : _setLSL)
 				strLabels += " " + lsl.fullyQualifiedName();

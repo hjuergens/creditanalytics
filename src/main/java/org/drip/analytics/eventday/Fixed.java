@@ -33,7 +33,7 @@ package org.drip.analytics.eventday;
  */
 
 /**
- * Fixed contains the fixed holiday’s date and month. Holidays are generated on a per-year basis by applying
+ * Fixed contains the fixed holidayï¿½s date and month. Holidays are generated on a per-year basis by applying
  * 	the year, and by adjusting the date generated.
  *
  * @author Lakshmi Krishnamurthy
@@ -57,7 +57,7 @@ public class Fixed extends Base {
 		final int iDay,
 		final int iMonth,
 		final Weekend wkend,
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		super (strDescription);
 

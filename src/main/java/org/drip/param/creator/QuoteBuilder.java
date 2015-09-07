@@ -51,7 +51,7 @@ public class QuoteBuilder {
 	 */
 
 	public static final org.drip.param.definition.Quote CreateQuote (
-		final java.lang.String strSide,
+		final String strSide,
 		final double dblQuote,
 		final double dblSize)
 	{

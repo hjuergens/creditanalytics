@@ -47,7 +47,7 @@ public interface BasketMarketParamRef {
 	 * @return The component name
 	 */
 
-	public abstract java.lang.String name();
+	public abstract String name();
 
 	/**
 	 * Get the Coupon Currency
@@ -55,7 +55,7 @@ public interface BasketMarketParamRef {
 	 * @return The Coupon Currency
 	 */
 
-	public abstract java.lang.String[] couponCurrency();
+	public abstract String[] couponCurrency();
 
 	/**
 	 * Get the Pay Currency
@@ -63,7 +63,7 @@ public interface BasketMarketParamRef {
 	 * @return The Pay Currency
 	 */
 
-	public abstract java.lang.String[] payCurrency();
+	public abstract String[] payCurrency();
 
 	/**
 	 * Get the Principal Currency
@@ -71,7 +71,7 @@ public interface BasketMarketParamRef {
 	 * @return The Principal Currency
 	 */
 
-	public abstract java.lang.String[] principalCurrency();
+	public abstract String[] principalCurrency();
 
 	/**
 	 * Get the Array of Credit Curve Latent State Identifier Labels

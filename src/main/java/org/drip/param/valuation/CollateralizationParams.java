@@ -40,8 +40,8 @@ package org.drip.param.valuation;
  */
 
 public class CollateralizationParams {
-	private java.lang.String _strType = "";
-	private java.lang.String _strCurrency = "";
+	private String _strType = "";
+	private String _strCurrency = "";
 
 	/**
 	 * CollateralizationParams Constructor
@@ -53,8 +53,8 @@ public class CollateralizationParams {
 	 */
 
 	public CollateralizationParams (
-		final java.lang.String strType,
-		final java.lang.String strCurrency)
+		final String strType,
+		final String strCurrency)
 		throws java.lang.Exception
 	{
 		if (null == (_strType = strType) || _strType.isEmpty() || null == (_strCurrency = strCurrency) ||
@@ -68,7 +68,7 @@ public class CollateralizationParams {
 	 * @return The Collateral Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -79,7 +79,7 @@ public class CollateralizationParams {
 	 * @return The Collateral Type
 	 */
 
-	public java.lang.String type()
+	public String type()
 	{
 		return _strType;
 	}
@@ -90,7 +90,7 @@ public class CollateralizationParams {
 	 * @return The Collateral Key
 	 */
 
-	public java.lang.String key()
+	public String key()
 	{
 		return _strCurrency + "_" + _strType;
 	}

@@ -54,7 +54,7 @@ public class LeftHatShapeControl extends org.drip.spline.bspline.BasisHatShapeCo
 	public LeftHatShapeControl (
 		final double dblLeftPredictorOrdinate,
 		final double dblRightPredictorOrdinate,
-		final java.lang.String strShapeControlType,
+		final String strShapeControlType,
 		final double dblTension)
 		throws java.lang.Exception
 	{

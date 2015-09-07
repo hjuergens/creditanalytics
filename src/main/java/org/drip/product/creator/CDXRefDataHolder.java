@@ -52,7 +52,7 @@ public class CDXRefDataHolder {
 				org.drip.analytics.date.JulianDate>>();
 
 	private static final boolean UpdateCDXRefDataMap (
-		final java.lang.String strCDXName,
+		final String strCDXName,
 		final org.drip.product.params.CDXRefDataParams cdxrd)
 	{
 		if (null == cdxrd) {

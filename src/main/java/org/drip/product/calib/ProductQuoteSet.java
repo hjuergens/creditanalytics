@@ -70,7 +70,7 @@ public abstract class ProductQuoteSet {
 	 */
 
 	public boolean containsLatentStateType (
-		final java.lang.String strLatentStateType)
+		final String strLatentStateType)
 	{
 		if (null == strLatentStateType || strLatentStateType.isEmpty()) return false;
 
@@ -124,7 +124,7 @@ public abstract class ProductQuoteSet {
 	 */
 
 	public boolean containsLatentStateQuantificationMetric (
-		final java.lang.String strLatentStateQuantificationMetric)
+		final String strLatentStateQuantificationMetric)
 	{
 		if (null == strLatentStateQuantificationMetric || strLatentStateQuantificationMetric.isEmpty())
 			return false;
@@ -148,8 +148,8 @@ public abstract class ProductQuoteSet {
 	 */
 
 	public boolean contains (
-		final java.lang.String strLatentState,
-		final java.lang.String strLatentStateQuantificationMetric,
+		final String strLatentState,
+		final String strLatentStateQuantificationMetric,
 		final org.drip.state.identifier.LatentStateLabel label)
 	{
 		org.drip.state.representation.LatentStateSpecification lssExternal = null;
@@ -180,7 +180,7 @@ public abstract class ProductQuoteSet {
 	 */
 
 	public boolean set (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblManifestMeasureQuote)
 	{
 		if (null == strManifestMeasure || strManifestMeasure.isEmpty() ||
@@ -198,7 +198,7 @@ public abstract class ProductQuoteSet {
 	 * @return The Set of Fields Available
 	 */
 
-	public java.util.Set<java.lang.String> fields()
+	public java.util.Set<String> fields()
 	{
 		return _mapQuote.keySet();
 	}

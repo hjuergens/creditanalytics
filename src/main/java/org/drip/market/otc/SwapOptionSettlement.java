@@ -108,7 +108,7 @@ public class SwapOptionSettlement {
 		return _iSettlementQuote;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		if (SETTLEMENT_TYPE_PHYSICAL_DELIVERY == _iSettlementType) return "PHYSICAL DELIVERY";
 

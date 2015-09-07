@@ -35,9 +35,9 @@ package org.drip.market.exchange;
  */
 
 public class DeliverableSwapFuturesContainer {
-	private static final java.util.Map<java.lang.String, org.drip.market.exchange.DeliverableSwapFutures>
+	private static final java.util.Map<String, org.drip.market.exchange.DeliverableSwapFutures>
 		_mapFutures = new
-			java.util.TreeMap<java.lang.String, org.drip.market.exchange.DeliverableSwapFutures>();
+			java.util.TreeMap<String, org.drip.market.exchange.DeliverableSwapFutures>();
 
 
 	/**
@@ -88,13 +88,13 @@ public class DeliverableSwapFuturesContainer {
 	 */
 
 	public static final org.drip.market.exchange.DeliverableSwapFutures ProductInfo (
-		final java.lang.String strCurrency,
-		final java.lang.String strTenor)
+		final String strCurrency,
+		final String strTenor)
 	{
 		if (null == strCurrency || strCurrency.isEmpty() || null == strTenor || strTenor.isEmpty())
 			return null;
 
-		java.lang.String strKey = strCurrency + "-" + strTenor;
+		String strKey = strCurrency + "-" + strTenor;
 
 		return _mapFutures.containsKey (strKey) ? _mapFutures.get (strKey) : null;
 	}

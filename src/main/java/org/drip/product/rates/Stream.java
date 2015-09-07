@@ -108,7 +108,7 @@ public class Stream {
 	 * @return The Coupon Day Count
 	 */
 
-	public java.lang.String couponDC()
+	public String couponDC()
 	{
 		return _lsPeriod.get (0).periods().get (0).couponDC();
 	}
@@ -130,7 +130,7 @@ public class Stream {
 	 * @return The Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _lsPeriod.get (0).periods().get (0).calendar();
 	}
@@ -141,7 +141,7 @@ public class Stream {
 	 * @return The Accrual Day Count
 	 */
 
-	public java.lang.String accrualDC()
+	public String accrualDC()
 	{
 		return _lsPeriod.get (0).periods().get (0).accrualDC();
 	}
@@ -360,7 +360,7 @@ public class Stream {
 	 * @return The Coupon Currency
 	 */
 
-	public java.lang.String couponCurrency()
+	public String couponCurrency()
 	{
 		return _lsPeriod.get (_lsPeriod.size() - 1).couponCurrency();
 	}
@@ -371,7 +371,7 @@ public class Stream {
 	 * @return The Pay Currency
 	 */
 
-	public java.lang.String payCurrency()
+	public String payCurrency()
 	{
 		return _lsPeriod.get (_lsPeriod.size() - 1).payCurrency();
 	}
@@ -382,9 +382,9 @@ public class Stream {
 	 * @return The Cash Flow Currency Set
 	 */
 
-	public java.util.Set<java.lang.String> cashflowCurrencySet()
+	public java.util.Set<String> cashflowCurrencySet()
 	{
-		java.util.Set<java.lang.String> setCcy = new java.util.HashSet<java.lang.String>();
+		java.util.Set<String> setCcy = new java.util.HashSet<String>();
 
 		setCcy.add (payCurrency());
 
@@ -399,11 +399,11 @@ public class Stream {
 	 * @return The Stream Name
 	 */
 
-	public java.lang.String name()
+	public String name()
 	{
 		org.drip.state.identifier.ForwardLabel forwardLabel = forwardLabel();
 
-		java.lang.String strTrailer = "::{" + effective() + "->" + maturity() + "}";
+		String strTrailer = "::{" + effective() + "->" + maturity() + "}";
 
 		if (null != forwardLabel)
 			return "FLOATSTREAM::" + payCurrency() + "::" + forwardLabel.fullyQualifiedName() + strTrailer;
@@ -1088,9 +1088,9 @@ public class Stream {
 	 * @return The set of the implemented measures
 	 */
 
-	public java.util.Set<java.lang.String> availableMeasures()
+	public java.util.Set<String> availableMeasures()
 	{
-		java.util.Set<java.lang.String> setstrMeasures = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasures = new java.util.TreeSet<String>();
 
 		setstrMeasures.add ("AccrualCoupon");
 
@@ -1649,7 +1649,7 @@ public class Stream {
 	 */
 
 	public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

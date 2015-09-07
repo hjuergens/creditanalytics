@@ -839,9 +839,9 @@ public class ProductDailyPnL {
 		return adblSPCA;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		boolean bStart = true;
 

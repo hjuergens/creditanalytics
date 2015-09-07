@@ -60,7 +60,7 @@ package org.drip.regression.spline;
  */
 
 public class BasisSplineRegressorSet implements org.drip.regression.core.RegressorSet {
-	private java.lang.String _strRegressionScenario = "PolynomialSplineRegressor";
+	private String _strRegressionScenario = "PolynomialSplineRegressor";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
 		java.util.ArrayList<org.drip.regression.core.UnitRegressor>();
@@ -203,7 +203,7 @@ public class BasisSplineRegressorSet implements org.drip.regression.core.Regress
 		return _setRegressors;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

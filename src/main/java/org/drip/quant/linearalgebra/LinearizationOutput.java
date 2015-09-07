@@ -40,7 +40,7 @@ package org.drip.quant.linearalgebra;
 public class LinearizationOutput {
 	private double[] _adblTransformedRHS = null;
 	private double[][] _aadblTransformedMatrix = null;
-	private java.lang.String _strLinearizationMethod = "";
+	private String _strLinearizationMethod = "";
 
 	/**
 	 * LinearizationOutput constructor
@@ -55,7 +55,7 @@ public class LinearizationOutput {
 	public LinearizationOutput (
 		final double[] adblTransformedRHS,
 		final double[][] aadblTransformedMatrix,
-		final java.lang.String strLinearizationMethod)
+		final String strLinearizationMethod)
 		throws java.lang.Exception
 	{
 		if (null == (_adblTransformedRHS = adblTransformedRHS) || null == (_aadblTransformedMatrix =
@@ -98,7 +98,7 @@ public class LinearizationOutput {
 	 * @return The Linearization Method
 	 */
 
-	public java.lang.String getLinearizationMethod()
+	public String getLinearizationMethod()
 	{
 		return _strLinearizationMethod;
 	}

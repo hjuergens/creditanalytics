@@ -237,7 +237,7 @@ public class LognormalLIBORPointEvolver implements org.drip.dynamics.evolution.P
 
 		double[] adblMultivariateRandom = _llv.msg().random();
 
-		java.lang.String strTenor = _lslForward.tenor();
+		String strTenor = _lslForward.tenor();
 
 		double dblLIBOR = java.lang.Double.NaN;
 		double dblSpotRate = java.lang.Double.NaN;

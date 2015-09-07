@@ -112,7 +112,7 @@ public class LognormalLIBORVolatility extends org.drip.dynamics.hjm.MultiFactorV
 			_dblSpotDate)
 			return null;
 
-		java.lang.String strTenor = _lslForward.tenor();
+		String strTenor = _lslForward.tenor();
 
 		org.drip.analytics.definition.MarketSurface[] aMS = volatilitySurface();
 
@@ -162,7 +162,7 @@ public class LognormalLIBORVolatility extends org.drip.dynamics.hjm.MultiFactorV
 		double dblTenorDCF = java.lang.Double.NaN;
 		double[] adblContinuousForwardVolatility = new double[iNumFactor];
 
-		java.lang.String strTenor = _lslForward.tenor();
+		String strTenor = _lslForward.tenor();
 
 		try {
 			dblTenorDCF = org.drip.analytics.support.AnalyticsHelper.TenorToYearFraction (strTenor);
@@ -226,7 +226,7 @@ public class LognormalLIBORVolatility extends org.drip.dynamics.hjm.MultiFactorV
 		double dblTenorDCF = java.lang.Double.NaN;
 		double[] adblContinuousForwardVolatility = new double[iNumFactor];
 
-		java.lang.String strTenor = _lslForward.tenor();
+		String strTenor = _lslForward.tenor();
 
 		try {
 			dblTenorDCF = org.drip.analytics.support.AnalyticsHelper.TenorToYearFraction (strTenor);

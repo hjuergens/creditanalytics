@@ -76,7 +76,7 @@ public class ComposableUnitFixedPeriod extends org.drip.analytics.cashflow.Compo
 		return _cufs.basis();
 	}
 
-	@Override public java.lang.String couponCurrency()
+	@Override public String couponCurrency()
 	{
 		return _cufs.couponCurrency();
 	}

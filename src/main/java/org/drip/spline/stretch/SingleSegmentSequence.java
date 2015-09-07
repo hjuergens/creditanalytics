@@ -122,7 +122,7 @@ public interface SingleSegmentSequence {
 	 */
 
 	public abstract org.drip.quant.calculus.WengertJacobian jackDResponseDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder);
 

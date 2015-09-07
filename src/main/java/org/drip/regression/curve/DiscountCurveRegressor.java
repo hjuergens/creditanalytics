@@ -50,11 +50,11 @@ package org.drip.regression.curve;
  */
 
 public class DiscountCurveRegressor implements org.drip.regression.core.RegressorSet {
-	private java.lang.String _strCurrency = "";
+	private String _strCurrency = "";
 	private org.drip.analytics.date.JulianDate _dtStart = null;
 	private org.drip.analytics.rates.DiscountCurve _dc = null;
 	private org.drip.analytics.rates.ExplicitBootDiscountCurve _dcFromFlatRate = null;
-	private java.lang.String _strRegressionScenario = "org.drip.analytics.curve.DiscountCurve";
+	private String _strRegressionScenario = "org.drip.analytics.curve.DiscountCurve";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
 		java.util.ArrayList<org.drip.regression.core.UnitRegressor>();
@@ -85,7 +85,7 @@ public class DiscountCurveRegressor implements org.drip.regression.core.Regresso
 				private static final int NUM_DC_INSTR = 30;
 
 				private double _adblCompCalibValue[] = new double[NUM_DC_INSTR];
-				private java.lang.String _astrCalibMeasure[] = new java.lang.String[NUM_DC_INSTR];
+				private String _astrCalibMeasure[] = new String[NUM_DC_INSTR];
 				private org.drip.product.definition.CalibratableFixedIncomeComponent _aCompCalib[] = new
 					org.drip.product.definition.CalibratableFixedIncomeComponent[NUM_DC_INSTR];
 
@@ -486,7 +486,7 @@ public class DiscountCurveRegressor implements org.drip.regression.core.Regresso
 					final org.drip.regression.core.RegressionRunDetail rnvd)
 				{
 					for (int i = 0; i < _aCalibComp.length; ++i) {
-						java.lang.String strCalibCompCode = _aCalibComp[i].primaryCode();
+						String strCalibCompCode = _aCalibComp[i].primaryCode();
 
 						try {
 							double dblQuote = _dc.manifestMeasure (strCalibCompCode).get ("Rate");
@@ -529,7 +529,7 @@ public class DiscountCurveRegressor implements org.drip.regression.core.Regresso
 						_dc.calibComp();
 
 					for (int i = 0; i < aCalibComp.length; ++i) {
-						java.lang.String strCalibCompCode = aCalibComp[i].primaryCode();
+						String strCalibCompCode = aCalibComp[i].primaryCode();
 
 						try {
 							double dblQuote = _dc.manifestMeasure (strCalibCompCode).get ("Rate");
@@ -878,7 +878,7 @@ public class DiscountCurveRegressor implements org.drip.regression.core.Regresso
 		return _setRegressors;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

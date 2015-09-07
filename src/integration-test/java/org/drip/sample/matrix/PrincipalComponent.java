@@ -59,7 +59,7 @@ public class PrincipalComponent {
 
 		double[] adblEigenvector = ec.eigenvector();
 
-		java.lang.String strDump = "[" + FormatUtil.FormatDouble (ec.eigenvalue(), 1, 4, 1.) + "] => ";
+		String strDump = "[" + FormatUtil.FormatDouble (ec.eigenvalue(), 1, 4, 1.) + "] => ";
 
 		for (int i = 0; i < adblEigenvector.length; ++i)
 			strDump += FormatUtil.FormatDouble (adblEigenvector[i], 1, 4, 1.) + " | ";

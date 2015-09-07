@@ -38,7 +38,7 @@ package org.drip.param.period;
 
 public class ComposableFixedUnitSetting extends org.drip.param.period.ComposableUnitBuilderSetting {
 	private double _dblBasis = java.lang.Double.NaN;
-	private java.lang.String _strCouponCurrency = "";
+	private String _strCouponCurrency = "";
 	private double _dblFixedCoupon = java.lang.Double.NaN;
 
 	/**
@@ -55,12 +55,12 @@ public class ComposableFixedUnitSetting extends org.drip.param.period.Composable
 	 */
 
 	public ComposableFixedUnitSetting (
-		final java.lang.String strTenor,
+		final String strTenor,
 		final int iEdgeDateSequenceScheme,
 		final org.drip.analytics.daycount.DateAdjustParams dapEdge,
 		final double dblFixedCoupon,
 		final double dblBasis,
-		final java.lang.String strCouponCurrency)
+		final String strCouponCurrency)
 		throws java.lang.Exception
 	{
 		super (strTenor, iEdgeDateSequenceScheme, dapEdge);
@@ -99,7 +99,7 @@ public class ComposableFixedUnitSetting extends org.drip.param.period.Composable
 	 * @return The Fixed Coupon Currency
 	 */
 
-	public java.lang.String couponCurrency()
+	public String couponCurrency()
 	{
 		return _strCouponCurrency;
 	}

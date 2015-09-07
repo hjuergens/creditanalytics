@@ -54,16 +54,16 @@ public class RatesManager {
 	 * @return Set of the IR curve names
 	 */
 
-	public static final java.util.Set<java.lang.String> GetIRCurves (
+	public static final java.util.Set<String> GetIRCurves (
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strInstrSetType)
+		final String strInstrSetType)
 	{
 		if (null == stmt || null == dtEOD || null == strInstrSetType || strInstrSetType.isEmpty())
 			return null;
 
 		try {
-			java.util.Set<java.lang.String> setIRCurves = new java.util.HashSet<java.lang.String>();
+			java.util.Set<String> setIRCurves = new java.util.HashSet<String>();
 
 			java.sql.ResultSet rsIRCurves = stmt.executeQuery
 				("select distinct Currency from IR_EOD where EOD = '" + dtEOD.toOracleDate() +
@@ -89,14 +89,14 @@ public class RatesManager {
 	 * @return Set of the IR curve names
 	 */
 
-	public static final java.util.Set<java.lang.String> GetAvailableEODIRCurveNames (
+	public static final java.util.Set<String> GetAvailableEODIRCurveNames (
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == stmt || null == dtEOD) return null;
 
 		try {
-			java.util.Set<java.lang.String> setIRCurves = new java.util.HashSet<java.lang.String>();
+			java.util.Set<String> setIRCurves = new java.util.HashSet<String>();
 
 			java.sql.ResultSet rsIRCurves = stmt.executeQuery
 				("select distinct Currency from IR_EOD where EOD = '" + dtEOD.toOracleDate() +
@@ -133,12 +133,12 @@ public class RatesManager {
 		boolean bAllCurvesLoaded = true;
 
 		if (s_bLoadIRCurves) {
-			java.util.Set<java.lang.String> setIRCurves = GetIRCurves (stmt, dtEOD, "swap");
+			java.util.Set<String> setIRCurves = GetIRCurves (stmt, dtEOD, "swap");
 
 			if (null == setIRCurves || 0 == setIRCurves.size())
 				System.out.println ("Cannot locate an IR Curve to load");
 			else {
-				for (java.lang.String strIRCurve : setIRCurves) {
+				for (String strIRCurve : setIRCurves) {
 					if (null == strIRCurve || strIRCurve.isEmpty()) {
 						bAllCurvesLoaded = false;
 						continue;
@@ -165,12 +165,12 @@ public class RatesManager {
 		}
 
 		if (s_bLoadTSYCurves) {
-			java.util.Set<java.lang.String> setTSYCurves = GetIRCurves (stmt, dtEOD, "government");
+			java.util.Set<String> setTSYCurves = GetIRCurves (stmt, dtEOD, "government");
 
 			if (null == setTSYCurves || 0 == setTSYCurves.size())
 				System.out.println ("Cannot locate a TSY Curve to load");
 			else {
-				for (java.lang.String strTSYCurve : setTSYCurves) {
+				for (String strTSYCurve : setTSYCurves) {
 					if (null == strTSYCurve || strTSYCurve.isEmpty()) {
 						bAllCurvesLoaded = false;
 
@@ -202,7 +202,7 @@ public class RatesManager {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		org.drip.analytics.support.AnalyticsHelper.Init();

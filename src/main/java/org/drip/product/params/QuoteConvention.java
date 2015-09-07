@@ -41,7 +41,7 @@ package org.drip.product.params;
  */
 
 public class QuoteConvention implements org.drip.product.params.Validatable {
-	private java.lang.String _strCalculationType = "";
+	private String _strCalculationType = "";
 	private double _dblFirstSettleDate = java.lang.Double.NaN;
 	private double _dblRedemptionValue = java.lang.Double.NaN;
 	private org.drip.param.valuation.CashSettleParams _cashSettleParams = null;
@@ -62,11 +62,11 @@ public class QuoteConvention implements org.drip.product.params.Validatable {
 
 	public QuoteConvention (
 		final org.drip.param.valuation.ValuationCustomizationParams valuationCustomizationParams,
-		final java.lang.String strCalculationType,
+		final String strCalculationType,
 		final double dblFirstSettleDate,
 		final double dblRedemptionValue,
 		final int iSettleLag,
-		final java.lang.String strSettleCalendar,
+		final String strSettleCalendar,
 		final int iSettleAdjustMode)
 	{
 		_dblFirstSettleDate = dblFirstSettleDate;
@@ -100,7 +100,7 @@ public class QuoteConvention implements org.drip.product.params.Validatable {
 	 * @return The Calculation Type
 	 */
 
-	public java.lang.String calculationType()
+	public String calculationType()
 	{
 		return _strCalculationType;
 	}

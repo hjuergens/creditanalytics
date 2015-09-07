@@ -47,14 +47,14 @@ public class DCAct_365L implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DCAct_365L";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"Act/365L", "Actual/365L", "ISMA-Year", "Actual/Actual AFB",
+		return new String[] {"Act/365L", "Actual/365L", "ISMA-Year", "Actual/Actual AFB",
 			"DCAct_365L"};
 	}
 
@@ -63,7 +63,7 @@ public class DCAct_365L implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == actactParams)
@@ -93,7 +93,7 @@ public class DCAct_365L implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == actactParams)

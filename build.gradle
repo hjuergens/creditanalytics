@@ -16,7 +16,7 @@ apply plugin: 'maven-publish'
 
 compileJava {
     options.encoding = 'windows-1250'
-    options.compilerArgs << '-Xdiags:verbose'
+    //options.compilerArgs << '-Xdiags:verbose'
     options.bootClasspath = "$JDK7_HOME/jre/lib/rt.jar"
 }
 
@@ -72,6 +72,7 @@ dependencies {
     // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
     // 'test.useTestNG()' to your build script.
     testCompile 'org.testng:testng:6.1.1'
+    integrationTestCompile 'org.testng:testng:6.1.1'
     integrationTestCompile 'org.assertj:assertj-core:3.0.0'
     testRuntime fileTree(dir: 'libs', include: ['ojdbc14.jar'])
     testRuntime files('libs/ojdbc14.jar')

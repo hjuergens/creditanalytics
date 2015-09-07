@@ -62,7 +62,7 @@ public class MarketParamsBuilder {
 		final org.drip.analytics.rates.ForwardCurve fc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.analytics.definition.CreditCurve cc,
-		final java.lang.String strComponentCode,
+		final String strComponentCode,
 		final org.drip.param.definition.ProductQuote compQuote,
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.definition.ProductQuote>
 			mTSYQuotes,
@@ -172,7 +172,7 @@ public class MarketParamsBuilder {
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final org.drip.analytics.definition.CreditCurve cc,
-		final java.lang.String strComponentCode,
+		final String strComponentCode,
 		final org.drip.param.definition.ProductQuote compQuote,
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.definition.ProductQuote>
 			mTSYQuotes,

@@ -102,9 +102,9 @@ public class InstrMetric {
 		return adblInstrMetric;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		boolean bStart = true;
 

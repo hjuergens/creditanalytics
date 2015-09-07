@@ -92,7 +92,7 @@ public class BasisSplineBasisCurve extends org.drip.analytics.rates.BasisCurve {
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDForwardDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblDate)
 	{
 		return _span.jackDResponseDManifestMeasure (strManifestMeasure, dblDate, 1);

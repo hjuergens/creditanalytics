@@ -54,19 +54,19 @@ public class BondProductBuilder {
 	 * ISIN
 	 */
 
-	public java.lang.String _strISIN = "";
+	public String _strISIN = "";
 
 	/**
 	 * CUSIP
 	 */
 
-	public java.lang.String _strCUSIP = "";
+	public String _strCUSIP = "";
 
 	/**
 	 * Ticker
 	 */
 
-	public java.lang.String _strTicker = "";
+	public String _strTicker = "";
 
 	/**
 	 * Coupon
@@ -90,25 +90,25 @@ public class BondProductBuilder {
 	 * Coupon Type
 	 */
 
-	public java.lang.String _strCouponType = "";
+	public String _strCouponType = "";
 
 	/**
 	 * Maturity Type
 	 */
 
-	public java.lang.String _strMaturityType = "";
+	public String _strMaturityType = "";
 
 	/**
 	 * Calculation Type
 	 */
 
-	public java.lang.String _strCalculationType = "";
+	public String _strCalculationType = "";
 
 	/**
 	 * Day count Code
 	 */
 
-	public java.lang.String _strDayCountCode = "";
+	public String _strDayCountCode = "";
 
 	/**
 	 * Redemption Value
@@ -168,19 +168,19 @@ public class BondProductBuilder {
 	 * Redemption Currency
 	 */
 
-	public java.lang.String _strRedemptionCurrency = "";
+	public String _strRedemptionCurrency = "";
 
 	/**
 	 * Coupon Currency
 	 */
 
-	public java.lang.String _strCouponCurrency = "";
+	public String _strCouponCurrency = "";
 
 	/**
 	 * Trade Currency
 	 */
 
-	public java.lang.String _strTradeCurrency = "";
+	public String _strTradeCurrency = "";
 
 	/**
 	 * Has Been Exercised flag
@@ -192,7 +192,7 @@ public class BondProductBuilder {
 	 * Floater Coupon Day Count Convention
 	 */
 
-	public java.lang.String _strFloatCouponConvention = "";
+	public String _strFloatCouponConvention = "";
 
 	/**
 	 * Current Coupon
@@ -234,15 +234,15 @@ public class BondProductBuilder {
 	 * Rate Index
 	 */
 
-	public java.lang.String _strRateIndex = "";
+	public String _strRateIndex = "";
 
 	/**
 	 * Issuer SPN
 	 */
 
-	public java.lang.String _strIssuerSPN = "";
+	public String _strIssuerSPN = "";
 
-	private static final java.lang.String DES (
+	private static final String DES (
 		final BondProductBuilder bpb)
 	{
 		return bpb._strTicker + "  " + bpb._dtMaturity.toString() + "[" + bpb._strISIN + "]";
@@ -440,7 +440,7 @@ public class BondProductBuilder {
 	 */
 
 	public static final BondProductBuilder CreateFromJSONMap (
-		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapJSON,
+		final org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapJSON,
 		final org.drip.param.definition.ScenarioMarketParams mpc)
 	{
 		/* if (null == mapJSON || 0 == mapJSON.size() || !mapJSON.containsKey ("isin") || !mapJSON.containsKey
@@ -578,7 +578,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setISIN (
-		final java.lang.String strISIN)
+		final String strISIN)
 	{
 		if (null == strISIN || strISIN.trim().isEmpty() || "null".equalsIgnoreCase (strISIN.trim()))
 			return false;
@@ -596,7 +596,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCUSIP (
-		final java.lang.String strCUSIP)
+		final String strCUSIP)
 	{
 		if (null == strCUSIP || strCUSIP.trim().isEmpty() || "null".equalsIgnoreCase (strCUSIP.trim()))
 			return false;
@@ -614,7 +614,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setTicker (
-		final java.lang.String strTicker)
+		final String strTicker)
 	{
 		if (null == (_strTicker = strTicker.trim())) _strTicker = "";
 
@@ -630,7 +630,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCoupon (
-		final java.lang.String strCoupon)
+		final String strCoupon)
 	{
 		if (null == strCoupon || strCoupon.trim().isEmpty() || "null".equalsIgnoreCase (strCoupon.trim()))
 			_dblCoupon = 0.;
@@ -655,7 +655,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setMaturity (
-		final java.lang.String strMaturity)
+		final String strMaturity)
 	{
 		try {
 			if (null == (_dtMaturity = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -679,7 +679,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCouponFreq (
-		final java.lang.String strCouponFreq)
+		final String strCouponFreq)
 	{
 		if (null == strCouponFreq || strCouponFreq.isEmpty() || "null".equalsIgnoreCase (strCouponFreq))
 			_iCouponFreq = 0;
@@ -705,7 +705,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCouponType (
-		final java.lang.String strCouponType)
+		final String strCouponType)
 	{
 		if (null == (_strCouponType = strCouponType.trim())) _strCouponType = "";
 
@@ -721,7 +721,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setMaturityType (
-		final java.lang.String strMaturityType)
+		final String strMaturityType)
 	{
 		if (null == (_strMaturityType = strMaturityType.trim())) _strMaturityType = "";
 
@@ -737,7 +737,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCalculationType (
-		final java.lang.String strCalculationType)
+		final String strCalculationType)
 	{
 		if (null == (_strCalculationType = strCalculationType.trim())) _strCalculationType = "";
 
@@ -753,7 +753,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setDayCountCode (
-		final java.lang.String strDayCountCode)
+		final String strDayCountCode)
 	{
 		_strDayCountCode = "Unknown DC";
 
@@ -777,7 +777,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setRedemptionValue (
-		final java.lang.String strRedemptionValue)
+		final String strRedemptionValue)
 	{
 		try {
 			_dblRedemptionValue = new java.lang.Double (strRedemptionValue.trim());
@@ -799,7 +799,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setAnnounce (
-		final java.lang.String strAnnounce)
+		final String strAnnounce)
 	{
 		try {
 			_dtAnnounce = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate (strAnnounce.trim());
@@ -821,7 +821,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setFirstSettle (
-		final java.lang.String strFirstSettle)
+		final String strFirstSettle)
 	{
 		try {
 			_dtFirstSettle = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -844,7 +844,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setFirstCoupon (
-		final java.lang.String strFirstCoupon)
+		final String strFirstCoupon)
 	{
 		try {
 			_dtFirstCoupon = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -867,7 +867,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setInterestAccrualStart (
-		final java.lang.String strInterestAccrualStart)
+		final String strInterestAccrualStart)
 	{
 		try {
 			_dtInterestAccrualStart = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -891,7 +891,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIssue (
-		final java.lang.String strIssue)
+		final String strIssue)
 	{
 		try {
 			_dtIssue = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate (strIssue.trim());
@@ -913,7 +913,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIsCallable (
-		final java.lang.String strCallable)
+		final String strCallable)
 	{
 		if (null == strCallable) _bIsCallable = false;
 
@@ -934,7 +934,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIsPutable (
-		final java.lang.String strPutable)
+		final String strPutable)
 	{
 		if (null == strPutable) _bIsPutable = false;
 
@@ -955,7 +955,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIsSinkable (
-		final java.lang.String strSinkable)
+		final String strSinkable)
 	{
 		if (null == strSinkable) _bIsSinkable = false;
 
@@ -976,7 +976,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setRedemptionCurrency (
-		final java.lang.String strRedemptionCurrency)
+		final String strRedemptionCurrency)
 	{
 		if (null == (_strRedemptionCurrency = strRedemptionCurrency.trim()) || "null".equalsIgnoreCase
 			(strRedemptionCurrency.trim()))
@@ -994,7 +994,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCouponCurrency (
-		final java.lang.String strCouponCurrency)
+		final String strCouponCurrency)
 	{
 		if (null == (_strCouponCurrency = strCouponCurrency.trim()) || "null".equalsIgnoreCase
 			(strCouponCurrency.trim()))
@@ -1012,7 +1012,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setTradeCurrency (
-		final java.lang.String strTradeCurrency)
+		final String strTradeCurrency)
 	{
 		if (null == (_strTradeCurrency = strTradeCurrency.trim()) || "null".equalsIgnoreCase
 			(strTradeCurrency.trim()))
@@ -1030,7 +1030,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setHasBeenCalled (
-		final java.lang.String strHasBeenCalled)
+		final String strHasBeenCalled)
 	{
 		if (null == strHasBeenCalled) _bHasBeenCalled = false;
 
@@ -1051,7 +1051,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setFloatCouponConvention (
-		final java.lang.String strFloatCouponConvention)
+		final String strFloatCouponConvention)
 	{
 		if (null == (_strFloatCouponConvention = strFloatCouponConvention.trim()))
 			_strFloatCouponConvention = "";
@@ -1068,7 +1068,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setCurrentCoupon (
-		final java.lang.String strCurrentCoupon)
+		final String strCurrentCoupon)
 	{
 		if (null == strCurrentCoupon || strCurrentCoupon.trim().isEmpty() || "null".equalsIgnoreCase
 			(strCurrentCoupon.trim()))
@@ -1096,7 +1096,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIsFloater (
-		final java.lang.String strIsFloater)
+		final String strIsFloater)
 	{
 		if (null == strIsFloater) _bIsFloater = false;
 
@@ -1117,7 +1117,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setFinalMaturity (
-		final java.lang.String strFinalMaturity)
+		final String strFinalMaturity)
 	{
 		try {
 			_dtFinalMaturity = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -1141,7 +1141,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIsPerpetual (
-		final java.lang.String strIsPerpetual)
+		final String strIsPerpetual)
 	{
 		if (null == strIsPerpetual) _bIsPerpetual = false;
 
@@ -1162,7 +1162,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIsDefaulted (
-		final java.lang.String strIsDefaulted)
+		final String strIsDefaulted)
 	{
 		if (null == strIsDefaulted) _bIsDefaulted = false;
 
@@ -1183,7 +1183,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setFloatSpread (
-		final java.lang.String strFloatSpread)
+		final String strFloatSpread)
 	{
 		try {
 			_dblFloatSpread = new java.lang.Double (strFloatSpread.trim());
@@ -1246,7 +1246,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setRateIndex (
-		final java.lang.String strRateIndex)
+		final String strRateIndex)
 	{
 		if (null == (_strRateIndex = strRateIndex)) _strRateIndex = "";
 
@@ -1262,7 +1262,7 @@ public class BondProductBuilder {
 	 */
 
 	public boolean setIssuerSPN (
-		final java.lang.String strIssuerSPN)
+		final String strIssuerSPN)
 	{
 		if (null == (_strIssuerSPN = strIssuerSPN)) _strIssuerSPN = "";
 
@@ -1358,9 +1358,9 @@ public class BondProductBuilder {
 	 * @return String representing the SQL Insert
 	 */
 
-	public java.lang.String makeSQLInsert()
+	public String makeSQLInsert()
 	{
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("insert into BondValData values(");
 
@@ -1572,9 +1572,9 @@ public class BondProductBuilder {
 	 * @return String representing the SQL Delete
 	 */
 
-	public java.lang.String makeSQLDelete()
+	public String makeSQLDelete()
 	{
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("delete from BondValData where ISIN = '").append (_strISIN).append
 			("' or CUSIP = '").append (_strCUSIP).append ("'");

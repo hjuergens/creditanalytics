@@ -33,7 +33,7 @@ package org.drip.product.definition;
  */
 
 /**
- *  BasketProduct abstract class extends MarketParamRef. It provides methods for getting the basket’s
+ *  BasketProduct abstract class extends MarketParamRef. It provides methods for getting the basketï¿½s
  *   components, notional, coupon, effective date, maturity date, coupon amount, and list of coupon periods.
  *  
  * @author Lakshmi Krishnamurthy
@@ -46,11 +46,11 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 	protected static final int MEASURE_AGGREGATION_TYPE_IGNORE = 4;
 
 	class ComponentCurve {
-		java.lang.String _strName = null;
+		String _strName = null;
 		org.drip.analytics.definition.CreditCurve _cc = null;
 
 		ComponentCurve (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.definition.CreditCurve cc)
 		{
 			_cc = cc;
@@ -124,7 +124,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 
 		if (null == mapUpMeasures || 0 == mapUpMeasures.size()) return null;
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapUpMeasuresES =
+		java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapUpMeasuresES =
 			mapUpMeasures.entrySet();
 
 		if (null == mapUpMeasuresES) return null;
@@ -132,10 +132,10 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapDeltaMeasures = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> meUp : mapUpMeasuresES) {
+		for (java.util.Map.Entry<String, java.lang.Double> meUp : mapUpMeasuresES) {
 			if (null == meUp) continue;
 
-			java.lang.String strKey = meUp.getKey();
+			String strKey = meUp.getKey();
 
 			if (null == strKey || strKey.isEmpty()) continue;
 
@@ -154,7 +154,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		if (null == mapDownMeasures || 0 == mapDownMeasures.size())
 			return new FlatDeltaGammaMeasureMap (mapDeltaMeasures, null);
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapDownMeasuresES =
+		java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapDownMeasuresES =
 			mapDownMeasures.entrySet();
 
 		if (null == mapDownMeasuresES) return new FlatDeltaGammaMeasureMap (mapDeltaMeasures, null);
@@ -162,10 +162,10 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapGammaMeasures = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> meDown : mapDownMeasuresES) {
+		for (java.util.Map.Entry<String, java.lang.Double> meDown : mapDownMeasuresES) {
 			if (null == meDown) continue;
 
-			java.lang.String strKey = meDown.getKey();
+			String strKey = meDown.getKey();
 
 			if (null == strKey || strKey.isEmpty()) continue;
 
@@ -195,7 +195,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 	{
 		if (null == mapTenorUpCSQS || 0 == mapTenorUpCSQS.size()) return null;
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>>
+		java.util.Set<java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>>
 			mapESTenorUpCSQS = mapTenorUpCSQS.entrySet();
 
 		if (null == mapESTenorUpCSQS || 0 == mapESTenorUpCSQS.size()) return null;
@@ -203,11 +203,11 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		org.drip.analytics.support.CaseInsensitiveTreeMap<FlatDeltaGammaMeasureMap> mapTenorDGMM = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<FlatDeltaGammaMeasureMap>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet> meTenorUpCSQS
+		for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet> meTenorUpCSQS
 			: mapESTenorUpCSQS) {
 			if (null == meTenorUpCSQS) continue;
 
-			java.lang.String strTenorKey = meTenorUpCSQS.getKey();
+			String strTenorKey = meTenorUpCSQS.getKey();
 
 			if (null == strTenorKey || strTenorKey.isEmpty()) continue;
 
@@ -255,14 +255,14 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 			mmGamma = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>();
 
-		for (java.util.Map.Entry<java.lang.String, FlatDeltaGammaMeasureMap> meTenorDGMM :
+		for (java.util.Map.Entry<String, FlatDeltaGammaMeasureMap> meTenorDGMM :
 			mapTenorDGMM.entrySet()) {
 			if (null == meTenorDGMM) continue;
 
 			FlatDeltaGammaMeasureMap dgmmTenorDelta = meTenorDGMM.getValue();
 
 			if (null != dgmmTenorDelta) {
-				java.lang.String strKey = meTenorDGMM.getKey();
+				String strKey = meTenorDGMM.getKey();
 
 				mmDelta.put (strKey, dgmmTenorDelta._mapDelta);
 
@@ -287,7 +287,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 	{
 		if (null == mapCSQS || 0 == mapCSQS.size()) return null;
 
-		java.util.Set<java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet>>
+		java.util.Set<java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet>>
 			mapESCSQS = mapCSQS.entrySet();
 
 		if (null == mapESCSQS || 0 == mapESCSQS.size()) return null;
@@ -295,11 +295,11 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		org.drip.analytics.support.CaseInsensitiveTreeMap<TenorDeltaGammaMeasureMap> mapComponentTenorDGMM =
 			new org.drip.analytics.support.CaseInsensitiveTreeMap<TenorDeltaGammaMeasureMap>();
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.market.CurveSurfaceQuoteSet> meCSQS :
+		for (java.util.Map.Entry<String, org.drip.param.market.CurveSurfaceQuoteSet> meCSQS :
 			mapESCSQS) {
 			if (null == meCSQS) continue;
 
-			java.lang.String strComponentName = meCSQS.getKey();
+			String strComponentName = meCSQS.getKey();
 
 			if (null == strComponentName || strComponentName.isEmpty()) continue;
 
@@ -322,14 +322,14 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 			mmmCompRatesGamma = new
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>>();
 
-		for (java.util.Map.Entry<java.lang.String, TenorDeltaGammaMeasureMap> meCompTenorDGMM :
+		for (java.util.Map.Entry<String, TenorDeltaGammaMeasureMap> meCompTenorDGMM :
 			mapComponentTenorDGMM.entrySet()) {
 			if (null == meCompTenorDGMM) continue;
 
 			TenorDeltaGammaMeasureMap dgmmCompTenorDeltaGamma = meCompTenorDGMM.getValue();
 
 			if (null != dgmmCompTenorDeltaGamma) {
-				java.lang.String strKey = meCompTenorDGMM.getKey();
+				String strKey = meCompTenorDGMM.getKey();
 
 				mmmCompRatesDelta.put (strKey, dgmmCompTenorDeltaGamma._mmDelta);
 
@@ -341,14 +341,14 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 	}
 
 	protected double measureValue (
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapCalc)
 		throws java.lang.Exception
 	{
 		if (null == strMeasure || strMeasure.isEmpty() || null == mapCalc || null == mapCalc.entrySet())
 			throw new java.lang.Exception ("BasketProduct::measureValue => Invalid Params");
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapCalc.entrySet()) {
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapCalc.entrySet()) {
 			if (null != me && null != me.getKey() && me.getKey().equalsIgnoreCase (strMeasure))
 				return me.getValue();
 		}
@@ -363,7 +363,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 	 * @return Name of the basket product
 	 */
 
-	public abstract java.lang.String name();
+	public abstract String name();
 
 	/**
 	 * Return the Components in the Basket
@@ -382,7 +382,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 	 */
 
 	public abstract int measureAggregationType (
-		final java.lang.String strMeasureName);
+		final String strMeasureName);
 
 	/**
 	 * Retrieve the component Weights
@@ -416,7 +416,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		return adblWeight;
 	}
 
-	@Override public java.lang.String[] couponCurrency()
+	@Override public String[] couponCurrency()
 	{
 		org.drip.product.definition.FixedIncomeComponent[] aComp = components();
 
@@ -426,16 +426,16 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 
 		if (0 == iNumComp) return null;
 
-		java.util.Set<java.lang.String> setCouponCurrency = new java.util.HashSet<java.lang.String>();
+		java.util.Set<String> setCouponCurrency = new java.util.HashSet<String>();
 
 		for (int i = 0; i < iNumComp; ++i) {
 			if (null == aComp[i]) return null;
 
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapComponentCouponCurrency =
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapComponentCouponCurrency =
 				aComp[i].couponCurrency();
 
 			if (null != mapComponentCouponCurrency && 0 != mapComponentCouponCurrency.size()) {
-				for (java.util.Map.Entry<java.lang.String, java.lang.String> meCouponCurrency :
+				for (java.util.Map.Entry<String, String> meCouponCurrency :
 					mapComponentCouponCurrency.entrySet())
 					setCouponCurrency.add (meCouponCurrency.getValue());
 			}
@@ -446,15 +446,15 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		if (0 == iNumCouponCurrency) return null;
 
 		int i = 0;
-		java.lang.String[] astrCouponCurrency = new java.lang.String[iNumCouponCurrency];
+		String[] astrCouponCurrency = new String[iNumCouponCurrency];
 
-		for (java.lang.String strCouponCurrency : astrCouponCurrency)
+		for (String strCouponCurrency : astrCouponCurrency)
 			astrCouponCurrency[i++] = strCouponCurrency;
 
 		return astrCouponCurrency;
 	}
 
-	@Override public java.lang.String[] payCurrency()
+	@Override public String[] payCurrency()
 	{
 		org.drip.product.definition.FixedIncomeComponent[] aComp = components();
 
@@ -464,7 +464,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 
 		if (0 == iNumComp) return null;
 
-		java.util.Set<java.lang.String> setPayCurrency = new java.util.HashSet<java.lang.String>();
+		java.util.Set<String> setPayCurrency = new java.util.HashSet<String>();
 
 		for (int i = 0; i < iNumComp; ++i) {
 			if (null == aComp[i]) return null;
@@ -477,15 +477,15 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		if (0 == iNumPayCurrency) return null;
 
 		int i = 0;
-		java.lang.String[] astrPayCurrency = new java.lang.String[iNumPayCurrency];
+		String[] astrPayCurrency = new String[iNumPayCurrency];
 
-		for (java.lang.String strPayCurrency : astrPayCurrency)
+		for (String strPayCurrency : astrPayCurrency)
 			astrPayCurrency[i++] = strPayCurrency;
 
 		return astrPayCurrency;
 	}
 
-	@Override public java.lang.String[] principalCurrency()
+	@Override public String[] principalCurrency()
 	{
 		org.drip.product.definition.FixedIncomeComponent[] aComp = components();
 
@@ -495,7 +495,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 
 		if (0 == iNumComp) return null;
 
-		java.util.Set<java.lang.String> setPrincipalCurrency = new java.util.HashSet<java.lang.String>();
+		java.util.Set<String> setPrincipalCurrency = new java.util.HashSet<String>();
 
 		for (int i = 0; i < iNumComp; ++i) {
 			if (null == aComp[i]) return null;
@@ -508,9 +508,9 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		if (0 == iNumPrincipalCurrency) return null;
 
 		int i = 0;
-		java.lang.String[] astrPrincipalCurrency = new java.lang.String[iNumPrincipalCurrency];
+		String[] astrPrincipalCurrency = new String[iNumPrincipalCurrency];
 
-		for (java.lang.String strPrincipalCurrency : astrPrincipalCurrency)
+		for (String strPrincipalCurrency : astrPrincipalCurrency)
 			astrPrincipalCurrency[i++] = strPrincipalCurrency;
 
 		return astrPrincipalCurrency;
@@ -910,15 +910,15 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 
 			if (null == mapCompOP || 0 == mapCompOP.size()) continue;
 
-			java.util.Set<java.util.Map.Entry<java.lang.String, java.lang.Double>> mapCompOPES =
+			java.util.Set<java.util.Map.Entry<String, java.lang.Double>> mapCompOPES =
 				mapCompOP.entrySet();
 
 			if (null == mapCompOPES) continue;
 
-			for (java.util.Map.Entry<java.lang.String, java.lang.Double> meCompOP : mapCompOPES) {
+			for (java.util.Map.Entry<String, java.lang.Double> meCompOP : mapCompOPES) {
 				if (null == meCompOP) continue;
 
-				java.lang.String strKey = meCompOP.getKey();
+				String strKey = meCompOP.getKey();
 
 				if (null == strKey || strKey.isEmpty()) continue;
 
@@ -963,7 +963,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,
-		final java.lang.String strMeasure)
+		final String strMeasure)
 		throws java.lang.Exception
 	{
 		return measureValue (strMeasure, value (valParams, pricerParams, csqs, vcp));
@@ -1100,7 +1100,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.definition.ScenarioMarketParams mpc,
-		final java.lang.String strCustomScenName,
+		final String strCustomScenName,
 		final org.drip.param.valuation.ValuationCustomizationParams vcp,
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapBase)
 	{
@@ -1125,7 +1125,7 @@ public abstract class BasketProduct implements org.drip.product.definition.Baske
 		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> mapOP = new
 			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>();
 
-		for (java.util.Map.Entry<java.lang.String, java.lang.Double> me : mapScenMeasures.entrySet()) {
+		for (java.util.Map.Entry<String, java.lang.Double> me : mapScenMeasures.entrySet()) {
 			if (null == me || null == me.getKey()) continue;
 
 			mapOP.put (me.getKey(), me.getValue() - mapBase.get (me.getKey()));

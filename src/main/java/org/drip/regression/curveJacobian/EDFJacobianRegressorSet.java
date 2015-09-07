@@ -38,7 +38,7 @@ package org.drip.regression.curveJacobian;
  */
 
 public class EDFJacobianRegressorSet implements org.drip.regression.core.RegressorSet {
-	private java.lang.String _strRegressionScenario =
+	private String _strRegressionScenario =
 		"org.drip.analytics.definition.EDFDiscountCurve.CompPVDFJacobian";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
@@ -67,7 +67,7 @@ public class EDFJacobianRegressorSet implements org.drip.regression.core.Regress
 					double adblRate[] = new double[NUM_DC_INSTR];
 					double adblCompCalibValue[] = new double[NUM_DC_INSTR];
 					aWJComp = new org.drip.quant.calculus.WengertJacobian[NUM_DC_INSTR];
-					java.lang.String astrCalibMeasure[] = new java.lang.String[NUM_DC_INSTR];
+					String astrCalibMeasure[] = new String[NUM_DC_INSTR];
 					aCompCalib = new
 						org.drip.product.definition.CalibratableFixedIncomeComponent[NUM_DC_INSTR];
 
@@ -138,7 +138,7 @@ public class EDFJacobianRegressorSet implements org.drip.regression.core.Regress
 		return true;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

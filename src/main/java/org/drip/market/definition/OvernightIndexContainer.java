@@ -249,7 +249,7 @@ public class OvernightIndexContainer {
 	 */
 
 	public static final org.drip.market.definition.OvernightIndex IndexFromJurisdiction (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return _mapJurisdictionOvernightIndex.containsKey (strName) ? _mapJurisdictionOvernightIndex.get
 			(strName) : null;
@@ -264,7 +264,7 @@ public class OvernightIndexContainer {
 	 */
 
 	public static final org.drip.market.definition.OvernightIndex IndexFromName (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return _mapNamedOvernightIndex.containsKey (strName) ? _mapNamedOvernightIndex.get (strName) : null;
 	}

@@ -104,11 +104,11 @@ public abstract class ScenarioCreditCurve {
 	 */
 
 	public abstract boolean cookScenarioCC (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblQuote,
 		final double dblRecovery,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
@@ -138,12 +138,12 @@ public abstract class ScenarioCreditCurve {
 	 */
 
 	public abstract boolean cookCustomCC (
-		final java.lang.String strName,
-		final java.lang.String strCustomName,
+		final String strName,
+		final String strCustomName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final double[] adblQuote,
 		final double dblRecovery,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,

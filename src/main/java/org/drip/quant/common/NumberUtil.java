@@ -295,7 +295,7 @@ public class NumberUtil {
 	 */
 
 	public static final boolean Print1DArray (
-		final java.lang.String strName,
+		final String strName,
 		final double[] adblA,
 		final boolean bBailOnNaN)
 	{
@@ -323,7 +323,7 @@ public class NumberUtil {
 	 */
 
 	public static final boolean Print2DArray (
-		final java.lang.String strName,
+		final String strName,
 		final double[][] aadblA,
 		final boolean bBailOnNaN)
 	{
@@ -356,8 +356,8 @@ public class NumberUtil {
 	 */
 
 	public static final boolean Print2DArrayPair (
-		final java.lang.String strLeftLabel,
-		final java.lang.String strRightLabel,
+		final String strLeftLabel,
+		final String strRightLabel,
 		final double[][] aadblLeft,
 		final double[][] aadblRight,
 		final boolean bBailOnNaN)
@@ -399,9 +399,9 @@ public class NumberUtil {
 	 */
 
 	public static final boolean Print2DArrayTriplet (
-		final java.lang.String strLeftLabel,
-		final java.lang.String strMiddleLabel,
-		final java.lang.String strRightLabel,
+		final String strLeftLabel,
+		final String strMiddleLabel,
+		final String strRightLabel,
 		final double[][] aadblLeft,
 		final double[][] aadblMiddle,
 		final double[][] aadblRight,
@@ -434,7 +434,7 @@ public class NumberUtil {
 	}
 
 	public static final boolean PrintMatrix (
-		final java.lang.String strName,
+		final String strName,
 		final double[][] aadblA)
 	{
 		if (null == aadblA || 0 == aadblA.length) return false;
@@ -442,7 +442,7 @@ public class NumberUtil {
 		int iSize = aadblA.length;
 
 		for (int i = 0; i < iSize; ++i) {
-			java.lang.String strDump = strName  + " => ";
+			String strDump = strName  + " => ";
 
 			for (int j = 0; j < iSize; ++j)
 				strDump += org.drip.quant.common.FormatUtil.FormatDouble (aadblA[i][j], 1, 6, 1.) + " |";

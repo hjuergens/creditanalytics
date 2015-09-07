@@ -177,7 +177,7 @@ public class ContinuouslyCompoundedForwardProcess {
 
 	public double liborRate (
 		final double dblTargetDate,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final boolean bRealized)
 		throws java.lang.Exception
 	{

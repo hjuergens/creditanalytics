@@ -52,9 +52,9 @@ public class EODCurves {
 
 	private static final org.drip.product.definition.CalibratableFixedIncomeComponent CreateIRComp (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor,
-		final java.lang.String strCurrency,
-		final java.lang.String strInstrCode,
+		final String strTenor,
+		final String strCurrency,
+		final String strInstrCode,
 		final boolean bTSY)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty() || null == strCurrency ||
@@ -138,9 +138,9 @@ public class EODCurves {
 		final java.util.List<java.lang.Double> alCalibValue,
 		final java.util.List<org.drip.product.definition.CalibratableFixedIncomeComponent> alCalibComp,
 		final java.sql.ResultSet rsCurvePoints,
-		final java.lang.String strCurveID,
-		final java.lang.String strInstrCode,
-		final java.lang.String strCurrency,
+		final String strCurveID,
+		final String strInstrCode,
+		final String strCurrency,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final boolean bTSY)
 	{
@@ -151,7 +151,7 @@ public class EODCurves {
 			return false;
 		}
 
-		java.lang.String strCPType = null;
+		String strCPType = null;
 
 		try {
 			strCPType = rsCurvePoints.getString ("IR" + strCurveID + "_TYPE");
@@ -214,7 +214,7 @@ public class EODCurves {
 
 	private static final boolean AddTSYQuoteToMPC (
 		final org.drip.param.definition.ScenarioMarketParams mpc,
-		final java.lang.String strTsyBmk,
+		final String strTsyBmk,
 		final double dblTSYQuote)
 	{
 		if (null == mpc) return false;
@@ -239,7 +239,7 @@ public class EODCurves {
 	private static final boolean AddTSYCQToMap (
 		final org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.param.definition.ProductQuote>
 			mapTSYCQ,
-		final java.lang.String strTsyBmk,
+		final String strTsyBmk,
 		final double dblTSYQuote)
 	{
 		if (null == mapTSYCQ || java.lang.Double.isNaN (dblTSYQuote)) return false;
@@ -278,8 +278,8 @@ public class EODCurves {
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final org.drip.analytics.rates.DiscountCurve dc,
-		final java.lang.String strSPN,
-		final java.lang.String strCurrency)
+		final String strSPN,
+		final String strCurrency)
 	{
 		if (null == dc || null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty() ||
 			null == strSPN || strSPN.isEmpty())
@@ -288,7 +288,7 @@ public class EODCurves {
 		double[] adblQuotes = new double[20];
 		java.sql.ResultSet rsCDSPoints = null;
 		double dblRecovery = java.lang.Double.NaN;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[20];
+		String[] astrCalibMeasure = new String[20];
 		org.drip.param.definition.ScenarioCreditCurve ccsc = null;
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCDS = new
 			org.drip.product.definition.CreditDefaultSwap[20];
@@ -429,7 +429,7 @@ public class EODCurves {
 
 			System.out.println ("CC[" + strSPN + "] cooked successfully");
 		} catch (java.lang.Exception e) {
-			java.lang.StringBuilder sb = new java.lang.StringBuilder();
+			StringBuilder sb = new StringBuilder();
 
 			sb.append ("Recovery=").append (dblRecovery).append (";");
 
@@ -462,7 +462,7 @@ public class EODCurves {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty()) {
 			System.out.println ("Bad inputs into EODCurves.AddTSYQuotesToMPC!");
@@ -584,7 +584,7 @@ public class EODCurves {
 			GetTSYQuotes (
 				final java.sql.Statement stmt,
 				final org.drip.analytics.date.JulianDate dtEOD,
-				final java.lang.String strCurrency)
+				final String strCurrency)
 	{
 		if (null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty()) {
 			System.out.println ("Bad inputs into EODCurves.GetTSYQuotes!");
@@ -746,7 +746,7 @@ public class EODCurves {
 				}
 
 				if (s_bBlog) {
-					for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ProductQuote>
+					for (java.util.Map.Entry<String, org.drip.param.definition.ProductQuote>
 						meTSYCQ : mapTSYCQ.entrySet()) {
 						if (null != meTSYCQ)
 							System.out.println (meTSYCQ.getKey() + "=" + meTSYCQ.getValue().quote
@@ -782,10 +782,10 @@ public class EODCurves {
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency,
-		final java.lang.String strInstrCode,
-		final java.lang.String strInstrSetType,
-		final java.lang.String strCurveName)
+		final String strCurrency,
+		final String strInstrCode,
+		final String strInstrSetType,
+		final String strCurveName)
 	{
 		if (null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty() || null ==
 			strInstrCode || strInstrCode.isEmpty()  || null == strInstrSetType || strInstrSetType.isEmpty()
@@ -904,7 +904,7 @@ public class EODCurves {
 
 		double[] adblCompCalibValue = new double[alCalibValue.size()];
 
-		java.lang.String[] astrCalibMeasure = new java.lang.String[alCalibValue.size()];
+		String[] astrCalibMeasure = new String[alCalibValue.size()];
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCompCalib = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[alCalibValue.size()];
@@ -952,9 +952,9 @@ public class EODCurves {
 		final org.drip.param.market.LatentStateFixingsContainer lsfc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency,
-		final java.lang.String strInstrSetType,
-		final java.lang.String strCurveName)
+		final String strCurrency,
+		final String strInstrSetType,
+		final String strCurveName)
 	{
 		if (null == lsfc || null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty() ||
 			null == strInstrSetType || strInstrSetType.isEmpty() || null == strCurveName ||
@@ -985,7 +985,7 @@ public class EODCurves {
 
 		try {
 			while (rsCurvePoints.next()) {
-				java.lang.String[] astrCalibMeasure = new java.lang.String[25];
+				String[] astrCalibMeasure = new String[25];
 				astrCalibMeasure[0] = "Rate";
 				astrCalibMeasure[1] = "Rate";
 				astrCalibMeasure[2] = "Rate";
@@ -1122,7 +1122,7 @@ public class EODCurves {
 
 		double[] adblCompCalibValue = new double[alCalibValue.size()];
 
-		java.lang.String[] astrCalibMeasure = new java.lang.String[alCalibValue.size()];
+		String[] astrCalibMeasure = new String[alCalibValue.size()];
 
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCompCalib = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[alCalibValue.size()];
@@ -1167,9 +1167,9 @@ public class EODCurves {
 	public static final org.drip.analytics.rates.DiscountCurve LoadEODIR (
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency,
-		final java.lang.String strInstrType,
-		final java.lang.String strCurveName)
+		final String strCurrency,
+		final String strInstrType,
+		final String strCurveName)
 	{
 		if (null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty() || null ==
 			strInstrType || strInstrType.isEmpty() || null == strCurveName || strCurveName.isEmpty())
@@ -1207,9 +1207,9 @@ public class EODCurves {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency,
-		final java.lang.String strInstrType,
-		final java.lang.String strCurveName)
+		final String strCurrency,
+		final String strInstrType,
+		final String strCurveName)
 	{
 		if (null == mpc || null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty() ||
 			null == strInstrType || strInstrType.isEmpty() || null == strCurveName || strCurveName.isEmpty())
@@ -1249,10 +1249,10 @@ public class EODCurves {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency,
-		final java.lang.String strInstrCode,
-		final java.lang.String strInstrType,
-		final java.lang.String strCurveName)
+		final String strCurrency,
+		final String strInstrCode,
+		final String strInstrType,
+		final String strCurveName)
 	{
 		if (null == mpc || null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty() ||
 			null == strInstrCode || strInstrCode.isEmpty() || null == strCurveName || strCurveName.isEmpty()
@@ -1300,7 +1300,7 @@ public class EODCurves {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == mpc || null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty())
 			return false;
@@ -1323,7 +1323,7 @@ public class EODCurves {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == mpc || null == stmt || null == dtEOD || null == strCurrency || strCurrency.isEmpty())
 			return false;
@@ -1374,8 +1374,8 @@ public class EODCurves {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strSPN,
-		final java.lang.String strCurrency)
+		final String strSPN,
+		final String strCurrency)
 	{
 		if (null == mpc || null == mpc.scenarioDiscountCurveMap() || null == stmt || null == dtEOD || null == strCurrency ||
 			strCurrency.isEmpty() || null == strSPN || strSPN.isEmpty() || null == mpc.scenarioDiscountCurveMap().get

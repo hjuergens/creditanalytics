@@ -36,9 +36,9 @@ package org.drip.dynamics.evolution;
  */
 
 public class LSQMCurveSnapshot {
-	private java.util.Map<java.lang.String, java.util.Map<java.lang.String,
-		org.drip.analytics.definition.Curve>> _mmCurve = new java.util.HashMap<java.lang.String,
-			java.util.Map<java.lang.String, org.drip.analytics.definition.Curve>>();
+	private java.util.Map<String, java.util.Map<String,
+		org.drip.analytics.definition.Curve>> _mmCurve = new java.util.HashMap<String,
+			java.util.Map<String, org.drip.analytics.definition.Curve>>();
 
 	/**
 	 * Empty LSQMCurveSnapshot Constructor
@@ -54,7 +54,7 @@ public class LSQMCurveSnapshot {
 	 * @return The Latent State Labels
 	 */
 
-	public java.util.Set<java.lang.String> latentStateLabel()
+	public java.util.Set<String> latentStateLabel()
 	{
 		return _mmCurve.keySet();
 	}
@@ -84,11 +84,11 @@ public class LSQMCurveSnapshot {
 
 	public boolean containsQM (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM)
+		final String strQM)
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty()) return false;
 
-		java.lang.String strLabel = lsl.fullyQualifiedName();
+		String strLabel = lsl.fullyQualifiedName();
 
 		return _mmCurve.containsKey (strLabel) && _mmCurve.get (strLabel).containsKey (strQM);
 	}
@@ -103,15 +103,15 @@ public class LSQMCurveSnapshot {
 	 */
 
 	public boolean setQMCurve (
-		final java.lang.String strQM,
+		final String strQM,
 		final org.drip.analytics.definition.Curve curve)
 	{
 		if (null == strQM || strQM.isEmpty() || null == curve) return false;
 
-		java.lang.String strLabel = curve.label().fullyQualifiedName();
+		String strLabel = curve.label().fullyQualifiedName();
 
-		java.util.Map<java.lang.String, org.drip.analytics.definition.Curve> mapCurve = _mmCurve.containsKey
-			(strLabel) ? _mmCurve.get (strLabel) : new java.util.HashMap<java.lang.String,
+		java.util.Map<String, org.drip.analytics.definition.Curve> mapCurve = _mmCurve.containsKey
+			(strLabel) ? _mmCurve.get (strLabel) : new java.util.HashMap<String,
 				org.drip.analytics.definition.Curve>();
 
 		mapCurve.put (strQM, curve);
@@ -132,13 +132,13 @@ public class LSQMCurveSnapshot {
 
 	public org.drip.analytics.definition.Curve qm (
 		final org.drip.state.identifier.LatentStateLabel lsl,
-		final java.lang.String strQM)
+		final String strQM)
 	{
 		if (null == lsl || null == strQM || strQM.isEmpty()) return null;
 
-		java.lang.String strLabel = lsl.fullyQualifiedName();
+		String strLabel = lsl.fullyQualifiedName();
 
-		java.util.Map<java.lang.String, org.drip.analytics.definition.Curve> mapCurve = _mmCurve.get
+		java.util.Map<String, org.drip.analytics.definition.Curve> mapCurve = _mmCurve.get
 			(strLabel);
 
 		return mapCurve.containsKey (strQM) ? mapCurve.get (strQM) : null;

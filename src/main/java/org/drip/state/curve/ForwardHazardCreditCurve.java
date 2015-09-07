@@ -89,7 +89,7 @@ public class ForwardHazardCreditCurve extends org.drip.analytics.definition.Expl
 	public ForwardHazardCreditCurve (
 		final double dblStartDate,
 		final org.drip.state.identifier.CreditLabel label,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final double adblHazardRate[],
 		final double adblHazardDate[],
 		final double[] adblRecoveryRate,
@@ -199,7 +199,7 @@ public class ForwardHazardCreditCurve extends org.drip.analytics.definition.Expl
 	}
 
 	@Override public ForwardHazardCreditCurve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift)) return null;
@@ -245,7 +245,7 @@ public class ForwardHazardCreditCurve extends org.drip.analytics.definition.Expl
 
 	@Override public ForwardHazardCreditCurve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift)) return null;
@@ -352,7 +352,7 @@ public class ForwardHazardCreditCurve extends org.drip.analytics.definition.Expl
 	}
 
 	@Override  public org.drip.analytics.definition.CreditCurve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams mmtp)
 	{
 		if (null == mmtp) return null;

@@ -39,7 +39,7 @@ package org.drip.regression.fixedpointfinder;
 
 public class OpenRegressorSet implements org.drip.regression.core.RegressorSet {
 	private org.drip.function.definition.R1ToR1 _of = null;
-	private java.lang.String _strRegressionScenario = "org.drip.math.solver1D.FixedPointFinderNewton";
+	private String _strRegressionScenario = "org.drip.math.solver1D.FixedPointFinderNewton";
 
 	private java.util.List<org.drip.regression.core.UnitRegressor> _setRegressors = new
 		java.util.ArrayList<org.drip.regression.core.UnitRegressor>();
@@ -129,7 +129,7 @@ public class OpenRegressorSet implements org.drip.regression.core.RegressorSet {
 		return _setRegressors;
 	}
 
-	@Override public java.lang.String getSetName()
+	@Override public String getSetName()
 	{
 		return _strRegressionScenario;
 	}

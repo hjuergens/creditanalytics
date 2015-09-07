@@ -352,7 +352,7 @@ public class ShapeDFZeroLocalSmooth {
 		FixFloatComponent[] aSwapComp = SwapInstrumentsFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"4Y", "5Y", "6Y", "7Y", "8Y", "9Y", "10Y", "11Y", "12Y", "15Y", "20Y", "25Y", "30Y", "40Y", "50Y"
 			}
 		);
@@ -893,7 +893,7 @@ public class ShapeDFZeroLocalSmooth {
 		CalibratableFixedIncomeComponent[] aCC = SwapInstrumentsFromMaturityTenor (
 			dtSpot,
 			strCurrency,
-			new java.lang.String[] {
+			new String[] {
 				"3Y", "6Y", "9Y", "12Y", "15Y", "18Y", "21Y", "24Y", "27Y", "30Y"
 			}
 		);

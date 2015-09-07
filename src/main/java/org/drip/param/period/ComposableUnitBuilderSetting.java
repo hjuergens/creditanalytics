@@ -37,12 +37,12 @@ package org.drip.param.period;
  */
 
 public class ComposableUnitBuilderSetting {
-	private java.lang.String _strTenor = "";
+	private String _strTenor = "";
 	private int _iEdgeDateSequenceScheme = -1;
 	private org.drip.analytics.daycount.DateAdjustParams _dapEdge = null;
 
 	protected ComposableUnitBuilderSetting (
-		final java.lang.String strTenor,
+		final String strTenor,
 		final int iEdgeDateSequenceScheme,
 		final org.drip.analytics.daycount.DateAdjustParams dapEdge)
 		throws java.lang.Exception
@@ -60,7 +60,7 @@ public class ComposableUnitBuilderSetting {
 	 * @return The Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		return _strTenor;
 	}

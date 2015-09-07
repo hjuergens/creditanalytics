@@ -47,14 +47,14 @@ public class DC30E_360 implements org.drip.analytics.daycount.DCFCalculator {
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DC30E_360";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"30E/360", "30/360 ICMA", "30S/360", "Eurobond basis",
+		return new String[] {"30E/360", "30/360 ICMA", "30S/360", "Eurobond basis",
 			"Eurobond basis (ISDA 2006)", "Special German", "ISMA 30/360", "30E/360 ISDA",
 				"Eurobond basis (ISDA 2000)", "German", "German:30/360", "Ger:30/360", "ISDA SWAPS:30/360",
 					"ISDA 30E/360", "DC30E_360"};
@@ -65,7 +65,7 @@ public class DC30E_360 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA30E_360 (dblStart, dblEnd, bApplyEOMAdj);
@@ -85,7 +85,7 @@ public class DC30E_360 implements org.drip.analytics.daycount.DCFCalculator {
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		DateEOMAdjustment dm = DateEOMAdjustment.MakeDEOMA30E_360 (dblStart, dblEnd, bApplyEOMAdj);

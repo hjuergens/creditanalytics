@@ -255,12 +255,12 @@ public class WengertJacobian {
 	 * @return Stringified WengertJacobian
 	 */
 
-	public java.lang.String displayString()
+	public String displayString()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		for (int iWengertIndex = 0; iWengertIndex < _aadblDWengertDParameter.length; ++iWengertIndex) {
-			java.lang.StringBuffer sbDWengertDParameter = new java.lang.StringBuffer();
+			StringBuffer sbDWengertDParameter = new StringBuffer();
 
 			sbDWengertDParameter.append ("Wengert{" + iWengertIndex + "} => [");
 

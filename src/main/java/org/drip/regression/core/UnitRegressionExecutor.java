@@ -42,8 +42,8 @@ package org.drip.regression.core;
 public abstract class UnitRegressionExecutor implements org.drip.regression.core.UnitRegressor {
 	private static final boolean _bDisplayStatus = false;
 
-	private java.lang.String _strRegressorSet = "";
-	private java.lang.String _strRegressorName = "";
+	private String _strRegressorSet = "";
+	private String _strRegressorName = "";
 
 	/**
 	 * Constructor for the unit regression executor
@@ -55,8 +55,8 @@ public abstract class UnitRegressionExecutor implements org.drip.regression.core
 	 */
 
 	protected UnitRegressionExecutor (
-		final java.lang.String strRegressorName,
-		final java.lang.String strRegressorSet)
+		final String strRegressorName,
+		final String strRegressorSet)
 		throws java.lang.Exception
 	{
 		if (null == (_strRegressorName = strRegressorName) || strRegressorName.isEmpty() || null ==
@@ -146,7 +146,7 @@ public abstract class UnitRegressionExecutor implements org.drip.regression.core
 		return ro;
 	}
 
-	@Override public java.lang.String getName()
+	@Override public String getName()
 	{
 		return _strRegressorName;
 	}

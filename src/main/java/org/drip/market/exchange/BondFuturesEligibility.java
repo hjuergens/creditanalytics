@@ -36,9 +36,9 @@ package org.drip.market.exchange;
  */
 
 public class BondFuturesEligibility {
-	private java.lang.String[] _astrIssuer = null;
-	private java.lang.String _strMaturityFloor = "";
-	private java.lang.String _strMaturityCeiling = "";
+	private String[] _astrIssuer = null;
+	private String _strMaturityFloor = "";
+	private String _strMaturityCeiling = "";
 	private double _dblMinimumOutstandingNotional = java.lang.Double.NaN;
 
 	/**
@@ -53,9 +53,9 @@ public class BondFuturesEligibility {
 	 */
 
 	public BondFuturesEligibility (
-		final java.lang.String strMaturityFloor,
-		final java.lang.String strMaturityCeiling,
-		final java.lang.String[] astrIssuer,
+		final String strMaturityFloor,
+		final String strMaturityCeiling,
+		final String[] astrIssuer,
 		final double dblMinimumOutstandingNotional)
 		throws java.lang.Exception
 	{
@@ -81,7 +81,7 @@ public class BondFuturesEligibility {
 	 * @return Array of Eligible Maturity Floor
 	 */
 
-	public java.lang.String maturityFloor()
+	public String maturityFloor()
 	{
 		return _strMaturityFloor;
 	}
@@ -92,7 +92,7 @@ public class BondFuturesEligibility {
 	 * @return Array of Eligible Maturity Ceiling
 	 */
 
-	public java.lang.String maturityCeiling()
+	public String maturityCeiling()
 	{
 		return _strMaturityCeiling;
 	}
@@ -103,7 +103,7 @@ public class BondFuturesEligibility {
 	 * @return Array of Eligible Issuers
 	 */
 
-	public java.lang.String[] issuer()
+	public String[] issuer()
 	{
 		return _astrIssuer;
 	}
@@ -134,7 +134,7 @@ public class BondFuturesEligibility {
 		final org.drip.analytics.date.JulianDate dtValue,
 		final org.drip.product.definition.Bond bond,
 		final double dblOutstandingNotional,
-		final java.lang.String strIssuer)
+		final String strIssuer)
 	{
 		if (null == bond || null == dtValue) return false;
 
@@ -166,9 +166,9 @@ public class BondFuturesEligibility {
 		return false;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
-		java.lang.String strDump = "[Futures Eligibility => Maturity Band: " + _strMaturityFloor + " -> " +
+		String strDump = "[Futures Eligibility => Maturity Band: " + _strMaturityFloor + " -> " +
 			_strMaturityCeiling + "] [Issuers: ";
 
 		if (null == _astrIssuer) return strDump + "]";

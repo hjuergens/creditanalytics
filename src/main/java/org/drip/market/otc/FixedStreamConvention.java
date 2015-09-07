@@ -37,11 +37,11 @@ package org.drip.market.otc;
 
 public class FixedStreamConvention {
 	private int _iAccrualCompoundingRule = -1;
-	private java.lang.String _strCalendar = "";
-	private java.lang.String _strCurrency = "";
-	private java.lang.String _strDayCount = "";
-	private java.lang.String _strUnitPeriodTenor = "";
-	private java.lang.String _strCompositePeriodTenor = "";
+	private String _strCalendar = "";
+	private String _strCurrency = "";
+	private String _strDayCount = "";
+	private String _strUnitPeriodTenor = "";
+	private String _strCompositePeriodTenor = "";
 
 	/**
 	 * FixedStreamConvention Constructor
@@ -57,11 +57,11 @@ public class FixedStreamConvention {
 	 */
 
 	public FixedStreamConvention (
-		final java.lang.String strCurrency,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar,
-		final java.lang.String strUnitPeriodTenor,
-		final java.lang.String strCompositePeriodTenor,
+		final String strCurrency,
+		final String strDayCount,
+		final String strCalendar,
+		final String strUnitPeriodTenor,
+		final String strCompositePeriodTenor,
 		final int iAccrualCompoundingRule)
 		throws java.lang.Exception
 	{
@@ -81,7 +81,7 @@ public class FixedStreamConvention {
 	 * @return The Holiday Calendar
 	 */
 
-	public java.lang.String calendar()
+	public String calendar()
 	{
 		return _strCalendar;
 	}
@@ -92,7 +92,7 @@ public class FixedStreamConvention {
 	 * @return The Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -103,7 +103,7 @@ public class FixedStreamConvention {
 	 * @return The Day Count Convention
 	 */
 
-	public java.lang.String dayCount()
+	public String dayCount()
 	{
 		return _strDayCount;
 	}
@@ -114,7 +114,7 @@ public class FixedStreamConvention {
 	 * @return The Unit Period Tenor
 	 */
 
-	public java.lang.String unitPeriodTenor()
+	public String unitPeriodTenor()
 	{
 		return _strUnitPeriodTenor;
 	}
@@ -125,7 +125,7 @@ public class FixedStreamConvention {
 	 * @return The Composite Period Tenor
 	 */
 
-	public java.lang.String compositePeriodTenor()
+	public String compositePeriodTenor()
 	{
 		return _strCompositePeriodTenor;
 	}
@@ -154,7 +154,7 @@ public class FixedStreamConvention {
 
 	public org.drip.product.rates.Stream createStream (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strMaturityTenor,
+		final String strMaturityTenor,
 		final double dblCoupon,
 		final double dblNotional)
 	{
@@ -189,7 +189,7 @@ public class FixedStreamConvention {
 		return null;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return "[FIXED: " + _strCurrency + " | " + _strDayCount + " | " + _strCalendar + " | " +
 			_strUnitPeriodTenor + " | " + _strCompositePeriodTenor + " | " + _iAccrualCompoundingRule + "]";

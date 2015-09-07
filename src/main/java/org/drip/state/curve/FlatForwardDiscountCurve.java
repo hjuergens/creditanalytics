@@ -54,7 +54,7 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 	private int _iCompoundingFreq = -1;
 	private double _adblForwardRate[] = null;
 	private boolean _bDiscreteCompounding = false;
-	private java.lang.String _strCompoundingDayCount = "";
+	private String _strCompoundingDayCount = "";
 
 	private double yearFract (
 		final double dblStartDate,
@@ -80,7 +80,7 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 		org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>>
 			mapQuote = _ccis.quoteMap();
 
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String[]> mapMeasures =
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String[]> mapMeasures =
 			_ccis.measures();
 
 		org.drip.param.market.LatentStateFixingsContainer lsfc = _ccis.fixing();
@@ -90,7 +90,7 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 
 		int iNumComp = aCalibInst.length;
 		double[] adblCalibQuoteShifted = new double[iNumComp];
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iNumComp];
+		String[] astrCalibMeasure = new String[iNumComp];
 
 		if (adblShift.length != iNumComp) return null;
 
@@ -101,7 +101,7 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 						_iCompoundingFreq);
 
 			for (int i = 0; i < iNumComp; ++i) {
-				java.lang.String strInstrumentCode = aCalibInst[i].primaryCode();
+				String strInstrumentCode = aCalibInst[i].primaryCode();
 
 				calibrator.calibrateIRNode (frdc, null, aCalibInst[i], i, valParam, astrCalibMeasure[i] =
 					mapMeasures.get (strInstrumentCode)[0], adblCalibQuoteShifted[i] = mapQuote.get
@@ -135,12 +135,12 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 
 	public FlatForwardDiscountCurve (
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblDate,
 		final double[] adblForwardRate,
 		final boolean bDiscreteCompounding,
-		final java.lang.String strCompoundingDayCount,
+		final String strCompoundingDayCount,
 		final int iCompoundingFreq)
 		throws java.lang.Exception
 	{
@@ -261,13 +261,13 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 	}
 
 	@Override public java.util.Map<java.lang.Double, java.lang.Double> canonicalTruthness (
-		final java.lang.String strLatentQuantificationMetric)
+		final String strLatentQuantificationMetric)
 	{
 		return null;
 	}
 
 	@Override public FlatForwardDiscountCurve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift) || null == _ccis) return null;
@@ -285,7 +285,7 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 
 	@Override public FlatForwardDiscountCurve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblShift) || null == _ccis) return null;
@@ -304,7 +304,7 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 	}
 
 	@Override public org.drip.analytics.rates.ExplicitBootDiscountCurve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams rvtp)
 	{
 		return shiftManifestMeasure (org.drip.analytics.support.AnalyticsHelper.TweakManifestMeasure
@@ -374,14 +374,14 @@ public class FlatForwardDiscountCurve extends org.drip.analytics.rates.ExplicitB
 		return null;
 	}
 
-	@Override public java.lang.String latentStateQuantificationMetric()
+	@Override public String latentStateQuantificationMetric()
 	{
 		return org.drip.analytics.definition.LatentStateStatic.DISCOUNT_QM_ZERO_RATE;
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDDFDManifestMeasure (
 		final double dblDate,
-		final java.lang.String strManifestMeasure)
+		final String strManifestMeasure)
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblDate)) return null;
 

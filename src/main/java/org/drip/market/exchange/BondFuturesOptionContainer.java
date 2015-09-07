@@ -35,9 +35,9 @@ package org.drip.market.exchange;
  */
 
 public class BondFuturesOptionContainer {
-	private static final java.util.Map<java.lang.String,
+	private static final java.util.Map<String,
 		org.drip.market.exchange.BondFuturesOptionConvention> _mapFuturesOptions = new
-			java.util.TreeMap<java.lang.String, org.drip.market.exchange.BondFuturesOptionConvention>();
+			java.util.TreeMap<String, org.drip.market.exchange.BondFuturesOptionConvention>();
 
 	/**
 	 * Initialize the Bond Futures Options Convention Container with the Conventions
@@ -57,43 +57,43 @@ public class BondFuturesOptionContainer {
 									"", java.lang.Double.NaN)};
 
 			_mapFuturesOptions.put ("USD-TREASURY-BOND-ULTRA", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"OUB", "OUL"},
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"OUB", "OUL"},
 					"USD-TREASURY-BOND-ULTRA", 100000., true, aLTDS));
 
 			_mapFuturesOptions.put ("USD-TREASURY-BOND-30Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"OZB",
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"OZB",
 					"CG-PG"}, "USD-TREASURY-BOND-30Y", 100000., true, aLTDS));
 
 			_mapFuturesOptions.put ("USD-TREASURY-NOTE-10Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"OZN",
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"OZN",
 					"TC-TP"}, "USD-TREASURY-NOTE-10Y", 100000., true, aLTDS));
 
 			_mapFuturesOptions.put ("USD-TREASURY-NOTE-5Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"OZF",
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"OZF",
 					"FL-FP"}, "USD-TREASURY-NOTE-5Y", 100000., true, aLTDS));
 
 			_mapFuturesOptions.put ("USD-TREASURY-NOTE-2Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"OZT",
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"OZT",
 					"TUC-TUP"}, "USD-TREASURY-NOTE-2Y", 200000., true, aLTDS));
 
 			_mapFuturesOptions.put ("EUR-EURO-BUXL-30Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"BUXL"},
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"BUXL"},
 					"EUR-EURO-BUXL-30Y", 100000., false, aLTDS));
 
 			_mapFuturesOptions.put ("EUR-EURO-BUND-10Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"BUND"},
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"BUND"},
 					"EUR-EURO-BUND-10Y", 100000., false, aLTDS));
 
 			_mapFuturesOptions.put ("EUR-EURO-BOBL-5Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"BOBL"},
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"BOBL"},
 					"EUR-EURO-BOBL-10Y", 100000., false, aLTDS));
 
 			_mapFuturesOptions.put ("EUR-EURO-SCHATZ-2Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"SCHATZ"},
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"SCHATZ"},
 					"EUR-EURO-SCHATZ-10Y", 100000., false, aLTDS));
 
 			_mapFuturesOptions.put ("EUR-TREASURY-BONO-10Y", new
-				org.drip.market.exchange.BondFuturesOptionConvention (new java.lang.String[] {"BONO"},
+				org.drip.market.exchange.BondFuturesOptionConvention (new String[] {"BONO"},
 					"EUR-TREASURY-BONO-10Y", 100000., false, aLTDS));
 
 			return true;
@@ -113,7 +113,7 @@ public class BondFuturesOptionContainer {
 	 */
 
 	public static final org.drip.market.exchange.BondFuturesOptionConvention FromContract (
-		final java.lang.String strContractName)
+		final String strContractName)
 	{
 		return null == strContractName || strContractName.isEmpty() || !_mapFuturesOptions.containsKey
 			(strContractName) ? null : _mapFuturesOptions.get (strContractName);

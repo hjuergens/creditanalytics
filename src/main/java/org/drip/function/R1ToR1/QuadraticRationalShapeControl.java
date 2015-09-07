@@ -117,7 +117,7 @@ public class QuadraticRationalShapeControl extends org.drip.function.definition.
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		QuadraticRationalShapeControl qrsc = new QuadraticRationalShapeControl (1.);

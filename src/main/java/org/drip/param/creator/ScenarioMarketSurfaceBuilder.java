@@ -55,9 +55,9 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface CustomSplineWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
 		final double[] adblY,
@@ -139,12 +139,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface CubicPolynomialWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode)
 	{
 		if (null == astrTenor) return null;
@@ -195,12 +195,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface QuarticPolynomialWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode)
 	{
 		if (null == astrTenor) return null;
@@ -251,12 +251,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface KaklisPandelisWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode)
 	{
 		if (null == astrTenor) return null;
@@ -308,12 +308,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface KLKHyperbolicWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode,
 		final double dblTension)
 	{
@@ -366,12 +366,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface KLKRationalLinearWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode,
 		final double dblTension)
 	{
@@ -424,12 +424,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface KLKRationalQuadraticWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode,
 		final double dblTension)
 	{
@@ -482,12 +482,12 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface CustomWireSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblX,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final double[][] aadblNode,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbcWireSpan,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbcSurface)
@@ -528,16 +528,16 @@ public class ScenarioMarketSurfaceBuilder {
 	 */
 
 	public static final org.drip.analytics.definition.MarketSurface HestonRunMarketSurface (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtStart,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final double dblRiskFreeRate,
 		final double dblUnderlier,
 		final boolean bIsForward,
 		final double dblInitialVolatility,
 		final org.drip.param.valuation.CollateralizationParams collatParams,
 		final double[] adblStrike,
-		final java.lang.String[] astrTenor,
+		final String[] astrTenor,
 		final org.drip.param.pricer.HestonOptionPricerParams fphp,
 		final boolean bPriceSurface,
 		final org.drip.spline.params.SegmentCustomBuilderControl scbcWireSpan,
@@ -568,7 +568,7 @@ public class ScenarioMarketSurfaceBuilder {
 		for (double dblStrike : adblStrike) {
 			int iTenor = 0;
 
-			for (java.lang.String strTenor : astrTenor) {
+			for (String strTenor : astrTenor) {
 				try {
 					double dblTimeToExpiry = org.drip.analytics.support.AnalyticsHelper.TenorToYearFraction
 						(strTenor);

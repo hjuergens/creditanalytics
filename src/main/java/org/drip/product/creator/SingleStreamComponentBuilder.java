@@ -50,7 +50,7 @@ public class SingleStreamComponentBuilder {
 	 * @return EDF Code String
 	 */
 
-	public static java.lang.String MakeBaseEDFCode (
+	public static String MakeBaseEDFCode (
 		final double dblEffective)
 	{
 		try {
@@ -77,7 +77,7 @@ public class SingleStreamComponentBuilder {
 	public static org.drip.product.rates.SingleStreamComponent[] FuturesPack (
 		final org.drip.analytics.date.JulianDate dt,
 		final int iNumContract,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (0 == iNumContract || null == dt) return null;
 
@@ -138,13 +138,13 @@ public class SingleStreamComponentBuilder {
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final org.drip.state.identifier.ForwardLabel fri)
 	{
-		java.lang.String strTenor = fri.tenor();
+		String strTenor = fri.tenor();
 
-		java.lang.String strCurrency = fri.currency();
+		String strCurrency = fri.currency();
 
 		boolean bIsON = "ON".equalsIgnoreCase (strTenor);
 
-		java.lang.String strCode = "DEPOSIT::" + fri.fullyQualifiedName() + "::{" + dtEffective + "->" +
+		String strCode = "DEPOSIT::" + fri.fullyQualifiedName() + "::{" + dtEffective + "->" +
 			dtMaturity + "}";
 
 		try {
@@ -209,15 +209,15 @@ public class SingleStreamComponentBuilder {
 			return null;
 		}
 
-		java.lang.String strTenor = fri.tenor();
+		String strTenor = fri.tenor();
 
-		java.lang.String strCurrency = fri.currency();
+		String strCurrency = fri.currency();
 
 		boolean bIsON = "ON".equalsIgnoreCase (strTenor);
 
 		org.drip.analytics.date.JulianDate dtMaturity = dtEffective.addTenor (strTenor);
 		
-		java.lang.String strCode = (0 == dblStrike ? "FUTURES::" : "FRA::") + fri.fullyQualifiedName() +
+		String strCode = (0 == dblStrike ? "FUTURES::" : "FRA::") + fri.fullyQualifiedName() +
 			"::{" + dtEffective + "->" + dtMaturity + "}";
 
 		try {
@@ -272,15 +272,15 @@ public class SingleStreamComponentBuilder {
 
 		org.drip.analytics.date.JulianDate dtEffective = dtSpot;
 
-		java.lang.String strTenor = fri.tenor();
+		String strTenor = fri.tenor();
 
-		java.lang.String strCurrency = fri.currency();
+		String strCurrency = fri.currency();
 
 		boolean bIsON = "ON".equalsIgnoreCase (strTenor);
 
 		org.drip.analytics.date.JulianDate dtMaturity = dtEffective.addTenor (strTenor);
 		
-		java.lang.String strCode = "FUTURES::" + fri.fullyQualifiedName() + "::{" + dtEffective + "->" +
+		String strCode = "FUTURES::" + fri.fullyQualifiedName() + "::{" + dtEffective + "->" +
 			dtMaturity + "}";
 
 		try {

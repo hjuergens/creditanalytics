@@ -85,7 +85,7 @@ public class FXForwardBuilder {
 	public static final org.drip.product.definition.FXForward CreateFXForward (
 		final org.drip.product.params.CurrencyPair ccyPair,
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		if (null == dtEffective || null == strTenor || strTenor.isEmpty()) return null;
 

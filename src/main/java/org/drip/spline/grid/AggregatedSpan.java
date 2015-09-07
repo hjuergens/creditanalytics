@@ -87,7 +87,7 @@ public class AggregatedSpan implements org.drip.spline.grid.Span {
 	}
 
 	@Override public org.drip.spline.stretch.MultiSegmentSequence getStretch (
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null == strName || strName.isEmpty()) return null;
 
@@ -152,7 +152,7 @@ public class AggregatedSpan implements org.drip.spline.grid.Span {
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian jackDResponseDManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblPredictorOrdinate,
 		final int iOrder)
 	{
@@ -186,11 +186,11 @@ public class AggregatedSpan implements org.drip.spline.grid.Span {
 		return false;
 	}
 
-	@Override public java.lang.String displayString()
+	@Override public String displayString()
 	{
 		int i = 0;
 
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		for (org.drip.spline.grid.Span span : _lsSpan)
 			sb.append (span.displayString() + " | " + _lsWeight.get (i++));

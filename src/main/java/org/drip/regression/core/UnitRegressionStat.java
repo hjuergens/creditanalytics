@@ -193,12 +193,12 @@ public class UnitRegressionStat {
 	 * @return String holding the content of the unit regression statistics
 	 */
 
-	public java.lang.String displayString (
-		final java.lang.String strRegressionUnit)
+	public String displayString (
+		final String strRegressionUnit)
 	{
 		if (null == strRegressionUnit || strRegressionUnit.isEmpty()) return null;
 
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		sb.append ("\t" + strRegressionUnit + ".Stat.NumRuns=" + _llExecTime.size() + "\n");
 

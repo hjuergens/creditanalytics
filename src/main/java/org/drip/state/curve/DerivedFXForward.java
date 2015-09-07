@@ -152,7 +152,7 @@ public class DerivedFXForward extends org.drip.analytics.definition.FXForwardCur
 		return _dblFXSpot;
 	}
 
-	@Override public java.lang.String currency()
+	@Override public String currency()
 	{
 		return _cp.denomCcy();
 	}
@@ -313,7 +313,7 @@ public class DerivedFXForward extends org.drip.analytics.definition.FXForwardCur
 	}
 
 	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> manifestMeasure (
-		final java.lang.String strInstr)
+		final String strInstr)
 	{
 		return null;
 	}
@@ -331,7 +331,7 @@ public class DerivedFXForward extends org.drip.analytics.definition.FXForwardCur
 
 	@Override public org.drip.state.identifier.LatentStateLabel label()
 	{
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		sb.append ("FXFWDBASIS[" + _cp.code() + "]=");
 
@@ -357,7 +357,7 @@ public class DerivedFXForward extends org.drip.analytics.definition.FXForwardCur
 	}
 
 	@Override public org.drip.analytics.definition.Curve parallelShiftManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		double[] adblFXForwardBumped = new double[_adblFXFwd.length];
@@ -377,7 +377,7 @@ public class DerivedFXForward extends org.drip.analytics.definition.FXForwardCur
 
 	@Override public org.drip.analytics.definition.Curve shiftManifestMeasure (
 		final int iSpanIndex,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final double dblShift)
 	{
 		int iNumForward = _adblFXFwd.length;
@@ -400,7 +400,7 @@ public class DerivedFXForward extends org.drip.analytics.definition.FXForwardCur
 	}
 
 	@Override public org.drip.analytics.definition.Curve customTweakManifestMeasure (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.definition.ResponseValueTweakParams mmtp)
 	{
 		if (null == mmtp) return null;

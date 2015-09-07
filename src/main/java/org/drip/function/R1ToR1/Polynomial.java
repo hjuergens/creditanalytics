@@ -104,7 +104,7 @@ public class Polynomial extends org.drip.function.definition.R1ToR1 {
 	}
 
 	public static final void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		Polynomial poly = new Polynomial (4);

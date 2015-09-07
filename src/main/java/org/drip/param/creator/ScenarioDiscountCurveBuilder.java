@@ -64,11 +64,11 @@ public class ScenarioDiscountCurveBuilder {
 	private static final CompQuote[] CompQuote (
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
-		final java.lang.String strCurrency,
+		final String strCurrency,
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtInitialMaturity,
 		final org.drip.analytics.date.JulianDate dtTerminalMaturity,
-		final java.lang.String strTenor,
+		final String strTenor,
 		final boolean bIsIRS)
 	{
 		java.util.List<java.lang.Double> lsCalibQuote = new java.util.ArrayList<java.lang.Double>();
@@ -83,7 +83,7 @@ public class ScenarioDiscountCurveBuilder {
 				org.drip.product.definition.CalibratableFixedIncomeComponent comp = null;
 
 				if (bIsIRS) {
-					java.lang.String strMaturityTenor = ((int) ((dtMaturity.julian() - dtEffective.julian())
+					String strMaturityTenor = ((int) ((dtMaturity.julian() - dtEffective.julian())
 						* 12 / 365.25)) + "M";
 
 					org.drip.market.otc.FixedFloatSwapConvention ffConv =
@@ -148,8 +148,8 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.param.definition.ScenarioDiscountCurve FromIRCSG (
-		final java.lang.String strCurrency,
-		final java.lang.String strBootstrapMode,
+		final String strCurrency,
+		final String strBootstrapMode,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst)
 	{
 		if (null == strCurrency || strCurrency.isEmpty() || null == aCalibInst || 0 == aCalibInst.length)
@@ -182,11 +182,11 @@ public class ScenarioDiscountCurveBuilder {
 
 	public static final org.drip.analytics.rates.DiscountCurve NonlinearBuild (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCurrency,
-		final java.lang.String strBootstrapMode,
+		final String strCurrency,
+		final String strBootstrapMode,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibInst,
 		final double[] adblQuotes,
-		final java.lang.String[] astrCalibMeasure,
+		final String[] astrCalibMeasure,
 		final org.drip.param.market.LatentStateFixingsContainer lsfc)
 	{
 		org.drip.param.definition.ScenarioDiscountCurve irsg = FromIRCSG (strCurrency, strBootstrapMode,
@@ -269,7 +269,7 @@ public class ScenarioDiscountCurveBuilder {
 
 		if (null == gccp) return dcShapePreserver;
 
-		java.lang.String strSmootheningQM = gccp.smootheningQuantificationMetric();
+		String strSmootheningQM = gccp.smootheningQuantificationMetric();
 
 		java.util.Map<java.lang.Double, java.lang.Double> mapQMTruth = dcShapePreserver.canonicalTruthness
 			(strSmootheningQM);
@@ -285,7 +285,7 @@ public class ScenarioDiscountCurveBuilder {
 
 		if (null == esQMTruth || 0 == esQMTruth.size()) return null;
 
-		java.lang.String strName = dcShapePreserver.label().fullyQualifiedName();
+		String strName = dcShapePreserver.label().fullyQualifiedName();
 
 		int i = 0;
 		double[] adblQM = new double[iTruthSize];
@@ -367,7 +367,7 @@ public class ScenarioDiscountCurveBuilder {
 
 		if (null == lccp) return dcShapePreserver;
 
-		java.lang.String strSmootheningQM = lccp.smootheningQuantificationMetric();
+		String strSmootheningQM = lccp.smootheningQuantificationMetric();
 
 		java.util.Map<java.lang.Double, java.lang.Double> mapQMTruth = dcShapePreserver.canonicalTruthness
 			(strSmootheningQM);
@@ -383,7 +383,7 @@ public class ScenarioDiscountCurveBuilder {
 
 		if (null == esQMTruth || 0 == esQMTruth.size()) return null;
 
-		java.lang.String strName = dcShapePreserver.label().fullyQualifiedName();
+		String strName = dcShapePreserver.label().fullyQualifiedName();
 
 		int i = 0;
 		double[] adblQM = new double[iTruthSize];
@@ -468,19 +468,19 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve DFRateShapePreserver (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParam,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
 		final org.drip.param.valuation.ValuationCustomizationParams quotingParam,
-		final java.lang.String strBasisType,
+		final String strBasisType,
 		final org.drip.spline.basis.FunctionSetBuilderParams fsbp,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp1,
 		final double[] adblQuote1,
-		final java.lang.String[] astrManifestMeasure1,
+		final String[] astrManifestMeasure1,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp2,
 		final double[] adblQuote2,
-		final java.lang.String[] astrManifestMeasure2,
+		final String[] astrManifestMeasure2,
 		final double dblEpochResponse,
 		final boolean bZeroSmooth)
 	{
@@ -656,14 +656,14 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve CubicKLKHyperbolicDFRateShapePreserver (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp1,
 		final double[] adblQuote1,
-		final java.lang.String[] astrManifestMeasure1,
+		final String[] astrManifestMeasure1,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp2,
 		final double[] adblQuote2,
-		final java.lang.String[] astrManifestMeasure2,
+		final String[] astrManifestMeasure2,
 		final boolean bZeroSmooth)
 	{
 		try {
@@ -697,14 +697,14 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve CubicPolyDFRateShapePreserver (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp1,
 		final double[] adblQuote1,
-		final java.lang.String[] astrManifestMeasure1,
+		final String[] astrManifestMeasure1,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp2,
 		final double[] adblQuote2,
-		final java.lang.String[] astrManifestMeasure2,
+		final String[] astrManifestMeasure2,
 		final boolean bZeroSmooth)
 	{
 		try {
@@ -723,13 +723,13 @@ public class ScenarioDiscountCurveBuilder {
 	/**
 	 * Customizable DENSE Curve Creation Methodology - the references are:
 	 * 
-	 *  - Sankar, L. (1997): OFUTS – An Alternative Yield Curve Interpolator F. A. S. T. Research
+	 *  - Sankar, L. (1997): OFUTS ï¿½ An Alternative Yield Curve Interpolator F. A. S. T. Research
 	 *  	Documentation Bear Sterns.
 	 *  
-	 *  - Nahum, E. (2004): Changes to Yield Curve Construction – Linear Stripping of the Short End of the
+	 *  - Nahum, E. (2004): Changes to Yield Curve Construction ï¿½ Linear Stripping of the Short End of the
 	 *  	Curve F. A. S. T. Research Documentation Bear Sterns.
 	 *  
-	 *  - Kinlay, J., and X. Bai (2009): Yield Curve Construction Models – Tools & Techniques 
+	 *  - Kinlay, J., and X. Bai (2009): Yield Curve Construction Models ï¿½ Tools & Techniques 
 	 *  	(http://www.jonathankinlay.com/Articles/Yield Curve Construction Models.pdf)
 	 *  
 	 * @param strName The Curve Name
@@ -748,16 +748,16 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve CustomDENSE (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp1,
 		final double[] adblQuote1,
-		final java.lang.String strTenor1,
-		final java.lang.String[] astrManifestMeasure1,
+		final String strTenor1,
+		final String[] astrManifestMeasure1,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp2,
 		final double[] adblQuote2,
-		final java.lang.String strTenor2,
-		final java.lang.String[] astrManifestMeasure2,
+		final String strTenor2,
+		final String[] astrManifestMeasure2,
 		final org.drip.analytics.rates.TurnListDiscountFactor tldf)
 	{
 		org.drip.analytics.rates.DiscountCurve dcShapePreserver = CubicKLKHyperbolicDFRateShapePreserver
@@ -773,7 +773,7 @@ public class ScenarioDiscountCurveBuilder {
 
 		CompQuote[] aCQ1 = null;
 
-		java.lang.String strCurrency = aCalibComp1[0].payCurrency();
+		String strCurrency = aCalibComp1[0].payCurrency();
 
 		if (null == strTenor1 || strTenor1.isEmpty()) {
 			if (null != aCalibComp1) {
@@ -804,7 +804,7 @@ public class ScenarioDiscountCurveBuilder {
 		if (0 == iTotalNumDENSEComp) return null;
 
 		double[] adblCalibQuote = new double[iTotalNumDENSEComp];
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iTotalNumDENSEComp];
+		String[] astrCalibMeasure = new String[iTotalNumDENSEComp];
 		org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp = new
 			org.drip.product.definition.CalibratableFixedIncomeComponent[iTotalNumDENSEComp];
 
@@ -836,13 +836,13 @@ public class ScenarioDiscountCurveBuilder {
 	 * The Standard DENSE Curve Creation Methodology - this uses no re-construction set for the short term,
 	 * 	and uses 3M dense re-construction for the Swap Set. The references are:
 	 * 
-	 *  - Sankar, L. (1997): OFUTS – An Alternative Yield Curve Interpolator F. A. S. T. Research
+	 *  - Sankar, L. (1997): OFUTS ï¿½ An Alternative Yield Curve Interpolator F. A. S. T. Research
 	 *  	Documentation Bear Sterns.
 	 *  
-	 *  - Nahum, E. (2004): Changes to Yield Curve Construction – Linear Stripping of the Short End of the
+	 *  - Nahum, E. (2004): Changes to Yield Curve Construction ï¿½ Linear Stripping of the Short End of the
 	 *  	Curve F. A. S. T. Research Documentation Bear Sterns.
 	 *  
-	 *  - Kinlay, J., and X. Bai (2009): Yield Curve Construction Models – Tools & Techniques 
+	 *  - Kinlay, J., and X. Bai (2009): Yield Curve Construction Models ï¿½ Tools & Techniques 
 	 *  	(http://www.jonathankinlay.com/Articles/Yield Curve Construction Models.pdf)
 	 *  
 	 * @param strName The Curve Name
@@ -859,14 +859,14 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve DENSE (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp1,
 		final double[] adblQuote1,
-		final java.lang.String[] astrManifestMeasure1,
+		final String[] astrManifestMeasure1,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp2,
 		final double[] adblQuote2,
-		final java.lang.String[] astrManifestMeasure2,
+		final String[] astrManifestMeasure2,
 		final org.drip.analytics.rates.TurnListDiscountFactor tldf)
 	{
 		return CustomDENSE (strName, valParams, aCalibComp1, adblQuote1, null, astrManifestMeasure1,
@@ -878,13 +878,13 @@ public class ScenarioDiscountCurveBuilder {
 	 *  term, and another configurable re-construction for the Swap Set. 1D re-construction tenor for the
 	 *  short end will result in CDF (Constant Daily Forward) Discount Curve. The references are:
 	 * 
-	 *  - Sankar, L. (1997): OFUTS – An Alternative Yield Curve Interpolator F. A. S. T. Research
+	 *  - Sankar, L. (1997): OFUTS ï¿½ An Alternative Yield Curve Interpolator F. A. S. T. Research
 	 *  	Documentation Bear Sterns.
 	 *  
-	 *  - Nahum, E. (2004): Changes to Yield Curve Construction – Linear Stripping of the Short End of the
+	 *  - Nahum, E. (2004): Changes to Yield Curve Construction ï¿½ Linear Stripping of the Short End of the
 	 *  	Curve F. A. S. T. Research Documentation Bear Sterns.
 	 *  
-	 *  - Kinlay, J., and X. Bai (2009): Yield Curve Construction Models – Tools & Techniques 
+	 *  - Kinlay, J., and X. Bai (2009): Yield Curve Construction Models ï¿½ Tools & Techniques 
 	 *  	(http://www.jonathankinlay.com/Articles/Yield Curve Construction Models.pdf)
 	 *  
 	 * @param strName The Curve Name
@@ -903,16 +903,16 @@ public class ScenarioDiscountCurveBuilder {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve DUALDENSE (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp1,
 		final double[] adblQuote1,
-		final java.lang.String strTenor1,
-		final java.lang.String[] astrManifestMeasure1,
+		final String strTenor1,
+		final String[] astrManifestMeasure1,
 		final org.drip.product.definition.CalibratableFixedIncomeComponent[] aCalibComp2,
 		final double[] adblQuote2,
-		final java.lang.String strTenor2,
-		final java.lang.String[] astrManifestMeasure2,
+		final String strTenor2,
+		final String[] astrManifestMeasure2,
 		final org.drip.analytics.rates.TurnListDiscountFactor tldf)
 	{
 		return CustomDENSE (strName, valParams, aCalibComp1, adblQuote1, strTenor1, astrManifestMeasure1,

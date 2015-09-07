@@ -66,7 +66,7 @@ public class CreditAnalyticsRegressionEngine extends org.drip.regression.core.Re
 	}
 
 	public static void main (
-		final java.lang.String[] astrArgs)
+		final String[] astrArgs)
 		throws java.lang.Exception
 	{
 		CreditAnalyticsRegressionEngine care = new CreditAnalyticsRegressionEngine (10,

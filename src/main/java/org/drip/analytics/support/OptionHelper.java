@@ -138,7 +138,7 @@ public class OptionHelper {
 
 	public static final double IntegratedSurfaceVariance (
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
-		final java.lang.String strVolSurface,
+		final String strVolSurface,
 		final double dblStartDate,
 		final double dblEndDate)
 		throws java.lang.Exception
@@ -271,9 +271,9 @@ public class OptionHelper {
 
 	public static final double IntegratedCrossVolQuanto (
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
-		final java.lang.String strVolSurface1,
-		final java.lang.String strVolSurface2,
-		final java.lang.String strCorrSurface,
+		final String strVolSurface1,
+		final String strVolSurface2,
+		final String strCorrSurface,
 		final double dblStartDate,
 		final double dblEndDate)
 		throws java.lang.Exception
@@ -313,9 +313,9 @@ public class OptionHelper {
 
 	public static final double MultiplicativeCrossVolQuanto (
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
-		final java.lang.String strVolSurface1,
-		final java.lang.String strVolSurface2,
-		final java.lang.String strCorrSurface,
+		final String strVolSurface1,
+		final String strVolSurface2,
+		final String strCorrSurface,
 		final double dblStartDate,
 		final double dblEndDate)
 		throws java.lang.Exception

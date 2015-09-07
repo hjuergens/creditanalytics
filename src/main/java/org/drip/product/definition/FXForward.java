@@ -49,7 +49,7 @@ public abstract class FXForward {
 	 * @return Primary Code string
 	 */
 
-	public abstract java.lang.String primaryCode();
+	public abstract String primaryCode();
 
 	/**
 	 * Set the primary code
@@ -58,7 +58,7 @@ public abstract class FXForward {
 	 */
 
 	public abstract void setPrimaryCode (
-		final java.lang.String strCode);
+		final String strCode);
 
 	/**
 	 * Get the array of secondary code
@@ -66,7 +66,7 @@ public abstract class FXForward {
 	 * @return Array of secondary code string
 	 */
 
-	public abstract java.lang.String[] secondaryCode();
+	public abstract String[] secondaryCode();
 
 	/**
 	 * Get the Effective Date

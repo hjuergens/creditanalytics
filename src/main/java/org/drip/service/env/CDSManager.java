@@ -54,14 +54,14 @@ public class CDSManager {
 	 * @return Set of curve strings
 	 */
 
-	public static final java.util.Set<java.lang.String> GetCreditCurves (
+	public static final java.util.Set<String> GetCreditCurves (
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == stmt || null == dtEOD) return null;
 
 		try {
-			java.util.Set<java.lang.String> setCreditCurves = new java.util.HashSet<java.lang.String>();
+			java.util.Set<String> setCreditCurves = new java.util.HashSet<String>();
 
 			java.sql.ResultSet rsCreditCurves = stmt.executeQuery
 				("select distinct SPN from CR_EOD where EOD = '" + dtEOD.toOracleDate() + "' order by SPN");
@@ -92,9 +92,9 @@ public class CDSManager {
 	public static final boolean SaveSPNEOD (
 		final java.sql.Statement stmt,
 		final org.drip.param.definition.ScenarioMarketParams mpc,
-		final java.lang.String strSPN,
+		final String strSPN,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == stmt || null == dtEOD || null == strSPN || strSPN.isEmpty() || null == mpc || null ==
 			mpc.scenarioCreditCurveMap() || null == mpc.scenarioCreditCurveMap().get (strSPN))
@@ -126,19 +126,19 @@ public class CDSManager {
 			return false;
 		}
 
-		java.lang.StringBuilder sbSQL = new java.lang.StringBuilder();
+		StringBuilder sbSQL = new StringBuilder();
 
-		java.lang.StringBuilder sbDV01 = new java.lang.StringBuilder();
+		StringBuilder sbDV01 = new StringBuilder();
 
-		java.lang.StringBuilder sbParSpread = new java.lang.StringBuilder();
+		StringBuilder sbParSpread = new StringBuilder();
 
-		java.lang.StringBuilder sbUpfront100 = new java.lang.StringBuilder();
+		StringBuilder sbUpfront100 = new StringBuilder();
 
-		java.lang.StringBuilder sbUpfront500 = new java.lang.StringBuilder();
+		StringBuilder sbUpfront500 = new StringBuilder();
 
-		java.lang.StringBuilder sbFlatSpread100 = new java.lang.StringBuilder();
+		StringBuilder sbFlatSpread100 = new StringBuilder();
 
-		java.lang.StringBuilder sbFlatSpread500 = new java.lang.StringBuilder();
+		StringBuilder sbFlatSpread500 = new StringBuilder();
 
 		sbSQL.append ("insert into CDSHist values('").append (strSPN).append ("', '").append
 			(dtEOD.toOracleDate()).append ("', '").append (strCurrency).append ("', 'ParSpread', ");
@@ -335,13 +335,13 @@ public class CDSManager {
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
 		final org.drip.analytics.date.JulianDate dtEOD,
-		final java.lang.String strCurrency)
+		final String strCurrency)
 	{
 		if (null == mpc || null == mpc.scenarioCreditCurveMap() || null == mpc.scenarioCreditCurveMap().entrySet()) return false;
 
 		boolean bAllSPNSuccess = true;
 
-		for (java.util.Map.Entry<java.lang.String, org.drip.param.definition.ScenarioCreditCurve> meCCSG
+		for (java.util.Map.Entry<String, org.drip.param.definition.ScenarioCreditCurve> meCCSG
 			: mpc.scenarioCreditCurveMap().entrySet()) {
 			if (null == meCCSG.getKey()) continue;
 
@@ -365,7 +365,7 @@ public class CDSManager {
 	public static final boolean SaveSPNCalibMeasures (
 		final org.drip.param.definition.ScenarioMarketParams mpc,
 		final java.sql.Statement stmt,
-		final java.lang.String strSPN,
+		final String strSPN,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (!EODCurves.BuildCREOD (mpc, stmt, dtEOD, strSPN, "USD")) return false;
@@ -405,11 +405,11 @@ public class CDSManager {
 
 		if (!LoadFullCreditCurves (mpc, stmt, dtEOD)) return false;
 
-		java.util.Set<java.lang.String> setCC = GetCreditCurves (stmt, dtEOD);
+		java.util.Set<String> setCC = GetCreditCurves (stmt, dtEOD);
 
 		if (null == setCC || 0 == setCC.size()) return false;
 
-		for (java.lang.String strCredit : setCC) {
+		for (String strCredit : setCC) {
 			SaveSPNEOD (stmt, mpc, strCredit, dtEOD, "USD");
 
 			if (0 == (++iNumCurves % 100))
@@ -490,11 +490,11 @@ public class CDSManager {
 		int iNumCurvesCooked = 0;
 		int iNumCurvesFailed = 0;
 
-		java.util.Set<java.lang.String> setCreditCurves = GetCreditCurves (stmt, dtEOD);
+		java.util.Set<String> setCreditCurves = GetCreditCurves (stmt, dtEOD);
 
 		if (null == setCreditCurves || 0 == setCreditCurves.size()) return false;
 
-		for (java.lang.String strCC : setCreditCurves) {
+		for (String strCC : setCreditCurves) {
 			if (s_bLoadStaticCurves) {
 				if (!StaticBACurves.setCC (mpc, dtEOD, strCC, "USD", 0.01, 125., 0.4))
 					++iNumCurvesFailed;

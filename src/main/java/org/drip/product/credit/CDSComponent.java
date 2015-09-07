@@ -48,11 +48,11 @@ package org.drip.product.credit;
 
 public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap {
 	private double _dblNotional = 100.;
-	private java.lang.String _strCode = "";
-	private java.lang.String _strName = "";
+	private String _strCode = "";
+	private String _strName = "";
 	private boolean _bApplyAccEOMAdj = false;
 	private boolean _bApplyCpnEOMAdj = false;
-	private java.lang.String _strCouponCurrency = "";
+	private String _strCouponCurrency = "";
 	private double _dblCoupon = java.lang.Double.NaN;
 	private double _dblMaturity = java.lang.Double.NaN;
 	private double _dblEffective = java.lang.Double.NaN;
@@ -71,7 +71,7 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 	}
 
 	private org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double> measures (
-		final java.lang.String strMeasureSetPrefix,
+		final String strMeasureSetPrefix,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,
@@ -395,9 +395,9 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 		final double dblMaturity,
 		final double dblCoupon,
 		final int iFreq,
-		final java.lang.String strCouponDC,
-		final java.lang.String strAccrualDC,
-		final java.lang.String strFloatingRateIndex,
+		final String strCouponDC,
+		final String strAccrualDC,
+		final String strFloatingRateIndex,
 		final boolean bConvCDS,
 		final org.drip.analytics.daycount.DateAdjustParams dapEffective,
 		final org.drip.analytics.daycount.DateAdjustParams dapMaturity,
@@ -409,9 +409,9 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 		final org.drip.analytics.daycount.DateAdjustParams dapReset,
 		final org.drip.quant.common.Array2D notlSchedule,
 		final double dblNotional,
-		final java.lang.String strCouponCurrency,
+		final String strCouponCurrency,
 		final org.drip.product.params.CreditSetting crValParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == strCouponCurrency || (_strCouponCurrency = strCouponCurrency).isEmpty() || null ==
@@ -422,7 +422,7 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 
 		_dblCoupon = dblCoupon;
 		_crValParams = crValParams;
-		java.lang.String strTenor = (12 / iFreq) + "M";
+		String strTenor = (12 / iFreq) + "M";
 
 		if (null == (_notlSchedule = notlSchedule))
 			_notlSchedule = org.drip.quant.common.Array2D.BulletSchedule();
@@ -454,47 +454,47 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 				throw new java.lang.Exception ("CDSComponent ctr: Cannot make Coupon Period List!");
 	}
 
-	@Override public java.lang.String primaryCode()
+	@Override public String primaryCode()
 	{
 		return _strCode;
 	}
 
 	@Override public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		_strCode = strCode;
 	}
 
 	public boolean setName (
-		final java.lang.String strName)
+		final String strName)
 	{
 		_strName = strName;
 		return true;
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		if (null != _strName && !_strName.isEmpty()) return _strName;
 
 		return "CDS=" + org.drip.analytics.date.DateUtil.FromJulian (_dblMaturity);
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapCouponCurrency = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapCouponCurrency = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		mapCouponCurrency.put (name(), _strCouponCurrency);
 
 		return mapCouponCurrency;
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _strCouponCurrency;
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return null;
 	}
@@ -705,7 +705,7 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 		org.drip.quant.common.CollectionUtil.MergeWithMain (mapFairMeasures,
 			org.drip.quant.common.CollectionUtil.PrefixKeys (mapFairMeasures, "Fair"));
 
-		java.lang.String strName = name();
+		String strName = name();
 
 		org.drip.param.definition.ProductQuote cq = csqs.productQuote (strName);
 
@@ -790,9 +790,9 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 		return mapMeasures;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("AccrualDays");
 
@@ -958,7 +958,7 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 		int iNumCalibComp = aComp.length;
 		double[] adblQS = new double[iNumCalibComp];
 		org.drip.analytics.definition.CreditCurve ccQS = null;
-		java.lang.String[] astrCalibMeasure = new java.lang.String[iNumCalibComp];
+		String[] astrCalibMeasure = new String[iNumCalibComp];
 
 		for (int i = 0; i < iNumCalibComp; ++i) {
 			adblQS[i] = dblQuotedSpread;
@@ -1064,7 +1064,7 @@ public class CDSComponent extends org.drip.product.definition.CreditDefaultSwap 
 	}
 
 	@Override public org.drip.quant.calculus.WengertJacobian manifestMeasureDFMicroJack (
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.param.pricer.CreditPricerParams pricerParams,
 		final org.drip.param.market.CurveSurfaceQuoteSet csqs,

@@ -96,7 +96,7 @@ public class Locale {
 
 	public boolean addStaticHoliday (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		if (null == dt) return false;
 
@@ -121,8 +121,8 @@ public class Locale {
 	 */
 
 	public boolean addStaticHoliday (
-		final java.lang.String strDate,
-		final java.lang.String strDescription)
+		final String strDate,
+		final String strDescription)
 	{
 		if (null == strDate || strDate.isEmpty()) return false;
 
@@ -147,7 +147,7 @@ public class Locale {
 	public boolean addFixedHoliday (
 		final int iDay,
 		final int iMonth,
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		_setHolidays.add (new Fixed (iDay, iMonth, _wkend, strDescription));
 
@@ -172,7 +172,7 @@ public class Locale {
 		final int iWeekDay,
 		final int iMonth,
 		final boolean bFromFront,
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		_setHolidays.add (new Variable (iWeekInMonth, iWeekDay, iMonth, bFromFront, _wkend,
 			strDescription));

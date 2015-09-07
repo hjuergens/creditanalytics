@@ -41,7 +41,7 @@ package org.drip.product.fra;
  */
 public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncomeComponent {
 	private boolean _bIsCap = false;
-	private java.lang.String _strName = "";
+	private String _strName = "";
 	private double _dblStrike = java.lang.Double.NaN;
 	private org.drip.product.rates.Stream _stream = null;
 	private org.drip.param.valuation.CashSettleParams _csp = null;
@@ -65,9 +65,9 @@ public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncome
 	 */
 
 	public FRAStandardCapFloor (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.product.rates.Stream stream,
-		final java.lang.String strManifestMeasure,
+		final String strManifestMeasure,
 		final boolean bIsCap,
 		final double dblStrike,
 		final org.drip.product.params.LastTradingDateSetting ltds,
@@ -87,9 +87,9 @@ public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncome
 		if (null == fri)
 			throw new java.lang.Exception ("FRAStandardCapFloor Constructor => Invalid Floater Index");
 
-		java.lang.String strCalendar = _stream.calendar();
+		String strCalendar = _stream.calendar();
 
-		java.lang.String strDayCount = _stream.couponDC();
+		String strDayCount = _stream.couponDC();
 
 		for (org.drip.analytics.cashflow.CompositePeriod period : _stream.periods()) {
 			org.drip.product.fra.FRAStandardComponent fra =
@@ -102,22 +102,22 @@ public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncome
 		}
 	}
 
-	@Override public java.lang.String name()
+	@Override public String name()
 	{
 		return _strName;
 	}
 
-	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> couponCurrency()
+	@Override public org.drip.analytics.support.CaseInsensitiveTreeMap<String> couponCurrency()
 	{
 		return _lsFRACapFloorlet.get (0).couponCurrency();
 	}
 
-	@Override public java.lang.String payCurrency()
+	@Override public String payCurrency()
 	{
 		return _stream.payCurrency();
 	}
 
-	@Override public java.lang.String principalCurrency()
+	@Override public String principalCurrency()
 	{
 		return _stream.payCurrency();
 	}
@@ -287,9 +287,9 @@ public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncome
 		return mapResult;
 	}
 
-	@Override public java.util.Set<java.lang.String> measureNames()
+	@Override public java.util.Set<String> measureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("ATMFairPremium");
 
@@ -370,11 +370,11 @@ public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncome
 
 		org.drip.product.fra.FRAStandardCapFloorlet fraLeading = _lsFRACapFloorlet.get (0);
 
-		java.lang.String strCalendar = fraLeading.calendar();
+		String strCalendar = fraLeading.calendar();
 
-		java.lang.String strDayCount = fraLeading.dayCount();
+		String strDayCount = fraLeading.dayCount();
 
-		java.lang.String strManifestMeasure = fraLeading.manifestMeasure();
+		String strManifestMeasure = fraLeading.manifestMeasure();
 
 		org.drip.pricer.option.FokkerPlanckGenerator fpg = fraLeading.pricer();
 
@@ -636,7 +636,7 @@ public class FRAStandardCapFloor extends org.drip.product.definition.FixedIncome
 					if (dblExerciseDate <= dblValueDate) continue;
 
 					if (lsCalibCapFloorletIndex.contains (iIndex)) {
-						java.util.Map<java.lang.String, java.lang.Double> mapOutput =
+						java.util.Map<String, java.lang.Double> mapOutput =
 							fracfl.valueFromSurfaceVariance (valParams, pricerParams, csqs, quotingParams,
 								dblVolatility * dblVolatility * (dblExerciseDate - dblValueDate) / 365.25);
 	

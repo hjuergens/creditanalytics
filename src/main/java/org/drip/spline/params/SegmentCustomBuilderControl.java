@@ -38,7 +38,7 @@ package org.drip.spline.params;
  */
 
 public class SegmentCustomBuilderControl {
-	private java.lang.String _strBasisSpline = "";
+	private String _strBasisSpline = "";
 	private org.drip.spline.basis.FunctionSetBuilderParams _fsbp = null;
 	private org.drip.spline.params.ResponseScalingShapeControl _rssc = null;
 	private org.drip.spline.params.SegmentInelasticDesignControl _sdic = null;
@@ -57,7 +57,7 @@ public class SegmentCustomBuilderControl {
 	 */
 
 	public SegmentCustomBuilderControl (
-		final java.lang.String strBasisSpline,
+		final String strBasisSpline,
 		final org.drip.spline.basis.FunctionSetBuilderParams fsbp,
 		final org.drip.spline.params.SegmentInelasticDesignControl sdic,
 		final org.drip.spline.params.ResponseScalingShapeControl rssc,
@@ -77,7 +77,7 @@ public class SegmentCustomBuilderControl {
 	 * @return The Basis Spline Name
 	 */
 
-	public java.lang.String basisSpline()
+	public String basisSpline()
 	{
 		return _strBasisSpline;
 	}

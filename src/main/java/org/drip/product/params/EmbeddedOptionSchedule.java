@@ -49,7 +49,7 @@ public class EmbeddedOptionSchedule {
 	private boolean _bIsPut = false;
 	private double _adblDate[] = null;
 	private double _adblFactor[] = null;
-	private java.lang.String _strFloatIndex = "";
+	private String _strFloatIndex = "";
 	private boolean _bFixToFloatOnExercise = false;
 	private int _iNoticePeriod = CALL_NOTICE_PERIOD_DEFAULT;
 	private double _dblFixToFloatSpread = java.lang.Double.NaN;
@@ -73,15 +73,15 @@ public class EmbeddedOptionSchedule {
 	 */
 
 	public static final EmbeddedOptionSchedule CreateFromDateFactorSet (
-		final java.lang.String strDates,
-		final java.lang.String strFactors,
+		final String strDates,
+		final String strFactors,
 		final int iNoticePeriod,
 		final boolean bIsPut,
 		final boolean bIsDiscrete,
 		final double dblScheduleStart,
 		final boolean bFixToFloatOnExercise,
 		final double dblFixToFloatExerciseDate,
-		final java.lang.String strFloatIndex,
+		final String strFloatIndex,
 		final double dblFixToFloatSpread)
 	{
 		if (null == strDates || strDates.isEmpty() || null == strFactors || strFactors.isEmpty() ||
@@ -137,7 +137,7 @@ public class EmbeddedOptionSchedule {
 		final int iNoticePeriod,
 		final boolean bFixToFloatOnExercise,
 		final double dblFixToFloatExerciseDate,
-		final java.lang.String strFloatIndex,
+		final String strFloatIndex,
 		final double dblFixToFloatSpread)
 	{
 		if (null == adblDate || adblDate.length == 0 || null == adblFactor || adblFactor.length == 0 ||
@@ -214,7 +214,7 @@ public class EmbeddedOptionSchedule {
 		final int iNoticePeriod,
 		final boolean bFixToFloatOnExercise,
 		final double dblFixToFloatExerciseDate,
-		final java.lang.String strFloatIndex,
+		final String strFloatIndex,
 		final double dblFixToFloatSpread)
 		throws java.lang.Exception
 	{

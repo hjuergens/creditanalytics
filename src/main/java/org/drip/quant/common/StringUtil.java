@@ -46,7 +46,7 @@ public class StringUtil {
 	 * Null serialized string
 	 */
 
-	public static final java.lang.String NULL_SER_STRING = "<<null>>";
+	public static final String NULL_SER_STRING = "<<null>>";
 
 	/**
 	 * Serialization Version - ALWAYS prepend this on all derived classes
@@ -65,15 +65,15 @@ public class StringUtil {
 	 */
 
 	public static final boolean MatchInStringArray (
-		final java.lang.String strFieldToMatch,
-		final java.lang.String[] astrMatchSet,
+		final String strFieldToMatch,
+		final String[] astrMatchSet,
 		final boolean bCaseMatch)
 	{
 		if (null == strFieldToMatch || strFieldToMatch.isEmpty() || null == astrMatchSet || 0 ==
 			astrMatchSet.length)
 			return false;
 
-		for (java.lang.String strMatchSetEntry : astrMatchSet) {
+		for (String strMatchSetEntry : astrMatchSet) {
 			if (null == strMatchSetEntry || strMatchSetEntry.isEmpty()) continue;
 
 			if (strMatchSetEntry.equals (strFieldToMatch)) return true;
@@ -95,15 +95,15 @@ public class StringUtil {
 	 */
 
 	public static final boolean MatchInStringArray (
-		final java.lang.String[] astrFieldToMatch,
-		final java.lang.String[] astrMatchSet,
+		final String[] astrFieldToMatch,
+		final String[] astrMatchSet,
 		final boolean bCaseMatch)
 	{
 		if (null == astrFieldToMatch || 0 == astrFieldToMatch.length || null == astrMatchSet || 0 ==
 			astrMatchSet.length)
 			return false;
 
-		for (java.lang.String strFieldToMatch : astrFieldToMatch) {
+		for (String strFieldToMatch : astrFieldToMatch) {
 			if (MatchInStringArray (strFieldToMatch, astrMatchSet, bCaseMatch)) return true;
 		}
 
@@ -118,8 +118,8 @@ public class StringUtil {
 	 * @return Parameter from the Argument
 	 */
 
-	public static final java.lang.String MakeStringArg (
-		final java.lang.String strArg)
+	public static final String MakeStringArg (
+		final String strArg)
 	{
 		if (null == strArg) return "null";
 
@@ -137,8 +137,8 @@ public class StringUtil {
 	 * @return The Processed String
 	 */
 
-	public static final java.lang.String ProcessInputForNULL (
-		final java.lang.String strIn,
+	public static final String ProcessInputForNULL (
+		final String strIn,
 		final boolean bEmptyToNULL)
 	{
 		if (null == strIn) return null;
@@ -162,13 +162,13 @@ public class StringUtil {
 	 * @return Array of substrings
 	 */
 
-	public static final java.lang.String[] Split (
-		final java.lang.String strPhrase,
-		final java.lang.String strDelim)
+	public static final String[] Split (
+		final String strPhrase,
+		final String strDelim)
 	{
 		if (null == strPhrase || strPhrase.isEmpty() || null == strDelim || strDelim.isEmpty()) return null;
 
-		java.util.List<java.lang.String> lsstr = new java.util.ArrayList<java.lang.String>();
+		java.util.List<String> lsstr = new java.util.ArrayList<String>();
 
 		java.util.StringTokenizer stCodeTokens = new java.util.StringTokenizer (strPhrase, strDelim);
 
@@ -177,11 +177,11 @@ public class StringUtil {
 
 		if (0 == lsstr.size()) return null;
 
-		java.lang.String[] astr = new java.lang.String[lsstr.size()];
+		String[] astr = new String[lsstr.size()];
 
 		int i = 0;
 
-		for (java.lang.String str : lsstr)
+		for (String str : lsstr)
 			astr[i++] = str;
 
 		return astr;
@@ -196,7 +196,7 @@ public class StringUtil {
 	 */
 
 	public static final boolean ParseFromUnitaryString (
-		final java.lang.String strUnitaryBoolean)
+		final String strUnitaryBoolean)
 	{
 		if (null == strUnitaryBoolean || strUnitaryBoolean.isEmpty() || !"1".equalsIgnoreCase
 			(strUnitaryBoolean.trim()))
@@ -241,7 +241,7 @@ public class StringUtil {
 	 * @return String representing the GUID
 	 */
 
-	public static final java.lang.String GUID()
+	public static final String GUID()
 	{
 	    return java.util.UUID.randomUUID().toString();
 	}
@@ -261,22 +261,22 @@ public class StringUtil {
 	public static final boolean KeyValueListFromStringArray (
 		final java.util.List<java.lang.Double> lsdblKey,
 		final java.util.List<java.lang.Double> lsdblValue,
-		final java.lang.String strArray,
-		final java.lang.String strRecordDelim,
-		final java.lang.String strKVDelim)
+		final String strArray,
+		final String strRecordDelim,
+		final String strKVDelim)
 	{
 		if (null == strArray || strArray.isEmpty() || null == strRecordDelim || strRecordDelim.isEmpty() ||
 			null == strKVDelim || strKVDelim.isEmpty() || null == lsdblKey || null == lsdblValue)
 			return false;
 
-		java.lang.String[] astr = Split (strArray, strRecordDelim);
+		String[] astr = Split (strArray, strRecordDelim);
 
 		if (null == astr || 0 == astr.length) return false;
 
 		for (int i = 0; i < astr.length; ++i) {
 			if (null == astr[i] || astr[i].isEmpty()) return false;
 
-			java.lang.String[] astrRecord = Split (astr[i], strKVDelim);
+			String[] astrRecord = Split (astr[i], strKVDelim);
 
 			if (null == astrRecord || 2 != astrRecord.length || null == astrRecord[0] ||
 				astrRecord[0].isEmpty() || null == astrRecord[1] || astrRecord[1].isEmpty())
@@ -302,13 +302,13 @@ public class StringUtil {
 
 	public static final boolean IntegerListFromString (
 		final java.util.List<java.lang.Integer> lsi,
-		final java.lang.String strList,
-		final java.lang.String strDelim)
+		final String strList,
+		final String strDelim)
 	{
 		if (null == lsi || null == strList || strList.isEmpty() || null == strDelim || strDelim.isEmpty())
 			return false;
 
-		java.lang.String[] astr = Split (strList, strDelim);
+		String[] astr = Split (strList, strDelim);
 
 		if (null == astr || 0 == astr.length) return false;
 
@@ -333,13 +333,13 @@ public class StringUtil {
 
 	public static final boolean BooleanListFromString (
 		final java.util.List<java.lang.Boolean> lsb,
-		final java.lang.String strList,
-		final java.lang.String strDelim)
+		final String strList,
+		final String strDelim)
 	{
 		if (null == lsb || null == strList || strList.isEmpty() || null == strDelim || strDelim.isEmpty())
 			return false;
 
-		java.lang.String[] astr = Split (strList, strDelim);
+		String[] astr = Split (strList, strDelim);
 
 		if (null == astr || 0 == astr.length) return false;
 
@@ -362,10 +362,10 @@ public class StringUtil {
 	 * @return The Record Delimited String Array
 	 */
 
-	public static final java.lang.String StringArrayToString (
-		final java.lang.String[] astr,
-		final java.lang.String strRecordDelimiter,
-		final java.lang.String strNULL)
+	public static final String StringArrayToString (
+		final String[] astr,
+		final String strRecordDelimiter,
+		final String strNULL)
 	{
 		if (null == astr || null == strRecordDelimiter || strRecordDelimiter.isEmpty() || null == strNULL ||
 			strNULL.isEmpty())
@@ -375,10 +375,10 @@ public class StringUtil {
 
 		if (0 == iNumStr) return null;
 
-		java.lang.StringBuffer sb = new java.lang.StringBuffer();
+		StringBuffer sb = new StringBuffer();
 
 		for (int i = 0; i < iNumStr; ++i) {
-			java.lang.String str = astr[i];
+			String str = astr[i];
 
 			if (0 != i) sb.append (strRecordDelimiter);
 
@@ -397,7 +397,7 @@ public class StringUtil {
 	 */
 
 	public static final boolean IsEmpty (
-		final java.lang.String str)
+		final String str)
 	{
 		return null == str || str.isEmpty();
 	}
@@ -412,8 +412,8 @@ public class StringUtil {
 	 */
 
 	public static final boolean StringMatch (
-		final java.lang.String strLeft,
-		final java.lang.String strRight)
+		final String strLeft,
+		final String strRight)
 	{
 		boolean bIsLeftEmpty = IsEmpty (strLeft);
 

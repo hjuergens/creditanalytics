@@ -37,16 +37,16 @@ package org.drip.market.otc;
 public class FloatFloatSwapConvention {
 	private int _iSpotLag = -1;
 	private boolean _bIsComponentPair = false;
-	private java.lang.String _strCurrency = "";
+	private String _strCurrency = "";
 	private boolean _bBasisOnDerivedStream = true;
 	private boolean _bBasisOnDerivedComponent = true;
-	private java.lang.String _strReferenceTenor = "";
+	private String _strReferenceTenor = "";
 	private boolean _bIsDerivedCompoundedToReference = true;
 
 	private org.drip.product.rates.FixFloatComponent fixFloatComponent (
 		final org.drip.analytics.date.JulianDate dtEffective,
-		final java.lang.String strFloaterTenor,
-		final java.lang.String strMaturityTenor,
+		final String strFloaterTenor,
+		final String strMaturityTenor,
 		final double dblFixedCoupon,
 		final double dblBasis,
 		final double dblNotional)
@@ -65,7 +65,7 @@ public class FloatFloatSwapConvention {
 			(org.drip.market.definition.IBORIndexContainer.IndexFromJurisdiction (_strCurrency),
 				strFloaterTenor);
 
-		java.lang.String strFloaterTenorComposite = _bIsDerivedCompoundedToReference ?
+		String strFloaterTenorComposite = _bIsDerivedCompoundedToReference ?
 			fixedConv.compositePeriodTenor() : strFloaterTenor;
 
 		try {
@@ -119,8 +119,8 @@ public class FloatFloatSwapConvention {
 	 */
 
 	public FloatFloatSwapConvention (
-		final java.lang.String strCurrency,
-		final java.lang.String strReferenceTenor,
+		final String strCurrency,
+		final String strReferenceTenor,
 		final boolean bBasisOnDerivedStream,
 		final boolean bBasisOnDerivedComponent,
 		final boolean bIsDerivedCompoundedToReference,
@@ -144,7 +144,7 @@ public class FloatFloatSwapConvention {
 	 * @return The Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -155,7 +155,7 @@ public class FloatFloatSwapConvention {
 	 * @return The Reference Tenor
 	 */
 
-	public java.lang.String referenceTenor()
+	public String referenceTenor()
 	{
 		return _strReferenceTenor;
 	}
@@ -231,8 +231,8 @@ public class FloatFloatSwapConvention {
 
 	public org.drip.product.rates.FloatFloatComponent createFloatFloatComponent (
 		final org.drip.analytics.date.JulianDate dtSpot,
-		final java.lang.String strDerivedTenor,
-		final java.lang.String strMaturityTenor,
+		final String strDerivedTenor,
+		final String strMaturityTenor,
 		final double dblBasis,
 		final double dblNotional)
 	{
@@ -255,7 +255,7 @@ public class FloatFloatSwapConvention {
 
 		if (null == forwardLabelDerived) return null;
 
-		java.lang.String strDerivedTenorComposite = _bIsDerivedCompoundedToReference ? _strReferenceTenor :
+		String strDerivedTenorComposite = _bIsDerivedCompoundedToReference ? _strReferenceTenor :
 			strDerivedTenor;
 
 		try {
@@ -324,8 +324,8 @@ public class FloatFloatSwapConvention {
 
 	public org.drip.product.fx.ComponentPair createFixFloatComponentPair (
 		final org.drip.analytics.date.JulianDate dtSpot,
-		final java.lang.String strDerivedTenor,
-		final java.lang.String strMaturityTenor,
+		final String strDerivedTenor,
+		final String strMaturityTenor,
 		final double dblReferenceFixedCoupon,
 		final double dblDerivedFixedCoupon,
 		final double dblBasis,

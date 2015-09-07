@@ -37,7 +37,7 @@ package org.drip.product.fx;
  */
 
 public class DomesticCollateralizedForeignForward {
-	private java.lang.String _strCode = "";
+	private String _strCode = "";
 	private double _dblMaturity = java.lang.Double.NaN;
 	private org.drip.product.params.CurrencyPair _cp = null;
 	private double _dblForexForwardStrike = java.lang.Double.NaN;
@@ -66,23 +66,23 @@ public class DomesticCollateralizedForeignForward {
 		_dblMaturity = dtMaturity.julian();
 	}
 
-	public java.lang.String getPrimaryCode()
+	public String getPrimaryCode()
 	{
 		return _strCode;
 	}
 
 	public void setPrimaryCode (
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		_strCode = strCode;
 	}
 
-	public java.lang.String[] getSecondaryCode()
+	public String[] getSecondaryCode()
 	{
-		java.lang.String strPrimaryCode = getPrimaryCode();
+		String strPrimaryCode = getPrimaryCode();
 
 		int iNumTokens = 0;
-		java.lang.String astrCodeTokens[] = new java.lang.String[2];
+		String astrCodeTokens[] = new String[2];
 
 		java.util.StringTokenizer stCodeTokens = new java.util.StringTokenizer (strPrimaryCode, ".");
 
@@ -91,7 +91,7 @@ public class DomesticCollateralizedForeignForward {
 
 		System.out.println (astrCodeTokens[0]);
 
-		return new java.lang.String[] {astrCodeTokens[0]};
+		return new String[] {astrCodeTokens[0]};
 	}
 
 	public org.drip.analytics.date.JulianDate getMaturityDate()
@@ -129,14 +129,14 @@ public class DomesticCollateralizedForeignForward {
 
 		if (null == auFX) return null;
 
-		java.lang.String strDomesticCurrency = _cp.denomCcy();
+		String strDomesticCurrency = _cp.denomCcy();
 
 		org.drip.analytics.rates.DiscountCurve dcDomesticCollateral =
 			csqs.payCurrencyCollateralCurrencyCurve (strDomesticCurrency, strDomesticCurrency);
 
 		if (null == dcDomesticCollateral) return null;
 
-		java.lang.String strForeignCurrency = _cp.numCcy();
+		String strForeignCurrency = _cp.numCcy();
 
 		org.drip.analytics.rates.DiscountCurve dcForeignCurrencyDomesticCollateral =
 			csqs.payCurrencyCollateralCurrencyCurve (strForeignCurrency, strDomesticCurrency);
@@ -179,9 +179,9 @@ public class DomesticCollateralizedForeignForward {
 		return mapResult;
 	}
 
-	public java.util.Set<java.lang.String> getMeasureNames()
+	public java.util.Set<String> getMeasureNames()
 	{
-		java.util.Set<java.lang.String> setstrMeasureNames = new java.util.TreeSet<java.lang.String>();
+		java.util.Set<String> setstrMeasureNames = new java.util.TreeSet<String>();
 
 		setstrMeasureNames.add ("CalcTime");
 

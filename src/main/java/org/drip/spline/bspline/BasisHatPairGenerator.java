@@ -47,19 +47,19 @@ public class BasisHatPairGenerator {
 	 * Raw Tension Hyperbolic B Spline Basis Hat Phy and Psy
 	 */
 
-	public static final java.lang.String RAW_TENSION_HYPERBOLIC = "RAW_TENSION_HYPERBOLIC";
+	public static final String RAW_TENSION_HYPERBOLIC = "RAW_TENSION_HYPERBOLIC";
 
 	/**
 	 * Processed Tension Hyperbolic B Spline Basis Hat Phy and Psy
 	 */
 
-	public static final java.lang.String PROCESSED_TENSION_HYPERBOLIC = "PROCESSED_TENSION_HYPERBOLIC";
+	public static final String PROCESSED_TENSION_HYPERBOLIC = "PROCESSED_TENSION_HYPERBOLIC";
 
 	/**
 	 * Processed Cubic Rational B Spline Basis Hat Phy and Psy
 	 */
 
-	public static final java.lang.String PROCESSED_CUBIC_RATIONAL = "PROCESSED_CUBIC_RATIONAL";
+	public static final String PROCESSED_CUBIC_RATIONAL = "PROCESSED_CUBIC_RATIONAL";
 
 	/**
 	 * Generate the array of the Hyperbolic Phy and Psy Hat Function Pair
@@ -140,7 +140,7 @@ public class BasisHatPairGenerator {
 	 */
 
 	public static final org.drip.spline.bspline.TensionBasisHat[] ProcessedCubicRationalHatPair (
-		final java.lang.String strShapeControlType,
+		final String strShapeControlType,
 		final double dblPredictorOrdinateLeading,
 		final double dblPredictorOrdinateFollowing,
 		final double dblPredictorOrdinateTrailing,
@@ -178,8 +178,8 @@ public class BasisHatPairGenerator {
 	 */
 
 	public static final org.drip.spline.bspline.TensionBasisHat[] GenerateHatPair (
-		final java.lang.String strHatType,
-		final java.lang.String strShapeControlType,
+		final String strHatType,
+		final String strShapeControlType,
 		final double dblPredictorOrdinateLeading,
 		final double dblPredictorOrdinateFollowing,
 		final double dblPredictorOrdinateTrailing,

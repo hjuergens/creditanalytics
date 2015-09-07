@@ -44,14 +44,14 @@ public class DCAct_Act_UST implements org.drip.analytics.daycount.DCFCalculator 
 	{
 	}
 
-	@Override public java.lang.String baseCalculationType()
+	@Override public String baseCalculationType()
 	{
 		return "DCAct_Act_UST";
 	}
 
-	@Override public java.lang.String[] alternateNames()
+	@Override public String[] alternateNames()
 	{
-		return new java.lang.String[] {"Actual/Actual UST", "Act/Act UST", "DCAct_Act_UST"};
+		return new String[] {"Actual/Actual UST", "Act/Act UST", "DCAct_Act_UST"};
 	}
 
 	@Override public double yearFraction (
@@ -59,7 +59,7 @@ public class DCAct_Act_UST implements org.drip.analytics.daycount.DCFCalculator 
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == actactParams || !org.drip.quant.common.NumberUtil.IsValid (dblStart) ||
@@ -74,7 +74,7 @@ public class DCAct_Act_UST implements org.drip.analytics.daycount.DCFCalculator 
 		final double dblEnd,
 		final boolean bApplyEOMAdj,
 		final ActActDCParams actactParams,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (!org.drip.quant.common.NumberUtil.IsValid (dblStart) || !org.drip.quant.common.NumberUtil.IsValid

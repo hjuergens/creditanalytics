@@ -60,103 +60,103 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * ISIN
 	 */
 
-	public java.lang.String _strISIN = "";
+	public String _strISIN = "";
 
 	/**
 	 * CUSIP
 	 */
 
-	public java.lang.String _strCUSIP = "";
+	public String _strCUSIP = "";
 
 	/**
 	 * Bloomberg ID
 	 */
 
-	public java.lang.String _strBBGID = "";
+	public String _strBBGID = "";
 
 	/**
 	 * Issuer Category
 	 */
 
-	public java.lang.String _strIssuerCategory = "";
+	public String _strIssuerCategory = "";
 
 	/**
 	 * Ticker
 	 */
 
-	public java.lang.String _strTicker = "";
+	public String _strTicker = "";
 
 	/**
 	 * Series
 	 */
 
-	public java.lang.String _strSeries = "";
+	public String _strSeries = "";
 
 	/**
 	 * Name
 	 */
 
-	public java.lang.String _strName = "";
+	public String _strName = "";
 
 	/**
 	 * Short Name
 	 */
 
-	public java.lang.String _strShortName = "";
+	public String _strShortName = "";
 
 	/**
 	 * Issuer Industry
 	 */
 
-	public java.lang.String _strIssuerIndustry = "";
+	public String _strIssuerIndustry = "";
 
 	/**
 	 * Coupon Type
 	 */
 
-	public java.lang.String _strCouponType = "";
+	public String _strCouponType = "";
 
 	/**
 	 * Maturity Type
 	 */
 
-	public java.lang.String _strMaturityType = "";
+	public String _strMaturityType = "";
 
 	/**
 	 * Calculation Type
 	 */
 
-	public java.lang.String _strCalculationType = "";
+	public String _strCalculationType = "";
 
 	/**
 	 * Day Count Code
 	 */
 
-	public java.lang.String _strDayCountCode = "";
+	public String _strDayCountCode = "";
 
 	/**
 	 * Market Issue Type
 	 */
 
-	public java.lang.String _strMarketIssueType = "";
+	public String _strMarketIssueType = "";
 
 	/**
 	 * Issue Country Code
 	 */
 
-	public java.lang.String _strIssueCountryCode = "";
+	public String _strIssueCountryCode = "";
 
 	/**
 	 * Issue Country
 	 */
 
-	public java.lang.String _strIssueCountry = "";
+	public String _strIssueCountry = "";
 
 	/**
 	 * Collateral Type
 	 */
 
-	public java.lang.String _strCollateralType = "";
+	public String _strCollateralType = "";
 
 	/**
 	 * Issue Amount
@@ -192,13 +192,13 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Lead Manager
 	 */
 
-	public java.lang.String _strLeadManager = "";
+	public String _strLeadManager = "";
 
 	/**
 	 * Exchange Code
 	 */
 
-	public java.lang.String _strExchangeCode = "";
+	public String _strExchangeCode = "";
 
 	/**
 	 * Redemption Value
@@ -264,55 +264,55 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Bloomberg Parent
 	 */
 
-	public java.lang.String _strBBGParent = "";
+	public String _strBBGParent = "";
 
 	/**
 	 * Country of Incorporation
 	 */
 
-	public java.lang.String _strCountryOfIncorporation = "";
+	public String _strCountryOfIncorporation = "";
 
 	/**
 	 * Industry Sector
 	 */
 
-	public java.lang.String _strIndustrySector = "";
+	public String _strIndustrySector = "";
 
 	/**
 	 * Industry Group
 	 */
 
-	public java.lang.String _strIndustryGroup = "";
+	public String _strIndustryGroup = "";
 
 	/**
 	 * Industry Sub Group
 	 */
 
-	public java.lang.String _strIndustrySubgroup = "";
+	public String _strIndustrySubgroup = "";
 
 	/**
 	 * Country of Guarantor
 	 */
 
-	public java.lang.String _strCountryOfGuarantor = "";
+	public String _strCountryOfGuarantor = "";
 
 	/**
 	 * Country of Domicile
 	 */
 
-	public java.lang.String _strCountryOfDomicile = "";
+	public String _strCountryOfDomicile = "";
 
 	/**
 	 * Description
 	 */
 
-	public java.lang.String _strDescription = "";
+	public String _strDescription = "";
 
 	/**
 	 * Security Type
 	 */
 
-	public java.lang.String _strSecurityType = "";
+	public String _strSecurityType = "";
 
 	/**
 	 * Previous Coupon Date
@@ -324,13 +324,13 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Unique Bloomberg ID
 	 */
 
-	public java.lang.String _strBBGUniqueID = "";
+	public String _strBBGUniqueID = "";
 
 	/**
 	 * Long Company Name
 	 */
 
-	public java.lang.String _strLongCompanyName = "";
+	public String _strLongCompanyName = "";
 
 	/**
 	 * Flag indicating Structured Note
@@ -354,19 +354,19 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Redemption Currency
 	 */
 
-	public java.lang.String _strRedemptionCurrency = "";
+	public String _strRedemptionCurrency = "";
 
 	/**
 	 * Coupon Currency
 	 */
 
-	public java.lang.String _strCouponCurrency = "";
+	public String _strCouponCurrency = "";
 
 	/**
 	 * Trade Currency
 	 */
 
-	public java.lang.String _strTradeCurrency = "";
+	public String _strTradeCurrency = "";
 
 	/**
 	 * Is this a Bearer Bond
@@ -390,7 +390,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Issuer Name
 	 */
 
-	public java.lang.String _strIssuer = "";
+	public String _strIssuer = "";
 
 	/**
 	 * Penultimate Coupon Date
@@ -402,7 +402,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Float Coupon Convention
 	 */
 
-	public java.lang.String _strFloatCouponConvention = "";
+	public String _strFloatCouponConvention = "";
 
 	/**
 	 * Current Coupon
@@ -426,13 +426,13 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * CDR Country Code
 	 */
 
-	public java.lang.String _strCDRCountryCode = "";
+	public String _strCDRCountryCode = "";
 
 	/**
 	 * CDR Settle Code
 	 */
 
-	public java.lang.String _strCDRSettleCode = "";
+	public String _strCDRSettleCode = "";
 
 	/**
 	 * Final Maturity Date
@@ -468,37 +468,37 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * Floating rate index
 	 */
 
-	public java.lang.String _strRateIndex = "";
+	public String _strRateIndex = "";
 
 	/**
 	 * Moody's Rating
 	 */
 
-	public java.lang.String _strMoody = "";
+	public String _strMoody = "";
 
 	/**
 	 * S&P rating
 	 */
 
-	public java.lang.String _strSnP = "";
+	public String _strSnP = "";
 
 	/**
 	 * Fitch Rating
 	 */
 
-	public java.lang.String _strFitch = "";
+	public String _strFitch = "";
 
 	/**
 	 * Senior or Sub-ordinate
 	 */
 
-	public java.lang.String _strSnrSub = "";
+	public String _strSnrSub = "";
 
 	/**
 	 * Issuer SPN
 	 */
 
-	public java.lang.String _strIssuerSPN = "";
+	public String _strIssuerSPN = "";
 
 	/**
 	 * Issue Price
@@ -762,7 +762,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public BondRefDataBuilder (
-		final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapJSON)
+		final org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapJSON)
 		throws java.lang.Exception
 	{
 		if (null == mapJSON || 0 == mapJSON.size())
@@ -943,7 +943,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setISIN (
-		final java.lang.String strISIN)
+		final String strISIN)
 	{
 		if (null == strISIN || strISIN.isEmpty()) return false;
 
@@ -960,7 +960,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCUSIP (
-		final java.lang.String strCUSIP)
+		final String strCUSIP)
 	{
 		if (null == strCUSIP || strCUSIP.isEmpty()) return false;
 
@@ -977,7 +977,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setBBGID (
-		final java.lang.String strBBGID)
+		final String strBBGID)
 	{
 		if (null == (_strBBGID = strBBGID)) _strBBGID = "";
 
@@ -993,7 +993,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssuerCategory (
-		final java.lang.String strIssuerCategory)
+		final String strIssuerCategory)
 	{
 		if (null == (_strIssuerCategory = strIssuerCategory)) _strIssuerCategory = "";
 
@@ -1009,7 +1009,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setTicker (
-		final java.lang.String strTicker)
+		final String strTicker)
 	{
 		if (null == (_strTicker = strTicker)) _strTicker = "";
 
@@ -1025,7 +1025,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setSeries (
-		final java.lang.String strSeries)
+		final String strSeries)
 	{
 		if (null == (_strSeries = strSeries)) _strSeries = "";
 
@@ -1041,7 +1041,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setName (
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null == (_strName = strName)) _strName = "";
 
@@ -1057,7 +1057,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setShortName (
-		final java.lang.String strShortName)
+		final String strShortName)
 	{
 		if (null == (_strShortName = strShortName)) _strShortName = "";
 
@@ -1073,7 +1073,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssuerIndustry (
-		final java.lang.String strIssuerIndustry)
+		final String strIssuerIndustry)
 	{
 		if (null == (_strIssuerIndustry = strIssuerIndustry)) _strIssuerIndustry = "";
 
@@ -1089,7 +1089,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCouponType (
-		final java.lang.String strCouponType)
+		final String strCouponType)
 	{
 		if (null == (_strCouponType = strCouponType)) _strCouponType = "";
 
@@ -1105,7 +1105,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setMaturityType (
-		final java.lang.String strMaturityType)
+		final String strMaturityType)
 	{
 		if (null == (_strMaturityType = strMaturityType)) _strMaturityType = "";
 
@@ -1121,7 +1121,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCalculationType (
-		final java.lang.String strCalculationType)
+		final String strCalculationType)
 	{
 		if (null == (_strCalculationType = strCalculationType)) _strCalculationType = "";
 
@@ -1137,7 +1137,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setDayCountCode (
-		final java.lang.String strDayCountCode)
+		final String strDayCountCode)
 	{
 		_strDayCountCode = "Unknown DC";
 
@@ -1164,7 +1164,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setMarketIssueType (
-		final java.lang.String strMarketIssueType)
+		final String strMarketIssueType)
 	{
 		if (null == (_strMarketIssueType = strMarketIssueType)) _strMarketIssueType = "";
 
@@ -1180,7 +1180,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssueCountryCode (
-		final java.lang.String strIssueCountryCode)
+		final String strIssueCountryCode)
 	{
 		if (null == (_strIssueCountryCode = strIssueCountryCode)) _strIssueCountryCode = "";
 
@@ -1196,7 +1196,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssueCountry (
-		final java.lang.String strIssueCountry)
+		final String strIssueCountry)
 	{
 		if (null == (_strIssueCountry = strIssueCountry)) _strIssueCountry = "";
 
@@ -1212,7 +1212,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCollateralType (
-		final java.lang.String strCollateralType)
+		final String strCollateralType)
 	{
 		if (null == (_strCollateralType = strCollateralType)) _strCollateralType = "";
 
@@ -1228,7 +1228,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssueAmount (
-		final java.lang.String strIssueAmount)
+		final String strIssueAmount)
 	{
 		try {
 			_dblIssueAmount = new java.lang.Double (strIssueAmount.trim());
@@ -1250,7 +1250,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setOutstandingAmount (
-		final java.lang.String strOutstandingAmount)
+		final String strOutstandingAmount)
 	{
 		try {
 			_dblOutstandingAmount = new java.lang.Double (strOutstandingAmount.trim());
@@ -1274,7 +1274,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setMinimumPiece (
-		final java.lang.String strMinimumPiece)
+		final String strMinimumPiece)
 	{
 		try {
 			_dblMinimumPiece = new java.lang.Double (strMinimumPiece.trim());
@@ -1297,7 +1297,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setMinimumIncrement (
-		final java.lang.String strMinimumIncrement)
+		final String strMinimumIncrement)
 	{
 		try {
 			_dblMinimumIncrement = new java.lang.Double (strMinimumIncrement.trim());
@@ -1321,7 +1321,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setParAmount (
-		final java.lang.String strParAmount)
+		final String strParAmount)
 	{
 		try {
 			_dblParAmount = new java.lang.Double (strParAmount.trim());
@@ -1343,7 +1343,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setLeadManager (
-		final java.lang.String strLeadManager)
+		final String strLeadManager)
 	{
 		if (null == (_strLeadManager = strLeadManager)) _strLeadManager = "";
 
@@ -1359,7 +1359,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setExchangeCode (
-		final java.lang.String strExchangeCode)
+		final String strExchangeCode)
 	{
 		if (null == (_strExchangeCode = strExchangeCode)) _strExchangeCode = "";
 
@@ -1375,7 +1375,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setRedemptionValue (
-		final java.lang.String strRedemptionValue)
+		final String strRedemptionValue)
 	{
 		try {
 			_dblRedemptionValue = new java.lang.Double (strRedemptionValue.trim());
@@ -1398,7 +1398,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setAnnounce (
-		final java.lang.String strAnnounce)
+		final String strAnnounce)
 	{
 		try {
 			_dtAnnounce = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate (strAnnounce.trim());
@@ -1420,7 +1420,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setFirstSettle (
-		final java.lang.String strFirstSettle)
+		final String strFirstSettle)
 	{
 		try {
 			_dtFirstSettle = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -1443,7 +1443,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setFirstCoupon (
-		final java.lang.String strFirstCoupon)
+		final String strFirstCoupon)
 	{
 		try {
 			_dtFirstCoupon = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -1466,7 +1466,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setInterestAccrualStart (
-		final java.lang.String strInterestAccrualStart)
+		final String strInterestAccrualStart)
 	{
 		try {
 			_dtInterestAccrualStart = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -1490,7 +1490,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssue (
-		final java.lang.String strIssue)
+		final String strIssue)
 	{
 		try {
 			_dtIssue = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate (strIssue.trim());
@@ -1512,7 +1512,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setNextCouponDate (
-		final java.lang.String strNextCouponDate)
+		final String strNextCouponDate)
 	{
 		try {
 			_dtNextCouponDate = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -1536,7 +1536,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsCallable (
-		final java.lang.String strCallable)
+		final String strCallable)
 	{
 		if (null == strCallable) _bIsCallable = false;
 
@@ -1557,7 +1557,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsPutable (
-		final java.lang.String strPutable)
+		final String strPutable)
 	{
 		if (null == strPutable) _bIsPutable = false;
 
@@ -1578,7 +1578,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsSinkable (
-		final java.lang.String strSinkable)
+		final String strSinkable)
 	{
 		if (null == strSinkable) _bIsSinkable = false;
 
@@ -1599,7 +1599,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setBBGParent (
-		final java.lang.String strBBGParent)
+		final String strBBGParent)
 	{
 		if (null == (_strBBGParent = strBBGParent)) _strBBGParent = "";
 
@@ -1615,7 +1615,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCountryOfIncorporation (
-		final java.lang.String strCountryOfIncorporation)
+		final String strCountryOfIncorporation)
 	{
 		if (null == (_strCountryOfIncorporation = strCountryOfIncorporation))
 			_strCountryOfIncorporation = "";
@@ -1632,7 +1632,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIndustrySector (
-		final java.lang.String strIndustrySector)
+		final String strIndustrySector)
 	{
 		if (null == (_strIndustrySector = strIndustrySector)) _strIndustrySector = "";
 
@@ -1648,7 +1648,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIndustryGroup (
-		final java.lang.String strIndustryGroup)
+		final String strIndustryGroup)
 	{
 		if (null == (_strIndustryGroup = strIndustryGroup)) _strIndustryGroup = "";
 
@@ -1664,7 +1664,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIndustrySubgroup (
-		final java.lang.String strIndustrySubgroup)
+		final String strIndustrySubgroup)
 	{
 		if (null == (_strIndustrySubgroup = strIndustrySubgroup)) _strIndustrySubgroup = "";
 
@@ -1680,7 +1680,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCountryOfGuarantor (
-		final java.lang.String strCountryOfGuarantor)
+		final String strCountryOfGuarantor)
 	{
 		if (null == (_strCountryOfGuarantor = strCountryOfGuarantor)) _strCountryOfGuarantor = "";
 
@@ -1696,7 +1696,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCountryOfDomicile (
-		final java.lang.String strCountryOfDomicile)
+		final String strCountryOfDomicile)
 	{
 		if (null == (_strCountryOfDomicile = strCountryOfDomicile)) _strCountryOfDomicile = "";
 
@@ -1712,7 +1712,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setDescription (
-		final java.lang.String strDescription)
+		final String strDescription)
 	{
 		if (null == (_strDescription = strDescription)) _strDescription = "";
 
@@ -1728,7 +1728,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setSecurityType (
-		final java.lang.String strSecurityType)
+		final String strSecurityType)
 	{
 		if (null == (_strSecurityType = strSecurityType)) _strSecurityType = "";
 
@@ -1744,7 +1744,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setPrevCouponDate (
-		final java.lang.String strPrevCouponDate)
+		final String strPrevCouponDate)
 	{
 		try {
 			_dtPrevCouponDate = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -1768,7 +1768,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setBBGUniqueID (
-		final java.lang.String strBBGUniqueID)
+		final String strBBGUniqueID)
 	{
 		if (null == (_strBBGUniqueID = strBBGUniqueID)) _strBBGUniqueID = "";
 
@@ -1784,7 +1784,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setLongCompanyName (
-		final java.lang.String strLongCompanyName)
+		final String strLongCompanyName)
 	{
 		if (null == (_strLongCompanyName = strLongCompanyName)) _strLongCompanyName = "";
 
@@ -1800,7 +1800,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsStructuredNote (
-		final java.lang.String strIsStructuredNote)
+		final String strIsStructuredNote)
 	{
 		if (null == strIsStructuredNote) _bIsStructuredNote = false;
 
@@ -1821,7 +1821,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsUnitTraded (
-		final java.lang.String strIsUnitTraded)
+		final String strIsUnitTraded)
 	{
 		if (null == strIsUnitTraded) _bIsUnitTraded = false;
 
@@ -1842,7 +1842,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsReversibleConvertible (
-		final java.lang.String strIsReversibleConvertible)
+		final String strIsReversibleConvertible)
 	{
 		if (null == strIsReversibleConvertible) _bIsReversibleConvertible = false;
 
@@ -1863,7 +1863,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setRedemptionCurrency (
-		final java.lang.String strRedemptionCurrency)
+		final String strRedemptionCurrency)
 	{
 		if (null == (_strRedemptionCurrency = strRedemptionCurrency)) return false;
 
@@ -1879,7 +1879,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCouponCurrency (
-		final java.lang.String strCouponCurrency)
+		final String strCouponCurrency)
 	{
 		if (null == (_strCouponCurrency = strCouponCurrency)) return false;
 
@@ -1895,7 +1895,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setTradeCurrency (
-		final java.lang.String strTradeCurrency)
+		final String strTradeCurrency)
 	{
 		if (null == (_strTradeCurrency = strTradeCurrency)) return false;
 
@@ -1911,7 +1911,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsBearer (
-		final java.lang.String strIsBearer)
+		final String strIsBearer)
 	{
 		if (null == strIsBearer) _bIsBearer = false;
 
@@ -1932,7 +1932,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsRegistered (
-		final java.lang.String strIsRegistered)
+		final String strIsRegistered)
 	{
 		if (null == strIsRegistered) _bIsRegistered = false;
 
@@ -1953,7 +1953,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setHasBeenCalled (
-		final java.lang.String strHasBeenCalled)
+		final String strHasBeenCalled)
 	{
 		if (null == strHasBeenCalled) _bHasBeenCalled = false;
 
@@ -1974,7 +1974,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssuer (
-		final java.lang.String strIssuer)
+		final String strIssuer)
 	{
 		if (null == (_strIssuer = strIssuer)) _strIssuer = "";
 
@@ -1990,7 +1990,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setPenultimateCouponDate (
-		final java.lang.String strPenultimateCouponDate)
+		final String strPenultimateCouponDate)
 	{
 		try {
 			_dtPenultimateCouponDate = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -2015,7 +2015,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setFloatCouponConvention (
-		final java.lang.String strFloatCouponConvention)
+		final String strFloatCouponConvention)
 	{
 		if (null == (_strFloatCouponConvention = strFloatCouponConvention)) _strFloatCouponConvention = "";
 
@@ -2031,7 +2031,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCurrentCoupon (
-		final java.lang.String strCurrentCoupon)
+		final String strCurrentCoupon)
 	{
 		if (null == strCurrentCoupon || strCurrentCoupon.isEmpty() || "null".equalsIgnoreCase
 			(strCurrentCoupon))
@@ -2059,7 +2059,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsFloater (
-		final java.lang.String strIsFloater)
+		final String strIsFloater)
 	{
 		if (null == strIsFloater) _bIsFloater = false;
 
@@ -2080,7 +2080,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setTradeStatus (
-		final java.lang.String strTradeStatus)
+		final String strTradeStatus)
 	{
 		if (null == strTradeStatus) _bTradeStatus = false;
 
@@ -2101,7 +2101,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCDRCountryCode (
-		final java.lang.String strCDRCountryCode)
+		final String strCDRCountryCode)
 	{
 		if (null == (_strCDRCountryCode = strCDRCountryCode)) _strCDRCountryCode = "";
 
@@ -2117,7 +2117,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCDRSettleCode (
-		final java.lang.String strCDRSettleCode)
+		final String strCDRSettleCode)
 	{
 		if (null == (_strCDRSettleCode = strCDRSettleCode)) _strCDRSettleCode = "";
 
@@ -2133,7 +2133,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setFinalMaturity (
-		final java.lang.String strFinalMaturity)
+		final String strFinalMaturity)
 	{
 		try {
 			_dtFinalMaturity = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -2157,7 +2157,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsPrivatePlacement (
-		final java.lang.String strIsPrivatePlacement)
+		final String strIsPrivatePlacement)
 	{
 		if (null == strIsPrivatePlacement) _bIsPrivatePlacement = false;
 
@@ -2178,7 +2178,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsPerpetual (
-		final java.lang.String strIsPerpetual)
+		final String strIsPerpetual)
 	{
 		if (null == strIsPerpetual) _bIsPerpetual = false;
 
@@ -2199,7 +2199,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIsDefaulted (
-		final java.lang.String strIsDefaulted)
+		final String strIsDefaulted)
 	{
 		if (null == strIsDefaulted) _bIsDefaulted = false;
 
@@ -2220,7 +2220,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setFloatSpread (
-		final java.lang.String strFloatSpread)
+		final String strFloatSpread)
 	{
 		try {
 			_dblFloatSpread = new java.lang.Double (strFloatSpread.trim());
@@ -2242,7 +2242,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setRateIndex (
-		final java.lang.String strRateIndex)
+		final String strRateIndex)
 	{
 		if (null == (_strRateIndex = strRateIndex)) _strRateIndex = "";
 
@@ -2258,7 +2258,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setMoody (
-		final java.lang.String strMoody)
+		final String strMoody)
 	{
 		if (null == (_strMoody = strMoody)) _strMoody = "";
 
@@ -2274,7 +2274,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setSnP (
-		final java.lang.String strSnP)
+		final String strSnP)
 	{
 		if (null == (_strSnP = strSnP)) _strSnP = "";
 
@@ -2290,7 +2290,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setFitch (
-		final java.lang.String strFitch)
+		final String strFitch)
 	{
 		if (null == (_strFitch = strFitch)) _strFitch = "";
 
@@ -2306,7 +2306,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setSnrSub (
-		final java.lang.String strSnrSub)
+		final String strSnrSub)
 	{
 		if (null == (_strSnrSub = strSnrSub)) _strSnrSub = "";
 
@@ -2322,7 +2322,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssuerSPN (
-		final java.lang.String strIssuerSPN)
+		final String strIssuerSPN)
 	{
 		if (null == (_strIssuerSPN = strIssuerSPN)) _strIssuerSPN = "";
 
@@ -2338,7 +2338,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setIssuePrice (
-		final java.lang.String strIssuePrice)
+		final String strIssuePrice)
 	{
 		try {
 			_dblIssuePrice = new java.lang.Double (strIssuePrice.trim()).doubleValue();
@@ -2360,7 +2360,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setCoupon (
-		final java.lang.String strCoupon)
+		final String strCoupon)
 	{
 		if (null == strCoupon || strCoupon.isEmpty() || "null".equalsIgnoreCase (strCoupon)) _dblCoupon = 0.;
 
@@ -2384,7 +2384,7 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 */
 
 	public boolean setMaturity (
-		final java.lang.String strMaturity)
+		final String strMaturity)
 	{
 		try {
 			if (null == (_dtMaturity = org.drip.analytics.date.DateUtil.MakeJulianDateFromBBGDate
@@ -2434,9 +2434,9 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * @return SQL Insert string
 	 */
 
-	public java.lang.String makeSQLInsert()
+	public String makeSQLInsert()
 	{
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("insert into BondRefData values(");
 
@@ -2645,9 +2645,9 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 	 * @return SQL Delete string
 	 */
 
-	public java.lang.String makeSQLDelete()
+	public String makeSQLDelete()
 	{
-		java.lang.StringBuilder sb = new java.lang.StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		sb.append ("delete from BondRefData where ISIN = '").append (_strISIN).append
 			("' or CUSIP = '").append (_strCUSIP).append ("'");
@@ -2655,10 +2655,10 @@ public class BondRefDataBuilder implements org.drip.product.params.Validatable {
 		return sb.toString();
 	}
 
-	public org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> toJSON()
+	public org.drip.analytics.support.CaseInsensitiveTreeMap<String> toJSON()
 	{
-		org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> mapJSON = new
-			org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String>();
+		org.drip.analytics.support.CaseInsensitiveTreeMap<String> mapJSON = new
+			org.drip.analytics.support.CaseInsensitiveTreeMap<String>();
 
 		mapJSON.put ("version", "" + org.drip.quant.common.StringUtil.VERSION);
 

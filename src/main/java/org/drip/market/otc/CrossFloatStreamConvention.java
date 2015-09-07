@@ -36,8 +36,8 @@ package org.drip.market.otc;
 
 public class CrossFloatStreamConvention {
 	private boolean _bApplySpread = false;
-	private java.lang.String _strTenor = "";
-	private java.lang.String _strCurrency = "";
+	private String _strTenor = "";
+	private String _strCurrency = "";
 
 	/**
 	 * CrossFloatStreamConvention Constructor
@@ -50,8 +50,8 @@ public class CrossFloatStreamConvention {
 	 */
 
 	public CrossFloatStreamConvention (
-		final java.lang.String strCurrency,
-		final java.lang.String strTenor,
+		final String strCurrency,
+		final String strTenor,
 		final boolean bApplySpread)
 		throws java.lang.Exception
 	{
@@ -68,7 +68,7 @@ public class CrossFloatStreamConvention {
 	 * @return The Currency
 	 */
 
-	public java.lang.String currency()
+	public String currency()
 	{
 		return _strCurrency;
 	}
@@ -79,7 +79,7 @@ public class CrossFloatStreamConvention {
 	 * @return The Tenor
 	 */
 
-	public java.lang.String tenor()
+	public String tenor()
 	{
 		return _strTenor;
 	}
@@ -95,7 +95,7 @@ public class CrossFloatStreamConvention {
 		return _bApplySpread;
 	}
 
-	@Override public java.lang.String toString()
+	@Override public String toString()
 	{
 		return "[" + _strCurrency + " | " + _strTenor + " | " + _bApplySpread + "]";
 	}

@@ -60,10 +60,10 @@ public class CDSBasketBuilder {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final double dblCoupon,
-		final java.lang.String strIR,
-		final java.lang.String[] astrCC,
+		final String strIR,
+		final String[] astrCC,
 		final double[] adblWeight,
-		final java.lang.String strName)
+		final String strName)
 	{
 		if (null == dtEffective || null == dtMaturity || !org.drip.quant.common.NumberUtil.IsValid (dblCoupon)
 			|| null == strIR || strIR.isEmpty() || null == strName || strName.isEmpty() || null == astrCC ||
@@ -111,9 +111,9 @@ public class CDSBasketBuilder {
 		final org.drip.analytics.date.JulianDate dtEffective,
 		final org.drip.analytics.date.JulianDate dtMaturity,
 		final double dblCoupon,
-		final java.lang.String strIR,
-		final java.lang.String[] astrCC,
-		final java.lang.String strName)
+		final String strIR,
+		final String[] astrCC,
+		final String strName)
 	{
 		if (null == dtEffective || null == dtMaturity || !org.drip.quant.common.NumberUtil.IsValid (dblCoupon)
 			|| null == strIR || strIR.isEmpty() || null == strName || strName.isEmpty() || null == astrCC ||

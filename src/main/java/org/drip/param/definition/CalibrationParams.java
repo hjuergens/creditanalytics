@@ -40,7 +40,7 @@ package org.drip.param.definition;
 
 public class CalibrationParams {
 	private int _iType = 0;
-	private java.lang.String _strMeasure = "";
+	private String _strMeasure = "";
 	private org.drip.param.valuation.WorkoutInfo _wi = null;
 
 	/**
@@ -70,7 +70,7 @@ public class CalibrationParams {
 	 */
 
 	public CalibrationParams (
-		final java.lang.String strMeasure,
+		final String strMeasure,
 		final int iType,
 		final org.drip.param.valuation.WorkoutInfo wi)
 		throws java.lang.Exception
@@ -99,7 +99,7 @@ public class CalibrationParams {
 	 * @return The Calibration Measure
 	 */
 
-	public java.lang.String measure()
+	public String measure()
 	{
 		return _strMeasure;
 	}

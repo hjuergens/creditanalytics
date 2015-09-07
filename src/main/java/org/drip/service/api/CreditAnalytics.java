@@ -33,7 +33,7 @@ package org.drip.service.api;
  */
 
 /**
- * CreditAnalytics exposes all the CreditAnalytics API to clients – this class is the main functional
+ * CreditAnalytics exposes all the CreditAnalytics API to clients ï¿½ this class is the main functional
  * 	interface. The functions exposed are too numerous to list, and can be roughly grouped the following:
  * 	- Product Creation
  * 	- Curve Construction from Market Instruments
@@ -60,19 +60,19 @@ public class CreditAnalytics {
 				org.drip.analytics.support.CaseInsensitiveTreeMap<org.drip.product.creator.BondRefDataBuilder>();
 
 	private static final org.drip.product.definition.Bond GetBondFromCache (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		return _mapBondCache.get (strBondId);
 	}
 
 	private static final org.drip.product.creator.BondRefDataBuilder GetBondRefDataFromCache (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		return _mapBondRefDataCache.get (strBondId);
 	}
 
 	private static final org.drip.analytics.date.JulianDate[] GetLocationSetTypedHolidaysInYear (
-		final java.lang.String strLocationSet,
+		final String strLocationSet,
 		final int iYear,
 		final int iHolType)
 	{
@@ -120,7 +120,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean Init (
-		final java.lang.String strConfig)
+		final String strConfig)
 	{
 		if (null == (s_stmt = org.drip.service.env.EnvManager.InitEnv (strConfig))) return false;
 
@@ -133,7 +133,7 @@ public class CreditAnalytics {
 	 * @return The set of holiday location strings
 	 */
 
-	public static final java.util.Set<java.lang.String> GetHolLocations()
+	public static final java.util.Set<String> GetHolLocations()
 	{
 		return org.drip.analytics.daycount.Convention.HolidayLocations();
 	}
@@ -144,7 +144,7 @@ public class CreditAnalytics {
 	 * @return The set of the available day count string.
 	 */
 
-	public static final java.lang.String GetAvailableDC()
+	public static final String GetAvailableDC()
 	{
 		return org.drip.analytics.daycount.Convention.AvailableDC();
 	}
@@ -159,7 +159,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate[] GetWeekDayHolsInYear (
-		final java.lang.String strLocationSet,
+		final String strLocationSet,
 		final int iYear)
 	{
 		return GetLocationSetTypedHolidaysInYear (strLocationSet, iYear,
@@ -176,7 +176,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate[] GetWeekendHolsInYear (
-		final java.lang.String strLocationSet,
+		final String strLocationSet,
 		final int iYear)
 	{
 		return GetLocationSetTypedHolidaysInYear (strLocationSet, iYear,
@@ -193,7 +193,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate[] GetHolsInYear (
-		final java.lang.String strLocationSet,
+		final String strLocationSet,
 		final int iYear)
 	{
 		return GetLocationSetTypedHolidaysInYear (strLocationSet, iYear,
@@ -210,7 +210,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final int[] GetWeekendDays (
-		final java.lang.String strLocationSet)
+		final String strLocationSet)
 	{
 		return org.drip.analytics.daycount.Convention.WeekendDays (strLocationSet);
 	}
@@ -227,7 +227,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean IsHoliday (
-		final java.lang.String strLocationSet,
+		final String strLocationSet,
 		final org.drip.analytics.date.JulianDate dt)
 		throws java.lang.Exception
 	{
@@ -250,9 +250,9 @@ public class CreditAnalytics {
 	public static final double YearFraction (
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.analytics.date.JulianDate dtEnd,
-		final java.lang.String strDayCount,
+		final String strDayCount,
 		final boolean bApplyEOMAdj,
-		final java.lang.String strCalendar)
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == dtStart || null == dtEnd)
@@ -277,8 +277,8 @@ public class CreditAnalytics {
 	public static final double YearFraction (
 		final org.drip.analytics.date.JulianDate dtStart,
 		final org.drip.analytics.date.JulianDate dtEnd,
-		final java.lang.String strDayCount,
-		final java.lang.String strCalendar)
+		final String strDayCount,
+		final String strCalendar)
 		throws java.lang.Exception
 	{
 		if (null == dtStart || null == dtEnd)
@@ -300,7 +300,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.date.JulianDate Adjust (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCalendar,
+		final String strCalendar,
 		final int iAdjustMode)
 	{
 		if (null == dt) return null;
@@ -331,7 +331,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.date.JulianDate RollDate (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCalendarSet,
+		final String strCalendarSet,
 		final int iRollMode)
 	{
 		if (null == dt) return null;
@@ -358,7 +358,7 @@ public class CreditAnalytics {
 	 * @return The set of on-the-run treasury identifier strings
 	 */
 
-	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.String> GetOnTheRunTSYSet (
+	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<String> GetOnTheRunTSYSet (
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		return null;
@@ -408,7 +408,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.product.definition.FixedIncomeComponent MakeInstrumentFromCode (
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strCode)
+		final String strCode)
 	{
 		return null;
 	}
@@ -427,7 +427,7 @@ public class CreditAnalytics {
 	public static final org.drip.product.definition.FixedIncomeComponent[] MakeStdInstrumentSet (
 		final org.drip.analytics.date.JulianDate dt,
 		final int iNumInstr,
-		final java.lang.String strType)
+		final String strType)
 	{
 		return null;
 	}
@@ -440,7 +440,7 @@ public class CreditAnalytics {
 	 * @return The set of the curve names
 	 */
 
-	public static final java.util.Set<java.lang.String> GetEODIRCurveNames (
+	public static final java.util.Set<String> GetEODIRCurveNames (
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == s_stmt || null == dtEOD) return null;
@@ -457,7 +457,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadLiveFullIRCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -472,7 +472,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadEODFullIRCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == s_stmt || null == dtEOD || null == strName || strName.isEmpty()) return null;
@@ -492,7 +492,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.rates.DiscountCurve> LoadEODFullIRCurves (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -534,7 +534,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadLiveIRCashCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -549,7 +549,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadEODIRCashCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == strName || strName.isEmpty() || null == s_stmt) return null;
@@ -575,7 +575,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.rates.DiscountCurve> LoadEODIRCashCurves (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -617,7 +617,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadLiveEDFCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -632,7 +632,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadEODEDSFCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == strName || strName.isEmpty() || null == s_stmt) return null;
@@ -658,7 +658,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.rates.DiscountCurve>	LoadEODEDSFCurves (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -700,7 +700,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadLiveIRSwapCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -715,7 +715,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadEODIRSwapCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == strName || strName.isEmpty() || null == s_stmt) return null;
@@ -747,7 +747,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.rates.DiscountCurve> LoadEODIRSwapCurves (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -788,7 +788,7 @@ public class CreditAnalytics {
 	 * @return The set of treasury curves
 	 */
 
-	public static final java.util.Set<java.lang.String> GetEODTSYCurveNames (
+	public static final java.util.Set<String> GetEODTSYCurveNames (
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == s_stmt) return null;
@@ -805,7 +805,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadLiveTSYCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -820,7 +820,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.rates.DiscountCurve LoadEODTSYCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == s_stmt) return null;
@@ -840,7 +840,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.rates.DiscountCurve> LoadEODTSYCurves (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -881,7 +881,7 @@ public class CreditAnalytics {
 	 * @return The set of CDS curves
 	 */
 
-	public static final java.util.Set<java.lang.String> GetEODCDSCurveNames (
+	public static final java.util.Set<String> GetEODCDSCurveNames (
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == s_stmt) return null;
@@ -898,7 +898,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve LoadLiveCDSCreditCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -914,8 +914,8 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve LoadEODCDSCreditCurve (
-		final java.lang.String strName,
-		final java.lang.String strCurrency,
+		final String strName,
+		final String strCurrency,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == strName || strName.isEmpty() || null == strCurrency || strCurrency.isEmpty() || null ==
@@ -947,8 +947,8 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.definition.CreditCurve> LoadEODCDSCreditCurves (
-			final java.lang.String strName,
-			final java.lang.String strCurrency,
+			final String strName,
+			final String strCurrency,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -990,7 +990,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve LoadLiveBondCreditCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -1005,7 +1005,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve LoadEODBondCreditCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == s_stmt) return null;
@@ -1025,7 +1025,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.definition.CreditCurve> LoadEODBondCreditCurve (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -1044,7 +1044,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve LoadLiveFullCreditCurve (
-		final java.lang.String strName)
+		final String strName)
 	{
 		return null;
 	}
@@ -1059,7 +1059,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.definition.CreditCurve LoadEODFullCreditCurve (
-		final java.lang.String strName,
+		final String strName,
 		final org.drip.analytics.date.JulianDate dtEOD)
 	{
 		if (null == dtEOD || null == strName || strName.isEmpty() || null == s_stmt) return null;
@@ -1079,7 +1079,7 @@ public class CreditAnalytics {
 
 	public static final java.util.Map<org.drip.analytics.date.JulianDate,
 		org.drip.analytics.definition.CreditCurve> LoadEODFullCreditCurve (
-			final java.lang.String strName,
+			final String strName,
 			final org.drip.analytics.date.JulianDate dtStart,
 			final org.drip.analytics.date.JulianDate dtEnd)
 	{
@@ -1104,11 +1104,11 @@ public class CreditAnalytics {
 	{
 		if (null == cds || null == dtEOD) return null;
 
-		java.lang.String strIR = cds.payCurrency();
+		String strIR = cds.payCurrency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = cds.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty()) return null;
 
@@ -1150,7 +1150,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.definition.Bond GetBond (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		org.drip.product.definition.Bond bond = GetBondFromCache (strBondId);
@@ -1179,7 +1179,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.definition.Bond GetBond (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		return GetBond (strBondId, null);
 	}
@@ -1194,7 +1194,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean PutBond (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.product.definition.Bond bond)
 	{
 		if (null == bond || null == strBondId || strBondId.isEmpty()) return false;
@@ -1213,7 +1213,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean RemoveBond (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		if (null == strBondId || strBondId.isEmpty()) return false;
 
@@ -1231,7 +1231,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.creator.BondRefDataBuilder GetBondRefData (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		org.drip.product.creator.BondRefDataBuilder brdb = GetBondRefDataFromCache (strBondId);
 
@@ -1255,7 +1255,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.params.EmbeddedOptionSchedule GetBondCallEOS (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == GetBond (strBondId, dt)) return null;
@@ -1272,7 +1272,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.params.EmbeddedOptionSchedule GetBondCallEOS (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		return GetBondCallEOS (strBondId, null);
 	}
@@ -1287,7 +1287,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.params.EmbeddedOptionSchedule GetBondPutEOS (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == GetBond (strBondId, dt)) return null;
@@ -1304,7 +1304,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.params.EmbeddedOptionSchedule GetBondPutEOS (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		return GetBondPutEOS (strBondId, null);
 	}
@@ -1315,7 +1315,7 @@ public class CreditAnalytics {
 	 * @return Set of available issuer tickers
 	 */
 
-	public static final java.util.Set<java.lang.String> GetAvailableTickers()
+	public static final java.util.Set<String> GetAvailableTickers()
 	{
 		if (null == s_stmt) return null;
 
@@ -1330,8 +1330,8 @@ public class CreditAnalytics {
 	 * @return The set of tickers
 	 */
 
-	public static final java.util.List<java.lang.String> GetISINsForTicker (
-		final java.lang.String strTicker)
+	public static final java.util.List<String> GetISINsForTicker (
+		final String strTicker)
 	{
 		if (null == s_stmt || null == strTicker || strTicker.isEmpty()) return null;
 
@@ -1349,7 +1349,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean IsBondFloater (
-		final java.lang.String strBondId)
+		final String strBondId)
 		throws java.lang.Exception
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId))
@@ -1371,7 +1371,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.param.valuation.WorkoutInfo BondWorkoutInfoFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1397,7 +1397,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.param.valuation.WorkoutInfo BondWorkoutInfoFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice)
@@ -1421,7 +1421,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondYieldFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1460,7 +1460,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondYTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1492,7 +1492,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondYieldFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice) throws java.lang.Exception
@@ -1516,7 +1516,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1549,7 +1549,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1581,7 +1581,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice) throws java.lang.Exception
@@ -1605,7 +1605,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondOASFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1638,7 +1638,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondOASTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1669,7 +1669,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondOASFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice)
@@ -1694,7 +1694,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondISpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1727,7 +1727,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondITMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1759,7 +1759,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondISpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice)
@@ -1784,7 +1784,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1817,7 +1817,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice,
@@ -1849,7 +1849,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblPrice)
@@ -1876,7 +1876,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondTSYSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -1911,7 +1911,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondTSYTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -1945,7 +1945,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondTSYSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -1972,7 +1972,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2007,7 +2007,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2040,7 +2040,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2067,7 +2067,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -2102,7 +2102,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -2136,7 +2136,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -2163,7 +2163,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -2198,7 +2198,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSTMFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -2232,7 +2232,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -2259,7 +2259,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPriceFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2293,7 +2293,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPriceFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2319,7 +2319,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondYieldFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2351,7 +2351,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondYieldFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
 		final double dblTSYSpread)
@@ -2377,7 +2377,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2411,7 +2411,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2438,7 +2438,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondOASFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2472,7 +2472,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondOASFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2498,7 +2498,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondISpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2531,7 +2531,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondISpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2557,7 +2557,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2591,7 +2591,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2617,7 +2617,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2650,7 +2650,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2678,7 +2678,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2712,7 +2712,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2742,7 +2742,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2776,7 +2776,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -2804,7 +2804,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPriceFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield,
@@ -2836,7 +2836,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPriceFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield)
@@ -2861,7 +2861,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield,
@@ -2893,7 +2893,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondZSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield)
@@ -2918,7 +2918,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondISpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield,
@@ -2950,7 +2950,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondISpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield)
@@ -2975,7 +2975,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield,
@@ -3007,7 +3007,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondDiscountMarginFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final double dblYield)
@@ -3034,7 +3034,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -3068,7 +3068,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondGSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.rates.DiscountCurve dcTSY,
@@ -3095,7 +3095,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -3129,7 +3129,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditBasisFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -3156,7 +3156,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -3190,7 +3190,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondPECSFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -3216,7 +3216,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.param.valuation.ValuationParams valParams,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc,
@@ -3248,7 +3248,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondCreditPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt,
 		final org.drip.analytics.rates.DiscountCurve dc,
 		final org.drip.analytics.definition.CreditCurve cc)
@@ -3267,7 +3267,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate EffectiveDate (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId)) return null;
 
@@ -3283,7 +3283,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate MaturityDate (
-		final java.lang.String strBondId)
+		final String strBondId)
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId)) return null;
 
@@ -3300,7 +3300,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate PreviousCouponDate (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == dt || null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId))
@@ -3325,7 +3325,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate CurrentCouponDate (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == dt || null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId))
@@ -3350,7 +3350,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate NextCouponDate (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == dt || null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId))
@@ -3375,7 +3375,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.output.ExerciseInfo NextExerciseInfo (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dt)
 	{
 		if (null == dt || null == strBondId || strBondId.isEmpty() || null == GetBond (strBondId))
@@ -3396,7 +3396,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean InFirstPeriod (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblDate)
 		throws java.lang.Exception
 	{
@@ -3419,7 +3419,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean InLastPeriod (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblDate)
 		throws java.lang.Exception
 	{
@@ -3443,7 +3443,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODConvexityFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3455,7 +3455,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
@@ -3479,7 +3479,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODCreditBasisFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3491,11 +3491,11 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR or Credit Curve for bond with ID " + strBondId);
@@ -3522,7 +3522,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODPECSFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3534,11 +3534,11 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR or Credit Curve for bond with ID " + strBondId);
@@ -3565,7 +3565,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODDurationFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3577,7 +3577,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
@@ -3601,7 +3601,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODGSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3613,12 +3613,12 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty())
 			throw new java.lang.Exception ("Cannot locate TSY Curve for bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = LoadEODTSYCurve (strIR, dtEOD);
 
@@ -3644,7 +3644,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODISpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3656,7 +3656,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -3681,7 +3681,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODDiscountMarginFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3693,7 +3693,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -3718,7 +3718,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODOASFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3730,7 +3730,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -3755,7 +3755,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODTSYSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3770,11 +3770,11 @@ public class CreditAnalytics {
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
-		java.lang.String strTSY = bond.	payCurrency();
+		String strTSY = bond.	payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODTSYCurve (strTSY, dtEOD);
 
@@ -3796,7 +3796,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODYieldFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3810,7 +3810,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
@@ -3839,7 +3839,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODZSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblPrice)
 		throws java.lang.Exception
@@ -3851,7 +3851,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -3875,7 +3875,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveConvexityFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -3894,7 +3894,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveCreditBasisFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -3913,7 +3913,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLivePECSFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -3932,7 +3932,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveDurationFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -3951,7 +3951,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODGSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -3970,7 +3970,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveISpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -3989,7 +3989,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveOASFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -4008,7 +4008,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveTSYSpreadFromPrice (
-		final java.lang.String strBondId, 
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -4027,7 +4027,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveYieldFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -4046,7 +4046,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveZSpreadFromPrice (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblPrice)
 		throws java.lang.Exception
 	{
@@ -4066,7 +4066,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODConvexityFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4080,7 +4080,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
@@ -4102,7 +4102,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODCreditBasisFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4114,11 +4114,11 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR or Credit Curve for bond with ID " + strBondId);
@@ -4145,7 +4145,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODPECSFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4157,11 +4157,11 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR or Credit Curve for bond with ID " + strBondId);
@@ -4188,7 +4188,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODDurationFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4200,7 +4200,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
@@ -4224,7 +4224,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODGSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4236,12 +4236,12 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty())
 			throw new java.lang.Exception ("Cannot locate TSY Curve for bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = LoadEODTSYCurve (strIR, dtEOD);
 
@@ -4267,7 +4267,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODISpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4279,7 +4279,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -4304,7 +4304,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODDiscountMarginFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4316,7 +4316,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -4341,7 +4341,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODOASFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4353,7 +4353,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -4378,7 +4378,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODPriceFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4392,7 +4392,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
@@ -4414,7 +4414,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODTSYSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4429,11 +4429,11 @@ public class CreditAnalytics {
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -4455,7 +4455,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODZSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblYield)
 		throws java.lang.Exception
@@ -4467,7 +4467,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -4491,7 +4491,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveConvexityFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4510,7 +4510,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveCreditBasisFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4529,7 +4529,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLivePECSFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4548,7 +4548,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveDurationFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4567,7 +4567,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveGSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4586,7 +4586,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveISpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4605,7 +4605,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveOASFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4624,7 +4624,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveParASWFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4643,7 +4643,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLivePriceFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4662,7 +4662,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveTSYSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4681,7 +4681,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveZSpreadFromYield (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblYield)
 		throws java.lang.Exception
 	{
@@ -4701,7 +4701,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODConvexityFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4717,11 +4717,11 @@ public class CreditAnalytics {
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODTSYCurve (strTSY, dtEOD);
 
@@ -4744,7 +4744,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODCreditBasisFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4757,11 +4757,11 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR or Credit Curve for bond with ID " + strBondId);
@@ -4770,7 +4770,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.definition.CreditCurve ccEOD = LoadEODCDSCreditCurve (strCC, strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
@@ -4795,7 +4795,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODPECSFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4808,11 +4808,11 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
 		if (null == strIR || strIR.isEmpty() || null == strCC || strCC.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR or Credit Curve for bond with ID " + strBondId);
@@ -4821,7 +4821,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.definition.CreditCurve ccEOD = LoadEODCDSCreditCurve (strCC, strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
@@ -4846,7 +4846,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODDurationFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4859,14 +4859,14 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -4889,7 +4889,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODGSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4902,13 +4902,13 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (bond.currency(), dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty())
 			throw new java.lang.Exception ("Cannot locate TSY Curve for bond with ID " + strBondId);
@@ -4935,7 +4935,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODISpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4948,7 +4948,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -4957,7 +4957,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -4981,7 +4981,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODDiscountMarginFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -4994,7 +4994,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond for ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -5003,7 +5003,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -5027,7 +5027,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODOASFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -5040,7 +5040,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -5049,7 +5049,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -5072,7 +5072,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODPriceFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -5088,11 +5088,11 @@ public class CreditAnalytics {
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -5115,7 +5115,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODYieldFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -5131,11 +5131,11 @@ public class CreditAnalytics {
 		org.drip.analytics.rates.DiscountCurve dcEOD = null;
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null != strIR && !strIR.isEmpty()) dcEOD = LoadEODFullIRCurve (strIR, dtEOD);
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -5158,7 +5158,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondEODZSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final org.drip.analytics.date.JulianDate dtEOD,
 		final double dblTSYSpread)
 		throws java.lang.Exception
@@ -5171,7 +5171,7 @@ public class CreditAnalytics {
 
 		if (null == bond) throw new java.lang.Exception ("Cannot locate bond with ID " + strBondId);
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty())
 			throw new java.lang.Exception ("Cannot locate IR Curve for bond with ID " + strBondId);
@@ -5180,7 +5180,7 @@ public class CreditAnalytics {
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		if (null == strTSY || strTSY.isEmpty()) dcTSY = LoadEODEDSFCurve (strTSY, dtEOD);
 
@@ -5202,7 +5202,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveConvexityFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5222,7 +5222,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveCreditBasisFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5242,7 +5242,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLivePECSFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5262,7 +5262,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveDurationFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5282,7 +5282,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveGSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5302,7 +5302,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveISpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5322,7 +5322,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveOASFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5341,7 +5341,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLivePriceFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5361,7 +5361,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveYieldFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5381,7 +5381,7 @@ public class CreditAnalytics {
 	 */
 
 	public static final double BondLiveZSpreadFromTSYSpread (
-		final java.lang.String strBondId,
+		final String strBondId,
 		final double dblTSYSpread)
 		throws java.lang.Exception
 	{
@@ -5401,7 +5401,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		BondEODMeasuresFromPrice (
-			final java.lang.String strBondId,
+			final String strBondId,
 			final org.drip.analytics.date.JulianDate dtEOD,
 			final double dblPrice)
 	{
@@ -5412,7 +5412,7 @@ public class CreditAnalytics {
 
 		if (null == bond) return null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty()) return null;
 
@@ -5433,9 +5433,9 @@ public class CreditAnalytics {
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 		org.drip.analytics.definition.CreditCurve ccEOD = null;
@@ -5461,7 +5461,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		BondLiveMeasuresFromPrice (
-			final java.lang.String strBondId,
+			final String strBondId,
 			final double dblPrice)
 	{
 		return BondEODMeasuresFromPrice (strBondId, org.drip.analytics.date.DateUtil.Today(), dblPrice);
@@ -5479,7 +5479,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		BondEODMeasuresFromTSYSpread (
-			final java.lang.String strBondId,
+			final String strBondId,
 			final org.drip.analytics.date.JulianDate dtEOD,
 			final double dblTSYSpread)
 	{
@@ -5491,7 +5491,7 @@ public class CreditAnalytics {
 
 		if (null == bond) return null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty()) return null;
 
@@ -5512,9 +5512,9 @@ public class CreditAnalytics {
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 		org.drip.analytics.definition.CreditCurve ccEOD = null;
@@ -5540,7 +5540,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		BondLiveMeasuresFromTSYSpread (
-			final java.lang.String strBondId,
+			final String strBondId,
 			final double dblTSYSpread)
 	{
 		return BondEODMeasuresFromTSYSpread (strBondId, org.drip.analytics.date.DateUtil.Today(),
@@ -5559,7 +5559,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		BondEODMeasuresFromYield (
-			final java.lang.String strBondId,
+			final String strBondId,
 			final org.drip.analytics.date.JulianDate dtEOD,
 			final double dblYield)
 	{
@@ -5570,7 +5570,7 @@ public class CreditAnalytics {
 
 		if (null == bond) return null;
 
-		java.lang.String strIR = bond.currency();
+		String strIR = bond.currency();
 
 		if (null == strIR || strIR.isEmpty()) return null;
 
@@ -5591,9 +5591,9 @@ public class CreditAnalytics {
 
 		org.drip.state.identifier.LatentStateLabel lslCredit = bond.creditLabel();
 
-		java.lang.String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
+		String strCC = null == lslCredit ? null : lslCredit.fullyQualifiedName();
 
-		java.lang.String strTSY = bond.payCurrency();
+		String strTSY = bond.payCurrency();
 
 		org.drip.analytics.rates.DiscountCurve dcTSY = null;
 		org.drip.analytics.definition.CreditCurve ccEOD = null;
@@ -5619,7 +5619,7 @@ public class CreditAnalytics {
 
 	public static final org.drip.analytics.support.CaseInsensitiveTreeMap<java.lang.Double>
 		BondLiveMeasuresFromYield (
-			final java.lang.String strBondId,
+			final String strBondId,
 			final double dblYield)
 	{
 		return BondEODMeasuresFromYield (strBondId, org.drip.analytics.date.DateUtil.Today(), dblYield);
@@ -5637,8 +5637,8 @@ public class CreditAnalytics {
 	 */
 
 	public static final boolean GetBondBooleanField (
-		final java.lang.String strBondId,
-		final java.lang.String strField)
+		final String strBondId,
+		final String strField)
 		throws java.lang.Exception
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == strField || strField.isEmpty()) 
@@ -5698,8 +5698,8 @@ public class CreditAnalytics {
 	 */
 
 	public static final int GetBondIntegerField (
-		final java.lang.String strBondId,
-		final java.lang.String strField)
+		final String strBondId,
+		final String strField)
 		throws java.lang.Exception
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == strField || strField.isEmpty()) 
@@ -5726,8 +5726,8 @@ public class CreditAnalytics {
 	 */
 
 	public static final double GetBondDoubleField (
-		final java.lang.String strBondId,
-		final java.lang.String strField)
+		final String strBondId,
+		final String strField)
 		throws java.lang.Exception
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == strField || strField.isEmpty()) 
@@ -5778,9 +5778,9 @@ public class CreditAnalytics {
 	 * @return String field value
 	 */
 
-	public static final java.lang.String GetBondStringField (
-		final java.lang.String strBondId,
-		final java.lang.String strField)
+	public static final String GetBondStringField (
+		final String strBondId,
+		final String strField)
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == strField || strField.isEmpty()) return null;
 
@@ -5897,8 +5897,8 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.analytics.date.JulianDate GetBondDateField (
-		final java.lang.String strBondId,
-		final java.lang.String strField)
+		final String strBondId,
+		final String strField)
 	{
 		if (null == strBondId || strBondId.isEmpty() || null == strField || strField.isEmpty()) return null;
 
@@ -5946,14 +5946,14 @@ public class CreditAnalytics {
 	public static final java.util.Map<org.drip.analytics.date.JulianDate, java.lang.Double>
 		GetIssuerAggregateOutstandingNotional (
 			final org.drip.analytics.date.JulianDate dtToday,
-			final java.lang.String strTicker,
+			final String strTicker,
 			final org.drip.analytics.date.JulianDate[] adtAscending)
 	{
 		if (null == strTicker || strTicker.isEmpty() || null == adtAscending || 0 == adtAscending.length ||
 			null == s_stmt)
 			return null;
 
-		java.util.List<java.lang.String> lsstrISIN = GetISINsForTicker (strTicker);
+		java.util.List<String> lsstrISIN = GetISINsForTicker (strTicker);
 
 		if (null == lsstrISIN || 0 == lsstrISIN.size()) return null;
 
@@ -5967,7 +5967,7 @@ public class CreditAnalytics {
 
 		if (null == dtToday) dtCurrent = org.drip.analytics.date.DateUtil.Today();
 
-		for (java.lang.String strISIN : lsstrISIN) {
+		for (String strISIN : lsstrISIN) {
 			org.drip.product.definition.Bond bond = CreditAnalytics.GetBond (strISIN);
 
 			if (null != bond && !bond.variableCoupon() && !bond.exercised() && !bond.defaulted() &&
@@ -6001,8 +6001,8 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.definition.BasketProduct MakeBondBasket (
-		final java.lang.String strName,
-		final java.lang.String[] astrBondId,
+		final String strName,
+		final String[] astrBondId,
 		final double[] adblWeights,
 		final org.drip.analytics.date.JulianDate dtEffective)
 	{
@@ -6042,9 +6042,9 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.definition.BasketProduct MakeCDX (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final org.drip.analytics.date.JulianDate dt,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		return org.drip.service.env.StandardCDXManager.GetOnTheRun (strIndex, dt, strTenor);
 	}
@@ -6060,9 +6060,9 @@ public class CreditAnalytics {
 	 */
 
 	public static final org.drip.product.definition.BasketProduct MakeCDX (
-		final java.lang.String strIndex,
+		final String strIndex,
 		final int iSeries,
-		final java.lang.String strTenor)
+		final String strTenor)
 	{
 		return org.drip.service.env.StandardCDXManager.MakeStandardCDX (strIndex, iSeries, strTenor);
 	}
