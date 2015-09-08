@@ -1,8 +1,10 @@
 
 package org.drip.sample.futures;
 
-import org.drip.market.exchange.*;
+import org.drip.market.exchange.ShortTermFutures;
+import org.drip.market.exchange.ShortTermFuturesContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -60,7 +62,8 @@ public class ShortTermFuturesDefinition {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		String[] args)
 	{
 		CreditAnalytics.Init ("");

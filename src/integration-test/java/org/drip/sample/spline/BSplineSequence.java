@@ -2,8 +2,10 @@
 package org.drip.sample.spline;
 
 import org.drip.quant.common.FormatUtil;
-import org.drip.spline.bspline.*;
-import org.testng.annotations.DataProvider;
+import org.drip.spline.bspline.BasisHatPairGenerator;
+import org.drip.spline.bspline.BasisHatShapeControl;
+import org.drip.spline.bspline.SegmentBasisFunction;
+import org.drip.spline.bspline.SegmentBasisFunctionGenerator;
 import org.testng.annotations.Test;
 
 /*
@@ -184,15 +186,8 @@ public class BSplineSequence {
 			);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

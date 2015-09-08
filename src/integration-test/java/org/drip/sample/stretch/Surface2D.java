@@ -1,14 +1,19 @@
 
 package org.drip.sample.stretch;
 
-import java.util.TreeMap;
-
 import org.drip.quant.common.FormatUtil;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
-import org.drip.spline.grid.*;
+import org.drip.spline.grid.OverlappingStretchSpan;
+import org.drip.spline.grid.Span;
 import org.drip.spline.multidimensional.WireSurfaceStretch;
-import org.drip.spline.params.*;
-import org.drip.spline.stretch.*;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.stretch.BoundarySettings;
+import org.drip.spline.stretch.MultiSegmentSequence;
+import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
+import org.testng.annotations.Test;
+
+import java.util.TreeMap;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -46,7 +51,8 @@ import org.drip.spline.stretch.*;
 
 public class Surface2D {
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -4,6 +4,7 @@ package org.drip.sample.coveringNumber;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spaces.cover.L1R1CoveringBounds;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -41,7 +42,8 @@ import org.drip.spaces.cover.L1R1CoveringBounds;
 
 public class BoundedFunction {
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

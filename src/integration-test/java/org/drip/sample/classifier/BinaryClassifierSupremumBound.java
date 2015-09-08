@@ -1,12 +1,15 @@
 
 package org.drip.sample.classifier;
 
-import org.drip.learning.RxToR1.*;
+import org.drip.learning.RxToR1.EmpiricalPenaltySupremumEstimator;
+import org.drip.learning.RxToR1.EmpiricalPenaltySupremumMetrics;
 import org.drip.quant.common.FormatUtil;
 import org.drip.sequence.functional.FlatMultivariateRandom;
 import org.drip.sequence.metrics.SingleSequenceAgnosticMetrics;
-import org.drip.sequence.random.*;
+import org.drip.sequence.random.Binary;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -255,7 +258,8 @@ public class BinaryClassifierSupremumBound {
 		System.out.println (strDump + " |");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class, enabled = false)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

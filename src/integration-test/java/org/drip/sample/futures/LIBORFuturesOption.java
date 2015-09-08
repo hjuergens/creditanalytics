@@ -1,24 +1,31 @@
 
 package org.drip.sample.futures;
 
-import java.util.*;
-
-import org.drip.analytics.date.*;
-import org.drip.analytics.rates.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.analytics.rates.DiscountCurve;
+import org.drip.analytics.rates.ForwardCurve;
 import org.drip.function.R1ToR1.FlatUnivariate;
-import org.drip.market.otc.*;
-import org.drip.param.creator.*;
+import org.drip.market.otc.FloatFloatSwapConvention;
+import org.drip.market.otc.IBORFloatFloatContainer;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioForwardCurveBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
-import org.drip.param.valuation.*;
+import org.drip.param.valuation.ValuationParams;
 import org.drip.product.creator.SingleStreamOptionBuilder;
 import org.drip.product.fra.FRAStandardCapFloorlet;
-import org.drip.product.rates.*;
+import org.drip.product.rates.FloatFloatComponent;
 import org.drip.quant.common.FormatUtil;
 import org.drip.sample.forward.OvernightIndexCurve;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
 import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
-import org.drip.state.identifier.*;
+import org.drip.state.identifier.ForwardLabel;
+import org.drip.state.identifier.FundingLabel;
+import org.testng.annotations.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -408,7 +415,8 @@ public class LIBORFuturesOption {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

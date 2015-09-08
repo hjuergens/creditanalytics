@@ -2,13 +2,17 @@
 package org.drip.sample.treasury;
 
 import org.drip.analytics.cashflow.CompositePeriod;
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.market.otc.*;
-import org.drip.param.creator.*;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
 import org.drip.param.valuation.ValuationParams;
-import org.drip.product.creator.*;
+import org.drip.product.creator.BondBuilder;
+import org.drip.product.creator.SingleStreamComponentBuilder;
 import org.drip.product.credit.BondComponent;
 import org.drip.product.definition.CalibratableFixedIncomeComponent;
 import org.drip.product.rates.FixFloatComponent;
@@ -16,6 +20,7 @@ import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.creator.DiscountCurveBuilder;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*!
  * Copyright (C) 2015 Lakshmi Krishnamurthy
@@ -256,7 +261,8 @@ public class YAS_UST {
 		System.out.println ("\tAccrued   : " + FormatUtil.FormatDouble (dblAccrued * dblNotional, 1, 2, 1.));
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

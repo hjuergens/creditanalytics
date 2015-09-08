@@ -30,6 +30,12 @@ package org.drip.spline.tension;
  *  	limitations under the License.
  */
 
+import org.drip.function.definition.R1ToR1;
+import static org.drip.quant.common.NumberUtil.IsValid;
+import static java.lang.Math.pow;
+import static java.lang.Math.sinh;
+import static java.lang.Math.cosh;
+
 /**
  * KLKHyperbolicTensionPsy implements the basic framework and the family of C2 Tension Splines outlined in
  *  Koch and Lyche (1989), Koch and Lyche (1993), and Kvasov (2000) Papers.
@@ -40,60 +46,60 @@ package org.drip.spline.tension;
  * @author Lakshmi Krishnamurthy
  */
 
-public class KLKHyperbolicTensionPsy extends org.drip.function.definition.R1ToR1 {
-	private double _dblTension = java.lang.Double.NaN;
+public class KLKHyperbolicTensionPsy extends R1ToR1 {
+	private double _dblTension = Double.NaN;
 
 	/**
 	 * KLKHyperbolicTensionPsy constructor
 	 * 
 	 * @param dblTension Tension of the HyperbolicTension Function
 	 * 
-	 * @throws java.lang.Exception Thrown if the input is invalid
+	 * @throws Exception Thrown if the input is invalid
 	 */
 
 	public KLKHyperbolicTensionPsy (
 		final double dblTension)
-		throws java.lang.Exception
+		throws Exception
 	{
 		super (null);
 
-		if (!org.drip.quant.common.NumberUtil.IsValid (_dblTension = dblTension))
-			throw new java.lang.Exception ("KLKHyperbolicTensionPsy ctr: Invalid Inputs");
+		if (!IsValid (_dblTension = dblTension))
+			throw new Exception ("KLKHyperbolicTensionPsy ctr: Invalid Inputs");
 	}
 
 	@Override public double evaluate (
 		final double dblVariate)
-		throws java.lang.Exception
+		throws Exception
 	{
-		if (!org.drip.quant.common.NumberUtil.IsValid (dblVariate))
-			throw new java.lang.Exception ("KLKHyperbolicTensionPsy::evaluate => Invalid Inputs");
+		if (!IsValid (dblVariate))
+			throw new Exception ("KLKHyperbolicTensionPsy::evaluate => Invalid Inputs");
 
-		return java.lang.Math.sinh (_dblTension * (1. - dblVariate)) / java.lang.Math.sinh (_dblTension);
+		return sinh(_dblTension * (1. - dblVariate)) / sinh(_dblTension);
 	}
 
 	@Override public double derivative (
 		final double dblVariate,
 		final int iOrder)
-		throws java.lang.Exception
+		throws Exception
 	{
-		if (!org.drip.quant.common.NumberUtil.IsValid (dblVariate) || 0 > iOrder)
-			throw new java.lang.Exception ("KLKHyperbolicTensionPsy::derivative => Invalid Inputs");
+		if (!IsValid (dblVariate) || 0 > iOrder)
+			throw new Exception ("KLKHyperbolicTensionPsy::derivative => Invalid Inputs");
 
-		return java.lang.Math.pow (-_dblTension, iOrder) * java.lang.Math.sinh (_dblTension * (1. -
-			dblVariate)) / java.lang.Math.sinh (_dblTension);
+		return pow(-_dblTension, iOrder) * sinh (_dblTension * (1. -
+			dblVariate)) / sinh (_dblTension);
 	}
 
 	@Override public double integrate (
 		final double dblBegin,
 		final double dblEnd)
-		throws java.lang.Exception
+		throws Exception
 	{
-		if (!org.drip.quant.common.NumberUtil.IsValid (dblBegin) || !org.drip.quant.common.NumberUtil.IsValid
+		if (!IsValid(dblBegin) || !IsValid
 			(dblEnd))
-			throw new java.lang.Exception ("KLKHyperbolicTensionPsy::integrate => Invalid Inputs");
+			throw new Exception ("KLKHyperbolicTensionPsy::integrate => Invalid Inputs");
 
-		return -1. * (java.lang.Math.cosh (_dblTension * (1. - dblEnd)) - java.lang.Math.cosh (_dblTension *
-			(1. - dblBegin))) / (_dblTension * java.lang.Math.sinh (_dblTension));
+		return -1. * (cosh (_dblTension * (1. - dblEnd)) - cosh (_dblTension *
+			(1. - dblBegin))) / (_dblTension * sinh (_dblTension));
 	}
 
 	/**
@@ -109,7 +115,7 @@ public class KLKHyperbolicTensionPsy extends org.drip.function.definition.R1ToR1
 
 	public static final void main (
 		final String[] astrArgs)
-		throws java.lang.Exception
+		throws Exception
 	{
 		KLKHyperbolicTensionPsy khtp = new KLKHyperbolicTensionPsy (2.);
 

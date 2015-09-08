@@ -5,24 +5,27 @@ package org.drip.sample.fx;
  * General imports
  */
 
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.daycount.Convention;
+import org.drip.analytics.definition.FXBasisCurve;
+import org.drip.analytics.definition.FXForwardCurve;
+import org.drip.analytics.rates.ExplicitBootDiscountCurve;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.creator.FXForwardBuilder;
+import org.drip.product.definition.FXForward;
+import org.drip.product.params.CurrencyPair;
+import org.drip.quant.common.FormatUtil;
+import org.drip.service.api.CreditAnalytics;
+import org.drip.state.creator.DiscountCurveBuilder;
+import org.drip.state.creator.FXBasisCurveBuilder;
+import org.drip.state.creator.FXForwardCurveBuilder;
+import org.testng.annotations.Test;
+
 import java.util.Random;
 
 /*
  * Credit Product imports
  */
-
-
-import org.drip.analytics.date.DateUtil;
-import org.drip.analytics.daycount.Convention;
-import org.drip.analytics.definition.*;
-import org.drip.analytics.rates.ExplicitBootDiscountCurve;
-import org.drip.param.valuation.*;
-import org.drip.product.definition.*;
-import org.drip.product.params.*;
-import org.drip.product.creator.*;
-import org.drip.quant.common.FormatUtil;
-import org.drip.service.api.CreditAnalytics;
-import org.drip.state.creator.*;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -334,7 +337,8 @@ public class FXAPI {
 				FormatUtil.FormatDouble (adblFXFwdFromEURBasis[i], 1, 3, 100.));
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

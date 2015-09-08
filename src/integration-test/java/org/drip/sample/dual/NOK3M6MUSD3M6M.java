@@ -1,17 +1,24 @@
 
 package org.drip.sample.dual;
 
-import org.drip.analytics.date.*;
-import org.drip.analytics.rates.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.analytics.rates.DiscountCurve;
+import org.drip.analytics.rates.ForwardCurve;
 import org.drip.analytics.support.CompositePeriodBuilder;
 import org.drip.function.R1ToR1.QuadraticRationalShapeControl;
-import org.drip.market.definition.*;
-import org.drip.sample.forward.*;
+import org.drip.market.definition.FloaterIndex;
+import org.drip.market.definition.OvernightIndex;
+import org.drip.sample.forward.IBORCurve;
+import org.drip.sample.forward.OvernightIndexCurve;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
-import org.drip.spline.params.*;
-import org.drip.spline.stretch.*;
+import org.drip.spline.params.ResponseScalingShapeControl;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -571,7 +578,8 @@ public class NOK3M6MUSD3M6M {
 		0.0600  // 20Y
 	};
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -3,10 +3,15 @@ package org.drip.sample.efronstein;
 
 import org.drip.quant.common.FormatUtil;
 import org.drip.sequence.custom.GlivenkoCantelliUniformDeviation;
-import org.drip.sequence.functional.*;
+import org.drip.sequence.functional.BoundedIdempotentUnivariateRandom;
+import org.drip.sequence.functional.EfronSteinMetrics;
+import org.drip.sequence.functional.FlatMultivariateRandom;
+import org.drip.sequence.functional.MultivariateRandom;
 import org.drip.sequence.metrics.SingleSequenceAgnosticMetrics;
-import org.drip.sequence.random.*;
+import org.drip.sequence.random.BoundedUniform;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
 
@@ -244,7 +249,8 @@ public class BoundedVariateSumBound {
 		System.out.println (strDump + " |");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -1,19 +1,24 @@
 
 package org.drip.sample.fra;
 
-import java.util.*;
-
-import org.drip.analytics.date.*;
-import org.drip.analytics.rates.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.analytics.rates.DiscountCurve;
+import org.drip.analytics.rates.ForwardCurve;
 import org.drip.function.R1ToR1.FlatUnivariate;
-import org.drip.param.creator.*;
+import org.drip.param.creator.MarketParamsBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
 import org.drip.param.valuation.ValuationParams;
 import org.drip.product.creator.SingleStreamComponentBuilder;
 import org.drip.product.fra.FRAMarketComponent;
-import org.drip.sample.forward.*;
+import org.drip.sample.forward.IBOR6MQuarticPolyVanilla;
+import org.drip.sample.forward.OvernightIndexCurve;
 import org.drip.service.api.CreditAnalytics;
-import org.drip.state.identifier.*;
+import org.drip.state.identifier.ForwardLabel;
+import org.drip.state.identifier.FundingLabel;
+import org.testng.annotations.Test;
+
+import java.util.Map;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -50,7 +55,8 @@ import org.drip.state.identifier.*;
  */
 
 public class FRAMkt {
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

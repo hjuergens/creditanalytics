@@ -1,15 +1,19 @@
 
 package org.drip.sample.collateral;
 
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.function.R1ToR1.*;
+import org.drip.function.R1ToR1.ExponentialDecay;
+import org.drip.function.R1ToR1.FlatUnivariate;
 import org.drip.function.definition.R1ToR1;
 import org.drip.param.valuation.CollateralizationParams;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.creator.DiscountCurveBuilder;
-import org.drip.state.curve.*;
+import org.drip.state.curve.DeterministicCollateralChoiceDiscountCurve;
+import org.drip.state.curve.ForeignCollateralizedDiscountCurve;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -47,7 +51,8 @@ import org.drip.state.curve.*;
  */
 
 public class DeterministicCollateralChoiceZeroCoupon {
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

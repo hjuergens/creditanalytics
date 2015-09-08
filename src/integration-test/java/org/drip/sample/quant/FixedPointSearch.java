@@ -3,8 +3,10 @@ package org.drip.sample.quant;
 
 import org.drip.function.definition.R1ToR1;
 import org.drip.function.solverR1ToR1.*;
-import org.drip.quant.calculus.*;
-import org.drip.quant.common.*;
+import org.drip.quant.calculus.Differential;
+import org.drip.quant.calculus.R1ToR1Integrator;
+import org.drip.quant.common.FormatUtil;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -311,7 +313,8 @@ public class FixedPointSearch {
 		}
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 	{
 		/*

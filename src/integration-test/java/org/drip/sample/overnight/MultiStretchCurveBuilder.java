@@ -1,23 +1,33 @@
 
 package org.drip.sample.overnight;
 
-import org.drip.analytics.date.*;
-import org.drip.analytics.rates.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.analytics.rates.DiscountCurve;
 import org.drip.function.R1ToR1.QuadraticRationalShapeControl;
-import org.drip.market.otc.*;
-import org.drip.param.creator.*;
-import org.drip.param.valuation.*;
-import org.drip.product.creator.*;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.OvernightFixedFloatContainer;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.creator.SingleStreamComponentBuilder;
 import org.drip.product.definition.CalibratableFixedIncomeComponent;
-import org.drip.product.rates.*;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.product.rates.SingleStreamComponent;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
-import org.drip.spline.params.*;
-import org.drip.spline.stretch.*;
+import org.drip.spline.params.ResponseScalingShapeControl;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.stretch.BoundarySettings;
+import org.drip.spline.stretch.MultiSegmentSequence;
+import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
 import org.drip.state.estimator.LatentStateStretchBuilder;
-import org.drip.state.identifier.*;
-import org.drip.state.inference.*;
+import org.drip.state.identifier.ForwardLabel;
+import org.drip.state.inference.LatentStateStretchSpec;
+import org.drip.state.inference.LinearLatentStateCalibrator;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -504,7 +514,8 @@ public class MultiStretchCurveBuilder {
 									null, "FairPremium"), 1, 6, 1.));
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -1,15 +1,20 @@
 
 package org.drip.sample.hullwhite;
 
-import java.util.Map;
-
-import org.drip.analytics.date.*;
-import org.drip.dynamics.hullwhite.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.dynamics.hullwhite.SingleFactorStateEvolver;
+import org.drip.dynamics.hullwhite.TrinomialTreeNodeMetrics;
+import org.drip.dynamics.hullwhite.TrinomialTreeSequenceMetrics;
+import org.drip.dynamics.hullwhite.TrinomialTreeTransitionMetrics;
 import org.drip.function.R1ToR1.FlatUnivariate;
 import org.drip.quant.common.FormatUtil;
 import org.drip.sequence.random.BoxMullerGaussian;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.identifier.FundingLabel;
+import org.testng.annotations.Test;
+
+import java.util.Map;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -116,7 +121,8 @@ public class TrinomialTreeCalibration {
 		System.out.println ("\t|----------------------------------------------------------|");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -5,24 +5,30 @@ package org.drip.sample.tick;
  * Credit Product Analytics API
  */
 
-import java.util.*;
-
-import org.drip.analytics.cashflow.*;
+import org.drip.analytics.cashflow.LossQuadratureMetrics;
 import org.drip.analytics.date.DateUtil;
 import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
-import org.drip.analytics.definition.*;
+import org.drip.analytics.definition.ExplicitBootCreditCurve;
 import org.drip.analytics.output.ExerciseInfo;
 import org.drip.analytics.rates.ExplicitBootDiscountCurve;
 import org.drip.analytics.support.CaseInsensitiveTreeMap;
+import org.drip.param.creator.MarketParamsBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
 import org.drip.param.pricer.CreditPricerParams;
-import org.drip.param.valuation.*;
-import org.drip.product.definition.*;
-import org.drip.param.creator.*;
+import org.drip.param.valuation.ValuationCustomizationParams;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.param.valuation.WorkoutInfo;
+import org.drip.product.definition.Bond;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
-import org.drip.state.creator.*;
+import org.drip.state.creator.CreditCurveBuilder;
+import org.drip.state.creator.DiscountCurveBuilder;
+import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -456,7 +462,8 @@ public class BondLiveAndEODAPI {
 			);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class, enabled = false)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

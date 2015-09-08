@@ -1,22 +1,31 @@
 
 package org.drip.sample.cross;
 
-import java.util.*;
-
 import org.drip.analytics.date.JulianDate;
-import org.drip.analytics.support.*;
+import org.drip.analytics.support.CaseInsensitiveTreeMap;
+import org.drip.analytics.support.CompositePeriodBuilder;
 import org.drip.function.R1ToR1.FlatUnivariate;
 import org.drip.param.creator.ScenarioForwardCurveBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
 import org.drip.param.period.*;
-import org.drip.param.valuation.*;
+import org.drip.param.valuation.CashSettleParams;
+import org.drip.param.valuation.CollateralizationParams;
+import org.drip.param.valuation.ValuationParams;
 import org.drip.product.fx.ComponentPair;
-import org.drip.product.params.*;
-import org.drip.product.rates.*;
-import org.drip.quant.common.*;
+import org.drip.product.params.CurrencyPair;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.product.rates.Stream;
+import org.drip.quant.common.FormatUtil;
+import org.drip.quant.common.NumberUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.creator.DiscountCurveBuilder;
-import org.drip.state.identifier.*;
+import org.drip.state.identifier.FXLabel;
+import org.drip.state.identifier.ForwardLabel;
+import org.drip.state.identifier.FundingLabel;
+import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.Map;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -168,7 +177,8 @@ public class FixFloatFixFloat {
 		return fixFloat;
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

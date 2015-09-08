@@ -5,15 +5,18 @@ package org.drip.sample.funding;
  * Credit Product imports
  */
 
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.param.valuation.*;
-import org.drip.product.definition.*;
-import org.drip.param.creator.*;
-import org.drip.product.creator.*;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.creator.BondBuilder;
+import org.drip.product.definition.Bond;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
-import org.drip.state.creator.*;
+import org.drip.state.creator.DiscountCurveBuilder;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -331,7 +334,8 @@ public class TreasuryCurveAPI {
 		System.out.println ("\tTime => " + (System.nanoTime() - lTime) * 1.e-06 + " ms");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

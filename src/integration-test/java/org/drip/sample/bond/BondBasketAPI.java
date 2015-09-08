@@ -5,32 +5,42 @@ package org.drip.sample.bond;
  * Credit Product Imports
  */
 
-import java.util.List;
-
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.analytics.support.*;
+import org.drip.analytics.support.CaseInsensitiveTreeMap;
+import org.drip.analytics.support.CompositePeriodBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
-import org.drip.param.period.*;
+import org.drip.param.period.ComposableFixedUnitSetting;
+import org.drip.param.period.ComposableFloatingUnitSetting;
+import org.drip.param.period.CompositePeriodSetting;
+import org.drip.param.period.UnitCouponAccrualSetting;
 import org.drip.param.pricer.CreditPricerParams;
-import org.drip.param.valuation.*;
-import org.drip.product.creator.*;
-import org.drip.product.credit.*;
-import org.drip.product.definition.*;
+import org.drip.param.valuation.CashSettleParams;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.creator.BondBuilder;
+import org.drip.product.creator.SingleStreamComponentBuilder;
+import org.drip.product.credit.BondBasket;
+import org.drip.product.credit.BondComponent;
+import org.drip.product.definition.BasketProduct;
+import org.drip.product.definition.Bond;
+import org.drip.product.definition.CalibratableFixedIncomeComponent;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.product.rates.Stream;
+import org.drip.quant.common.Array2D;
+import org.drip.quant.common.FormatUtil;
+import org.drip.service.api.CreditAnalytics;
+import org.drip.state.creator.DiscountCurveBuilder;
+import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
+
+import java.util.List;
 
 /*
  * Credit Analytics API Imports
  */
-
-import org.drip.product.rates.*;
-import org.drip.param.creator.*;
-import org.drip.quant.common.*;
-import org.drip.service.api.CreditAnalytics;
-import org.drip.state.creator.*;
-import org.drip.state.identifier.ForwardLabel;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -613,15 +623,8 @@ public class BondBasketAPI {
 		System.out.println ("Accrued:          " + FormatUtil.FormatDouble (mapResult.get ("Accrued"), 1, 2, 100.));
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

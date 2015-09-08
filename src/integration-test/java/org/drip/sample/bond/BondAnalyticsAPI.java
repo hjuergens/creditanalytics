@@ -5,27 +5,40 @@ package org.drip.sample.bond;
  * Credit Product imports
  */
 
-import org.drip.analytics.cashflow.*;
-import org.drip.analytics.date.*;
+import org.drip.analytics.cashflow.CompositePeriod;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
-import org.drip.analytics.definition.*;
+import org.drip.analytics.definition.CreditCurve;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.analytics.support.*;
-import org.drip.market.otc.*;
-import org.drip.param.definition.*;
+import org.drip.analytics.support.AnalyticsHelper;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
+import org.drip.param.creator.CreditScenarioCurveBuilder;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.QuoteBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
+import org.drip.param.definition.ProductQuote;
+import org.drip.param.definition.Quote;
 import org.drip.param.market.CurveSurfaceQuoteSet;
 import org.drip.param.pricer.CreditPricerParams;
-import org.drip.param.valuation.*;
-import org.drip.product.params.*;
-import org.drip.product.rates.*;
-import org.drip.product.definition.*;
-import org.drip.param.creator.*;
-import org.drip.product.creator.*;
-import org.drip.quant.common.*;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.param.valuation.WorkoutInfo;
+import org.drip.product.creator.BondBuilder;
+import org.drip.product.creator.CDSBuilder;
+import org.drip.product.creator.SingleStreamComponentBuilder;
+import org.drip.product.definition.Bond;
+import org.drip.product.definition.BondProduct;
+import org.drip.product.definition.CalibratableFixedIncomeComponent;
+import org.drip.product.definition.CreditDefaultSwap;
+import org.drip.product.params.EmbeddedOptionSchedule;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.quant.common.Array2D;
+import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
-import org.drip.state.creator.*;
+import org.drip.state.creator.CreditCurveBuilder;
+import org.drip.state.creator.DiscountCurveBuilder;
 import org.drip.state.identifier.ForwardLabel;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /*
@@ -974,15 +987,8 @@ public class BondAnalyticsAPI {
 		);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

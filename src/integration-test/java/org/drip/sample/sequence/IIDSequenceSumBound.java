@@ -1,11 +1,15 @@
 
 package org.drip.sample.sequence;
 
-import org.drip.measure.continuous.*;
+import org.drip.measure.continuous.R1;
+import org.drip.measure.continuous.R1Lebesgue;
 import org.drip.quant.common.FormatUtil;
-import org.drip.sequence.metrics.*;
-import org.drip.sequence.random.*;
+import org.drip.sequence.metrics.BoundedSequenceAgnosticMetrics;
+import org.drip.sequence.metrics.SingleSequenceAgnosticMetrics;
+import org.drip.sequence.random.BoundedUniform;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
 
@@ -151,6 +155,7 @@ public class IIDSequenceSumBound {
 		}
 	}
 
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
 	public static void main (
 		final String[] args)
 		throws Exception

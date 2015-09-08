@@ -1,14 +1,19 @@
 
 package org.drip.sample.option;
 
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.definition.MarketSurface;
 import org.drip.param.creator.ScenarioMarketSurfaceBuilder;
 import org.drip.param.valuation.CollateralizationParams;
 import org.drip.quant.common.FormatUtil;
-import org.drip.spline.basis.*;
-import org.drip.spline.params.*;
+import org.drip.spline.basis.ExponentialTensionSetParams;
+import org.drip.spline.basis.KaklisPandelisSetParams;
+import org.drip.spline.basis.PolynomialFunctionSetParams;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
 import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -166,7 +171,8 @@ public class CustomVolSurfaceBuilder {
 		System.out.println ("\t|------------------------------------------------------------|");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

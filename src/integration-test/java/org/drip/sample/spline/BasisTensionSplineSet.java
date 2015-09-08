@@ -1,13 +1,14 @@
 
 package org.drip.sample.spline;
 
-import org.drip.function.R1ToR1.*;
+import org.drip.function.R1ToR1.QuadraticRationalShapeControl;
 import org.drip.quant.calculus.WengertJacobian;
-import org.drip.spline.basis.*;
-import org.drip.spline.params.*;
-import org.drip.spline.segment.*;
+import org.drip.spline.basis.ExponentialTensionSetParams;
+import org.drip.spline.basis.FunctionSet;
+import org.drip.spline.params.ResponseScalingShapeControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.segment.LatentStateResponseModel;
 import org.drip.spline.tension.KochLycheKvasovFamily;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /*
@@ -332,15 +333,8 @@ public class BasisTensionSplineSet {
 		);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

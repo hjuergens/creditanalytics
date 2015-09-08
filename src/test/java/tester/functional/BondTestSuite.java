@@ -2,7 +2,7 @@
 package tester.functional;
 
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 /*
@@ -41,7 +41,7 @@ import org.testng.annotations.Test;
  * 
  * @author Lakshmi Krishnamurthy
  */
-
+@Listeners({ org.drip.util.TestStopWatch.class })
 public class BondTestSuite {
 
 	/**

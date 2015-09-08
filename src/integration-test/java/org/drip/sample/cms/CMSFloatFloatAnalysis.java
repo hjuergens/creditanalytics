@@ -1,23 +1,32 @@
 
 package org.drip.sample.cms;
 
-import java.util.List;
-
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.analytics.support.*;
+import org.drip.analytics.support.CaseInsensitiveTreeMap;
+import org.drip.analytics.support.CompositePeriodBuilder;
 import org.drip.function.R1ToR1.FlatUnivariate;
-import org.drip.market.otc.*;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
 import org.drip.param.creator.ScenarioDiscountCurveBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
-import org.drip.param.period.*;
-import org.drip.param.valuation.*;
+import org.drip.param.period.ComposableFloatingUnitSetting;
+import org.drip.param.period.CompositePeriodSetting;
+import org.drip.param.valuation.CashSettleParams;
+import org.drip.param.valuation.ValuationParams;
 import org.drip.product.creator.SingleStreamComponentBuilder;
 import org.drip.product.definition.CalibratableFixedIncomeComponent;
-import org.drip.product.rates.*;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.product.rates.FloatFloatComponent;
+import org.drip.product.rates.Stream;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
-import org.drip.state.identifier.*;
+import org.drip.state.identifier.ForwardLabel;
+import org.drip.state.identifier.FundingLabel;
+import org.testng.annotations.Test;
+
+import java.util.List;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -61,11 +70,11 @@ public class CMSFloatFloatAnalysis {
 		final String strMaturityTenor,
 		final double dblCoupon)
 	{
-		FixedFloatSwapConvention ffConv = IBORFixedFloatContainer.ConventionFromJurisdiction (
-			strCurrency,
-			"ALL",
-			strMaturityTenor,
-			"MAIN"
+		FixedFloatSwapConvention ffConv = IBORFixedFloatContainer.ConventionFromJurisdiction(
+				strCurrency,
+				"ALL",
+				strMaturityTenor,
+				"MAIN"
 		);
 
 		return ffConv.createFixFloatComponent (
@@ -322,9 +331,9 @@ public class CMSFloatFloatAnalysis {
 		final double dblForwardFundingCorr)
 		throws Exception
 	{
-		mktParams.setForwardCurveVolSurface (
-			forwardLabel,
-			new FlatUnivariate (dblForwardVol)
+		mktParams.setForwardCurveVolSurface(
+				forwardLabel,
+				new FlatUnivariate(dblForwardVol)
 		);
 
 		mktParams.setFundingCurveVolSurface (
@@ -332,10 +341,10 @@ public class CMSFloatFloatAnalysis {
 			new FlatUnivariate (dblFundingVol)
 		);
 
-		mktParams.setForwardFundingCorrSurface (
-			forwardLabel,
-			fundingLabel,
-			new FlatUnivariate (dblForwardFundingCorr)
+		mktParams.setForwardFundingCorrSurface(
+				forwardLabel,
+				fundingLabel,
+				new FlatUnivariate(dblForwardFundingCorr)
 		);
 	}
 
@@ -385,7 +394,8 @@ public class CMSFloatFloatAnalysis {
 		System.out.println (strDump + "  |");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

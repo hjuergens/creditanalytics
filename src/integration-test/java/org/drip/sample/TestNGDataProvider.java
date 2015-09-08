@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
  */
 public class TestNGDataProvider {
     @DataProvider(name = "mainparam", parallel = true)
-    public Object[][] measures() {
+    public static Object[][] mainparam() {
         return new Object[][] {
                 new Object[]{ new String[]{ "" } },
         };

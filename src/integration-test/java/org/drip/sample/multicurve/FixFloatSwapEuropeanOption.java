@@ -1,26 +1,45 @@
 
 package org.drip.sample.multicurve;
 
-import java.util.*;
-
-import org.drip.analytics.date.*;
-import org.drip.analytics.rates.*;
-import org.drip.analytics.support.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.analytics.rates.DiscountCurve;
+import org.drip.analytics.rates.ForwardCurve;
+import org.drip.analytics.support.AnalyticsHelper;
+import org.drip.analytics.support.CompositePeriodBuilder;
 import org.drip.function.R1ToR1.FlatUnivariate;
-import org.drip.market.otc.*;
-import org.drip.param.creator.*;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.FloatFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
+import org.drip.market.otc.IBORFloatFloatContainer;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
+import org.drip.param.creator.ScenarioForwardCurveBuilder;
 import org.drip.param.market.CurveSurfaceQuoteSet;
-import org.drip.param.period.*;
-import org.drip.param.valuation.*;
-import org.drip.product.creator.*;
-import org.drip.product.definition.*;
-import org.drip.product.option.*;
+import org.drip.param.period.ComposableFixedUnitSetting;
+import org.drip.param.period.ComposableFloatingUnitSetting;
+import org.drip.param.period.CompositePeriodSetting;
+import org.drip.param.period.UnitCouponAccrualSetting;
+import org.drip.param.valuation.CashSettleParams;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.creator.SingleStreamComponentBuilder;
+import org.drip.product.definition.CalibratableFixedIncomeComponent;
+import org.drip.product.option.FixFloatEuropeanOption;
 import org.drip.product.params.LastTradingDateSetting;
-import org.drip.product.rates.*;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.product.rates.FloatFloatComponent;
+import org.drip.product.rates.Stream;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
 import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
-import org.drip.state.identifier.*;
+import org.drip.state.identifier.CustomMetricLabel;
+import org.drip.state.identifier.ForwardLabel;
+import org.drip.state.identifier.FundingLabel;
+import org.testng.annotations.Test;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -616,7 +635,8 @@ public class FixFloatSwapEuropeanOption {
 		return irs;
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

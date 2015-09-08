@@ -1,21 +1,26 @@
 
 package org.drip.sample.option;
 
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
 import org.drip.function.R1ToR1.FlatUnivariate;
-import org.drip.market.otc.*;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
 import org.drip.param.creator.ScenarioDiscountCurveBuilder;
 import org.drip.param.pricer.HestonOptionPricerParams;
-import org.drip.param.valuation.*;
-import org.drip.pricer.option.*;
-import org.drip.product.creator.*;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.pricer.option.BlackScholesAlgorithm;
+import org.drip.pricer.option.FokkerPlanckGenerator;
+import org.drip.pricer.option.HestonStochasticVolatilityAlgorithm;
+import org.drip.product.creator.SingleStreamComponentBuilder;
 import org.drip.product.definition.CalibratableFixedIncomeComponent;
 import org.drip.product.option.EuropeanCallPut;
-import org.drip.product.rates.*;
+import org.drip.product.rates.FixFloatComponent;
 import org.drip.quant.fourier.PhaseAdjuster;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -252,7 +257,8 @@ public class ForwardOptionPricing {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

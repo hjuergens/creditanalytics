@@ -2,8 +2,10 @@
 package org.drip.sample.forward;
 
 import org.drip.analytics.support.CompositePeriodBuilder;
-import org.drip.market.definition.*;
+import org.drip.market.definition.IBORIndex;
+import org.drip.market.definition.IBORIndexContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -67,7 +69,8 @@ public class IBORIndexDefinition {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		String[] args)
 	{
 		CreditAnalytics.Init ("");

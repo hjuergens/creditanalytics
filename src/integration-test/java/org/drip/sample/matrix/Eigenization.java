@@ -1,9 +1,12 @@
 
 package org.drip.sample.matrix;
 
-import org.drip.quant.common.*;
-import org.drip.quant.eigen.*;
+import org.drip.quant.common.FormatUtil;
+import org.drip.quant.eigen.EigenComponent;
+import org.drip.quant.eigen.EigenOutput;
+import org.drip.quant.eigen.QREigenComponentExtractor;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -90,7 +93,8 @@ public class Eigenization {
 		System.out.println ("\t|----------------------------------------|");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -1,9 +1,12 @@
 
 package org.drip.sample.bondfutures;
 
-import org.drip.analytics.date.*;
-import org.drip.market.exchange.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.market.exchange.BondFuturesConvention;
+import org.drip.market.exchange.BondFuturesConventionContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -68,7 +71,8 @@ public class ContractDates {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] args)
 		throws Exception
 	{

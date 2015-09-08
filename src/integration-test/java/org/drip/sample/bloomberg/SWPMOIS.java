@@ -1,21 +1,25 @@
 
 package org.drip.sample.bloomberg;
 
-import org.drip.analytics.cashflow.*;
-import org.drip.analytics.date.*;
+import org.drip.analytics.cashflow.ComposableUnitFloatingPeriod;
+import org.drip.analytics.cashflow.CompositePeriod;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.analytics.support.*;
-import org.drip.market.otc.*;
-import org.drip.param.creator.*;
-import org.drip.param.market.*;
-import org.drip.param.valuation.*;
-import org.drip.product.creator.*;
-import org.drip.product.definition.*;
-import org.drip.product.rates.*;
+import org.drip.analytics.support.CaseInsensitiveTreeMap;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
+import org.drip.param.market.CurveSurfaceQuoteSet;
+import org.drip.param.market.LatentStateFixingsContainer;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.creator.SingleStreamComponentBuilder;
+import org.drip.product.definition.CalibratableFixedIncomeComponent;
+import org.drip.product.rates.FixFloatComponent;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.identifier.ForwardLabel;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /*
@@ -230,14 +234,7 @@ public class SWPMOIS {
 		);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
 	public static void main (
 		final String[] astrArgs)
 		throws Exception

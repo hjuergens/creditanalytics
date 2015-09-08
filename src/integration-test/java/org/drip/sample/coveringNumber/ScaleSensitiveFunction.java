@@ -5,6 +5,7 @@ import org.drip.function.definition.R1ToR1;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spaces.cover.ScaleSensitiveCoveringBounds;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -42,7 +43,8 @@ import org.drip.spaces.cover.ScaleSensitiveCoveringBounds;
 
 public class ScaleSensitiveFunction {
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -1,12 +1,15 @@
 
 package org.drip.sample.sabr;
 
-import org.drip.analytics.date.*;
-import org.drip.dynamics.sabr.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.dynamics.sabr.ForwardRateUpdate;
+import org.drip.dynamics.sabr.StochasticVolatilityStateEvolver;
 import org.drip.quant.common.FormatUtil;
 import org.drip.sequence.random.BoxMullerGaussian;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -147,6 +150,7 @@ public class ForwardRateEvolution {
 		System.out.println ("\t||---------------------------------------------------------------------------------||");
 	}
 
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
 	public static void main (
 		final String[] astrArgs)
 		throws Exception

@@ -1,8 +1,10 @@
 
 package org.drip.sample.floatfloat;
 
-import org.drip.market.otc.*;
+import org.drip.market.otc.FloatFloatSwapConvention;
+import org.drip.market.otc.IBORFloatFloatContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -54,7 +56,8 @@ public class OTCFloatFloatDefinitions {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		String[] args)
 	{
 		CreditAnalytics.Init ("");

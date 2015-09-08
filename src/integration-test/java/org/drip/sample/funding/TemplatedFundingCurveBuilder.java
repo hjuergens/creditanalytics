@@ -1,18 +1,26 @@
 
 package org.drip.sample.funding;
 
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.rates.DiscountCurve;
-import org.drip.analytics.support.*;
-import org.drip.market.otc.*;
-import org.drip.param.creator.*;
-import org.drip.param.period.*;
-import org.drip.param.valuation.*;
-import org.drip.product.definition.*;
-import org.drip.product.rates.*;
+import org.drip.analytics.support.CompositePeriodBuilder;
+import org.drip.market.otc.FixedFloatSwapConvention;
+import org.drip.market.otc.IBORFixedFloatContainer;
+import org.drip.param.creator.MarketParamsBuilder;
+import org.drip.param.creator.ScenarioDiscountCurveBuilder;
+import org.drip.param.period.ComposableFloatingUnitSetting;
+import org.drip.param.period.CompositePeriodSetting;
+import org.drip.param.valuation.CashSettleParams;
+import org.drip.param.valuation.ValuationParams;
+import org.drip.product.definition.FixedIncomeComponent;
+import org.drip.product.rates.FixFloatComponent;
+import org.drip.product.rates.SingleStreamComponent;
+import org.drip.product.rates.Stream;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -483,7 +491,8 @@ public class TemplatedFundingCurveBuilder {
 		}
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

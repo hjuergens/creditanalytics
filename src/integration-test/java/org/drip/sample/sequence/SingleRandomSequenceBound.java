@@ -1,12 +1,13 @@
 
 package org.drip.sample.sequence;
 
-import org.drip.function.R1ToR1.*;
+import org.drip.function.R1ToR1.ExponentialTension;
 import org.drip.function.definition.R1ToR1;
 import org.drip.quant.common.FormatUtil;
-import org.drip.sequence.metrics.*;
+import org.drip.sequence.metrics.SingleSequenceAgnosticMetrics;
 import org.drip.sequence.random.BoundedUniform;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
 
@@ -209,6 +210,7 @@ public class SingleRandomSequenceBound {
 		CentralMomentBound (sm, 5);
 	}
 
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
 	public static void main (
 		final String[] astrArgs)
 		throws Exception

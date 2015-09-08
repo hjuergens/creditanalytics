@@ -5,15 +5,16 @@ package org.drip.sample.misc;
  * Generic imports
  */
 
-import org.drip.analytics.date.*;
-
-/* 
- * Credit Analytics API imports
- */
-
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
+
+/*
+ * Credit Analytics API imports
+ */
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -127,7 +128,8 @@ public class DayCountAPI {
 		DayCountAPISample (dtStart, dtEnd, "NL/365");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

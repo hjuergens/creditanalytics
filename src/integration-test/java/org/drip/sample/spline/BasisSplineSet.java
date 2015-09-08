@@ -1,12 +1,12 @@
 
 package org.drip.sample.spline;
 
-import org.drip.function.R1ToR1.*;
+import org.drip.function.R1ToR1.QuadraticRationalShapeControl;
 import org.drip.quant.calculus.WengertJacobian;
 import org.drip.spline.basis.*;
-import org.drip.spline.params.*;
-import org.drip.spline.segment.*;
-import org.testng.annotations.DataProvider;
+import org.drip.spline.params.ResponseScalingShapeControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.segment.LatentStateResponseModel;
 import org.testng.annotations.Test;
 
 /*
@@ -70,7 +70,7 @@ public class BasisSplineSet {
 
 		PolynomialFunctionSetParams polybsbp = new PolynomialFunctionSetParams (iNumBasis);
 
-		return FunctionSetBuilder.PolynomialBasisSet (polybsbp);
+		return FunctionSetBuilder.PolynomialBasisSet(polybsbp);
 	}
 
 	/*
@@ -90,7 +90,7 @@ public class BasisSplineSet {
 
 		PolynomialFunctionSetParams polybsbp = new PolynomialFunctionSetParams (iNumBasis);
 
-		return FunctionSetBuilder.BernsteinPolynomialBasisSet (polybsbp);
+		return FunctionSetBuilder.BernsteinPolynomialBasisSet(polybsbp);
 	}
 
 	/*
@@ -110,7 +110,7 @@ public class BasisSplineSet {
 
 		ExponentialTensionSetParams etbsbp = new ExponentialTensionSetParams (dblTension);
 
-		return FunctionSetBuilder.ExponentialTensionBasisSet (etbsbp);
+		return FunctionSetBuilder.ExponentialTensionBasisSet(etbsbp);
 	}
 
 	/*
@@ -130,7 +130,7 @@ public class BasisSplineSet {
 
 		ExponentialTensionSetParams etbsbp = new ExponentialTensionSetParams (dblTension);
 
-		return FunctionSetBuilder.HyperbolicTensionBasisSet (etbsbp);
+		return FunctionSetBuilder.HyperbolicTensionBasisSet(etbsbp);
 	}
 
 	/*
@@ -339,15 +339,15 @@ public class BasisSplineSet {
 			null // Constraints, Fitness Weighted Response
 		);
 
-		System.out.println ("\tY[" + 1.0 + "]: " + seg2.responseValue (1.0));
+		System.out.println("\tY[" + 1.0 + "]: " + seg2.responseValue(1.0));
 
 		System.out.println ("\tY[" + 2.0 + "]: " + seg2.responseValue (2.0));
 
-		System.out.println ("Segment 2 Jacobian: " + wj2.displayString());
+		System.out.println("Segment 2 Jacobian: " + wj2.displayString());
 
 		System.out.println ("Segment 2 Regular Jacobian: " + seg2.jackDCoeffDEdgeInputs().displayString());
 
-		System.out.println ("Segment 2 Monotone Type: " + seg2.monotoneType());
+		System.out.println("Segment 2 Monotone Type: " + seg2.monotoneType());
 
 		System.out.println ("Segment 2 DPE: " + seg2.curvatureDPE());
 
@@ -355,10 +355,10 @@ public class BasisSplineSet {
 		 * Re-calibrate Segment #2 with a different response value
 		 */
 
-		seg2.calibrate (
-			seg1,
-			14.,
-			null
+		seg2.calibrate(
+				seg1,
+				14.,
+				null
 		);
 
 		/*
@@ -367,11 +367,11 @@ public class BasisSplineSet {
 
 		double dblX = 2.0;
 
-		System.out.println ("\t\tValue[" + dblX + "]: " + seg2.responseValue (dblX));
+		System.out.println("\t\tValue[" + dblX + "]: " + seg2.responseValue(dblX));
 
 		System.out.println ("\t\tValue Jacobian[" + dblX + "]: " + seg2.jackDResponseDEdgeInput (dblX, 1).displayString());
 
-		System.out.println ("\t\tSegment 2 DPE: " + seg2.curvatureDPE());
+		System.out.println("\t\tSegment 2 DPE: " + seg2.curvatureDPE());
 	}
 
 	/*
@@ -493,15 +493,8 @@ public class BasisSplineSet {
 		);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

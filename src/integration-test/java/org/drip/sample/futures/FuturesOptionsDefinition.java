@@ -1,8 +1,10 @@
 
 package org.drip.sample.futures;
 
-import org.drip.market.exchange.*;
+import org.drip.market.exchange.FuturesOptions;
+import org.drip.market.exchange.FuturesOptionsContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -70,7 +72,8 @@ public class FuturesOptionsDefinition {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] args)
 	{
 		CreditAnalytics.Init ("");

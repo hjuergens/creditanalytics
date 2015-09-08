@@ -2,8 +2,11 @@
 package org.drip.sample.matrix;
 
 import org.drip.quant.common.FormatUtil;
-import org.drip.sequence.random.*;
+import org.drip.sequence.random.BoxMullerGaussian;
+import org.drip.sequence.random.MultivariateSequenceGenerator;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
 
@@ -42,7 +45,8 @@ import org.drip.service.api.CreditAnalytics;
 
 public class MultivariateRandom {
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArg)
 		throws Exception
 	{

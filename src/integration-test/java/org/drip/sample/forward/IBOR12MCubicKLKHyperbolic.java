@@ -1,14 +1,19 @@
 
 package org.drip.sample.forward;
 
-import org.drip.analytics.date.*;
-import org.drip.analytics.rates.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
+import org.drip.analytics.rates.DiscountCurve;
+import org.drip.analytics.rates.ForwardCurve;
 import org.drip.function.R1ToR1.QuadraticRationalShapeControl;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.ExponentialTensionSetParams;
-import org.drip.spline.params.*;
+import org.drip.spline.params.ResponseScalingShapeControl;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
 import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -46,7 +51,8 @@ import org.drip.state.identifier.ForwardLabel;
  */
 
 public class IBOR12MCubicKLKHyperbolic {
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

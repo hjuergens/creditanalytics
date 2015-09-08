@@ -5,14 +5,19 @@ import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.definition.MarketSurface;
 import org.drip.analytics.rates.ForwardCurve;
 import org.drip.dynamics.lmm.LognormalLIBORVolatility;
-import org.drip.param.creator.*;
+import org.drip.param.creator.ScenarioForwardCurveBuilder;
+import org.drip.param.creator.ScenarioMarketSurfaceBuilder;
 import org.drip.quant.common.FormatUtil;
-import org.drip.sequence.random.*;
+import org.drip.sequence.random.BoxMullerGaussian;
+import org.drip.sequence.random.PrincipalFactorSequenceGenerator;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
-import org.drip.spline.params.*;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
 import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
 import org.drip.state.identifier.ForwardLabel;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -129,6 +134,7 @@ public class ContinuousForwardRateVolatility {
 		System.out.println (strDump);
 	}
 
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
 	public static void main (
 		final String[] astrArgs)
 		throws Exception

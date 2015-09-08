@@ -1,11 +1,14 @@
 
 package org.drip.sample.misc;
 
-import java.util.*;
-
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.Set;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -146,7 +149,8 @@ public class CalendarAPI {
 			System.out.println (new JulianDate (dblDate).toOracleDate());
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

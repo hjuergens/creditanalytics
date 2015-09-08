@@ -399,8 +399,8 @@ public class PolynomialBasisSpline {
 		TestC1HermiteSpline (4, 1, iRoughnessPenaltyDerivativeOrder, rssc);
 	}
 
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

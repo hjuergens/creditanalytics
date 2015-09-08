@@ -1,10 +1,9 @@
 
 package org.drip.sample.bond;
 
-import java.util.*;
-
 import org.drip.analytics.cashflow.CompositePeriod;
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
 import org.drip.analytics.rates.DiscountCurve;
 import org.drip.analytics.support.AnalyticsHelper;
@@ -17,11 +16,17 @@ import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
 import org.drip.spline.grid.OverlappingStretchSpan;
-import org.drip.spline.params.*;
-import org.drip.spline.stretch.*;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.params.StretchBestFitResponse;
+import org.drip.spline.stretch.BoundarySettings;
+import org.drip.spline.stretch.MultiSegmentSequence;
+import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
 import org.drip.state.curve.DiscountFactorDiscountCurve;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.Map;
+import java.util.TreeMap;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -679,15 +684,8 @@ public class RegressionSplineBondCurve {
 		);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

@@ -5,13 +5,16 @@ package org.drip.sample.credit;
  * Generic imports
  */
 
-import java.util.*;
-
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.support.CaseInsensitiveTreeMap;
-import org.drip.product.definition.*;
+import org.drip.product.definition.BasketProduct;
 import org.drip.service.api.CreditAnalytics;
 import org.drip.service.env.StandardCDXManager;
+import org.testng.annotations.Test;
+
+import java.util.Map;
+import java.util.Set;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -149,7 +152,8 @@ public class StandardCDXAPI {
 			System.out.println ("ITRAXX.ENERGY[" + me.getValue() + "]: " + me.getKey());
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

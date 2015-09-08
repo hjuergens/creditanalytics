@@ -1,8 +1,10 @@
 
 package org.drip.sample.futures;
 
-import org.drip.market.exchange.*;
+import org.drip.market.exchange.DeliverableSwapFutures;
+import org.drip.market.exchange.DeliverableSwapFuturesContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -56,7 +58,8 @@ public class IRSFuturesDefinition {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] args)
 	{
 		CreditAnalytics.Init ("");

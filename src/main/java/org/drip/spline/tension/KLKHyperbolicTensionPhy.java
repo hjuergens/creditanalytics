@@ -30,6 +30,13 @@ package org.drip.spline.tension;
  *  	limitations under the License.
  */
 
+import org.drip.function.definition.R1ToR1;
+import org.drip.function.definition.R1ToR1;
+import static org.drip.quant.common.NumberUtil.IsValid;
+import static java.lang.Math.pow;
+import static java.lang.Math.sinh;
+import static java.lang.Math.cosh;
+
 /**
  * KLKHyperbolicTensionPhy implements the basic framework and the family of C2 Tension Splines outlined in
  *  Koch and Lyche (1989), Koch and Lyche (1993), and Kvasov (2000) Papers.
@@ -40,7 +47,7 @@ package org.drip.spline.tension;
  * @author Lakshmi Krishnamurthy
  */
 
-public class KLKHyperbolicTensionPhy extends org.drip.function.definition.R1ToR1 {
+public class KLKHyperbolicTensionPhy extends R1ToR1 {
 	private double _dblTension = java.lang.Double.NaN;
 
 	/**
@@ -57,7 +64,7 @@ public class KLKHyperbolicTensionPhy extends org.drip.function.definition.R1ToR1
 	{
 		super (null);
 
-		if (!org.drip.quant.common.NumberUtil.IsValid (_dblTension = dblTension))
+		if (!IsValid(_dblTension = dblTension))
 			throw new java.lang.Exception ("KLKHyperbolicTensionPhy ctr: Invalid Inputs");
 	}
 
@@ -65,10 +72,10 @@ public class KLKHyperbolicTensionPhy extends org.drip.function.definition.R1ToR1
 		final double dblVariate)
 		throws java.lang.Exception
 	{
-		if (!org.drip.quant.common.NumberUtil.IsValid (dblVariate))
+		if (!IsValid (dblVariate))
 			throw new java.lang.Exception ("KLKHyperbolicTensionPhy::evaluate => Invalid Inputs");
 
-		return java.lang.Math.sinh (_dblTension * dblVariate) / java.lang.Math.sinh (_dblTension);
+		return sinh (_dblTension * dblVariate) / sinh (_dblTension);
 	}
 
 	@Override public double derivative (
@@ -76,11 +83,11 @@ public class KLKHyperbolicTensionPhy extends org.drip.function.definition.R1ToR1
 		final int iOrder)
 		throws java.lang.Exception
 	{
-		if (!org.drip.quant.common.NumberUtil.IsValid (dblVariate) || 0 > iOrder)
+		if (!IsValid (dblVariate) || 0 > iOrder)
 			throw new java.lang.Exception ("KLKHyperbolicTensionPhy::derivative => Invalid Inputs");
 
-		return java.lang.Math.pow (_dblTension, iOrder) * java.lang.Math.sinh (_dblTension * dblVariate) /
-			java.lang.Math.sinh (_dblTension);
+		return pow (_dblTension, iOrder) * sinh (_dblTension * dblVariate) /
+			sinh (_dblTension);
 	}
 
 	@Override public double integrate (
@@ -88,12 +95,12 @@ public class KLKHyperbolicTensionPhy extends org.drip.function.definition.R1ToR1
 		final double dblEnd)
 		throws java.lang.Exception
 	{
-		if (!org.drip.quant.common.NumberUtil.IsValid (dblBegin) || !org.drip.quant.common.NumberUtil.IsValid
+		if (!IsValid (dblBegin) || !IsValid
 			(dblEnd))
 			throw new java.lang.Exception ("HyperbolicTension::integrate => Invalid Inputs");
 
-		return (java.lang.Math.cosh (_dblTension * dblEnd) - java.lang.Math.cosh (_dblTension * dblBegin)) /
-			(_dblTension * java.lang.Math.sinh (_dblTension));
+		return (cosh (_dblTension * dblEnd) - cosh (_dblTension * dblBegin)) /
+			(_dblTension * sinh (_dblTension));
 	}
 
 	/**

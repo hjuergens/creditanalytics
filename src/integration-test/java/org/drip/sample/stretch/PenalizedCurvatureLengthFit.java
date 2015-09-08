@@ -4,8 +4,14 @@ package org.drip.sample.stretch;
 import org.drip.function.R1ToR1.QuadraticRationalShapeControl;
 import org.drip.quant.common.FormatUtil;
 import org.drip.spline.basis.PolynomialFunctionSetParams;
-import org.drip.spline.params.*;
-import org.drip.spline.stretch.*;
+import org.drip.spline.params.ResponseScalingShapeControl;
+import org.drip.spline.params.SegmentCustomBuilderControl;
+import org.drip.spline.params.SegmentInelasticDesignControl;
+import org.drip.spline.params.StretchBestFitResponse;
+import org.drip.spline.stretch.BoundarySettings;
+import org.drip.spline.stretch.MultiSegmentSequence;
+import org.drip.spline.stretch.MultiSegmentSequenceBuilder;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -339,7 +345,8 @@ public class PenalizedCurvatureLengthFit {
 			FormatUtil.FormatDouble (mssBestFit.bestFitDPE (rbfr), 10, 0, 1.));
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

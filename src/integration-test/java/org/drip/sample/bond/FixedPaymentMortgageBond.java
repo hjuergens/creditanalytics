@@ -2,7 +2,8 @@
 package org.drip.sample.bond;
 
 import org.drip.analytics.cashflow.CompositePeriod;
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.analytics.daycount.Convention;
 import org.drip.param.market.CurveSurfaceQuoteSet;
 import org.drip.param.valuation.ValuationParams;
@@ -10,7 +11,6 @@ import org.drip.product.creator.BondBuilder;
 import org.drip.product.definition.Bond;
 import org.drip.quant.common.FormatUtil;
 import org.drip.service.api.CreditAnalytics;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /*
@@ -198,14 +198,7 @@ public class FixedPaymentMortgageBond {
 		);
 	}
 
-	@DataProvider(name = "mainparam")
-	public Object[][] measures() {
-		return new Object[][] {
-				new Object[]{ new String[]{ "" } },
-		};
-	}
-
-	@Test(dataProvider = "mainparam")
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
 	public static void main (
 		final String[] astrArgs)
 		throws Exception

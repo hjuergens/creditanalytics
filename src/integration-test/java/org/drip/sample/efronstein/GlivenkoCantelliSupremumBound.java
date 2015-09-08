@@ -5,10 +5,14 @@ import org.drip.function.R1ToR1.OffsetIdempotent;
 import org.drip.function.definition.R1ToR1;
 import org.drip.quant.common.FormatUtil;
 import org.drip.sequence.custom.GlivenkoCantelliFunctionSupremum;
-import org.drip.sequence.functional.*;
+import org.drip.sequence.functional.EfronSteinMetrics;
+import org.drip.sequence.functional.FunctionSupremumUnivariateRandom;
+import org.drip.sequence.functional.MultivariateRandom;
 import org.drip.sequence.metrics.SingleSequenceAgnosticMetrics;
-import org.drip.sequence.random.*;
+import org.drip.sequence.random.Binary;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -212,7 +216,8 @@ public class GlivenkoCantelliSupremumBound {
 		System.out.println (strDump + " |");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

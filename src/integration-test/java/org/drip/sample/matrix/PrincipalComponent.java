@@ -2,8 +2,10 @@
 package org.drip.sample.matrix;
 
 import org.drip.quant.common.FormatUtil;
-import org.drip.quant.eigen.*;
+import org.drip.quant.eigen.EigenComponent;
+import org.drip.quant.eigen.PowerIterationComponentExtractor;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -71,7 +73,8 @@ public class PrincipalComponent {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArg)
 		throws Exception
 	{

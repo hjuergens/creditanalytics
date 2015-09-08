@@ -2,9 +2,11 @@
 package org.drip.sample.sequence;
 
 import org.drip.quant.common.FormatUtil;
-import org.drip.sequence.metrics.*;
+import org.drip.sequence.metrics.DualSequenceAgnosticMetrics;
+import org.drip.sequence.metrics.SingleSequenceAgnosticMetrics;
 import org.drip.sequence.random.BoundedUniform;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
 
@@ -78,7 +80,8 @@ public class DualRandomSequenceBound {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{

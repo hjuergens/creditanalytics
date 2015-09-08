@@ -3,6 +3,7 @@ package org.drip.sample.fixfloat;
 
 import org.drip.market.otc.IBORFixedFloatContainer;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -55,7 +56,8 @@ public class OTCFixFloatDefinitions {
 		);
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] args)
 	{
 		CreditAnalytics.Init ("");

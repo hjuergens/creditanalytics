@@ -1,8 +1,12 @@
 
 package org.drip.sample.matrix;
 
-import org.drip.quant.common.*;
-import org.drip.quant.linearalgebra.*;
+import org.drip.quant.common.FormatUtil;
+import org.drip.quant.common.NumberUtil;
+import org.drip.quant.linearalgebra.LinearSystemSolver;
+import org.drip.quant.linearalgebra.LinearizationOutput;
+import org.drip.quant.linearalgebra.Matrix;
+import org.testng.annotations.Test;
 
 /*
 
@@ -186,7 +190,8 @@ public class LinearAlgebra {
 			System.out.println ("GaussSeidel[" + i + "] = " + FormatUtil.FormatDouble (lssGaussSeidel.getSolution()[i], 0, 2, 1.)); */
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 	{
 		MatrixManipulation();

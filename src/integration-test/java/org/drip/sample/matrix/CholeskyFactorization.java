@@ -4,6 +4,7 @@ package org.drip.sample.matrix;
 import org.drip.quant.common.NumberUtil;
 import org.drip.quant.linearalgebra.Matrix;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
 
@@ -42,7 +43,8 @@ import org.drip.service.api.CreditAnalytics;
 
 public class CholeskyFactorization {
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArg)
 		throws Exception
 	{

@@ -5,15 +5,18 @@ package org.drip.sample.tick;
  * Generic imports
  */
 
-import java.util.*;
-
 import org.drip.analytics.date.DateUtil;
 import org.drip.analytics.date.JulianDate;
-import org.drip.analytics.definition.*;
+import org.drip.analytics.definition.CreditCurve;
 import org.drip.analytics.support.CaseInsensitiveTreeMap;
-import org.drip.product.definition.*;
-import org.drip.product.creator.*;
+import org.drip.product.creator.CDSBuilder;
+import org.drip.product.definition.CalibratableFixedIncomeComponent;
+import org.drip.product.definition.CreditDefaultSwap;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
+
+import java.util.Map;
+import java.util.Set;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -154,7 +157,8 @@ public class CDSLiveAndEODAPI {
 			System.out.println (me.getKey() + " => " + me.getValue());
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String astrArgs[])
 		throws Exception
 	{

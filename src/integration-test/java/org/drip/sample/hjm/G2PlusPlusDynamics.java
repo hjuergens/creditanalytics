@@ -1,12 +1,15 @@
 
 package org.drip.sample.hjm;
 
-import org.drip.analytics.date.*;
+import org.drip.analytics.date.DateUtil;
+import org.drip.analytics.date.JulianDate;
 import org.drip.dynamics.hjm.G2PlusPlus;
 import org.drip.function.R1ToR1.FlatUnivariate;
 import org.drip.quant.common.FormatUtil;
-import org.drip.sequence.random.*;
+import org.drip.sequence.random.BoxMullerGaussian;
+import org.drip.sequence.random.UnivariateSequenceGenerator;
 import org.drip.service.api.CreditAnalytics;
+import org.testng.annotations.Test;
 
 /*
  * -*- mode: java; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
@@ -165,7 +168,8 @@ public class G2PlusPlusDynamics {
 		System.out.println ("\t|-----------------------------------------------------------------------||");
 	}
 
-	public static final void main (
+	@Test(dataProvider = "mainparam", dataProviderClass = org.drip.sample.TestNGDataProvider.class)
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{
