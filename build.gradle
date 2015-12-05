@@ -20,16 +20,13 @@ compileJava {
     options.bootClasspath = "$JDK7_HOME/jre/lib/rt.jar"
 }
 
-model {
-    tasks.generatePomFileForMavenCustomPublication {
-        destination = file("$buildDir/generated-pom.xml")
-    }
-}
-
 archivesBaseName    = 'DRIP-CreditAnalytics'
 group               = 'org.drip'
 
 version             = '2.4-SNAPSHOT'
+description         = 'CreditAnalytics and CreditProduct are part of CreditSuite' +
+        'open suite analytics and' +
+        'trading/valuation system for credit products.'
 
 targetCompatibility = JavaVersion.VERSION_1_6
 sourceCompatibility = JavaVersion.VERSION_1_6
@@ -109,21 +106,29 @@ jacocoTestReport {
     }
 }
 
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
 publishing {
     publications {
-        mavenCustom(MavenPublication) {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
             pom.withXml {
                 asNode().appendNode('description',
-                        'CreditAnalytics and CreditProduct are part of CreditSuite' +
-                                'open suite analytics and' +
-                                'trading/valuation system for credit products.')
+                        'CreditAnalytics and CreditProduct are part of CreditSuite open suite analytics and trading/valuation system for credit products.'
+                )
             }
+
         }
     }
     repositories {
         maven {
-            // change to point to your repo, e.g. http://my.org/repo
-            url "$buildDir/repo"
+            url "$buildDir/repo" // change to point to your repo, e.g. http://my.org/repo
         }
     }
 }
