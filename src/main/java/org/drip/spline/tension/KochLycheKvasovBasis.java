@@ -30,6 +30,9 @@ package org.drip.spline.tension;
  *  	limitations under the License.
  */
 
+
+import org.drip.function.definition.R1ToR1;
+
 /**
  * This class implements the basic framework and the family of C2 Tension Splines outlined in Koch and Lyche
  * 	(1989), Koch and Lyche (1993), and Kvasov (2000) Papers.
@@ -49,13 +52,13 @@ public class KochLycheKvasovBasis {
 	 * @return The Monic BSpline Basis Function Set
 	 */
 
-	public static final org.drip.function.definition.R1ToR1[] GenerateMonicBSplineSet (
+	public static R1ToR1[] GenerateMonicBSplineSet (
 		final double dblTension)
 	{
 		try {
-			return new org.drip.function.definition.R1ToR1[] {new
-				org.drip.spline.tension.KLKHyperbolicTensionPhy (dblTension), new
-					org.drip.spline.tension.KLKHyperbolicTensionPsy (dblTension)};
+			return new R1ToR1[] {new
+				KLKHyperbolicTensionPhy (dblTension), new
+					KLKHyperbolicTensionPsy (dblTension)};
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 		}
@@ -71,13 +74,13 @@ public class KochLycheKvasovBasis {
 	 * @return The Quadratic BSpline Basis Function Set
 	 */
 
-	public static final org.drip.function.definition.R1ToR1[] GenerateQuadraticBSplineSet (
+	public static R1ToR1[] GenerateQuadraticBSplineSet (
 		final double dblTension)
 	{
 		try {
-			return new org.drip.function.definition.R1ToR1[] {new
-				org.drip.spline.tension.KLKHyperbolicTensionPhy (dblTension), new
-					org.drip.spline.tension.KLKHyperbolicTensionPsy (dblTension)};
+			return new R1ToR1[] {new
+				KLKHyperbolicTensionPhy (dblTension), new
+					KLKHyperbolicTensionPsy (dblTension)};
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 		}

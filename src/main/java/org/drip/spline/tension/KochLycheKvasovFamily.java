@@ -30,6 +30,14 @@ package org.drip.spline.tension;
  *  	limitations under the License.
  */
 
+import static org.drip.quant.common.NumberUtil.IsValid;
+
+import org.drip.function.definition.R1ToR1;
+import org.drip.spline.basis.ExponentialTensionSetParams;
+import org.drip.spline.basis.FunctionSet;
+import static java.lang.Math.sinh;
+import static java.lang.Math.cosh;
+
 /**
  * This class implements the basic framework and the family of C2 Tension Splines outlined in Koch and Lyche
  * 	(1989), Koch and Lyche (1993), and Kvasov (2000) Papers.
@@ -53,44 +61,44 @@ public class KochLycheKvasovFamily {
 	 * @return Instance of the Basis Function Set
 	 */
 
-	public static final org.drip.spline.basis.FunctionSet FromHyperbolicPrimitive (
-		final org.drip.spline.basis.ExponentialTensionSetParams etsp)
+	public static final FunctionSet FromHyperbolicPrimitive (
+		final ExponentialTensionSetParams etsp)
 	{
 		if (null == etsp) return null;
 
-		org.drip.function.definition.R1ToR1 auPhy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPhy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromHyperbolicPrimitive.Phy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
 
-				return (java.lang.Math.sinh (dblTension * dblX) - dblTension * dblX) / (dblTension *
-					dblTension * java.lang.Math.sinh (dblTension));
+				return (sinh (dblTension * dblX) - dblTension * dblX) / (dblTension *
+					dblTension * sinh (dblTension));
 			}
 
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromHyperbolicPrimitive.Phy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
 
 				if (1 == iOrder)
-					return (java.lang.Math.cosh (dblTension * dblX) - 1.) / (dblTension * java.lang.Math.sinh
+					return (cosh (dblTension * dblX) - 1.) / (dblTension * java.lang.Math.sinh
 						(dblTension));
 
 				if (2 == iOrder)
-					return java.lang.Math.sinh (dblTension * dblX) / java.lang.Math.sinh (dblTension);
+					return sinh (dblTension * dblX) / sinh (dblTension);
 
 				return derivative (dblX, iOrder);
 			}
@@ -98,54 +106,54 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblBegin) ||
-					!org.drip.quant.common.NumberUtil.IsValid (dblEnd))
-					throw new java.lang.Exception
+				if (!IsValid (dblBegin) ||
+					!IsValid (dblEnd))
+					throw new Exception
 						("KLKF::FromHyperbolicPrimitive.Phy::integrate => Invalid Inputs");
 
 				double dblTension = etsp.tension();
 
-				return (java.lang.Math.cosh (dblTension * dblEnd) - java.lang.Math.cosh (dblTension *
+				return (cosh (dblTension * dblEnd) - cosh (dblTension *
 					dblBegin) - 0.5 * dblTension * (dblEnd * dblEnd - dblBegin * dblBegin)) / (dblTension *
-						dblTension * dblTension * java.lang.Math.sinh (dblTension));
+						dblTension * dblTension * sinh (dblTension));
 			}
 		};
 
-		org.drip.function.definition.R1ToR1 auPsy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPsy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF.Psy::FromHyperbolicPrimitive::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
 
-				return (java.lang.Math.sinh (dblTension * (1. - dblX)) - dblTension * (1. - dblX)) /
-					(dblTension * dblTension * java.lang.Math.sinh (dblTension));
+				return (sinh (dblTension * (1. - dblX)) - dblTension * (1. - dblX)) /
+					(dblTension * dblTension * sinh (dblTension));
 			}
 
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromHyperbolicPrimitive.Psy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
 
 				if (1 == iOrder)
-					return (1. - java.lang.Math.cosh (dblTension * (1. - dblX))) / (dblTension *
-						java.lang.Math.cosh (dblTension));
+					return (1. - cosh (dblTension * (1. - dblX))) / (dblTension *
+						cosh (dblTension));
 
 				if (2 == iOrder)
-					return java.lang.Math.sinh (dblTension * (1. - dblX)) / java.lang.Math.sinh (dblTension);
+					return sinh (dblTension * (1. - dblX)) / sinh (dblTension);
 
 				return derivative (dblX, iOrder);
 			}
@@ -153,26 +161,26 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblBegin) ||
-					!org.drip.quant.common.NumberUtil.IsValid (dblEnd))
-					throw new java.lang.Exception
+				if (!IsValid (dblBegin) ||
+					!IsValid (dblEnd))
+					throw new Exception
 						("KLKF::FromHyperbolicPrimitive.Psy::integrate => Invalid Inputs");
 
 				double dblTension = etsp.tension();
 
-				return -1. * (java.lang.Math.sinh (dblTension * (1. - dblEnd)) - java.lang.Math.sinh 
+				return -1. * (sinh (dblTension * (1. - dblEnd)) - sinh 
 					(dblTension * (1. - dblBegin)) - 0.5 * dblTension * ((1. - dblEnd) * (1. - dblEnd) - (1.
 						- dblBegin) * (1. - dblBegin))) / (dblTension * dblTension * dblTension *
-							java.lang.Math.sinh (dblTension));
+							sinh (dblTension));
 			}
 		};
 
 		try {
 			return new org.drip.spline.bspline.SegmentBasisFunctionSet (2, etsp.tension(), new
-				org.drip.function.definition.R1ToR1[] {auPhy, auPsy});
-		} catch (java.lang.Exception e) {
+				R1ToR1[] {auPhy, auPsy});
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -192,14 +200,14 @@ public class KochLycheKvasovFamily {
 	{
 		if (null == etsp) return null;
 
-		org.drip.function.definition.R1ToR1 auPhy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPhy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalLinearPrimitive.Phy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -210,10 +218,10 @@ public class KochLycheKvasovFamily {
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalLinearPrimitive.Phy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -242,20 +250,20 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
 				return org.drip.quant.calculus.R1ToR1Integrator.Boole (this, dblBegin, dblEnd);
 			}
 		};
 
-		org.drip.function.definition.R1ToR1 auPsy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPsy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalLinearPrimitive.Psy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -267,10 +275,10 @@ public class KochLycheKvasovFamily {
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalLinearPrimitive.Psy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -300,7 +308,7 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
 				return org.drip.quant.calculus.R1ToR1Integrator.Boole (this, dblBegin, dblEnd);
 			}
@@ -308,7 +316,7 @@ public class KochLycheKvasovFamily {
 
 		try {
 			return new org.drip.spline.bspline.SegmentBasisFunctionSet (2, etsp.tension(), new
-				org.drip.function.definition.R1ToR1[] {auPhy, auPsy});
+				R1ToR1[] {auPhy, auPsy});
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 		}
@@ -330,14 +338,14 @@ public class KochLycheKvasovFamily {
 	{
 		if (null == etsp) return null;
 
-		org.drip.function.definition.R1ToR1 auPhy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPhy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalQuadraticPrimitive.Phy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -348,10 +356,10 @@ public class KochLycheKvasovFamily {
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalQuadraticPrimitive.Phy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -380,20 +388,20 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
 				return org.drip.quant.calculus.R1ToR1Integrator.Boole (this, dblBegin, dblEnd);
 			}
 		};
 
-		org.drip.function.definition.R1ToR1 auPsy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPsy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalQuadraticPrimitive.Psy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -405,10 +413,10 @@ public class KochLycheKvasovFamily {
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromRationalQuadraticPrimitive.Psy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -438,7 +446,7 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
 				return org.drip.quant.calculus.R1ToR1Integrator.Boole (this, dblBegin, dblEnd);
 			}
@@ -446,7 +454,7 @@ public class KochLycheKvasovFamily {
 
 		try {
 			return new org.drip.spline.bspline.SegmentBasisFunctionSet (2, etsp.tension(), new
-				org.drip.function.definition.R1ToR1[] {auPhy, auPsy});
+				R1ToR1[] {auPhy, auPsy});
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 		}
@@ -462,19 +470,19 @@ public class KochLycheKvasovFamily {
 	 * @return Instance of the Basis Function Set
 	 */
 
-	public static final org.drip.spline.basis.FunctionSet FromExponentialPrimitive (
+	public static final FunctionSet FromExponentialPrimitive (
 		final org.drip.spline.basis.ExponentialTensionSetParams etsp)
 	{
 		if (null == etsp) return null;
 
-		org.drip.function.definition.R1ToR1 auPhy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPhy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromExponentialPrimitive.Phy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -486,10 +494,10 @@ public class KochLycheKvasovFamily {
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromExponentialPrimitive.Phy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -508,20 +516,20 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
 				return org.drip.quant.calculus.R1ToR1Integrator.Boole (this, dblBegin, dblEnd);
 			}
 		};
 
-		org.drip.function.definition.R1ToR1 auPsy = new org.drip.function.definition.R1ToR1
+		R1ToR1 auPsy = new R1ToR1
 			(null) {
 			@Override public double evaluate (
 				final double dblX)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromExponentialPrimitive.Psy::evaluate => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -533,10 +541,10 @@ public class KochLycheKvasovFamily {
 			@Override public double derivative (
 				final double dblX,
 				final int iOrder)
-				throws java.lang.Exception
+				throws Exception
 			{
-				if (!org.drip.quant.common.NumberUtil.IsValid (dblX))
-					throw new java.lang.Exception
+				if (!IsValid (dblX))
+					throw new Exception
 						("KLKF::FromExponentialPrimitive.Psy::derivative => Invalid Inputs!");
 
 				double dblTension = etsp.tension();
@@ -556,7 +564,7 @@ public class KochLycheKvasovFamily {
 			@Override public double integrate (
 				final double dblBegin,
 				final double dblEnd)
-				throws java.lang.Exception
+				throws Exception
 			{
 				return org.drip.quant.calculus.R1ToR1Integrator.Boole (this, dblBegin, dblEnd);
 			}
@@ -564,7 +572,7 @@ public class KochLycheKvasovFamily {
 
 		try {
 			return new org.drip.spline.bspline.SegmentBasisFunctionSet (2, etsp.tension(), new
-				org.drip.function.definition.R1ToR1[] {auPhy, auPsy});
+				R1ToR1[] {auPhy, auPsy});
 		} catch (java.lang.Exception e) {
 			e.printStackTrace();
 		}

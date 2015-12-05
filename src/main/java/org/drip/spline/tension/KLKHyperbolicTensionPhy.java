@@ -31,7 +31,7 @@ package org.drip.spline.tension;
  */
 
 import org.drip.function.definition.R1ToR1;
-import org.drip.function.definition.R1ToR1;
+
 import static org.drip.quant.common.NumberUtil.IsValid;
 import static java.lang.Math.pow;
 import static java.lang.Math.sinh;
@@ -48,7 +48,7 @@ import static java.lang.Math.cosh;
  */
 
 public class KLKHyperbolicTensionPhy extends R1ToR1 {
-	private double _dblTension = java.lang.Double.NaN;
+	private double _dblTension = Double.NaN;
 
 	/**
 	 * KLKHyperbolicTensionPhy constructor
@@ -60,20 +60,20 @@ public class KLKHyperbolicTensionPhy extends R1ToR1 {
 
 	public KLKHyperbolicTensionPhy (
 		final double dblTension)
-		throws java.lang.Exception
+		throws Exception
 	{
 		super (null);
 
 		if (!IsValid(_dblTension = dblTension))
-			throw new java.lang.Exception ("KLKHyperbolicTensionPhy ctr: Invalid Inputs");
+			throw new Exception ("KLKHyperbolicTensionPhy ctr: Invalid Inputs");
 	}
 
 	@Override public double evaluate (
 		final double dblVariate)
-		throws java.lang.Exception
+		throws Exception
 	{
 		if (!IsValid (dblVariate))
-			throw new java.lang.Exception ("KLKHyperbolicTensionPhy::evaluate => Invalid Inputs");
+			throw new Exception ("KLKHyperbolicTensionPhy::evaluate => Invalid Inputs");
 
 		return sinh (_dblTension * dblVariate) / sinh (_dblTension);
 	}
@@ -81,10 +81,10 @@ public class KLKHyperbolicTensionPhy extends R1ToR1 {
 	@Override public double derivative (
 		final double dblVariate,
 		final int iOrder)
-		throws java.lang.Exception
+		throws Exception
 	{
 		if (!IsValid (dblVariate) || 0 > iOrder)
-			throw new java.lang.Exception ("KLKHyperbolicTensionPhy::derivative => Invalid Inputs");
+			throw new Exception ("KLKHyperbolicTensionPhy::derivative => Invalid Inputs");
 
 		return pow (_dblTension, iOrder) * sinh (_dblTension * dblVariate) /
 			sinh (_dblTension);
@@ -93,11 +93,11 @@ public class KLKHyperbolicTensionPhy extends R1ToR1 {
 	@Override public double integrate (
 		final double dblBegin,
 		final double dblEnd)
-		throws java.lang.Exception
+		throws Exception
 	{
 		if (!IsValid (dblBegin) || !IsValid
 			(dblEnd))
-			throw new java.lang.Exception ("HyperbolicTension::integrate => Invalid Inputs");
+			throw new Exception ("HyperbolicTension::integrate => Invalid Inputs");
 
 		return (cosh (_dblTension * dblEnd) - cosh (_dblTension * dblBegin)) /
 			(_dblTension * sinh (_dblTension));
@@ -114,9 +114,9 @@ public class KLKHyperbolicTensionPhy extends R1ToR1 {
 		return _dblTension;
 	}
 
-	public static final void main (
+	public static void main (
 		final String[] astrArgs)
-		throws java.lang.Exception
+		throws Exception
 	{
 		KLKHyperbolicTensionPhy khtp = new KLKHyperbolicTensionPhy (2.);
 

@@ -31,6 +31,7 @@ package org.drip.spline.tension;
  */
 
 import org.drip.function.definition.R1ToR1;
+
 import static org.drip.quant.common.NumberUtil.IsValid;
 import static java.lang.Math.pow;
 import static java.lang.Math.sinh;
@@ -54,7 +55,7 @@ public class KLKHyperbolicTensionPsy extends R1ToR1 {
 	 * 
 	 * @param dblTension Tension of the HyperbolicTension Function
 	 * 
-	 * @throws Exception Thrown if the input is invalid
+	 * @throws java.lang.Exception Thrown if the input is invalid
 	 */
 
 	public KLKHyperbolicTensionPsy (
@@ -113,7 +114,7 @@ public class KLKHyperbolicTensionPsy extends R1ToR1 {
 		return _dblTension;
 	}
 
-	public static final void main (
+	public static void main (
 		final String[] astrArgs)
 		throws Exception
 	{
